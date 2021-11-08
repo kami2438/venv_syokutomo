@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'prime.apps.PrimeConfig', #11/8 追加分
+    'user.apps.UserConfig',
+    'shop.apps.ShopConfig',
+    'driver.apps.DriverConfig',
 ]
 
 MIDDLEWARE = [
