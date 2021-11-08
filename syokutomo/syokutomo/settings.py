@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'syokutomo.urls'
-
+#変更_11.8
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
