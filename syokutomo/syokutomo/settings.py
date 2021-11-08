@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'syokutomo.urls'
-#変更_11.8
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'syokutomo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+#変更_11.8
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2', #11/8 追加分
