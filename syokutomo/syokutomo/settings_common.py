@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'shop.apps.ShopConfig',
     'driver.apps.DriverConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
