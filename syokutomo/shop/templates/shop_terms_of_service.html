@@ -1,7 +1,8 @@
+{% extends 'shop_base.html' %}
 {% load static %}
 <!-- ここでエクステンズしといて！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ -->
 
-{% extends 'shop_base.html' %}
+
 
 {% block title %}利用規約{% endblock %}
 {% block contents %}
@@ -132,9 +133,7 @@
     </ol>
     <a href="https://www.youtube.com/user/HikakinTV"><img src="{% static 'img/HIKAKIN/HIKAKIN＿GOOD.jpg' %}"></a>
     <p class="tR">以上</p>
-
-
-
+    <a class="btn btn-outline-primary mt-5 mb-3" href="{{request.META.HTTP_REFERER}}">戻る</a>
 </div>
 {% endblock %}
 <!-- ここでエクステンズしといて！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ -->
