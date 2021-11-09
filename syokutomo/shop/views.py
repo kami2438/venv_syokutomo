@@ -6,3 +6,6 @@ class IndexView(generic.TemplateView):
 
 class MypageView(generic.TemplateView):
     template_name = "shop_mypage.html"
+
+class TermsView(generic.TemplateView):
+    template_name = "shop_terms_of_service.html"
