@@ -87,7 +87,7 @@ section::before,section::after {
     position:relative;
 }
 #header-driver {
-    background-image:url(../img/HIKAKIN_GOOD.jpg);
+    background-image:url(../img/logo.png);
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
     -moz-background-size:cover;
     -o-background-size:/*@@prefixmycss->No equivalent*/;
