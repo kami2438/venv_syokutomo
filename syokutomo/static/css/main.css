@@ -86,11 +86,12 @@ section::before,section::after {
     background-repeat:no-repeat;
     position:relative;
 }
+/*
 #header-driver {
     background-image:url(../img/night.jpg);
-    -webkit-background-size:/*@@prefixmycss->No equivalent*/;
+    -webkit-background-size:;
     -moz-background-size:cover;
-    -o-background-size:/*@@prefixmycss->No equivalent*/;
+    -o-background-size:;
     background-size:cover;
     background-position:center center;
     background-attachment:fixed;
@@ -99,9 +100,9 @@ section::before,section::after {
 }
 #header-shop {
     background-image:url(../img/night.jpg);
-    -webkit-background-size:/*@@prefixmycss->No equivalent*/;
+    -webkit-background-size:;
     -moz-background-size:cover;
-    -o-background-size:/*@@prefixmycss->No equivalent*/;
+    -o-background-size:;
     background-size:cover;
     background-position:center center;
     background-attachment:fixed;
@@ -110,15 +111,15 @@ section::before,section::after {
 }
 #header-user {
     background-image:url(../img/HIKAKIN_GOOD.jpg);
-    -webkit-background-size:/*@@prefixmycss->No equivalent*/;
+    -webkit-background-size:;
     -moz-background-size:cover;
-    -o-background-size:/*@@prefixmycss->No equivalent*/;
+    -o-background-size:;
     background-size:cover;
     background-position:center center;
     background-attachment:fixed;
     background-repeat:no-repeat;
     position:relative;
-}
+}*/
 .bg-overlay {
     position:absolute;
     top:0;
