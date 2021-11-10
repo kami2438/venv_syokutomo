@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'driver.apps.DriverConfig',
     'accounts.apps.AccountsConfig',
+    
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
