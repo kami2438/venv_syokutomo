@@ -64,7 +64,7 @@
 
 
                     <li><a href="#">レビュー</a></li>
-                    <li><a href="#">マイページ</a></li>
+                    <li><a href="{% url 'shop:mypage' %}">マイページ</a></li>
                     <li><a href="#">ログアウト</a></li>
 
                     <!--fix for scroll spy active menu element-->
@@ -84,11 +84,11 @@
     <div class="shop-base-margin-top-style">
         <footer id="footer" class="dark-wrapper">
             <section class="ss-style-top"></section>
-            <div class="container inner">
+            <div class="container inner">しょくとも
                 <div class="row">
                     <div class="col-sm-6">
-                        &copy; Copyright MeatKing 2014
-                        <br />Theme By <a class="themeBy" href="http://www.Themewagon.com">ThemeWagon</a>
+                        &copy; Copyright しょくとも
+                        <br /><a class="themeBy" href="{% url 'shop:terms' %}">利用規約</a>
                     </div>
                     <div class="col-sm-6">
                         <div class="social-bar">
