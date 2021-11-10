@@ -15,3 +15,72 @@
     background: #ed0121;
     color: #FFF;
   }
+
+  .btn-cus {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #ed0121;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+
+  .btn-cus:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+
+  .btn-sho {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #ff8c00;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+
+  .btn-sho:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+  
+  .btn-del {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #00ff00;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+
+  .btn-del:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+  
+  .btn-new {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #ed0121;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+
+  .btn-new:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+  
