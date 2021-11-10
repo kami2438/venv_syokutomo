@@ -8,5 +8,33 @@
 
 .shop-mypage-Character-position {
   text-align: left;
-  margin-left: auto;
+  margin-left: 6rem;
+  margin-bottom: 6rem;
+}
+
+.shop-mypage-litag {
+  margin-bottom: 6rem;
+}
+
+.shop-btn-orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+
+.shop-btn-orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.shop-btn-shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.shop-btn-circle {
+  border-radius: 50%;
+  line-height: 150px;
+  width: 150px;
+  height: 150px;
+  padding: 0;
 }
