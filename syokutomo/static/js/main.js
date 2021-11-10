@@ -78,21 +78,21 @@ $(document).ready(function() {
 	}
 	animateScrollDownArrow();
 	//Set Down Arrow Button
-	jQuery('#scrollDownArrow').click(function(e) {
-		e.preventDefault();
-		jQuery.scrollTo("#story", 1000, {
-			offset:-(jQuery('#header #menu').height()), axis:'y'
-		}
-		);
-	});
-	jQuery('.nav > li > a, #logo a').click(function(e) {
-		e.preventDefault();
+	// jQuery('#scrollDownArrow').click(function(e) {
+	// 	e.preventDefault();
+	// 	jQuery.scrollTo("#story", 1000, {
+	// 		offset:-(jQuery('#header #menu').height()), axis:'y'
+	// 	}
+	// 	);
+	// });
+	// jQuery('.nav > li > a, #logo a').click(function(e) {
+	// 	e.preventDefault();
 
-		jQuery.scrollTo(jQuery(this).attr('href'), 400, {
-			offset:-(jQuery('#header #menu').height()), axis:'y'
-		}
-		);
-	});
+	// 	jQuery.scrollTo(jQuery(this).attr('href'), 400, {
+	// 		offset:-(jQuery('#header #menu').height()), axis:'y'
+	// 	}
+	// 	);
+	// });
 
 
 });
