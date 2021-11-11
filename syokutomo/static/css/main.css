@@ -225,59 +225,6 @@ section::before,section::after {
     background-repeat:no-repeat;
     position:relative;
 }*/
-.bg-overlay {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:rgba(44,33,5,0.2);
-    z-index:0;
-}
-#header .center {
-    position:relative;
-    z-index:1;
-    color:white;
-}
-#header .bottom {
-    color:white;
-}
-#header .center .slogan {
-    font-size:26px;
-    text-transform:uppercase;
-}
-#header .banner h1 {
-    font-size:100px;
-    color:white;
-    text-transform:uppercase;
-    font-weight:bold;
-    display:inline-block;
-    background:#ed0121;
-    padding:0px 18px;
-}
-#header .subtitle h4 {
-    display:inline-block;
-    background:white;
-    color:#ed0121;
-    font-size:38px;
-    padding:0px 15px;
-}
-#header .bottom {
-    text-align:center;
-    width:100%;
-    position:absolute;
-    bottom:30px;
-}
-#header .bottom a {
-    font-size:36px;
-    color:whitesmoke;
-    position:relative;
-    top:-5px;
-}
-.navbar-nav>li:nth-child(3) {
-    margin-right: 110px;
-}
-
 
 /* ==========================================================================
     03. Navigation 
