@@ -1,0 +1,80 @@
+.user-base-margin-top-style {
+  margin-top: 10rem;
+}
+
+.user-base-margin-bottom-style {
+  margin-bottom: 10rem;
+}
+
+.user-mypage-Character-position {
+  text-align: left;
+  margin-left: 6rem;
+  margin-bottom: 6rem;
+}
+
+.user-mypage-litag {
+  margin-bottom: 6rem;
+}
+
+.user-btn-orange {
+  font-size: 2.5rem;
+  color: #fff;
+  background-color: #eb6100;
+  line-height: 1rem;
+}
+
+.user-btn-orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.user-btn-shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.user-btn-circle {
+  border-radius: 50%;
+  line-height: 150px;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+}
+
+.user-mypage-btn {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-mypage-btn-margin-bottom-left {
+  margin-left: 10rem;
+  margin-bottom: 5rem;
+}
+
+.user-mypage-btn-margin-bottom-right {
+  margin-right: 10rem;
+  margin-bottom: 5rem;
+}
+
+.user-mypage-btn-margin-top-left {
+  margin-left: 10rem;
+  margin-top: 5rem;
+}
+
+.user-mypage-btn-margin-top-right {
+  margin-right: 10rem;
+  margin-top: 5rem;
+}
+
+.user-btn-withdrawal {
+  font-size: 2.5rem;
+  color: #fff;
+  background-color: #4b0082;
+}
+
+.user-btn-withdrawal:hover {
+  color: #fff;
+  background: #4b0082;
+}

@@ -1,0 +1,29 @@
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+<div class="user-mypage-Character-position">
+    <h1 class="">My page </h1>
+</div>
+
+<div class="user-mypage-btn">
+    <a href="#"
+        class="btn user-btn-orange user-btn-circle user-btn-circle-a user-btn-shadow user-mypage-btn-margin-bottom-right">アカウント<br></a>
+    <a href="#"
+        class="btn user-btn-orange user-btn-circle user-btn-circle-a user-btn-shadow user-mypage-btn-margin-bottom-left">販売状況</a>
+    <a href="#"
+        class="btn user-btn-orange user-btn-circle user-btn-circle-a user-btn-shadow user-mypage-btn-margin-bottom-left">販売状況</a>
+</div>
+<div class="user-mypage-btn">
+    <a href="#"
+        class="btn user-btn-orange user-btn-circle user-btn-circle-a user-btn-shadow user-mypage-btn-margin-top-right">ログアウト</a>
+    <a href="#"
+        class="btn user-btn-withdrawal user-btn-circle user-btn-circle-a user-btn-shadow user-mypage-btn-margin-top-left">退会</a>
+</div>
+{% endblock %}
