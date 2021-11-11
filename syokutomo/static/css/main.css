@@ -76,8 +76,19 @@ section::before,section::after {
     02. Header 
 ========================================================================== */
 
-#header {
+#prime{
     background-image:url(../img/night.jpg);
+}
+#shop{
+    background-image:url(../img/night.jpg);
+}
+#driver{
+    background-image:url(../img/night.jpg);
+}
+#user{
+    background-image:url(../img/night.jpg);
+}
+#header {
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
     -moz-background-size:cover;
     -o-background-size:/*@@prefixmycss->No equivalent*/;
@@ -140,7 +151,7 @@ section::before,section::after {
     margin-right: 110px;
 }
 
-#header-shop {
+/*#header-shop {
     background-image:url(../img/HIKAKIN_GOOD.jpg);
     -webkit-background-size:;
     -moz-background-size:cover;
