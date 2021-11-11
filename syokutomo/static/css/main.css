@@ -88,7 +88,7 @@ section::before,section::after {
 #user{
     background-image:url(../img/night.jpg);
 }
-#header{
+#header #prime #shop #driver #user {
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
     -moz-background-size:cover;
     -o-background-size:/*@@prefixmycss->No equivalent*/;
