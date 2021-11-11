@@ -17,6 +17,7 @@
 }
 
 .shop-btn-orange {
+  font-size: 200%;
   color: #fff;
   background-color: #eb6100;
 }
@@ -37,4 +38,41 @@
   width: 150px;
   height: 150px;
   padding: 0;
+}
+
+.shop-mypage-btn {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.shop-mypage-btn-margin-bottom-left {
+  margin-left: 10rem;
+  margin-bottom: 5rem;
+}
+
+.shop-mypage-btn-margin-bottom-right {
+  margin-right: 10rem;
+  margin-bottom: 5rem;
+}
+
+.shop-mypage-btn-margin-top-left {
+  margin-left: 10rem;
+  margin-top: 5rem;
+}
+
+.shop-mypage-btn-margin-top-right {
+  margin-right: 10rem;
+  margin-top: 5rem;
+}
+
+.shop-btn-withdrawal {
+  font-size: 200%;
+  color: #fff;
+  background-color: #4b0082;
+}
+
+.shop-btn-withdrawal:hover {
+  color: #fff;
+  background: #4b0082;
 }
