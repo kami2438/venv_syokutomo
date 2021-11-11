@@ -88,7 +88,7 @@ section::before,section::after {
 #user{
     background-image:url(../img/night.jpg);
 }
-#header {
+#header{
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
     -moz-background-size:cover;
     -o-background-size:/*@@prefixmycss->No equivalent*/;
@@ -107,19 +107,20 @@ section::before,section::after {
     background:rgba(44,33,5,0.2);
     z-index:0;
 }
-#header .center {
+
+#header #prime #shop #driver #user .center {
     position:relative;
     z-index:1;
     color:white;
 }
-#header .bottom {
+#header #prime #shop #driver #user .bottom {
     color:white;
 }
-#header .center .slogan {
+#header #prime #shop #driver #user .center .slogan {
     font-size:26px;
     text-transform:uppercase;
 }
-#header .banner h1 {
+#header #prime #shop #driver #user .banner h1 {
     font-size:100px;
     color:white;
     text-transform:uppercase;
@@ -128,20 +129,20 @@ section::before,section::after {
     background:#ed0121;
     padding:0px 18px;
 }
-#header .subtitle h4 {
+#header #prime #shop #driver #user .subtitle h4 {
     display:inline-block;
     background:white;
     color:#ed0121;
     font-size:38px;
     padding:0px 15px;
 }
-#header .bottom {
+#header #prime #shop #driver #user .bottom {
     text-align:center;
     width:100%;
     position:absolute;
     bottom:30px;
 }
-#header .bottom a {
+#header #prime #shop #driver #user .bottom a {
     font-size:36px;
     color:whitesmoke;
     position:relative;
