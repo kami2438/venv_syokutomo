@@ -75,6 +75,7 @@ section::before,section::after {
 /* ==========================================================================
     02. Header 
 ========================================================================== */
+
 #header {
     background-image:url(../img/night.jpg);
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
@@ -150,15 +151,7 @@ section::before,section::after {
     background-repeat:no-repeat;
     position:relative;
 }
-.bg-overlay-shop {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:rgba(44,33,5,0.2);
-    z-index:0;
-}
+
 #header-shop .center {
     position:relative;
     z-index:1;
