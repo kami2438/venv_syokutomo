@@ -17,7 +17,7 @@
 }
 
 .shop-btn-orange {
-  font-size: 200%;
+  font-size: 2.5rem;
   color: #fff;
   background-color: #eb6100;
 }
@@ -34,9 +34,9 @@
 
 .shop-btn-circle {
   border-radius: 50%;
-  line-height: 150px;
-  width: 150px;
-  height: 150px;
+  line-height: 250px;
+  width: 300px;
+  height: 250px;
   padding: 0;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .shop-btn-withdrawal {
-  font-size: 200%;
+  font-size: 2.5rem;
   color: #fff;
   background-color: #4b0082;
 }
