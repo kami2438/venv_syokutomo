@@ -23,8 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1*6ojwa2*cp%qv3r)0v#12@vvvm9bqk6u&5%w1#0jrkmd+7i&k'
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,12 +33,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'prime.apps.PrimeConfig', #11/8 追加分
+    'prime.apps.PrimeConfig',  # 11/8 追加分
     'user.apps.UserConfig',
     'shop.apps.ShopConfig',
     'driver.apps.DriverConfig',
     'accounts.apps.AccountsConfig',
-    
+
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -79,15 +77,15 @@ WSGI_APPLICATION = 'syokutomo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-#変更_11.8
+# 変更_11.8
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2', #11/8 追加分
-        'NAME':'syokutomo',
-        'USER':os.environ.get('DB_USER'),
-        'PASSWORD':os.environ.get('DB_PASSWORD'),
-        'HOST':'',
-        'POST':'',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # 11/8 追加分
+        'NAME': 'syokutomo',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': '',
+        'POST': '',
     }
 }
 
@@ -114,9 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'ja' # 変更
+LANGUAGE_CODE = 'ja'  # 変更
 
-TIME_ZONE = 'Asia/Tokyo' # 変更
+TIME_ZONE = 'Asia/Tokyo'  # 変更
 
 USE_I18N = True
 
@@ -136,17 +134,16 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
-
-
 
 
 # django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別用IDを設定
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',  # 一般ユーザー用(メールアドレス認証)
+    # 一般ユーザー用(メールアドレス認証)
+    'allauth.account.auth_backends.AuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend',  # 管理サイト用(ユーザー名認証)
 )
 
@@ -159,16 +156,11 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 
 
-
 # 要調整
 # ログイン/ログアウト後の遷移先を設定
 LOGIN_REDIRECT_URL = 'diary:diary_list'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 # ログイン画面設定後
-
-
-
-
 
 
 # ログアウトリンクのクリック一発でログアウトする設定
@@ -179,3 +171,5 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 
 # デフォルトのメール送信元を設定
 DEFAULT_FROM_EMAIL = 'admin@example.com'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
