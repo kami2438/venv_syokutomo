@@ -22,4 +22,5 @@ urlpatterns = [
     path('user/',include('user.urls')),
     path('shop/',include('shop.urls')),
     path('driver/',include('driver.urls')),
+    path('accounts/',include('allauth.urls')),
 ]
