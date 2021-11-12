@@ -4,13 +4,17 @@
     <head>
         <meta charset="utf-8">
         <title>ログイン画面</title>
-        <link rel="stylesheet" type="text/css" href="css/button.css">
+        <link rel="stylesheet" type="text/css" href="button.css">
     </head>
     <body>
         <h1 id="login">ログイン画面</h1>
-        <button class="btn-cus" type=“button” onclick="location.href=''">顧客</button>
-        <button class="btn-sho" type=“button” onclick="location.href=''">店舗</button>
-        <button class="btn-del" type=“button” onclick="location.href=''">配達員</button>
-        <button class="btn-new" type=“button” onclick="location.href=''">新規作成</button>
+        <div class="login-btn">
+            <a href="" class="btn btn-cus"><span>ログイン<p>アカウントがある方はこちらへ</p></span></a>
+            <a href="" class="btn btn-new"><span>アカウント作成</span></a>
+        </div>
+        <div class="login-btn">
+            <a href="" class="btn btn-sho"><span>店舗様向け</span></a>
+            <a href="" class="btn btn-del"><span>配達員様向け</span></a>
+        </div>
     </body>
 </html>
