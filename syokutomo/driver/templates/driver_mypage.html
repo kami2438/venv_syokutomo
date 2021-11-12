@@ -1,0 +1,28 @@
+{% extends 'driver_base.html' %}
+
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+<div class="driver-mypage-Character-position">
+    <h1 class="">My page </h1>
+</div>
+
+<div class="driver-mypage-btn">
+    <a href="#"
+        class="btn driver-btn-orange driver-btn-circle driver-btn-circle-a driver-btn-shadow driver-mypage-btn-margin-bottom-right">アカウント</a>
+    <a href="#"
+        class="btn driver-btn-orange driver-btn-circle driver-btn-circle-a driver-btn-shadow driver-mypage-btn-margin-bottom-left">販売状況</a>
+
+</div>
+<div class="driver-mypage-btn">
+    <a href="#"
+        class="btn driver-btn-orange driver-btn-circle driver-btn-circle-a driver-btn-shadow driver-mypage-btn-margin-top-right">ログアウト</a>
+    <a href="#"
+        class="btn driver-btn-withdrawal driver-btn-circle driver-btn-circle-a driver-btn-shadow driver-mypage-btn-margin-top-left">退会</a>
+</div>
+{% endblock %}
