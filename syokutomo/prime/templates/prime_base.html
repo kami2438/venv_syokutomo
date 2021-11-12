@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prime_base.css' %}">
+
 
     <link rel="icon" href="{% static '/img/buf_icon.svg' %}">
 
@@ -64,7 +66,7 @@
 
                     <li><a href="#facts">料金</a></li>
                     <li><a href="#food-menu">お問い合わせ</a></li>
-                    <li><a href="#special-offser">サインイン</a></li>
+                    <li><a href="{% url 'prime:choice_login' %}">サインイン</a></li>
 
                     <!--fix for scroll spy active menu element-->
                     <li style="display:none;"><a href="#header"></a></li>
@@ -78,8 +80,6 @@
     <div class="driver-base-margin-bottom-style">
         {% block header %}{% endblock %}
     </div>
-
-    {% block loginbtn %}{% endblock %}
 
 
     {% block contents %}{% endblock %}
