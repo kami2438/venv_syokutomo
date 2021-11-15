@@ -14,7 +14,7 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
     # last_name = forms.CharField(max_length=30, label='名字')
     # user_type = form
     user_type= forms.CharField(
-        widget=forms.Select(choices=CustomUser.type_choice))
+        widget=forms.Select(choices=CustomUser.type_choice) label="利用者する種別")
     class Meta:
         model=CustomUser
 
