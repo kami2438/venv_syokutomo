@@ -175,6 +175,6 @@ DEFAULT_FROM_EMAIL = 'admin@example.com'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 ###################################################サインイン変更#######################################################################################
-ACCOUNT_FORMS = {
-'signup': 'accounts.forms.CustomSignupForm'
-}
+# ACCOUNT_FORMS = {
+# 'signup': 'accounts.forms.CustomSignupForm'
+# }
