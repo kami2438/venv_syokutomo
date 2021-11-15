@@ -11,7 +11,7 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
         label='タイプ'
         # widget=forms.widgets.Select,
     )
-    user_type = form
+    # user_type = form
 
     def signup(self, request, user):
         user.user_type = self.cleaned_data['user_type']
