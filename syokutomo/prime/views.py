@@ -13,3 +13,7 @@ class Choice_loginView(generic.TemplateView):
 
 class TermsView(generic.TemplateView):
     template_name = "prime_terms.html"
+
+
+class ReservationView(generic.TemplateView):
+    template_name = "prime_reservation.html"
