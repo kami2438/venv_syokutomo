@@ -8,7 +8,7 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
     forms.fields.ChoiceField(
         choices=CustomUser.type_choice.choices,
         required=True,
-        label='タイプ',
+        label='タイプ'
         # widget=forms.widgets.Select,
     )
     user_type = form
