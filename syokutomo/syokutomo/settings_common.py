@@ -179,3 +179,6 @@ ACCOUNT_FORMS = {
 'signup': 'accounts.forms.CustomSignupForm'
 }
 # ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
+
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
