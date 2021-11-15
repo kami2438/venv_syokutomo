@@ -1,7 +1,7 @@
 # forms.py
 from allauth.account.forms import SignupForm
 from django import forms
-from .import models
+from .models import CustomUser
 
 
 class CustomSignupForm(SignupForm):  # SignupFormを継承する
