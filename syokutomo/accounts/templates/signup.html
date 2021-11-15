@@ -12,7 +12,7 @@
             <form method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
 
-                {{ form.as_ul() }}
+                {{ form.as_p) }}
                 <tr>
                     <th>Name：</th>
                     <td>{{ form.user_type }}{{ form.user_type.errors }}</td>
