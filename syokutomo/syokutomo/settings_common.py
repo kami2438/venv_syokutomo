@@ -176,5 +176,5 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 ###################################################サインイン変更#######################################################################################
 ACCOUNT_FORMS = {
-'signup': 'accounts.forms.CustomSignupForm',
+'signup': 'accounts.forms.CustomSignupForm'
 }
