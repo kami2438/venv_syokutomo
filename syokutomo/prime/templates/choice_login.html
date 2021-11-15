@@ -1,13 +1,17 @@
 {% extends 'prime_base.html' %}
 
-{% block loginbtn %}
 <!DOCTYPE html>
 <html>
+
+    {% block title %}
     <head>
         <meta charset="utf-8">
         <title>ログイン画面</title>
         <link rel="stylesheet" type="text/css" href="button.css">
     </head>
+    {% endblock %}
+
+    {% block contents %}
     <body>
         <h1 id="login">ログイン画面</h1>
         <div class="login-btn">
@@ -19,5 +23,6 @@
             <a href="" class="btn btn-del"><span>配達員様向け</span></a>
         </div>
     </body>
+    {% edblock %}
+
 </html>
-{% endblock %}
