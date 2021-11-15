@@ -6,7 +6,7 @@ from .models import CustomUser
 
 class CustomSignupForm(SignupForm):  # SignupFormを継承する
     forms.fields.ChoiceField(
-        choices=CustomUser.type_choice.choices,
+        choices=CustomUser.type_choice,
         required=True,
         label='タイプ'
         # widget=forms.widgets.Select,
