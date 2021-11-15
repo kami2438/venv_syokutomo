@@ -1,5 +1,5 @@
 $(window).load(function() {
-    $('#header').bgSwitcher({
+    $('#user').bgSwitcher({
       images: ['img/night.jpg', 'img/parallax1.jpg', 'img/parallax2.jpg'], // 切り替える背景画像を指定
       interval: 4000, // 背景画像を切り替える間隔を指定 3000=3秒
       loop: true, // 切り替えを繰り返すか指定 true=繰り返す　false=繰り返さない
