@@ -1,18 +1,9 @@
 {% extends 'prime_base.html' %}
 
 <!DOCTYPE html>
-<html>
-
-    {% block title %}
-    <head>
-        <meta charset="utf-8">
-        <title>ログイン画面</title>
-        <link rel="stylesheet" type="text/css" href="button.css">
-    </head>
-    {% endblock %}
+    {% block title %}ログイン画面{% endblock %}
 
     {% block contents %}
-    <body>
         <h1 id="login">ログイン画面</h1>
         <div class="login-btn">
             <a href="" class="btn btn-cus"><span>ログイン<p>アカウントがある方はこちらへ</p></span></a>
@@ -22,7 +13,4 @@
             <a href="" class="btn btn-sho" value="2"><span>店舗様向け</span></a>
             <a href="" class="btn btn-del" value="3"><span>配達員様向け</span></a>
         </div>
-    </body>
     {% endblock %}
-
-</html>
