@@ -158,7 +158,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 # 要調整
 # ログイン/ログアウト後の遷移先を設定
-LOGIN_REDIRECT_URL = 'diary:diary_list'
+LOGIN_REDIRECT_URL = 'prime:index'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 # ログイン画面設定後
 
