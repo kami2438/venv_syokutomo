@@ -1,6 +1,6 @@
 from django.views import generic
 
-from .froms import ReservationForm
+from .forms import ReservationForm
 # Create your views here.
 
 
