@@ -26,7 +26,7 @@ class TermsView(generic.TemplateView):
 class ReservationView(generic.FormView):
     template_name = "prime_reservation.html"
     form_class = ReservationForm
-    success_url = reverse_lazy('syokutomo:reservation')
+    success_url = reverse_lazy('prime:index')
 
     def form_valid(self, form):
         form.send_email()
