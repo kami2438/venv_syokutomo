@@ -49,7 +49,7 @@ class T3_order_detail(models.Model):
     t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員ID',on_delete=models.CASCADE )
     t3_order_deliver_status=PositiveIntegerField(verbose_name='配送状態',null=False,max_length=1)
 class T4_food(models.Model):
-    t4_food_id=models.CharField(verbose_name='料理ID',Prinary_key=True,max_length=15,validators=[RegexValidator(regex=r"^F[0-9]*$")])
+    t4_food_id=models.CharField(verbose_name='料理ID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^F[0-9]*$")])
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=False)
     t9_food_category_id=models.ForeignKey(T9_food_category,verbose_name='カテゴリーID',on_delete= models.SET_DEFAULT,default='未設定',null=False)
     # postgresql specific model fields
@@ -62,7 +62,7 @@ class T4_food(models.Model):
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t4_order_count=models.PositiveIntegerField(verbose_name='注文回数',max_length=10,blank=True,null=True)
 class T5_user(models.Model):
-    t5_user_id=models.CharField(verbose_name='ユーザーID',Prinary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
+    t5_user_id=models.CharField(verbose_name='ユーザーID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
     t5_user_firstname=models.CharField(verbose_name='顧客姓',max_length=30,blank=False)
     t5_user_lastname=models.CharField(verbose_name='顧客名',max_length=30,blank=False)
     t10_area_id=models.ForeignKey(T10_area,verbose_name='エリアID',null=False,on_delete=models.SET_DEFAULT,default='エリアID未設定')
@@ -75,26 +75,25 @@ class T5_user(models.Model):
     t5_charge_remain=models.IntegerField(verbose_name='チャージ残高',max_length=15,default=0,null=True)
     t5_credit_number=models.CharField(verbose_name='カード番号',max_length=19,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_credit_limit=models.CharField(verbose_name='有効期限',max_length=4,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
-    t5_credit_security=model.PositiveIntegerField(verbose_name='セキュリティナンバー',max_length=3,null=True)
+    t5_credit_security=models.PositiveIntegerField(verbose_name='セキュリティナンバー',max_length=3,null=True)
     t5_bank_name=models.CharField(verbose_name='金融機関名',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_password=models.CharField(verbose_name='口座暗証番号',max_length=4,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
 
 class T6_review(models.Model):
-    t6_review_id=models.CharField(verbose_name='レビューID',Prinary_key=True,max_length=15,validators=[RegexValidator(regex=r"^R[0-9]*$")])
+    t6_review_id=models.CharField(verbose_name='レビューID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^R[0-9]*$")])
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='ユーザーID',on_delete=models.CASCADE,null=False)
     t6_star=PositiveSmallIntegerField(verbose_name='星',max_length=1,ValueValidator=[MaxValueValidator(5),MinValueValidator(1)])
     t6_title=models.CharField(verbose_name='タイトル',max_length=40,null=True,blank=True)
     t6_sentence=models.TextField(verbose_name='本文',max_length=400,null=True,blank=True)
     t6_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-
 class T7_delivery_man(models.Model):
-    t7_delivery_man_id=models.ForeignKey(T7_delivery,verbose_name='配達員ID',on_delete=models.SET_DEFAULT,default=0,null=False)
+    t7_delivery_man_id=models.CharField(verbose_name='配達員ID',primary_key=True,max_length=10,validators=[RegexValidator(regex=r"^D[0-9]*$")])
     t7_delivery_man_firstname=models.CharField(verbose_name='姓',max_length=20)
     t7_delivery_man_lastname=models.CharField(verbose_name='名',max_length=20)
-    t7_delivery_man_tel=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^F[0-9]*$")])
+    t7_delivery_man_tel=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^[0-9]*$")])
     t7_delivery_man_mail=models.EmailField(verbose_name='メールアドレス',max_length=90,blank=False)
     t10_area_id=models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
     t7_delivery_man_password=models.CharField(verbose_name='パスワード',max_length=20,blank=False)
@@ -104,3 +103,37 @@ class T7_delivery_man(models.Model):
     t7_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
 class T8_shop_category(models.Model):
+    t8_shop_category_id=models.CharField(verbose_name='店舗カテゴリID',max_length=8,primary_key=True,validators=[RegexValidator(regex=r"^SC[0-9]*$")])
+    t8_shop_category_name=models.CharField(verbose_name='カテゴリ名',max_length=40,blank=True,null=False)
+    t8_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t8_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+class T9_food_category(models.Model):
+    t9_shop_category_id=models.CharField(verbose_name='料理カテゴリID',max_length=8,primary_key=True,validators=[RegexValidator(regex=r"^FC[0-9]*$")])
+    t9_shop_category_name=models.CharField(verbose_name='カテゴリ名',max_length=40,blank=True,null=False)
+    t9_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t9_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+class T10_area(models.Model):
+    t10_area_id=models.CharField(verbose_name='料理カテゴリID',primary_key=True,max_length=10,validators=[RegexValidator(regex=r"^A[0-9]*$")])
+    t10_area_prefecture=models.CharField(verbose_name='県',max_length=70,blank=False)
+    t10_area_name=models.CharField(verbose_name='エリア名',max_length=70,blank=True,null=True)
+    t10_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t10_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+class T11_love(models.Model):
+    t11_love_id=models.CharField(verbose_name='お気に入りID',primary_key=True,max_length=20,validators=[RegexValidator(regex=r"^L[0-9]*$")])
+    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',on_delete=models.CASCADE,null=False)
+    t5_user_id=models.ForeignKey(T5_user,verbose_name='ユーザーID',on_delete=models.CASCADE,null=False)
+    t11_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t11_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+class T12_charge(models.Model):
+    t12_charge_id=models.CharField(verbose_name='お気に入りID',primary_key=True,max_length=20,validators=[RegexValidator(regex=r"^C[0-9]*$")])
+    t5_user_id=models.ForeignKey(T5_user,verbose_name='店舗ID',on_delete=models.CASCADE,null=False)
+    t12_charge_amount=models.PositiveIntegerField(verbose_name='チャージ額',max_length=15,blank=False,default=0)
+    t12_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t12_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+    t12_charge_remain_ex=models.IntegerField(verbose_name='チャージ後残高',max_length=15,blank=False,default=0)
+class T13_inquiry(models.Model):
+    t13_inquiry_id=models.CharField(verbose_name='お問い合わせID',primary_key=True,max_length=13,validators=[RegexValidator(regex=r"^I[0-9]*$")])
+    t13_title=models.CharField(verbose_name='題名',max_length=30,blank=False)
+    t13_sentence=models.TextField(verbose_name='内容',max_length=400,blank=False)
+    t13_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t13_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
