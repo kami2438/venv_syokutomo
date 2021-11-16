@@ -12,7 +12,7 @@ class T1_shop(models.Model):
     t1_shop_name_prime = models.CharField(verbos_name= '店名',max_length=3,null=False)
     t10_area_id= models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
     t1_address= models.CharField(verbos_name= '住所',max_length=200,null=False)
-    t1_shop_category_id= models.ForeignKey(verbose_name='店舗カテゴリーID',max_length=4,on_delete= models.SET_DEFAULT,default='未設定')
+    t8_shop_category_id= models.ManyToManyField(T8_shop_category,verbose_name='店舗カテゴリID',max_length=4)
     t1_holiday=models.CharField(verbose_name='定休日',max_length=7,null=True,validators=[RegexValidator(regex=r"^[0-1]\{7\}$")])
     t1_start_time=models.DateTimeField(verbose_name='注文開始時間',null=False)
     t1_end_time=models.DateTimeField(verbose_name='注文終了時間',null=False)
@@ -51,7 +51,7 @@ class T3_order_detail(models.Model):
 class T4_food(models.Model):
     t4_food_id=models.CharField(verbose_name='料理ID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^F[0-9]*$")])
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=False)
-    t9_food_category_id=models.ForeignKey(T9_food_category,verbose_name='カテゴリーID',on_delete= models.SET_DEFAULT,default='未設定',null=False)
+    t9_food_category_id=models.ManyToManyField(T9_food_category,verbose_name='カテゴリーID',null=False)
     # postgresql specific model fields
     t4_ingredients=ArrayField(models.CharField(max_length=300), blank=True,verbose_name='食材',null=True)
 
