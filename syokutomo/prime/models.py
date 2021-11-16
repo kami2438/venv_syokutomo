@@ -90,7 +90,7 @@ class T6_review(models.Model):
     t6_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
 
-class T6_review(models.Model):
+class T7_delivery_man(models.Model):
     t7_delivery_man_id=models.ForeignKey(T7_delivery,verbose_name='配達員ID',on_delete=models.SET_DEFAULT,default=0,null=False)
     t7_delivery_man_firstname=models.CharField(verbose_name='姓',max_length=20)
     t7_delivery_man_lastname=models.CharField(verbose_name='名',max_length=20)
@@ -103,3 +103,4 @@ class T6_review(models.Model):
     t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
+class T8_shop_category(models.Model):
