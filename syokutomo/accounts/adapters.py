@@ -9,6 +9,6 @@ class MyCrmAdapter(DefaultAccountAdapter):
         """
         # Do not persist the user yet so we pass commit=False
         # (last argument)
-        user = super(AccountAdapter, self).save_user(request, user, form, commit=False)
+        user = super(MyCrmAdapter, self).save_user(request, user, form, commit=False)
         user.user_type = form.cleaned_data.get('user_type')
         user.save()
