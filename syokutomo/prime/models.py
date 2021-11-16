@@ -7,8 +7,13 @@ from django.contrib.postgres.fields import ArrayField
 
 # number_only=RegexValidator(regex='^[0-9]{1,}]$', message='数字だけ入力ください')
 
+
 class T1_shop(models.Model):
-    t1_shop_id = models.CharField(verbose_name='店舗ID',null=False,primary_key= true,max_length=10, validators=[RegexValidator(regex=r"^S[0-9]*$")])
+    #ユーザー別foreignkey
+    user=models.ForeignKey()
+
+
+    t1_shop_id = models.CharField(verbose_name='店舗ID',null=False,primary_key= True,max_length=10, validators=[RegexValidator(regex=r"^S[0-9]*$")])
     t1_shop_name_prime = models.CharField(verbos_name= '店名',max_length=3,null=False)
     t10_area_id= models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
     t1_address= models.CharField(verbos_name= '住所',max_length=200,null=False)
@@ -27,6 +32,12 @@ class T1_shop(models.Model):
     t1_bank_name=models.CharField(verbose_name='金融機関名',null=False,max_length=4, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_location=models.CharField(verbose_name='支店番号',null=False,max_length=3, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_number=models.CharField(verbose_name='口座番号',null=False,max_length=6,validators=[RegexValidator(regex=r"^[0-9]*$")])
+
+    class Meta:
+        verbose_name_plural='T1_shop'
+        def __str__(self):
+            return self.t1_shop_id
+    def 
 class T2_order(models.Model):
     t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=False)
