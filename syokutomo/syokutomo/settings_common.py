@@ -179,3 +179,10 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 ACCOUNT_FORMS = {
 'signup': 'accounts.forms.CustomSignupForm'
 }
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'alert alert-danger',
+    messages.WARNING: 'alert alert-warning',
+    messages.SUCCESS: 'alert alert-success',
+    messages.INFO: 'alert alert-info',
+}
