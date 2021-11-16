@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from .forms import ReservationForm
+
+from django.contrib import messages
 # Create your views here.
 
 logger = logging.getLogger(__name__)
