@@ -180,5 +180,5 @@ ACCOUNT_FORMS = {
 }
 # ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
 
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
