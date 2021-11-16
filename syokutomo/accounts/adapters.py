@@ -2,7 +2,7 @@ from allauth.account.adapter import DefaultAccountAdapter
 from django.urls import reverse_lazy
 
 class MyCrmAdapter(DefaultAccountAdapter):
-def save_user(self, request, user, form, commit=True):
+    def save_user(self, request, user, form, commit=True):
         """
         This is called when saving user via allauth registration.
         We override this to set additional data on user object.
