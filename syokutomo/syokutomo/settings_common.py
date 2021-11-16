@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -178,4 +179,3 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 ACCOUNT_FORMS = {
 'signup': 'accounts.forms.CustomSignupForm'
 }
-ACCOUNT_ADAPTER = "accounts.adapters.MyCrmAdapter"

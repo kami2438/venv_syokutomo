@@ -15,5 +15,6 @@ class TermsView(generic.TemplateView):
     template_name = "prime_terms.html"
 
 
-class ReservationView(generic.TemplateView):
+class ReservationView(generic.FormView):
     template_name = "prime_reservation.html"
+    form_class = ReservationForm
