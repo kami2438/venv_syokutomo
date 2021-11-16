@@ -15,12 +15,12 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
     # user_type = form
     user_type= forms.CharField(
         widget=forms.Select(choices=CustomUser.type_choice),label="利用者する種別")
-    # class Meta:
-    #     model=CustomUser
+    class Meta:
+        model=CustomUser
 
     def signup(self, request):
         user= super(CustomSignupForm, self).save(request)
         user.user_type = self.cleaned_data['user_type']
         # user.last_name = self.cleaned_data['last_name']
         user.save()
-        return user
+        # return user
