@@ -10,7 +10,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class T1_shop(models.Model):
     #ユーザー別foreignkey
-    user=models.ForeignKey()
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー')
 
 
     t1_shop_id = models.CharField(verbose_name='店舗ID',null=False,primary_key= True,max_length=10, validators=[RegexValidator(regex=r"^S[0-9]*$")])
