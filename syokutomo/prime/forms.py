@@ -1,6 +1,6 @@
 from django import forms
 
-class ReservationForm(form.Form):
+class ReservationForm(forms.Form):
     name = forms.CharField(label='お名前', max_length=30)
     email = forms.EmailField(label='メールアドレス')
     title = forms.CharField(label='タイトル', max_length=30)
