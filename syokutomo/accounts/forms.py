@@ -18,9 +18,9 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
     class Meta:
         model=CustomUser
 
-    def signup(self, request):
-        user= super(CustomSignupForm, self).save(request)
-        user.user_type = self.cleaned_data['user_type']
-        # user.last_name = self.cleaned_data['last_name']
-        user.save()
-        # return user
+    # def signup(self, request):
+    #     user= super(CustomSignupForm, self).save(request)
+    #     user.user_type = self.cleaned_data['user_type']
+    #     # user.last_name = self.cleaned_data['last_name']
+    #     user.save()
+    #     # return user
