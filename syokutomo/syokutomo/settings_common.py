@@ -187,3 +187,4 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }
+ACCOUNT_ADAPTER = 'accounts.adapters.MyCrmAdapter'
