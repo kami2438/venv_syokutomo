@@ -119,7 +119,7 @@
 
 </html>
 {% if user.is_authenticated %}
-{% user.main_regis == False %}
+{% if user.main_regis == False %}
 <script>
 function MoveCheck() {
     if( confirm("移動してもいいですかー？") ) {
