@@ -118,3 +118,21 @@
 </body>
 
 </html>
+{% autoescape off %}
+{% user.main_regis == False %}
+<script>
+    function MoveCheck {
+    var res = confirm("移動してもいいですかー？");
+    if( res == true ) {
+        // OKなら移動
+        window.location.href = "{% url 'prime:terms' %}";
+    }
+    else {
+        // キャンセルならアラートボックスを表示
+        alert("移動をやめまーす。");
+    }
+}
+
+</script>
+{% endif %}
+{% autoescape %}
