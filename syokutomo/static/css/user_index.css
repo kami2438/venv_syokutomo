@@ -1,4 +1,4 @@
-#user{
+#user #header{
   animation  : bgAnime 9s infinite;
 }
 
@@ -53,19 +53,19 @@
     background: rgba(44, 33, 5, 0.2);
     z-index: 0;
   }
-  #user #header .center {
+  #user .center {
     position: relative;
     z-index: 1;
     color: white;
   }
-  #user #header .bottom {
+  #user .bottom {
     color: white;
   }
-  #user #header .center .slogan {
+  #user .center .slogan {
     font-size: 26px;
     text-transform: uppercase;
   }
-  #user #header .banner h1 {
+  #user .banner h1 {
     font-size: 100px;
     color: white;
     text-transform: uppercase;
@@ -74,20 +74,20 @@
     background: #ed0121;
     padding: 0px 18px;
   }
-  #user #header .subtitle h4 {
+  #user .subtitle h4 {
     display: inline-block;
     background: white;
     color: #ed0121;
     font-size: 38px;
     padding: 0px 15px;
   }
-  #user #header .bottom {
+  #user .bottom {
     text-align: center;
     width: 100%;
     position: absolute;
     bottom: 30px;
   }
-  #user #header .bottom a {
+  #user .bottom a {
     font-size: 36px;
     color: whitesmoke;
     position: relative;
