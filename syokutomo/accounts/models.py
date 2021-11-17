@@ -13,3 +13,5 @@ class CustomUser(AbstractUser):
     # nickname = models.CharField('ニックネーム', max_length=50,null=True)
     class Meta:
         verbose_name_plural="CustomUser"
+
+    

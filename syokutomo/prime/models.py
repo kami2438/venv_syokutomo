@@ -10,8 +10,9 @@ from django.contrib.postgres.fields import ArrayField
 
 class T1_shop(models.Model):
     #ユーザー別foreignkey
-    user=models.ForeignKey(CustomUser,verbose_name='ユーザー')
-
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
+    user_type=models.ForeignKey(CustomUser,verbose_name='user_type',on_delete=models.PROTECT)
+    mail=models.ForeignKey(CustomerUser,verbose_name='メールアドレス',on_delete=PROTECT)
 
     t1_shop_id = models.CharField(verbose_name='店舗ID',null=False,primary_key= True,max_length=10, validators=[RegexValidator(regex=r"^S[0-9]*$")])
     t1_shop_name_prime = models.CharField(verbos_name= '店名',max_length=3,null=False)
@@ -27,17 +28,12 @@ class T1_shop(models.Model):
     t1_shop_name_sub= models.CharField(verbose_name='サブ店名',max_length=30,blank=True,null=True)
     t1_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t1_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    t1_mail=models.EmailField(verbose_name='メールアドレス',max_length=90,null=False)
+    
     t1_password=models.CharField(verbose_name='パスワード',max_length=20,null=False,default='123')
     t1_bank_name=models.CharField(verbose_name='金融機関名',null=False,max_length=4, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_location=models.CharField(verbose_name='支店番号',null=False,max_length=3, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_number=models.CharField(verbose_name='口座番号',null=False,max_length=6,validators=[RegexValidator(regex=r"^[0-9]*$")])
 
-    class Meta:
-        verbose_name_plural='T1_shop'
-        def __str__(self):
-            return self.t1_shop_id
-    def 
 class T2_order(models.Model):
     t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=False)
@@ -73,6 +69,10 @@ class T4_food(models.Model):
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t4_order_count=models.PositiveIntegerField(verbose_name='注文回数',max_length=10,blank=True,null=True)
 class T5_user(models.Model):
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
+    user_type=models.ForeignKey(CustomUser,verbose_name='user_type',on_delete=models.PROTECT)
+    mail=models.ForeignKey(CustomerUser,verbose_name='メールアドレス',on_delete=PROTECT)
+
     t5_user_id=models.CharField(verbose_name='ユーザーID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
     t5_user_firstname=models.CharField(verbose_name='顧客姓',max_length=30,blank=False)
     t5_user_lastname=models.CharField(verbose_name='顧客名',max_length=30,blank=False)
@@ -101,11 +101,16 @@ class T6_review(models.Model):
     t6_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
 class T7_delivery_man(models.Model):
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
+    user_type=models.ForeignKey(CustomUser,verbose_name='user_type',on_delete=models.PROTECT)
+    mail=models.ForeignKey(CustomerUser,verbose_name='メールアドレス',on_delete=PROTECT)
+
+
     t7_delivery_man_id=models.CharField(verbose_name='配達員ID',primary_key=True,max_length=10,validators=[RegexValidator(regex=r"^D[0-9]*$")])
     t7_delivery_man_firstname=models.CharField(verbose_name='姓',max_length=20)
     t7_delivery_man_lastname=models.CharField(verbose_name='名',max_length=20)
     t7_delivery_man_tel=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^[0-9]*$")])
-    t7_delivery_man_mail=models.EmailField(verbose_name='メールアドレス',max_length=90,blank=False)
+    # t7_delivery_man_mail=models.EmailField(verbose_name='メールアドレス',max_length=90,blank=False)
     t10_area_id=models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
     t7_delivery_man_password=models.CharField(verbose_name='パスワード',max_length=20,blank=False)
     t7_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
