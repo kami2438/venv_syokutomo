@@ -34,11 +34,11 @@ class ReservationView(generic.FormView):
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
 
-class Regis_userViews(generic.FormView):
+class Regis_userViews(generic.TemplateView):
     template_name = 'regis_user.html'
 
-class Regis_shopViews(generic.FormView):
+class Regis_shopViews(generic.TemplateView):
     template_name = 'regis_shop.html'
 
-class Regis_driverViews(generic.FormView):
+class Regis_driverViews(generic.TemplateView):
     template_name = 'regis_driver.html'
