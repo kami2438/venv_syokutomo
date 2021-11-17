@@ -1,4 +1,4 @@
-#user #header {
+#user #user-header {
     /*background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);*/
     -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
     -moz-background-size: cover;
@@ -18,19 +18,19 @@
     background: rgba(44, 33, 5, 0.2);
     z-index: 0;
   }
-  #user #header .center {
+  #user #user-header .center {
     position: relative;
     z-index: 1;
     color: white;
   }
-  #user #header .bottom {
+  #user #user-header .bottom {
     color: white;
   }
-  #user #header .center .slogan {
+  #user #user-header .center .slogan {
     font-size: 26px;
     text-transform: uppercase;
   }
-  #user #header .banner h1 {
+  #user #user-header .banner h1 {
     font-size: 100px;
     color: white;
     text-transform: uppercase;
@@ -39,20 +39,20 @@
     background: #ed0121;
     padding: 0px 18px;
   }
-  #user #header .subtitle h4 {
+  #user #user-header .subtitle h4 {
     display: inline-block;
     background: white;
     color: #ed0121;
     font-size: 38px;
     padding: 0px 15px;
   }
-  #user #header .bottom {
+  #user #user-header .bottom {
     text-align: center;
     width: 100%;
     position: absolute;
     bottom: 30px;
   }
-  #user #header .bottom a {
+  #user #user-header .bottom a {
     font-size: 36px;
     color: whitesmoke;
     position: relative;
