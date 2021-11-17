@@ -71,7 +71,11 @@
                     {% else %}
                     <li><a href="{% url 'prime:choice_login' %}">サインイン</a></li>
                     {% endif %}
-
+                    {% if user.is_authenticated %}
+                        {% if user.main_regis == False %}
+                        <li>ggggggggggggggggggggggggggggggggggggggggggggg</li>
+                        {% endif %}
+                        {% endif %}
                     <!--fix for scroll spy active menu element-->
                     <li style="display:none;"><a href="#header"></a></li>
 
