@@ -1,8 +1,8 @@
 #user{
-  animation  : bgAnime 20s infinite;
+  animation  : bgAnime 9s infinite;
 }
 
-#user #header1 {
+#user #header #header1 {
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
   -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
   -moz-background-size: cover;
@@ -14,7 +14,7 @@
   position: relative;
   animation-delay  : 3s;
   }
-#user #header2{
+#user #header #header2{
   background-image: url(../img/night.jpg);
   -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
   -moz-background-size: cover;
@@ -26,7 +26,7 @@
   position: relative;
   animation-delay  : 3s;
 }
-#user #header3{
+#user #header #header3{
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
   -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
   -moz-background-size: cover;
@@ -93,14 +93,4 @@
     color: whitesmoke;
     position: relative;
     top: -5px;
-  }
-
-  .fadein {
-    opacity: 1;
-    transition: opacity 0.5s;
-  }
-  
-  .fadeout {
-    opacity: 0;
-    transition: opacity 0.5s;
   }
