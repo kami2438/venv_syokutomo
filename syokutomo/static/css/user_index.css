@@ -45,7 +45,25 @@
  34% { opacity: 0; }
 100% { opacity: 0; }
 }
-  #user .bg-overlay {
+  #user #header1 .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 33, 5, 0.2);
+    z-index: 0;
+  }
+  #user #header2 .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 33, 5, 0.2);
+    z-index: 0;
+  }
+  #user #header3 .bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
