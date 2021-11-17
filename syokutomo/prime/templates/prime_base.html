@@ -133,11 +133,11 @@ var cancel="今はやめておく";
 var url="{% url 'prime:reservation' %}";
 var type={{user.user_type}}
 if( {{user.user_type}} =="1") {
-    url="{% url 'prime:regis_user' %}";
+    url="{% url 'prime:terms' %}";
 } else if({{user.user_type}} =="2"){
-    url="{% url 'prime:regis_shop' %}";
+    url="{% url 'prime:terms' %}";
 } else if({{user.user_type}} =="3"){
-    url="{% url 'prime:regis_driver' %}";
+    url="{% url 'prime:terms' %}";
 } else{
     url="{% url 'prime:terms' %}";
 }
