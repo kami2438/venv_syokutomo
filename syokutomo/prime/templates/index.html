@@ -236,6 +236,8 @@
                         <img src="{% static 'img/chefs/2.jpg' %}">
                     </div>
                     <h3>Anton Mosimann</h3>
+                    <h1>アンダーバー{{ user.user_id }}</h1>
+                    <h1>そのまま{{ user.id }}</h1>
                     <p>Curabitur blandit matti tempus porttitor. Donec id elit non mi porta ut gravida at eget
                         metus. Consectetur adipiscing elit ultricies vehicula.</p>
                 </div>
@@ -245,5 +247,6 @@
     </div>
     <!-- /.container -->
 </div><!-- /#chefs -->
-
+<h1>アンダーバー{{ user.user_id }}</h1>
+<h1>そのまま{{ user.id }}</h1>
 {% endblock %}
