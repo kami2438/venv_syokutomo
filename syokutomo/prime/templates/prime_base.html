@@ -71,13 +71,13 @@
                     {% else %}
                     <li><a href="{% url 'prime:choice_login' %}">サインイン</a></li>
                     {% endif %}
-                    {% if user.is_authenticated %}
+                    <!-- {% if user.is_authenticated %}
                     <li>{{ user.main_regis }}</li>
                         {% if user.main_regis %}
                         {% else %}
                         <li>ggggggggggggggggggggggggggggggggggggggggggggg</li>
                         {% endif %}
-                        {% endif %}
+                        {% endif %} -->
                     <!--fix for scroll spy active menu element-->
                     <li style="display:none;"><a href="#header"></a></li>
 
@@ -125,11 +125,12 @@
 
 </html>
 {% if user.is_authenticated %}
-{% if user.main_regis == False %}
+{% if user.main_regis %}
+{% else %}
 <script>
 window.onload=function MoveCheck() {
     if( confirm("移動してもいいですかー？") ) {
-        window.location.href = "{% url 'prime:index' %}";
+        window.location.href = "{% url 'prime:terms' %}";
     }
     else {
         alert("移動をやめました。");
