@@ -118,7 +118,7 @@
 </body>
 
 </html>
-
+{% if user.is_authenticated %}
 {% user.main_regis == False %}
 <script>
 function MoveCheck() {
@@ -130,4 +130,5 @@ function MoveCheck() {
     }
 }
 </script>
+{% endif %}
 {% endif %}
