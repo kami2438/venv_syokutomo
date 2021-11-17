@@ -128,12 +128,24 @@
 {% if user.main_regis %}
 {% else %}
 <script>
+var p_str="アカウントに必要な情報を引き続き入力してください";
+var cancel="今はやめておく";
+var url="{% url 'prime:reservation' %}";
+if( {{user.user_type}} =="1") {
+    url="{% url 'prime:regis_user' %}";
+} else if({{user.user_type}} =="2"){
+    url="{% url 'prime:regis_shop' %}";
+} else if({{user.user_type}} =="3"){
+    url="{% url 'prime:regis_driver' %}";
+} else{
+    url="{% url 'prime:terms' %}";
+}
 window.onload=function MoveCheck() {
-    if( confirm("移動してもいいですかー？") ) {
-        window.location.href = "{% url 'prime:terms' %}";
+    if( confirm(p_str) ) {
+        window.location.href =url ;
     }
     else {
-        alert("移動をやめました。");
+        alert(cancel);
     }
 }
 </script>
