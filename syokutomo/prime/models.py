@@ -2,9 +2,11 @@ from django.db import models
 
 # Create your models here.
 from django.db import models
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.contrib.postgres.fields import ArrayField
 from accounts.models import CustomUser
+
+
 from django.core.validators import RegexValidator, MaxValueValidator ,MinValueValidator
 
 # Create your models here.
@@ -15,13 +17,13 @@ from django.core.validators import RegexValidator, MaxValueValidator ,MinValueVa
 #foreign key 先のクラスを先に初期化
 class T10_area(models.Model):
     # t10_area_id=models.CharField(verbose_name='料理カテゴリID',primary_key=True,max_length=10,validators=[RegexValidator(regex=r"^A[0-9]*$")])
-    id=models.AutoField(primary_key=True)
+    # id=models.AutoField(primary_key=True)
     t10_area_prefecture=models.CharField(verbose_name='県',max_length=70,blank=False)
     t10_area_name=models.CharField(verbose_name='エリア名',max_length=70,blank=True,null=True)
     t10_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t10_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     def __str__(self):
-        return "%s " % (self.id)
+        return " %s " % (self.id)
 
 class T8_shop_category(models.Model):
     # t8_shop_category_id=models.CharField(verbose_name='店舗カテゴリID',max_length=8,primary_key=True,validators=[RegexValidator(regex=r"^SC[0-9]*$")])
