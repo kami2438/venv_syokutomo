@@ -12,7 +12,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
-  animation-delay  : 5s;
+  animation-delay  : 3s;
   }
 #user #header2{
   background-image: url(../img/night.jpg);
@@ -24,7 +24,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
-  animation-delay  : 5s;
+  animation-delay  : 3s;
 }
 #user #header3{
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
@@ -36,7 +36,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
-  animation-delay  : 5s;
+  animation-delay  : 3s;
 }
 @keyframes bgAnime {
   0% { opacity: 0; }
@@ -45,25 +45,7 @@
  34% { opacity: 0; }
 100% { opacity: 0; }
 }
-  #user #header1 .bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(44, 33, 5, 0.2);
-    z-index: 0;
-  }
-  #user #header2 .bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(44, 33, 5, 0.2);
-    z-index: 0;
-  }
-  #user #header3 .bg-overlay {
+  #user .bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
