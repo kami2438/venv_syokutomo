@@ -1,14 +1,18 @@
-#user #user-header {
-    /*background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);*/
-    -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
-    -moz-background-size: cover;
-    -o-background-size:/*@@prefixmycss->No equivalent*/ ;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: relative;
+#user {
+      /*background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);*/
+      -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
+      -moz-background-size: cover;
+      -o-background-size:/*@@prefixmycss->No equivalent*/ ;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      position: relative;
+}
+#user #header1 {
+  background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
   }
+
   #user .bg-overlay {
     position: absolute;
     top: 0;
@@ -18,19 +22,19 @@
     background: rgba(44, 33, 5, 0.2);
     z-index: 0;
   }
-  #user #user-header .center {
+  #user #header .center {
     position: relative;
     z-index: 1;
     color: white;
   }
-  #user #user-header .bottom {
+  #user #header .bottom {
     color: white;
   }
-  #user #user-header .center .slogan {
+  #user #header .center .slogan {
     font-size: 26px;
     text-transform: uppercase;
   }
-  #user #user-header .banner h1 {
+  #user #header .banner h1 {
     font-size: 100px;
     color: white;
     text-transform: uppercase;
@@ -39,20 +43,20 @@
     background: #ed0121;
     padding: 0px 18px;
   }
-  #user #user-header .subtitle h4 {
+  #user #header .subtitle h4 {
     display: inline-block;
     background: white;
     color: #ed0121;
     font-size: 38px;
     padding: 0px 15px;
   }
-  #user #user-header .bottom {
+  #user #header .bottom {
     text-align: center;
     width: 100%;
     position: absolute;
     bottom: 30px;
   }
-  #user #user-header .bottom a {
+  #user #header .bottom a {
     font-size: 36px;
     color: whitesmoke;
     position: relative;
