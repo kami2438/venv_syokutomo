@@ -121,7 +121,7 @@
 {% if user.is_authenticated %}
 {% if user.main_regis == False %}
 <script>
-function MoveCheck() {
+window.onload=function MoveCheck() {
     if( confirm("移動してもいいですかー？") ) {
         window.location.href = "{% url 'prime:index' %}";
     }
