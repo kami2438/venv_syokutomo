@@ -72,7 +72,9 @@
                     <li><a href="{% url 'prime:choice_login' %}">サインイン</a></li>
                     {% endif %}
                     {% if user.is_authenticated %}
-                        {% if user.main_regis == False %}
+                    <li>{{ user.main_regis }}</li>
+                        {% if user.main_regis %}
+                        {% else %}
                         <li>ggggggggggggggggggggggggggggggggggggggggggggg</li>
                         {% endif %}
                         {% endif %}
