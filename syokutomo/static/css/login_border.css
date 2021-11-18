@@ -1,4 +1,30 @@
-.login_border {
-  border: 10px;
-  outline-color: #31a9ee;
+.login_border_main {
+  width: auto;
+  border: 8px solid;
+  border-color: #e6e6fa;
+  display: inline-block;
+  text-align: center;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin_top {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.sinup-main {
+  text-decoration: underline;
+  color: blue;
+}
+
+.login-button {
+  color: rgb(0, 0, 0);
+  background-color: #e6e6fa;
+}
+
+.login-button:hover {
+  color: rgb(0, 0, 0);
+  background: #e6ebfa;
 }
