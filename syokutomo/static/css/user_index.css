@@ -8,17 +8,17 @@
   background-repeat: no-repeat;
   position: relative;
 }
-#user #header #header1,#header2,#header3{
+#user .user-header{
   animation  : bgAnime 9s infinite;
 }
-#user #header #header1 {
+#user .header1 {
   background-image: url(../img/night.jpg);
   }
-#user #header #header2{
+#user .header2{
   background-image: url(../img/night.jpg);
   animation-delay  : 3s;
 }
-#user #header #header3{
+#user .header3{
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
   animation-delay : 6s;
 }
