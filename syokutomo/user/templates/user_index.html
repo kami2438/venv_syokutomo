@@ -6,19 +6,9 @@
 
 {% block header %}
 
-
 <script>
-jQuery(function($) {
-    $('.user').bgSwitcher({
-        images: ['../../static/img/night.jpg','../../static/img/HIKAKIN/HIKAKIN_GOOD.jpg','../../static/img/night.jpg'], // 切り替える背景画像を指定
-    });
-});
-</script>
-
-
-<!--<script>
 new Vue({
-  el: "#user",
+  el: "#app",
   data: {
     index: 0,
   },
@@ -41,13 +31,15 @@ new Vue({
     }
   }
 })
-</script>-->
+</script>
 
-<div class="user">
+<div id="app">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Lagopus_muta_japonica_Mount_Tsubakuro.jpg/320px-Lagopus_muta_japonica_Mount_Tsubakuro.jpg" class="slideshow">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pair_of_mandarin_ducks.jpg/320px-Pair_of_mandarin_ducks.jpg" class="slideshow fadeout">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Vicu%C3%B1a_-_Chimborazo%2C_Ecuador.jpg/320px-Vicu%C3%B1a_-_Chimborazo%2C_Ecuador.jpg" class="slideshow fadeout">
+</div>
+<!--<div class="user">
 <div class="bg-overlay"></div>
-<!--<div id="user-header header1"></div>
-<div id="user-header header2"></div>
-<div id="user-header header3"></div>-->
     <div class="center text-center">
         <div class="banner">
             <h1 class="">USER</h1>
@@ -60,7 +52,7 @@ new Vue({
         <a id="scrollDownArrow" href="#"><i class="fa fa-chevron-down"></i></a>
     </div>
 </div>
-</div>
+</div>-->
 <!-- /#header -->
 {% endblock %}
 
