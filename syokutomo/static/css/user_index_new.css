@@ -1,13 +1,11 @@
-.fadein {
-    opacity: 1;
-    transition: opacity 0.5s;
-  }
-  
-  .fadeout {
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  
-  .slideshow {
-    position: absolute;
+.hooper-slide {
+    background-color: #62caaa;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 30px;
+    border-radius: 10px;
   }

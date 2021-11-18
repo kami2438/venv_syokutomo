@@ -9,6 +9,16 @@
 <script>
 new Vue({
   el: "#app",
+  components: {
+      Hooper: window.Hooper.Hooper,
+      Slide: window.Hooper.Slide
+  }
+})
+</script>
+
+<!--<script>
+new Vue({
+  el: "#app",
   data: {
     index: 0,
   },
@@ -31,12 +41,23 @@ new Vue({
     }
   }
 })
-</script>
+</script>-->
 
 <div id="app">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Lagopus_muta_japonica_Mount_Tsubakuro.jpg/320px-Lagopus_muta_japonica_Mount_Tsubakuro.jpg" class="slideshow">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pair_of_mandarin_ducks.jpg/320px-Pair_of_mandarin_ducks.jpg" class="slideshow fadeout">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Vicu%C3%B1a_-_Chimborazo%2C_Ecuador.jpg/320px-Vicu%C3%B1a_-_Chimborazo%2C_Ecuador.jpg" class="slideshow fadeout">
+  <hooper>
+    <slide>
+      slide 1
+    </slide>
+    <slide>
+      slide 2
+    </slide>
+    <slide>
+      slide 3
+    </slide>
+    <slide>
+      slide 4
+    </slide>
+  </hooper>
 </div>
 <!--<div class="user">
 <div class="bg-overlay"></div>
