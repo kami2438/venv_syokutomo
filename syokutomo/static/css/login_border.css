@@ -5,8 +5,18 @@
   display: inline-block;
   text-align: center;
   padding: 70px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.margin_left {
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.margin_left_right {
+  margin-left: 35%;
+  margin-right: 35%;
 }
 
 .margin_top {
@@ -20,11 +30,29 @@
 }
 
 .login-button {
-  color: rgb(0, 0, 0);
-  background-color: #e6e6fa;
+  border: 1px solid #ccc;
+  background: #f1e767;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fdfbfb),
+    to(#ebedee)
+  );
+  background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+  background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+  -webkit-box-shadow: inset 1px 1px 1px #fff;
+  box-shadow: inset 1px 1px 1px #fff;
 }
 
 .login-button:hover {
-  color: rgb(0, 0, 0);
-  background: #e6ebfa;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#fdfbfb),
+    to(#ebedee)
+  );
+  background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+  background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
