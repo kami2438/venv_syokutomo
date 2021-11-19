@@ -7,6 +7,8 @@ from django.views import generic
 from .forms import ReservationForm
 
 from django.contrib import messages
+
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 logger = logging.getLogger(__name__)
@@ -34,11 +36,20 @@ class ReservationView(generic.FormView):
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
 
-class Regis_userViews(generic.FormView):
+class Regis_userViews(LoginRequiredMixin,generic.FormView):
     template_name = 'regis_user.html'
+    form_class =Regis_userForm
+    success_url=reverse_lazy('user:index')
+    def form_valid(self, form):
 
-class Regis_shopViews(generic.FormView):
+
+
+class Regis_shopViews(LoginRequiredMixin,generic.FormView):
     template_name = 'regis_shop.html'
+    form_class =Regis_shopForm
+    success_url=reverse_lazy('shop:index')
 
-class Regis_driverViews(generic.FormView):
+class Regis_driverViews(LoginRequiredMixin,generic.FormView):
     template_name = 'regis_driver.html'
+    form_class =Regis_driverForm
+    success_url=reverse_lazy('driver:index')
