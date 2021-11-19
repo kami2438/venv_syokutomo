@@ -9,6 +9,7 @@ from .forms import ReservationForm
 from django.contrib import messages
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import *
 # Create your views here.
 
 logger = logging.getLogger(__name__)
