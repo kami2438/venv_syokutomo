@@ -38,18 +38,40 @@ class ReservationView(generic.FormView):
 
 class Regis_userViews(LoginRequiredMixin,generic.FormView):
     template_name = 'regis_user.html'
+    model=T5_user
     form_class =Regis_userForm
     success_url=reverse_lazy('user:index')
     def form_valid(self, form):
+        # 新しい変数のuserは大文字表記
+        User=form.save(commit=False)
+        User.user=self.request.user
+        User.save()
+        message.success(self.request,"本登録が完了しました")
+        return super().form_valid(form)
+
 
 
 
 class Regis_shopViews(LoginRequiredMixin,generic.FormView):
     template_name = 'regis_shop.html'
     form_class =Regis_shopForm
+    model=T1_shop
     success_url=reverse_lazy('shop:index')
+    def form_valid(self, form):
+        shop=form.save(commit=False)
+        shop.user=self.request.user
+        shop.save()
+        message.success(self.request,"本登録が完了しました")
+        return super().form_valid(form)
 
 class Regis_driverViews(LoginRequiredMixin,generic.FormView):
     template_name = 'regis_driver.html'
+    model=T7_delivery_man
     form_class =Regis_driverForm
     success_url=reverse_lazy('driver:index')
+    def form_valid(self, form):
+        driver=form.save(commit=False)
+        driver.user=self.request.user
+        driver.save()
+        message.success(self.request,"本登録が完了しました")
+        return super().form_valid(form)
