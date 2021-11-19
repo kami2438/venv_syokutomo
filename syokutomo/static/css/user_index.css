@@ -86,7 +86,7 @@ section::after {
   background-repeat: no-repeat;
   position: relative;
 }
-.user .bgimg {
+.user .header {
   animation  : bgAnime 9s infinite;
 }
 
