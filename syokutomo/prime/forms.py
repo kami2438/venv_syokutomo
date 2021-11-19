@@ -41,7 +41,7 @@ class ReservationForm(forms.Form):
         message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list, cc=cc_list)
         message.send()
         
-class Regis_userForm(forms.modelForm):
-    class Meta:
-        model=T5_user
-        fields=("t5_user_firstname","t5_user_lastname",)
+# class Regis_userForm(forms.modelForm):
+#     class Meta:
+#         model=T5_user
+#         fields=("t5_user_firstname","t5_user_lastname",)
