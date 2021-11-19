@@ -52,11 +52,11 @@ class T1_shop(models.Model):
     t1_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t1_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
 
-    t1_shop_photo_01=models.ImageField(verbose_name='写真01',bank=True,null=True)
-    t1_shop_photo_02=models.ImageField(verbose_name='写真02',bank=True,null=True)
-    t1_shop_photo_03=models.ImageField(verbose_name='写真03',bank=True,null=True)
-    t1_shop_photo_04=models.ImageField(verbose_name='写真04',bank=True,null=True)
-    t1_shop_photo_05=models.ImageField(verbose_name='写真05',bank=True,null=True)
+    t1_shop_photo_01=models.ImageField(verbose_name='写真01',blank=True,null=True)
+    t1_shop_photo_02=models.ImageField(verbose_name='写真02',blank=True,null=True)
+    t1_shop_photo_03=models.ImageField(verbose_name='写真03',blank=True,null=True)
+    t1_shop_photo_04=models.ImageField(verbose_name='写真04',blank=True,null=True)
+    t1_shop_photo_05=models.ImageField(verbose_name='写真05',blank=True,null=True)
     
     t1_bank_name=models.CharField(verbose_name='金融機関名',null=False,max_length=4, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_location=models.CharField(verbose_name='支店番号',null=False,max_length=3, validators=[RegexValidator(regex=r"^[0-9]*$")])
@@ -78,7 +78,7 @@ class T4_food(models.Model):
     # postgresql specific model fields
     t4_ingredients=ArrayField(models.CharField(max_length=300), blank=True,verbose_name='食材',null=True)
 
-    t4_food_photo_01=models.ImageField(verbose_name='写真01',bank=True,null=True)
+    t4_food_photo_01=models.ImageField(verbose_name='写真01',blank=True,null=True)
 
     t4_price=models.PositiveIntegerField(verbose_name='単価',null=False,blank=False)
     t4_food_name=models.CharField(verbose_name='料理名',max_length=40,null=False,blank=False)
