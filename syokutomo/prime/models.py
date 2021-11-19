@@ -37,9 +37,7 @@ class T8_shop_category(models.Model):
 class T1_shop(models.Model):
     #ユーザー別foreignkey
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
-    user_type=models.ForeignKey(CustomUser,related_name='shop_user_type',verbose_name='user_type',on_delete=models.PROTECT)
-    mail=models.ForeignKey(CustomUser,related_name='shop_mail',verbose_name='メールアドレス',on_delete=models.PROTECT)
-
+  
   
     # id=models.AutoField(primary_key=True)
     t1_shop_name_prime = models.CharField(verbose_name= '店名',max_length=3,null=False)
@@ -89,9 +87,7 @@ class T4_food(models.Model):
 
 class T5_user(models.Model):
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
-    user_type=models.ForeignKey(CustomUser,related_name='user_user_type',verbose_name='user_type',on_delete=models.PROTECT)
-    mail=models.ForeignKey(CustomUser,related_name='user_mail',verbose_name='メールアドレス',on_delete=models.PROTECT)
-
+ 
     # t5_user_id=models.CharField(verbose_name='ユーザーID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
     # id=models.AutoField(primary_key=True)
     t5_user_firstname=models.CharField(verbose_name='顧客姓',max_length=30,blank=False)
@@ -127,8 +123,7 @@ class T2_order(models.Model):
     t2_order_count=models.PositiveIntegerField(verbose_name='残り回数',null=False)
 class T7_delivery_man(models.Model):
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
-    user_type=models.ForeignKey(CustomUser,related_name='deliver_man_Usertype',verbose_name='user_type',on_delete=models.PROTECT)
-    mail=models.ForeignKey(CustomUser,related_name='delivery_man_mail',verbose_name='メールアドレス',on_delete=models.PROTECT)
+  
     
 
     # t7_delivery_man_id=models.CharField(verbose_name='配達員ID',primary_key=True,max_length=10,validators=[RegexValidator(regex=r"^D[0-9]*$")])
