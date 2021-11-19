@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from .models import *
 # Register your models here.
 admin.site.register(T10_area)
 admin.site.register(T8_shop_category)
