@@ -54,7 +54,7 @@ class T1_shop(models.Model):
     t1_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t1_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     
-    t1_password=models.CharField(verbose_name='パスワード',max_length=20,null=False,default='123')
+   
     t1_bank_name=models.CharField(verbose_name='金融機関名',null=False,max_length=4, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_location=models.CharField(verbose_name='支店番号',null=False,max_length=3, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_number=models.CharField(verbose_name='口座番号',null=False,max_length=6,validators=[RegexValidator(regex=r"^[0-9]*$")])
