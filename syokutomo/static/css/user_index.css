@@ -76,7 +76,7 @@ section::after {
 /* ==========================================================================
     02. Header 
 ========================================================================== */
-#header {
+#user {
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
   -webkit-background-size:/*@@prefixmycss->No equivalent*/ ;
   -moz-background-size: cover;
@@ -96,19 +96,19 @@ section::after {
   background: rgba(44, 33, 5, 0.2);
   z-index: 0;
 }
-#header .center {
+#user .center {
   position: relative;
   z-index: 1;
   color: white;
 }
-#header .bottom {
+#user .bottom {
   color: white;
 }
-#header .center .slogan {
+#user .center .slogan {
   font-size: 26px;
   text-transform: uppercase;
 }
-#header .banner h1 {
+#user .banner h1 {
   font-size: 100px;
   color: white;
   text-transform: uppercase;
@@ -117,20 +117,20 @@ section::after {
   background: #ed0121;
   padding: 0px 18px;
 }
-#header .subtitle h4 {
+#user .subtitle h4 {
   display: inline-block;
   background: white;
   color: #ed0121;
   font-size: 38px;
   padding: 0px 15px;
 }
-#header .bottom {
+#user .bottom {
   text-align: center;
   width: 100%;
   position: absolute;
   bottom: 30px;
 }
-#header .bottom a {
+#user .bottom a {
   font-size: 36px;
   color: whitesmoke;
   position: relative;
