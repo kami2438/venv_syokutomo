@@ -86,18 +86,18 @@ section::after {
   background-repeat: no-repeat;
   position: relative;
 }
-#header .user{
+#header #user{
   animation  : bgAnime 9s infinite;
 }
 
-#header .src1{
+#header #src1{
   background-image: url(../img/night.jpg);
 }
-#header .src2{
+#header #src2{
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
   animation-delay: 3s;
 }
-#header .src3{
+#header #src3{
   background-image: url(../img/night.jpg);
   animation-delay: 6s;
 }
@@ -110,7 +110,7 @@ section::after {
 100% { opacity: 0; }
 }
 
-.bg-overlay {
+#header .bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
