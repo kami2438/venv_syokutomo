@@ -86,7 +86,6 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;*/
-    background-size: cover;
     position   : relative;
     /*max-width  : 400px;
     height     : 250px;*/
@@ -105,14 +104,17 @@ body {
   
   #header .src1{
     background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
+    background-size: cover;
   }
   #header .src2{
     background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
     animation-delay: 3s;
+    background-size: cover;
   }
   #header .src3{
     background-image: url(../img/night.jpg);
     animation-delay: 6s;
+    background-size: cover;
   }
   
   @keyframes bgAnime {
