@@ -9,7 +9,7 @@ from .models import T10_area
 class t10Admin(ImportExportMixin, admin.ModelAdmin):
     list_display = ['t10_area_prefecture', 't10_area_name', 't10_create_at', 't10_update_at']
 
-Class t9Admin(ImportExportMinxin,admin.ModelAdmin):
+class t9Admin(ImportExportMinxin,admin.ModelAdmin):
     list_display=[ ]
 
 admin.site.register(T10_area, t10Admin)
