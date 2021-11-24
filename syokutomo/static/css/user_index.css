@@ -99,7 +99,7 @@ section::after {
   bottom     : 0;
   right      : 0;
   opacity    : 0;
-  animation  : bgAnime 9s infinite;
+  animation  : bgAnime 15s infinite;
 }
 
 #header .src1{
@@ -108,12 +108,12 @@ section::after {
 }
 #header .src2{
   background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
-  animation-delay: 3s;
+  animation-delay: 5s;
   background-size: cover;
 }
 #header .src3{
   background-image: url(../img/night.jpg);
-  animation-delay: 6s;
+  animation-delay: 10s;
   background-size: cover;
 }
 
