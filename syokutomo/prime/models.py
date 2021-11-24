@@ -22,15 +22,15 @@ class T10_area(models.Model):
     t10_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t10_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     def __str__(self):
-        return " %s " % (self.id)
+        return " %s %s" % (self.t10_area_prefecture,self.t10_area_name)
 
 class T8_shop_category(models.Model):
  
     t8_shop_category_name=models.CharField(verbose_name='カテゴリ名',max_length=40,blank=True,null=False)
     t8_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t8_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    # def __str__(self):
-    #     return "%s " % (self.id)
+    def __str__(self):
+        return "%s " % (self.t8_shop_category_name)
 
 class T1_shop(models.Model):
     #ユーザー別foreignkey
@@ -68,9 +68,11 @@ class T1_shop(models.Model):
 class T9_food_category(models.Model):
  
 
-    t9_shop_category_name=models.CharField(verbose_name='カテゴリ名',max_length=40,blank=True,null=False)
+    t9_food_category_name=models.CharField(verbose_name='カテゴリ名',max_length=40,blank=True,null=False)
     t9_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t9_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+    def __str__(self):
+        return "%s " % (self.t9_food_category_name)
 
 class T4_food(models.Model):
  
