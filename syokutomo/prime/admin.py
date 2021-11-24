@@ -10,10 +10,10 @@ class t10Admin(ImportExportMixin, admin.ModelAdmin):
     list_display = ['t10_area_prefecture', 't10_area_name', 't10_create_at', 't10_update_at']
 
 class t9Admin(ImportExportMixin,admin.ModelAdmin):
-    list_display=[ ]
+    list_display=["t9_food_category_name","t9_create_at","t9_update_at" ]
 
 admin.site.register(T10_area, t10Admin)
-admin.site.register(T9_food_category)
+admin.site.register(T9_food_category,t9Admin)
 
 
 
