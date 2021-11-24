@@ -87,8 +87,8 @@ section::after {
   background-repeat: no-repeat;
   position: relative;*/
   position   : relative;
-  max-width  : 400px;
-  height     : 250px;
+  /*max-width  : 400px;
+  height     : 250px;*/
   margin     : auto;
   overflow   : hidden;
 }
