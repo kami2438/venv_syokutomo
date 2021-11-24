@@ -8,7 +8,7 @@ from accounts.models import CustomUser
 
 
 from django.core.validators import RegexValidator, MaxValueValidator ,MinValueValidator
-
+from import_export import resources
 # Create your models here.
 
 

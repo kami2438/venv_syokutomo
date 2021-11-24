@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # use pip install django-import-export to install app   and run  python manage.py collectstatic
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +131,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#if static_root error showed uncommand this. static_root is new parameter at django 3
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
