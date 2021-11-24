@@ -5,15 +5,6 @@ body {
   margin: 0;
 }
 
-input {
-  border: none;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5em;
-  padding: 0;
-  -webkit-appearance: none;
-}
-
 p {
   line-height: 1.5em;
 }
@@ -80,19 +71,13 @@ after {
   cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
+
 .submit:hover {
   background: #16aa56;
 }
 
-#login form input[type="checkbox"] {
-  width: 24px;
-  height: 24px;
-  -moz-transform: scale(1.4);
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4);
-  background-color: blanchedalmond;
-}
-
-#login form input[type="checkbox"]:checked {
-  background-color: #16aa56;
+.margin-margin {
+  display: inline-block;
+  margin-left: 35%;
+  font-size: 1.5em;
 }
