@@ -22,7 +22,7 @@ class T10_area(models.Model):
     t10_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t10_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     def __str__(self):
-        return " %s " % (self.id)
+        return " %s %s" % (self.t10_area_prefecture,t10_area_name)
 
 class T8_shop_category(models.Model):
  
