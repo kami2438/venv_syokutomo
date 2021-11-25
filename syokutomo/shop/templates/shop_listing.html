@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-
-<html lang=ja>
-
-    <head>
-        <meta charset="utf-8">
-        <title>店舗一覧</title>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    </head>
-
-    <body>
-        <div id="app">
-            <div class="container">
-                <h1 class="pageTitle">店舗一覧</h1>
-                <!--検索欄-->
-                <!--店舗一覧-->
-                <div class="list">
-                    <div class="item">
-                        <figure class="image">
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <title>店舗一覧</title>
+</head>
+ 
+<body>
+    <h1>店舗一覧</h1>
+    <form action="" method="get">
+        <input name="query" value="{{ request.GET.query }}" type="text">
+        <button type="submit">検索する</button>
+    </form>
+ 
+    <div class="container">
+        <div class="row">
+            <div class="my-div-style w-100">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <!--仮-->
+                    {% for shop in shop_list %}
+                    <div class="post-preview">
+                        <a href="#">
+                            <h2 calss="post-title">
+                                <!--仮-->
+                                {{shop.title}}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                <!--仮-->
+                                {{shop.content|truncatechars:20}}
+                            </h3>
                             
-                        </figure>
-                        <div class="detail">
-                            <div class="shopname"><span>お肉万博</span></div>
-                        </div>
+                        </a>
+                        <p class="post-meta">{{diary.created_at>}}</p>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-
-</html>
-
-<script>
-
-</script>
+    </div>
+ 
+</body>
