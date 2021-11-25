@@ -14,6 +14,7 @@ from .models import *
 
 logger = logging.getLogger(__name__)
 
+
 class IndexView(generic.TemplateView):
     template_name = "index.html"
 
@@ -37,20 +38,20 @@ class ReservationView(generic.FormView):
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
 
-# class Regis_userViews(LoginRequiredMixin,generic.FormView):
-#     template_name = 'regis_user.html'
-#     model=T5_user
-#     form_class =Regis_userForm
-#     success_url=reverse_lazy('user:index')
-#     def form_valid(self, form):
-#         # 新しい変数のuserは大文字表記
-#         User=form.save(commit=False)
-#         User.user=self.request.user
-#         User.save()
-#         message.success(self.request,"本登録が完了しました")
-#         return super().form_valid(form)
 
+class Regis_userViews(LoginRequiredMixin, generic.FormView):
+    template_name = 'regis_user.html'
+    model = T5_user
+    form_class = Regis_userForm
+    success_url = reverse_lazy('user:index')
 
+    def form_valid(self, form):
+        # 新しい変数のuserは大文字表記
+        User = form.save(commit=False)
+        User.user = self.request.user
+        User.save()
+        message.success(self.request, "本登録が完了しました")
+        return super().form_valid(form)
 
 
 # class Regis_shopViews(LoginRequiredMixin,generic.FormView):
