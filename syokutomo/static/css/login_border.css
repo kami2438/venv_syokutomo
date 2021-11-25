@@ -1,6 +1,5 @@
 body {
-  background: #2c3338;
-  color: #606468;
+  background: #f5f5dc;
   font: 87.5%/1.5em "Open Sans", sans-serif;
   margin: 0;
 }
@@ -29,7 +28,7 @@ after {
 }
 
 #login form span {
-  background-color: #363b41;
+  background-color: #e0ffff;
   border-radius: 3px 0px 0px 3px;
   border-right: 3px solid #434a52;
   color: #606468;
@@ -42,9 +41,9 @@ after {
 }
 
 #login form input[type="email"] {
-  background-color: #3b4148;
+  background-color: #e0ffff;
   border-radius: 0px 3px 3px 0px;
-  color: #a9a9a9;
+  color: #000000;
   margin-bottom: 1em;
   padding: 0 16px;
   width: 235px;
@@ -52,9 +51,9 @@ after {
 }
 
 #login form input[type="password"] {
-  background-color: #3b4148;
+  background-color: #e0ffff;
   border-radius: 0px 3px 3px 0px;
-  color: #a9a9a9;
+  color: #000000;
   margin-bottom: 1em;
   padding: 0 16px;
   width: 235px;
@@ -79,5 +78,14 @@ after {
 .margin-margin {
   display: inline-block;
   margin-left: 35%;
-  font-size: 1.5em;
+  font-size: 20px;
+}
+
+.login-font {
+  color: #000000;
+  font-family: "Arial Black";
+}
+
+.login-from-font {
+  color: #ffffff;
 }
