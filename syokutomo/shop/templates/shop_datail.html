@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <h1>店舗詳細</h1>
+        <div class="contaoner">
+            <div class="my-div-style w-100">
+                <div class="row">
+                    <div class="col-3">
+                        <strong>商品</strong>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-3">
+                            {% if .photo1 %}
+                                <img src="{{ .photo1.url }}"width="200"height="200"/>
+                            {% endif %}
+                        </div>
+                        <div class="col-3">
+                            {% if .photo1 %}
+                                <img src="{{ .photo1.url }}"width="200"height="200"/>
+                            {% endif %}
+                        </div>
+                        <div class="col-3">
+                            {% if .photo1 %}
+                                <img src="{{ .photo1.url }}"width="200"height="200"/>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
