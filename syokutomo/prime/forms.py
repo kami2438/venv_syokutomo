@@ -62,8 +62,10 @@ class Regis_shopForm(forms.ModelForm):
     class Meta:
         model = T1_shop
         fields = '__all__'
+        exclude = ['user'],['t1_create_at']
 
 class Regis_deliveryForm(forms.ModelForm):
     class Meta:
         model = T7_delivery_man
         fields = '__all__'
+        exclude = ['user'],['t1_create_at']
