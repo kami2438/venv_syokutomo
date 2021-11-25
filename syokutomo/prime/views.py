@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 
 from django.views import generic
 
-from .forms import ReservationForm
+# from .forms import ReservationForm
+from .forms import *
 
 from django.contrib import messages
 
