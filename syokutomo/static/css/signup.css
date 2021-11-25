@@ -37,7 +37,7 @@ after {
 #signup_form input[type="email"] {
   background-color: #e0ffff;
   border-radius: 0px 3px 3px 0px;
-  color: #a9a9a9;
+  color: #000;
   margin-bottom: 1em;
   padding: 0 16px;
   width: 235px;
@@ -47,7 +47,7 @@ after {
 #signup_form input[type="password"] {
   background-color: #e0ffff;
   border-radius: 0px 3px 3px 0px;
-  color: #a9a9a9;
+  color: #000;
   margin-bottom: 1em;
   padding: 0 16px;
   width: 235px;
@@ -84,4 +84,8 @@ option {
   background-color: #e0ffff;
   width: 235px;
   height: 50px;
+}
+
+.button-font {
+  color: #000;
 }
