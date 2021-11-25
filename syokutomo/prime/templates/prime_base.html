@@ -85,8 +85,11 @@
             </div>
             <!--/.navbar-collapse -->
         </div><!-- container -->
-    </div><!-- menu -->]
+    </div><!-- menu -->
 
+    {% if user.is_authenticated %}
+{{user.main_regis}}
+{% endif %}
     <div class="prime-base-margin-bottom-style">
         {% block header %}{% endblock %}
     </div>
