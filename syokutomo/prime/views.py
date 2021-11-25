@@ -40,7 +40,7 @@ class ReservationView(generic.FormView):
         return super().form_valid(form)
 
 
-class Regis_userViews(LoginRequiredMixin, generic.FormView):
+class Regis_userViews(LoginRequiredMixin, generic.CreateView):
     template_name = 'regis_user.html'
     model = T5_user
     form_class = Regis_userForm
