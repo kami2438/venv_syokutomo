@@ -51,7 +51,7 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
         User = form.save(commit=False)
         User.user = self.request.user
         User.save()
-        message.success(self.request, "本登録が完了しました")
+        messages.success(self.request, "本登録が完了しました")
         return super().form_valid(form)
 
 
