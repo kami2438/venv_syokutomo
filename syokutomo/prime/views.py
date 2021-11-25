@@ -54,7 +54,7 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
         User.save()
         messages.success(self.request, "本登録が完了しました")
         self.request.user.main_regist=True
-        user.save()
+        self.request.user.save()
         return super().form_valid(form)
 
 
