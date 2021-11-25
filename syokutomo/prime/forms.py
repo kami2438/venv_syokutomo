@@ -63,7 +63,7 @@ class Regis_shopForm(forms.ModelForm):
         model = T1_shop
         fields = '__all__'
 
-class Regis_shopForm(forms.ModelForm):
+class Regis_deliveryForm(forms.ModelForm):
     class Meta:
         model = T7_delivery_man
         fields = '__all__'
