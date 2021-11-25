@@ -113,7 +113,7 @@ class T5_user(models.Model):
     t5_credit_number=models.CharField(verbose_name='カード番号',max_length=19,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_credit_limit=models.CharField(verbose_name='有効期限',max_length=4,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     # t5_credit_security=models.PositiveIntegerField(verbose_name='セキュリティナンバー',null=True,validators=[MaxValueValidator(999)])
-    t5_credit_security=models.PositiveIntegerField(verbose_name='セキュリティナンバー',null=True)
+    t5_credit_security=models.CharField(verbose_name='セキュリティナンバー',null=True)
     t5_bank_name=models.CharField(verbose_name='金融機関名',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
