@@ -1,6 +1,8 @@
 from django import forms
 from django.core.mail import EmailMessage
 from .models import *
+
+
 class ReservationForm(forms.Form):
     name = forms.CharField(label='お名前', max_length=30)
     email = forms.EmailField(label='メールアドレス')
@@ -29,7 +31,8 @@ class ReservationForm(forms.Form):
         message = self.cleaned_data['message']
 
         subject = 'お問い合わせ {}'.format(title)
-        message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(name, email, message)
+        message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(
+            name, email, message)
         from_email = 'admin@example.com'
         to_list = [
             'test@example.com'
@@ -38,21 +41,24 @@ class ReservationForm(forms.Form):
             email
         ]
 
-        message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list, cc=cc_list)
+        message = EmailMessage(subject=subject, body=message,
+                               from_email=from_email, to=to_list, cc=cc_list)
         message.send()
-        
-class Regis_userForm(forms.modelForm):
+
+
+class Regis_userForm(forms.ModelForm):
     class Meta:
-        model=T5_user
-        fields=("t5_user_firstname","t5_user_lastname","t5_address","t5_post","t5_tel_number","t5_landmark","t5_allergy","t5_charge_tool","t5_charge_remain","t5_credit_number","t5_credit_limit","t5_credit_security","t5_bank_name","t5_bank_location","t5_bank_number","t5_bank_password")
+        model = T5_user
+        fields = ("t5_user_firstname", "t5_user_lastname", "t5_address", "t5_post", "t5_tel_number", "t5_landmark", "t5_allergy", "t5_charge_tool",
+                  "t5_charge_remain", "t5_credit_number", "t5_credit_limit", "t5_credit_security", "t5_bank_name", "t5_bank_location", "t5_bank_number", "t5_bank_password")
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
         #         field.widget.attrs['class'] = 'form-control col-9'
         #         field.widget.attrs['placeholder'] = "{v_placeholder}を入力してください".format(v_placeholder=field.verbose_name)
 
+
 class Regis_areaForm(forms.ModelForm):
     class Meta:
-        model=T10_area
-        fields=("t10_area_prefecture","t10_area_name")
-       
+        model = T10_area
+        fields = ("t10_area_prefecture", "t10_area_name")
