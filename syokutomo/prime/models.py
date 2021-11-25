@@ -94,7 +94,7 @@ class T4_food(models.Model):
 
 class T5_user(models.Model):
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
-
+    charge_choose=[('銀行',1),('クレジットカード',0)]
 
     # t5_user_id=models.CharField(verbose_name='ユーザーID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
 
@@ -106,7 +106,7 @@ class T5_user(models.Model):
     t5_tel_number=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^F[0-9]*$")])
     t5_landmark=models.TextField(verbose_name='自宅の目印',max_length=200,blank=True,null=True)
     t5_allergy=ArrayField(models.TextField(max_length=300),verbose_name='控えるべき食材',blank=True,null=True)
-    t5_charge_tool=models.PositiveIntegerField(verbose_name='チャージ方法',validators=[MaxValueValidator(1)],default=0,null=True)
+    t5_charge_tool=models.PositiveIntegerField(verbose_name='チャージ方法',choices=charge_choose,default=0,null=True)
     t5_charge_remain=models.IntegerField(verbose_name='チャージ残高',default=0,null=True)
     t5_credit_number=models.CharField(verbose_name='カード番号',max_length=19,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_credit_limit=models.CharField(verbose_name='有効期限',max_length=4,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
