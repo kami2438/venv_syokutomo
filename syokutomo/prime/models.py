@@ -39,14 +39,14 @@ class T1_shop(models.Model):
   
 
     t1_shop_name_prime = models.CharField(verbose_name= '店名',max_length=3,null=False)
-    t10_area_id= models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
+    t10_area_id= models.ForeignKey(T10_area,verbose_name='エリア',on_delete= models.SET_DEFAULT,default='未設定')
     t1_address= models.CharField(verbose_name= '住所',max_length=200,null=False)
     t8_shop_category_id= models.ManyToManyField(T8_shop_category,verbose_name='店舗カテゴリID',max_length=4)
     t1_holiday=models.CharField(verbose_name='定休日',max_length=7,null=True,validators=[RegexValidator(regex=r"^[0-1]\{7\}$")])
     t1_start_time=models.TimeField(verbose_name='注文開始時間',null=False)
     t1_end_time=models.TimeField(verbose_name='注文終了時間',null=False)
     t1_favorite_count=models.IntegerField(verbose_name='お気に入り数',null=False,default=0)
-    t1_tel_number=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^[0-9]*$")])
+    t1_tel_number=models.CharField(verbose_name='電話番号',max_length=11)
     t1_shop_discribe=models.TextField(verbose_name='説明',max_length=200,blank=True,null=True)
     t1_shop_name_sub= models.CharField(verbose_name='サブ店名',max_length=30,blank=True,null=True)
     t1_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
@@ -147,7 +147,7 @@ class T7_delivery_man(models.Model):
     t7_delivery_man_password=models.CharField(verbose_name='パスワード',max_length=20,blank=False)
     t7_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t7_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
+    t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=20)
     t7_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     def __str__(self):
