@@ -100,7 +100,7 @@ class T5_user(models.Model):
 
     t5_user_firstname=models.CharField(verbose_name='顧客姓',max_length=30,blank=False)
     t5_user_lastname=models.CharField(verbose_name='顧客名',max_length=30,blank=False)
-    t10_area_id=models.ForeignKey(T10_area,verbose_name='エリアID',null=False,on_delete=models.SET_DEFAULT,default='エリアID未設定')
+    t10_area_id=models.ForeignKey(T10_area,verbose_name='エリア',null=False,on_delete=models.SET_DEFAULT)
     t5_address=models.CharField(verbose_name='住所',max_length=70)
     t5_post=models.CharField(verbose_name='郵便番号',max_length=7,validators=[RegexValidator(regex=r"^F[0-9]*$")])
     t5_tel_number=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^F[0-9]*$")])
