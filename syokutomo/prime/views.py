@@ -64,7 +64,7 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
 #         shop=form.save(commit=False)
 #         shop.user=self.request.user
 #         shop.save()
-#         message.success(self.request,"本登録が完了しました")
+#         messages.success(self.request,"本登録が完了しました")
 #         return super().form_valid(form)
 
 # class Regis_driverViews(LoginRequiredMixin,generic.FormView):
@@ -76,5 +76,5 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
 #         driver=form.save(commit=False)
 #         driver.user=self.request.user
 #         driver.save()
-#         message.success(self.request,"本登録が完了しました")
+#         messages.success(self.request,"本登録が完了しました")
 #         return super().form_valid(form)
