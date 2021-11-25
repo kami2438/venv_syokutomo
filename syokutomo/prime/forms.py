@@ -58,7 +58,7 @@ class Regis_userForm(forms.ModelForm):
         #         field.widget.attrs['placeholder'] = "{v_placeholder}を入力してください".format(v_placeholder=field.verbose_name)
 
 
-class Regis_areaForm(forms.ModelForm):
-    class Meta:
-        model = T10_area
-        fields = ("t10_area_prefecture", "t10_area_name")
+# class Regis_shopForm(forms.ModelForm):
+#     class Meta:
+#         model = T1_shop
+#         fields=
