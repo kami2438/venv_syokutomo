@@ -50,7 +50,7 @@ class Regis_userForm(forms.ModelForm):
     class Meta:
         model = T5_user
         fields = ("t5_user_firstname", "t5_user_lastname", "t5_address", "t5_post", "t5_tel_number", "t5_landmark", "t5_allergy", "t5_charge_tool",
-                 "t5_credit_number", "t5_credit_limit", "t5_credit_security", "t5_bank_name", "t5_bank_location", "t5_bank_number", "t5_bank_password","t10_area_id")
+                  "t5_charge_remain", "t5_credit_number", "t5_credit_limit", "t5_credit_security", "t5_bank_name", "t5_bank_location", "t5_bank_number", "t5_bank_password","t10_area_id")
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
@@ -58,7 +58,12 @@ class Regis_userForm(forms.ModelForm):
         #         field.widget.attrs['placeholder'] = "{v_placeholder}を入力してください".format(v_placeholder=field.verbose_name)
 
 
-# class Regis_shopForm(forms.ModelForm):
-#     class Meta:
-#         model = T1_shop
-#         fields=
+class Regis_shopForm(forms.ModelForm):
+    class Meta:
+        model = T1_shop
+        fields = '__all__'
+
+class Regis_shopForm(forms.ModelForm):
+    class Meta:
+        model = T7_delivery_man
+        fields = '__all__'
