@@ -45,8 +45,7 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
     model = T5_user
     form_class = Regis_userForm
     success_url = reverse_lazy('user:index')
-    request.user.main_regist=True
-    user.save()
+
 
     def form_valid(self, form):
         # 新しい変数のuserは大文字表記
@@ -54,6 +53,8 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
         User.user = self.request.user
         User.save()
         messages.success(self.request, "本登録が完了しました")
+        request.user.main_regist=True
+        user.save()
         return super().form_valid(form)
 
 
