@@ -52,13 +52,9 @@ class Regis_userForm(forms.modelForm):
                 field.widget.attrs['placeholder'] = "{v_placeholder}を入力してください".format(v_placeholder=field.verbose_name)
 
 class Regis_areaForm(forms.ModelForm):
+    t10_area_prefecture=forms.ModelChoiceField(queryset=T10_area.objects.values('t10_area_prefecture'))
+    t10_area_name=forms.ModelChoiceField(queryset=T10_area.objects.values('t10_area_name'))
     class Meta:
         model=T10_area
         fields=("t10_area_prefecture","t10_area_name")
-        def __init__(self,*args,**kwargs):
-            super().__init
-             def __init__(self,*args,**kwargs) :
-            super().__init__(self,*args,**kwargs)
-            for field in self.fields.values():
-                field.widget.attrs['class'] = 'form-control col-9'
-                field.widget.attrs['placeholder'] = "{v_placeholder}を入力してください".format(v_placeholder=field.verbose_name)
+       
