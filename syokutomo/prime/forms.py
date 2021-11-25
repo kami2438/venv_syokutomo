@@ -44,7 +44,7 @@ class ReservationForm(forms.Form):
 class Regis_userForm(forms.modelForm):
     class Meta:
         model=T5_user
-        fields=("t5_user_firstname","t5_user_lastname","t5_address","t5_post","t5_tel_number","t5_landmark","t5_allergy","t5_charge_to0l","t5_charge_remain","t5_credit_number","t5_credit_limit","t5_credit_secruity","t5_bank_name","t5_location","t5_bank_number","t5_bank_password")
+        fields=("t5_user_firstname","t5_user_lastname","t5_address","t5_post","t5_tel_number","t5_landmark","t5_allergy","t5_charge_tool","t5_charge_remain","t5_credit_number","t5_credit_limit","t5_credit_security","t5_bank_name","t5_bank_location","t5_bank_number","t5_bank_password")
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
