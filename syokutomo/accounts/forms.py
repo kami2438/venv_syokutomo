@@ -29,6 +29,10 @@ class CustomSignupForm(SignupForm,forms.ModelForm):  # SignupFormを継承する
     class Meta:
         model=CustomUser
         fields=("user_type","area")
+        labels={
+            "user_type":"利用する種別",
+            "area":"住んでいるエリア"
+           }
 
     # def signup(self, request):
     #     user= super(CustomSignupForm, self).save(request)
