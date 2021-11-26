@@ -12,12 +12,15 @@ class t10Admin(ImportExportMixin, admin.ModelAdmin):
 class t9Admin(ImportExportMixin,admin.ModelAdmin):
     list_display=["t9_food_category_name","t9_create_at","t9_update_at" ]
 
+class t8Admin(ImportExportMixin,admin.ModelAdmin):
+    list_display=["t8_shop_category_name","t8_create_at","t8_update_at" ]
+
 admin.site.register(T10_area, t10Admin)
 admin.site.register(T9_food_category,t9Admin)
 
 
 
-admin.site.register(T8_shop_category)
+admin.site.register(T8_shop_category,t8Admin)
 admin.site.register(T1_shop)
 
 admin.site.register(T4_food)
