@@ -55,8 +55,8 @@ class T1_shop(models.Model):
     t1_bank_location=models.CharField(verbose_name='支店番号',null=False,max_length=3, validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_bank_number=models.CharField(verbose_name='口座番号',null=False,max_length=6,validators=[RegexValidator(regex=r"^[0-9]*$")])
     t1_review_ave=models.FloatField(verbose_name='レビュー評価',null=False,blank=True,default=2.5,max_length=3)
-    # def __str__(self):
-    #     return "%s " % (self.id)
+    def __str__(self):
+        return "%s " % (self.t1_shop_name_prime)
 
 class T9_food_category(models.Model):
  
@@ -82,8 +82,8 @@ class T4_food(models.Model):
     t4_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t4_order_count=models.PositiveIntegerField(verbose_name='注文回数',blank=True,null=True)
-    # def __str__(self):
-    #     return "%s " % (self.id)
+    def __str__(self):
+        return "%s " % (self.t4_food_name)
 
 class T5_user(models.Model):
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
@@ -112,7 +112,7 @@ class T5_user(models.Model):
     t5_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_password=models.CharField(verbose_name='口座暗証番号',max_length=4,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     def __str__(self):
-        return "%s " % (self.id)
+        return "%s %s" % (self.t5_user_firstname,self.t5_user_lastname)
 
 
 class T2_order(models.Model):
@@ -144,7 +144,7 @@ class T7_delivery_man(models.Model):
     t7_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     def __str__(self):
-        return "%s " % (self.id)
+        return "%s %s" % (self.t7_delivery_man_firstname,self.t7_delivery_man_lastname)
 
 
 
@@ -172,6 +172,8 @@ class T6_review(models.Model):
     t6_sentence=models.TextField(verbose_name='本文',max_length=400,null=True,blank=True)
     t6_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t4_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+    def __str__(self):
+        return "%s " % (self.t6_title)
 
 class T11_love(models.Model):
     # t11_love_id=models.CharField(verbose_name='お気に入りID',primary_key=True,max_length=20,validators=[RegexValidator(regex=r"^L[0-9]*$")])
@@ -195,3 +197,5 @@ class T13_inquiry(models.Model):
     t13_sentence=models.TextField(verbose_name='内容',max_length=400,blank=False)
     t13_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t13_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+    def __str__(self):
+        return "%s " % (self.t13_title)
