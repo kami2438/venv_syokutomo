@@ -1,0 +1,38 @@
+{% extends 'shop_base.html' %}
+{% load static %}
+
+{% block title %}商品一覧{% endblock %}
+
+{% block active_shop_merchandise %}active{% endblock %}
+
+
+{% block contents %} 
+    <div class="container">
+        <div class="row">
+            <div class="my-div-style w-100">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                  {% for user in shop_merchandise %}
+                    <div class="post-preview">
+                        <div class="col-3">
+                            {% if object.photo1 %}
+                            <img sr="{{ object.photo1.url }}" width="200" height="200"/>
+                            {% endif %}
+                        </div>
+                        <a href="{% url'user:user_shop_detail'user.py %}">
+                            <h2 calss="post-title">
+                                {{user.title}}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{user.content|truncatechars:20}}
+                            </h3>
+                        </a>
+                        <p class="post-meta">{{user.created_at>}}</p>
+                    </div>
+                    <hr>
+                  {% empty %}
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
