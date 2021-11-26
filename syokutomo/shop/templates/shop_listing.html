@@ -17,7 +17,7 @@
         <div class="row">
             <div class="my-div-style w-100">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    {% for shop in shop_list %}
+                  {% for shop in shop_list %}
                     <div class="post-preview">
                         <a href="#">
                             <h2 calss="post-title">
@@ -26,10 +26,13 @@
                             <h3 class="post-subtitle">
                                 {{shop.content|truncatechars:20}}
                             </h3>
-                            
                         </a>
                         <p class="post-meta">{{shop.created_at>}}</p>
                     </div>
+                    <hr>
+                  {% empty %}
+                    <p>近くにお店がありません</p>
+                  {% endfor %}
                 </div>
             </div>
         </div>
