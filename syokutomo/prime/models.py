@@ -10,7 +10,7 @@ from django.utils import timezone
 from django.core.validators import RegexValidator, MaxValueValidator ,MinValueValidator
 from import_export import resources
 # Create your models here.
-from accounts.models import *
+
 
 # number_only=RegexValidator(regex='^[0-9]{1,}]$', message='数字だけ入力ください')
 
