@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django import forms
 print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 from prime.models import T10_area
+print("sssssssssssssssssssssssssssssssssssssssssssssssssss")
 # Create your models here.
 class CustomUser(AbstractUser):
     type_choice=(
