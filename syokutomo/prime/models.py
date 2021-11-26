@@ -147,7 +147,7 @@ class T7_delivery_man(models.Model):
     t7_delivery_man_password=models.CharField(verbose_name='パスワード',max_length=20,blank=False)
     t7_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t7_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=20)
+    t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=20,null=True)
     t7_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     def __str__(self):
