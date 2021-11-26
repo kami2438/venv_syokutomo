@@ -1,7 +1,7 @@
 # forms.py
 from allauth.account.forms import SignupForm
 from django import forms
-from .models import CustomUser
+from .models import CustomUser,t10_area
 
 
 class CustomSignupForm(SignupForm):  # SignupFormを継承する
@@ -15,7 +15,7 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
     # user_type = form
     user_type= forms.CharField(
         widget=forms.Select(choices=CustomUser.type_choice),label="利用者する種別",required=True)
-    area= forms.ForeignKey(
+    area= forms.CharField(choices=t10_area,
         label="在住エリア",required=True
     )
     class Meta:
