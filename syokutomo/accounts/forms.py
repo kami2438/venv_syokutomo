@@ -34,11 +34,6 @@ class CustomSignupForm(SignupForm,forms.ModelForm):  # SignupFormを継承する
             "area":"住んでいるエリア"
            }
         # フィールドを初期化
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop("request")
-        super(CustomSignupForm, self).__init__(*args, **kwargs)
-        self.fields['area'].initial = 2359
-
     # def signup(self, request):
     #     user= super(CustomSignupForm, self).save(request)
     #     user.user_type = self.cleaned_data['user_type']
