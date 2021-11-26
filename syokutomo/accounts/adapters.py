@@ -11,4 +11,5 @@ class MyCrmAdapter(DefaultAccountAdapter):
         # (last argument)
         user = super(MyCrmAdapter, self).save_user(request, user, form, commit=False)
         user.user_type = form.cleaned_data.get('user_type')
+        user.user_type = form.cleaned_data.get('area')
         user.save()
