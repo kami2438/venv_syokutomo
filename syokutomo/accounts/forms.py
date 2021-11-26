@@ -15,6 +15,9 @@ class CustomSignupForm(SignupForm):  # SignupFormを継承する
     # user_type = form
     user_type= forms.CharField(
         widget=forms.Select(choices=CustomUser.type_choice),label="利用者する種別",required=True)
+    area= forms.ForeignKey(
+        label="在住エリア",required=True
+    )
     class Meta:
         model=CustomUser
 
