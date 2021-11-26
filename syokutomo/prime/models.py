@@ -10,7 +10,7 @@ from django.utils import timezone
 from django.core.validators import RegexValidator, MaxValueValidator ,MinValueValidator
 from import_export import resources
 # Create your models here.
-
+from accounts.models import *
 
 # number_only=RegexValidator(regex='^[0-9]{1,}]$', message='数字だけ入力ください')
 
@@ -38,8 +38,8 @@ class T1_shop(models.Model):
  
   
 
-    t1_shop_name_prime = models.CharField(verbose_name= '店名',max_length=3,null=False)
-    t10_area_id= models.ForeignKey(T10_area,verbose_name='エリア',on_delete= models.SET_DEFAULT,default='未設定')
+    t1_shop_name_prime = models.CharField(verbose_name= '店名',max_length=40,null=False)
+    # t10_area_id= models.ForeignKey(T10_area,verbose_name='エリア',on_delete= models.SET_DEFAULT,default='未設定')
     t1_address= models.CharField(verbose_name= '住所',max_length=200,null=False)
     t8_shop_category_id= models.ManyToManyField(T8_shop_category,verbose_name='店舗カテゴリID',max_length=4)
     t1_holiday=models.CharField(verbose_name='定休日',max_length=7,null=True,validators=[RegexValidator(regex=r"^[0-1]\{7\}$")])
@@ -100,7 +100,7 @@ class T5_user(models.Model):
 
     t5_user_firstname=models.CharField(verbose_name='顧客姓',max_length=30,blank=False)
     t5_user_lastname=models.CharField(verbose_name='顧客名',max_length=30,blank=False)
-    t10_area_id=models.ForeignKey(T10_area,verbose_name='エリア',null=False,on_delete=models.SET_DEFAULT,default=120)
+    # t10_area_id=models.ForeignKey(T10_area,verbose_name='エリア',null=False,on_delete=models.SET_DEFAULT,default=120)
     t5_address=models.CharField(verbose_name='住所',max_length=70)
     # t5_post=models.CharField(verbose_name='郵便番号',max_length=7,validators=[RegexValidator(regex=r"^F[0-9]*$")])
     t5_post=models.CharField(verbose_name='郵便番号',max_length=7)
@@ -143,7 +143,7 @@ class T7_delivery_man(models.Model):
     t7_delivery_man_lastname=models.CharField(verbose_name='名',max_length=20)
     t7_delivery_man_tel=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^[0-9]*$")])
     # t7_delivery_man_mail=models.EmailField(verbose_name='メールアドレス',max_length=90,blank=False)
-    t10_area_id=models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
+    # t10_area_id=models.ForeignKey(T10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
     t7_delivery_man_password=models.CharField(verbose_name='パスワード',max_length=20,blank=False)
     t7_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t7_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
