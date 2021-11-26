@@ -1,0 +1,40 @@
+{% extends 'user_base.html' %}
+{% load static %}
+
+{% block title %}店舗一覧{% endblock %}
+
+{% block active_user_shop_list %}active{% endblock %}
+
+
+{% block contents %}
+    <h1>店舗一覧</h1>
+    <form action="" method="get">
+        <input name="query" value="{{ request.GET.query }}" type="text">
+        <button type="submit">検索する</button>
+    </form>
+ 
+    <div class="container">
+        <div class="row">
+            <div class="my-div-style w-100">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                  {% for user in user_shop_list %}
+                    <div class="post-preview">
+                        <a href="{% url'user:user_shop_detail'user.py %}">
+                            <h2 calss="post-title">
+                                {{user.title}}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{user.content|truncatechars:20}}
+                            </h3>
+                        </a>
+                        <p class="post-meta">{{user.created_at>}}</p>
+                    </div>
+                    <hr>
+                  {% empty %}
+                    <p>近くにお店がありません</p>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
