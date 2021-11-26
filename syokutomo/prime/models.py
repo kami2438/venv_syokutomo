@@ -5,7 +5,7 @@ from django.db import models
 from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.contrib.postgres.fields import ArrayField
 from accounts.models import CustomUser
-
+from django.utils import timezone
 
 from django.core.validators import RegexValidator, MaxValueValidator ,MinValueValidator
 from import_export import resources
