@@ -118,8 +118,8 @@ class T5_user(models.Model):
     t5_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t5_bank_password=models.CharField(verbose_name='口座暗証番号',max_length=4,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
-    t5_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True,default=time.zonenow)
-    t5_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True,default=time.zonenow)
+    t5_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True,default=timezone.now)
+    t5_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True,default=timezone.now)
     def __str__(self):
         return "%s " % (self.id)
 
