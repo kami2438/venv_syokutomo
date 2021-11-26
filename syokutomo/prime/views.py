@@ -58,26 +58,30 @@ class Regis_userViews(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-# class Regis_shopViews(LoginRequiredMixin,generic.FormView):
-#     template_name = 'regis_shop.html'
-#     form_class =Regis_shopForm
-#     model=T1_shop
-#     success_url=reverse_lazy('shop:index')
-#     def form_valid(self, form):
-#         shop=form.save(commit=False)
-#         shop.user=self.request.user
-#         shop.save()
-#         messages.success(self.request,"本登録が完了しました")
-#         return super().form_valid(form)
+class Regis_shopViews(LoginRequiredMixin,generic.FormView):
+    template_name = 'regis_shop.html'
+    form_class =Regis_shopForm
+    model=T1_shop
+    success_url=reverse_lazy('shop:index')
+    def form_valid(self, form):
+        shop=form.save(commit=False)
+        shop.user=self.request.user
+        shop.save()
+        messages.success(self.request,"本登録が完了しました")
+        self.request.user.main_regist=True
+        self.request.user.save()
+        return super().form_valid(form)
 
-# class Regis_driverViews(LoginRequiredMixin,generic.FormView):
-#     template_name = 'regis_driver.html'
-#     model=T7_delivery_man
-#     form_class =Regis_driverForm
-#     success_url=reverse_lazy('driver:index')
-#     def form_valid(self, form):
-#         driver=form.save(commit=False)
-#         driver.user=self.request.user
-#         driver.save()
-#         messages.success(self.request,"本登録が完了しました")
-#         return super().form_valid(form)
+class Regis_driverViews(LoginRequiredMixin,generic.FormView):
+    template_name = 'regis_driver.html'
+    model=T7_delivery_man
+    form_class =Regis_driverForm
+    success_url=reverse_lazy('driver:index')
+    def form_valid(self, form):
+        driver=form.save(commit=False)
+        driver.user=self.request.user
+        driver.save()
+        messages.success(self.request,"本登録が完了しました")
+        self.request.user.main_regist=True
+        self.request.user.save()
+        return super().form_valid(form)
