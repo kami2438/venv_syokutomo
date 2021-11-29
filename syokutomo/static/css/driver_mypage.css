@@ -7,12 +7,60 @@
   .driver-mypage-litag {
     margin-bottom: 6rem;
   }
-.driver-mypage-btn {
+
+  .driver-mypage-btn {
+    display: inline-block;
+    position: relative;
+    padding: 0.5em 1.4em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 5px #36528c;/*ボタン色より暗めに*/
+    border-right: solid 5px #5375bd;/*ボタン色より暗めに*/
+  }
+  
+  .driver-mypage-btn:before {  
+    content: " ";
+    position: absolute;
+    bottom: -5px;
+    left: -1px;
+    width: 0;
+    height: 0;
+    border-width: 0 6px 6px 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #FFF;
+  }
+  
+  .driver-mypage-btn:after {  
+    content: " ";
+    position: absolute;
+    top: -1px;
+    right: -5px;
+    width: 0;
+    height: 0;
+    border-width: 0px 6px 6px 0px;
+    border-style: solid;
+    border-color: #FFF;
+    border-bottom-color: transparent;
+  }
+  
+  .driver-mypage-btn:active {
+    /*ボタンを押したとき*/
+    border:none;
+    -webkit-transform: translate(6px,6px);
+    transform: translate(6px,6px);
+  }
+  
+  .driver-mypage-btn:active:after, .driver-mypage-btn:active:before {
+    content: none;/*ボタンを押すと線が消える*/
+  }
+/*.driver-mypage-btn {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-  }
+  }*/
   
   .driver-mypage-btn-margin-bottom-left {
     margin-left: 10rem;
