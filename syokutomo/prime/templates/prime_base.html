@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <h2>ともく～る　～～しょくとも～～</h2>
+                    <h2>ともく～る<br>～～しょくとも～～</h2>
                 </a>
             </div><!-- navbar-header -->
             <div id="navbar" class="navbar-collapse collapse">
@@ -129,23 +129,23 @@
 {% if user.main_regist %}
 {% else %}
 <script>
-var p_str="アカウントに必要な情報を引き続き入力してください";
-var cancel="今はやめておく";
-var url="{% url 'prime:reservation' %}";
-var type={{user.user_type}}
-if( {{user.user_type}} =="1") {
-    url="{% url 'prime:regis_user' %}";
+    var p_str = "アカウントに必要な情報を引き続き入力してください";
+    var cancel = "今はやめておく";
+    var url = "{% url 'prime:reservation' %}";
+    var type = {{ user.user_type }}
+    if ({{ user.user_type }} == "1") {
+        url = "{% url 'prime:regis_user' %}";
 
-} else{
-    url="{% url 'prime:terms' %}";
-}
-window.onload=function MoveCheck() {
-    if( confirm(p_str) ) {
-        window.location.href =url ;
+    } else {
+        url = "{% url 'prime:terms' %}";
     }
-    else {
-        alert(cancel);
+    window.onload = function MoveCheck() {
+        if (confirm(p_str)) {
+            window.location.href = url;
+        }
+        else {
+            alert(cancel);
+        }
     }
-}
 </script>
 {% endif %}
