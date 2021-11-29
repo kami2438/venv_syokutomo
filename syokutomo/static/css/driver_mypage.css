@@ -1,3 +1,9 @@
+/*タイトルCSS*/
+.driver-mypage-Character-position{
+    margin-left: 30px;
+}
+
+/*ボタンCSS*/
 .driver-mypage-btn {
     max-width: 450px;
     margin: 0 auto;
