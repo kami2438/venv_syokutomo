@@ -19,7 +19,7 @@
     position: relative;
     padding: 0.5em 1.4em;
     text-decoration: none;
-    /*background: #668ad8;/*ボタン色*/
+    background: #668ad8;/*ボタン色*/
     color: #FFF;
     border-bottom: solid 5px #36528c;/*ボタン色より暗めに*/
     border-right: solid 5px #5375bd;/*ボタン色より暗めに*/
@@ -66,7 +66,7 @@
     margin-right: auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-  }*/
+  }
   
   .driver-mypage-btn-margin-bottom-left {
     margin-left: 10rem;
@@ -85,4 +85,4 @@
   .driver-mypage-btn-margin-top-right {
     margin-right: 10rem;
     margin-top: 5rem;
-  }
+  }*/
