@@ -1,5 +1,5 @@
 .driver-mypage-btn {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
   }
   a.btn_02_a {
@@ -11,8 +11,8 @@
     text-align: justify;
     text-decoration: none;
     transition-duration: 0.3s;
-    margin-top: 0.5px;
-    margin-bottom: 0.5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
   }
   a.btn_02_a:hover {
     background: #000000;
