@@ -1,0 +1,25 @@
+.driver-mypage-btn {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .driver-mypage-btn-margin-bottom-left {
+    margin-left: 10rem;
+    margin-bottom: 5rem;
+  }
+  
+  .driver-mypage-btn-margin-bottom {
+    margin-bottom: 5rem;
+  }
+  
+  .driver-mypage-btn-margin-top-left {
+    margin-left: 10rem;
+    margin-top: 5rem;
+  }
+  
+  .driver-mypage-btn-margin-top-right {
+    margin-right: 10rem;
+    margin-top: 5rem;
+  }
