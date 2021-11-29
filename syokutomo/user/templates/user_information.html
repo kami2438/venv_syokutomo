@@ -1,0 +1,16 @@
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+{% for T5_user in user_information %}
+<p>{{T5_user.t5_user_firstname}}</p>
+<p></p>
+<p></p>
+{% endfor %}
+{% endblock %}

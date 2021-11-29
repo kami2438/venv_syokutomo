@@ -9,4 +9,5 @@ urlpatterns = [
     path('mypage/', views.MypageView.as_view(), name="mypage"),
     path('terms/', views.TermsView.as_view(), name="terms"),
     path('list/', views.ListView.as_view(), name="list"),
+    path('information/', views.user_informationView.as_view(), name="information"),
 ]
