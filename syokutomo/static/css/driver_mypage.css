@@ -1,65 +1,51 @@
-.driver-mypage-Character-position {
-    text-align: left;
-    margin-left: 6rem;
-    margin-bottom: 6rem;
+section {
+    max-width: 300px;
+    margin: 0 auto;
   }
-  
-  .driver-mypage-litag {
-    margin-bottom: 6rem;
-  }
-
-  .btn-square-slant{
-    line-height: 250px;
-    width: 300px;
-    height: 250px;
-    padding: 0;
-  }
-  .driver-mypage-btn {
-    display: inline-block;
-    position: relative;
-    padding: 0.5em 1.4em;
+  a.btn_02_a {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    padding: 1.5rem .5rem;
+    background-color: #e22939;
+    text-align: center;
     text-decoration: none;
-    background: #668ad8;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 5px #36528c;/*ボタン色より暗めに*/
-    border-right: solid 5px #5375bd;/*ボタン色より暗めに*/
+    transition-duration: 0.3s;
   }
-  
-  .driver-mypage-btn:before {  
-    content: " ";
+  a.btn_02_a:hover {
+    background: #000000;
+  }
+  a.btn_02_a span {
+    position: relative;
+    padding-left: 36px;
+  }
+  a.btn_02_a span:before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background: #ffffff;
+    border-radius: 50%;
     position: absolute;
-    bottom: -5px;
-    left: -1px;
-    width: 0;
-    height: 0;
-    border-width: 0 6px 6px 0px;
-    border-style: solid;
-    border-color: transparent;
-    border-bottom-color: #FFF;
+    top: 50%;
+    left: 0;
+    margin-top: -13px;
   }
-  
-  .driver-mypage-btn:after {  
-    content: " ";
+  a.btn_02_a span:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-top: 3px solid #e22939;
+    border-right: 3px solid #e22939;
+    transform: rotate(45deg);
     position: absolute;
-    top: -1px;
-    right: -5px;
-    width: 0;
-    height: 0;
-    border-width: 0px 6px 6px 0px;
-    border-style: solid;
-    border-color: #FFF;
-    border-bottom-color: transparent;
+    top: 50%;
+    left: 7px;
+    margin-top: -5px;
   }
-  
-  .driver-mypage-btn:active {
-    /*ボタンを押したとき*/
-    border:none;
-    -webkit-transform: translate(6px,6px);
-    transform: translate(6px,6px);
-  }
-  
-  .driver-mypage-btn:active:after, .driver-mypage-btn:active:before {
-    content: none;/*ボタンを押すと線が消える*/
+  a.btn_02_a:hover span:after {
+    border-top: 3px solid #000000;
+    border-right: 3px solid #000000;
   }
 /*.driver-mypage-btn {
     margin-left: auto;
