@@ -1,0 +1,59 @@
+/*タイトルCSS*/
+.shop-mypage-Character-position{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+/*ボタンCSS*/
+.shop-mypage-btn {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  a.btn_02_a {
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    padding: 1.5rem .5rem;
+    background-color: #e22939;
+    text-align: justify;
+    text-justify: auto;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  a.btn_02_a:hover {
+    background: #000000;
+  }
+  a.btn_02_a span {
+    position: relative;
+    padding-left: 36px;
+  }
+  a.btn_02_a span:before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    margin-top: -13px;
+  }
+  a.btn_02_a span:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-top: 3px solid #e22939;
+    border-right: 3px solid #e22939;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    margin-top: -5px;
+  }
+  a.btn_02_a:hover span:after {
+    border-top: 3px solid #000000;
+    border-right: 3px solid #000000;
+  }
