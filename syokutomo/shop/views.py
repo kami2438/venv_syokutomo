@@ -10,7 +10,7 @@ class MypageView(generic.TemplateView):
 class TermsView(generic.TemplateView):
     template_name = "shop_terms_of_service.html"
 
-class MerchandiseView(LoginRequiredMixin, generic.MerchandiseView):
+#class MerchandiseView(LoginRequiredMixin, generic.MerchandiseView):
     model = T1_shop
     template_name = 'shop_merchandise.html'
 
