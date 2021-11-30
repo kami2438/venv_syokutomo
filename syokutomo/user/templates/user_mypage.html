@@ -9,12 +9,35 @@
 
 {% block contents %}
 <div class="user-mypage-Character-position">
-    <font face="Comic Sans MS">
-        <h1><b>My page</b></h1>
-    </font>
+        <h1><b>マイページ</b></h1>
 </div>
 
-<div class="user-mypage-btn">
+<div class="shop-mypage-btn">
+    <div>
+    <a href="{% url 'user:information' %}" class="btn_02_a"><span>アカウント</span></a>
+    </div>
+</div>
+<div class="shop-mypage-btn">
+    <div>
+    <a href="#" class="btn_02_a"><span>チャージ履歴</span></a>
+    </div>
+</div>
+<div class="shop-mypage-btn">
+    <div>
+    <a href="#" class="btn_02_a"><span>利用状況</span></a>
+    </div>
+</div>
+<div class="shop-mypage-btn">
+    <div>
+    <a href="#" class="btn_02_a"><span>ログアウト</span></a>
+    </div>
+</div>
+<div class="shop-mypage-btn">
+    <div>
+    <a href="#" class="btn_02_a"><span>退会申し込み</span></a>
+    </div>
+</div>
+<!--<div class="user-mypage-btn">
     <a href="{% url 'user:information' %}"
         class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-bottom-right">アカウント情報</a>
     <a href="#" class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-bottom">チャージ履歴</a>
@@ -26,5 +49,5 @@
         class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-top-right">ログアウト</a>
     <a href="#"
         class="btn user-btn-withdrawal user-btn-circle-my  user-btn-shadow user-mypage-btn-margin-top-left">退会</a>
-</div>
+</div>-->
 {% endblock %}
