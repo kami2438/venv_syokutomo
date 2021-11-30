@@ -34,7 +34,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
 class user_informationView(LoginRequiredMixin, generic.UpdateView):
     model = T5_user
     template_name = "user_information.html"
-    form_class =
+    form_class = User_UpdateForm
 
     def get_queryset(self):
         informations = T5_user.objects.filter(user=self.request.user)
