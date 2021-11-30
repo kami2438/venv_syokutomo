@@ -62,7 +62,7 @@ class Regis_shopForm(forms.ModelForm):
     class Meta:
         model = T1_shop
         fields = '__all__'
-        exclude = ['user','t1_create_at']
+        exclude = ['user','t1_create_at',"t1_favorite_count","t1_review_ave"]
 
 class Regis_driverForm(forms.ModelForm):
     class Meta:
