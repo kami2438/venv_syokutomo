@@ -13,9 +13,11 @@
 </div>
 
 <div class="shop-mypage-btn">
+
     <div>
-        <a href="{% url 'user:information'object.pk %}" class="btn_02_a"><span>アカウント</span></a>
+        <a href=# class="btn_02_a"><span>アカウント</span></a>
     </div>
+
 </div>
 <div class="shop-mypage-btn">
     <div>
@@ -37,17 +39,17 @@
         <a href="#" class="btn_02_a"><span>退会申し込み</span></a>
     </div>
 </div>
-<!--<div class="user-mypage-btn">
-    <a href="{% url 'user:information' %}"
-        class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-bottom-right">アカウント情報</a>
-    <a href="#" class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-bottom">チャージ履歴</a>
-    <a href="#"
-        class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-bottom-left">利用状況</a>
-</div>
-<div class="user-mypage-btn">
-    <a href="#"
-        class="btn user-btn-orange user-btn-circle-my user-btn-shadow user-mypage-btn-margin-top-right">ログアウト</a>
-    <a href="#"
-        class="btn user-btn-withdrawal user-btn-circle-my  user-btn-shadow user-mypage-btn-margin-top-left">退会</a>
-</div>-->
+
+
+
+<p>aaaaaaaaaaaaaaa</p>
+<p>{{ object.t5_user_firstname }}</p>
+<p>aaaaaaaaaaaaaaaaa</p>
+
+
+
+{% if user %}
+<h1>dffkejkfjjjjjjjjjjjjjj</h1>
+{% endif %}
+
 {% endblock %}
