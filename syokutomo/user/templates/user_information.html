@@ -8,10 +8,11 @@
 {% endblock %}
 
 {% block contents %}
+{% for info in object_list %}
 <p>aaaaaaaaaaaaaaa</p>
-<p>{{ object.t5_user_firstname }}</p>
+<p>{{ info.t5_user_firstname }}</p>
 <p>aaaaaaaaaaaaaaaaa</p>
-<p></p>
+{% endfor %}
 {% endblock %}
 
 
