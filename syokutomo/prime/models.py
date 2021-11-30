@@ -137,7 +137,6 @@ class T7_delivery_man(models.Model):
     t7_delivery_man_tel=models.CharField(verbose_name='電話番号',max_length=11,validators=[RegexValidator(regex=r"^[0-9]*$")])
     # t7_delivery_man_mail=models.EmailField(verbose_name='メールアドレス',max_length=90,blank=False)
     # t10_area_id=models.ForeignKey(t10_area,verbose_name='エリアID',on_delete= models.SET_DEFAULT,default='未設定')
-    t7_delivery_man_password=models.CharField(verbose_name='パスワード',max_length=20,blank=False)
     t7_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t7_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=20,null=True)
