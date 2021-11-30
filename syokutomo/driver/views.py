@@ -13,3 +13,6 @@ class MypageView(generic.TemplateView):
 
 class TermsView(generic.TemplateView):
     template_name = "driver_terms.html"
+
+class StatusView(generic.TemplateView):
+    template_name = "driver_status.html"
