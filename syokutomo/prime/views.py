@@ -85,3 +85,13 @@ class Regis_driverViews(LoginRequiredMixin,generic.FormView):
         self.request.user.main_regist=True
         self.request.user.save()
         return super().form_valid(form)
+
+# class Food_tempListViews(LoginRequiredMixin,generic.ListView):
+#     model=T4_food
+#     template_name='temp_list.html'
+
+#     def get_queryset(self,**kwargs):
+#         #<input type="text" name="input_type_name" ...>  in search templates　
+#         form_input=self.request.GET.get('input_type_name','')
+#         t4_ingredients=T4_food.objects.filter(t4_ingredients__icontains=form_input)
+#         return t4_ingredients
