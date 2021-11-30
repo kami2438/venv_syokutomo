@@ -1,5 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.contrib.postgres import fields
+from django.urls import reverse_lazy
+from django.urls.base import reverse
 
 from django.views import generic
 
@@ -31,11 +34,10 @@ class ListView(LoginRequiredMixin, generic.ListView):
         return users
 
 
-class user_informationView(LoginRequiredMixin, generic.UpdateView):
+class user_informationView(LoginRequiredMixin, generic.DetailView):
     model = T5_user
     template_name = "user_information.html"
-    form_class = User_UpdateForm
 
     def get_queryset(self):
-        informations = T5_user.objects.filter(user=self.request.user)
+        informations = T5_user.objects.filter(user=self.request.user)[0]
         return informations
