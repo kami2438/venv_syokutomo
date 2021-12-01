@@ -8,23 +8,23 @@
 {% endblock %}
 
 {% block contents %}
-<ol>
-    <li>{{object.t5_user_firstname}}</li>
-    <li>{{object.t5_user_lastname}}</li>
-    <li>{{object.t5_address}}</li>
-    <li>{{object.t5_post}}</li>
-    <li>{{object.t5_tel_number}}</li>
-    <li>{{object.t5_landmark}}</li>
-    <li>{{object.t5_allergy}}</li>
-    <li>{{object.t5_charge_tool}}</li>
-    <li>{{object.t5_credit_number}}</li>
-    <li>{{object.t5_credit_limit}}</li>
-    <li>{{object.t5_bank_name}}</li>
-    <li>{{object.t5_bank_location}}</li>
-    <li>{{object.t5_bank_number}}</li>
-    <li>{{object.t5_bank_password}}</li>
-    <a class="" href="{% url 'user:user_update' object.pk %}">変更</a>
-</ol>
+
+<p>苗字:{{object.t5_user_firstname}}</p>
+<p>名前:{{object.t5_user_lastname}}</p>
+<p>住所:{{object.t5_address}}</p>
+<p>郵便番号:{{object.t5_post}}</p>
+<p>電話番号:{{object.t5_tel_number}}</p>
+<p>自宅の目印:{{object.t5_landmark}}</p>
+<p>控えるべき食材:{{object.t5_allergy}}</p>
+<p>チャージ方法:{{object.t5_charge_tool}}</p>
+<p>カード番号:{{object.t5_credit_number}}</p>
+<p>有効期限:{{object.t5_credit_limit}}</p>
+<p>金融機関名:{{object.t5_bank_name}}</p>
+<p>支店番号:{{object.t5_bank_location}}</p>
+<p>口座番号:{{object.t5_bank_number}}</p>
+<p>講座暗証番号:{{object.t5_bank_password}}</p>
+<a class="" href="{% url 'user:user_update' object.pk %}">変更</a>
+
 {% endblock %}
 
 
