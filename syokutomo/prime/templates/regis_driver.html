@@ -6,7 +6,7 @@
         <h1>Hello World</h1>
         <form method="post" >
         {% csrf_token %}
-        {{ form.as_p}}
+        <table class="">{{ form.as_table }}</table>
         <button type="submit">送信</button>
     </body>
 </html>
