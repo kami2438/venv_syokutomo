@@ -45,7 +45,8 @@ class ReservationForm(forms.Form):
                                from_email=from_email, to=to_list, cc=cc_list)
         message.send()
 
-
+def wrap_boolean_check(v):
+    return not (v is False or v is None or v == '' or v == 0)
 class Regis_userForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
