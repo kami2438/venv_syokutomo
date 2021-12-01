@@ -8,23 +8,23 @@
 {% endblock %}
 
 {% block contents %}
-
-{{object.t5_user_firstname}}
-{{object.t5_user_lastname}}
-{{object.t5_address}}
-{{object.t5_post}}
-{{object.t5_tel_number}}
-{{object.t5_landmark}}
-{{object.t5_allergy}}
-{{object.t5_charge_tool}}
-{{object.t5_credit_number}}
-{{object.t5_credit_limit}}
-{{object.t5_bank_name}}
-{{object.t5_bank_location}}
-{{object.t5_bank_number}}
-{{object.t5_bank_password}}
-<a class="" href="{% url 'user:user_update' object.pk %}">変更</a>
-
+<ol>
+    <li>{{object.t5_user_firstname}}</li>
+    <li>{{object.t5_user_lastname}}</li>
+    <li>{{object.t5_address}}</li>
+    <li>{{object.t5_post}}</li>
+    <li>{{object.t5_tel_number}}</li>
+    <li>{{object.t5_landmark}}</li>
+    <li>{{object.t5_allergy}}</li>
+    <li>{{object.t5_charge_tool}}</li>
+    <li>{{object.t5_credit_number}}</li>
+    <li>{{object.t5_credit_limit}}</li>
+    <li>{{object.t5_bank_name}}</li>
+    <li>{{object.t5_bank_location}}</li>
+    <li>{{object.t5_bank_number}}</li>
+    <li>{{object.t5_bank_password}}</li>
+    <a class="" href="{% url 'user:user_update' object.pk %}">変更</a>
+</ol>
 {% endblock %}
 
 
