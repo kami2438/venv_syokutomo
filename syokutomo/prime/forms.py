@@ -57,6 +57,7 @@ class Regis_userForm(forms.ModelForm):
         help_texts={
             't5_allergy':"例）たまご、かに、なす　のように区切りに読点を使ってください"
         }
+
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
@@ -69,6 +70,7 @@ class Regis_shopForm(forms.ModelForm):
         model = T1_shop
         fields = '__all__'
         exclude = ['user','t1_create_at',"t1_favorite_count","t1_review_ave"]
+        widgets={"t1_shop_sun":forms.CheckboxInput(check_test=wrap_boolean_check)}
 
 
 class Regis_driverForm(forms.ModelForm):
