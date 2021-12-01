@@ -71,7 +71,10 @@ class Regis_shopForm(forms.ModelForm):
         model = T1_shop
         fields = '__all__'
         exclude = ['user','t1_create_at',"t1_favorite_count","t1_review_ave"]
-        widgets={"t1_shop_sun":forms.CheckboxInput(check_test=wrap_boolean_check)}
+        widgets={"t1_shop_sun":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_mon":forms.CheckboxInput(check_test=wrap_boolean_check),
+        "t1_shop_tue":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_wed":forms.CheckboxInput(check_test=wrap_boolean_check),
+        "t1_shop_tru":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_fri":forms.CheckboxInput(check_test=wrap_boolean_check),
+        "t1_shop_sat":forms.CheckboxInput(check_test=wrap_boolean_check)}
 
 
 class Regis_driverForm(forms.ModelForm):
