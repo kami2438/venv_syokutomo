@@ -69,7 +69,7 @@ class user_updateView(LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy('user:info',kwargs={'pk':self.kwargs['pk']})
 
     def form_valid(self,form):
-        messages.success(slef.request,'更新しました。')
+        messages.success(self.request,'更新しました。')
         return super().form_valid(form)
 
     def form_invalid(self,form):
