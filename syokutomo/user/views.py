@@ -58,3 +58,11 @@ class user_informationView(LoginRequiredMixin, generic.DetailView):
     # def get_queryset(self):
     #     informations = T5_user.objects.filter(user=self.request.user)
     #     return informations
+
+class user_updateView(LoginRequiredMixin, generic.UpdateView):
+    model =T5_user
+    template_name = 'user_update.html'
+    form_class = User_UpdateForm
+
+    def get_success_url(self):
+        return reverse_lazy('user:user_info',kwargs={'pk':self.kwargs['pk']})

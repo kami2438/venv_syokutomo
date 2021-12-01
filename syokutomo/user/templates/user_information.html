@@ -9,7 +9,7 @@
 
 {% block contents %}
 {{object.t5_user_firstname}}
-<a class="" href=>変更</a>
+<a class="" href="{% url 'user:user_update'object.pk %}">変更</a>
 {% endblock %}
 
 
