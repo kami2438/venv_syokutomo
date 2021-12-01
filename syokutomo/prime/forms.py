@@ -1,7 +1,7 @@
 from django import forms
 from django.core.mail import EmailMessage
 from .models import *
-
+from django.utils import timezone
 
 class ReservationForm(forms.Form):
     name = forms.CharField(label='お名前', max_length=30)
@@ -74,7 +74,9 @@ class Regis_shopForm(forms.ModelForm):
         widgets={"t1_shop_sun":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_mon":forms.CheckboxInput(check_test=wrap_boolean_check),
         "t1_shop_tue":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_wed":forms.CheckboxInput(check_test=wrap_boolean_check),
         "t1_shop_tru":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_fri":forms.CheckboxInput(check_test=wrap_boolean_check),
-        "t1_shop_sat":forms.CheckboxInput(check_test=wrap_boolean_check)}
+        "t1_shop_sat":forms.CheckboxInput(check_test=wrap_boolean_check)
+        # "t1_start_time":,"t1_end_time":
+        }
 
 
 class Regis_driverForm(forms.ModelForm):
