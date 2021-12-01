@@ -15,7 +15,7 @@
 <div class="user-mypage-btn">
     {% for object in object_list %}
     <div>
-        <a href="{% url 'user:info' object.id %}" class="btn_02_a"><span>アカウント</span></a>
+        <a href="{% url 'user:info' object.pk %}" class="btn_02_a"><span>アカウント</span></a>
     </div>
     {% endfor %}
 </div>
