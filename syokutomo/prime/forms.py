@@ -51,6 +51,9 @@ class Regis_userForm(forms.ModelForm):
         model = T5_user
         fields = ("t5_user_firstname", "t5_user_lastname", "t5_address","t5_post", "t5_tel_number", "t5_landmark", "t5_allergy", "t5_charge_tool",
                    "t5_credit_number", "t5_credit_limit", "t5_credit_security", "t5_bank_name", "t5_bank_location", "t5_bank_number", "t5_bank_password")
+        widget={"t5_credit_security":forms.PasswordInput(),"t5_bank_password":forms.PasswordInput()
+            
+        }
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
@@ -63,6 +66,7 @@ class Regis_shopForm(forms.ModelForm):
         model = T1_shop
         fields = '__all__'
         exclude = ['user','t1_create_at',"t1_favorite_count","t1_review_ave"]
+
 
 class Regis_driverForm(forms.ModelForm):
     class Meta:
