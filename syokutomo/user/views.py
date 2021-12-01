@@ -53,8 +53,8 @@ class ListView(LoginRequiredMixin, generic.ListView):
 class user_informationView(LoginRequiredMixin, generic.DetailView):
     model = T5_user
     template_name = "user_information.html"
-    pk_url_kwarg = "id"
+    # pk_url_kwarg = "id"
 
-    def get_queryset(self):
-        informations = T5_user.objects.filter(user=self.request.user)
-        return informations
+    # def get_queryset(self):
+    #     informations = T5_user.objects.filter(user=self.request.user)
+    #     return informations
