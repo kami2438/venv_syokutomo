@@ -34,7 +34,7 @@ class T1_shop(models.Model):
     t1_shop_name_prime = models.CharField(verbose_name= '店名',max_length=40,null=False)
     # t10_area_id= models.ForeignKey(t10_area,verbose_name='エリア',on_delete= models.SET_DEFAULT,default='未設定')
     t1_address= models.CharField(verbose_name= '住所',max_length=200,null=False)
-    t8_shop_category_id= models.ForeignKey(T8_shop_category,verbose_name='店舗カテゴリ',max_length=4,on_delete=models.CASCADE,null=True)
+    t8_shop_category_id= models.ForeignKey(T8_shop_category,verbose_name='店舗カテゴリ',max_length=4,on_delete=models.CASCADE,default=20)
     t1_shop_sun=models.BooleanField(verbose_name='日曜日',null=True,blank=True)
     t1_shop_mon=models.BooleanField(verbose_name='月曜日',null=True,blank=True)
     t1_shop_tue=models.BooleanField(verbose_name='火曜日',null=True,blank=True)
