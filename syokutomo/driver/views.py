@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.views import generic
 
 from .models import *
-from .forms import *
+# from .forms import *
 
 # Create your views here.
 
