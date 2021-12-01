@@ -16,20 +16,24 @@ class IndexView(generic.TemplateView):
     template_name = "user_index.html"
 
 
-class MypageView(generic.TemplateView, LoginRequiredMixin):
+class MypageView(generic.ListView, LoginRequiredMixin):
     template_name = "user_mypage.html"
     model = T5_user
     pk_url_kwarg = "id"
 
-    # def get_queryset(self):
-    #     print('get')
-    #     informations = T5_user.objects.filter(user=self.request.user)
-    #     print(informations)
-    #     return informations
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        print(context)
-        return context
+    def get_queryset(self):
+        print('get')
+        informations = T5_user.objects.filter(user=self.request.user)
+        informations = informations
+        print(type(self.request.user))
+        print(type(informations))
+        print("--------------------------------")
+        print(vars(informations))
+        return informations
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     print(context)
+    #     return context
 
 
 class TermsView(generic.TemplateView):

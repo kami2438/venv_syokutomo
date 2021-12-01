@@ -13,11 +13,11 @@
 </div>
 
 <div class="user-mypage-btn">
-
+    {% for object in object_list %}
     <div>
-        <a href=# class="btn_02_a"><span>アカウント</span></a>
+        <a href="{% url 'user:info' object.id %}" class="btn_02_a"><span>アカウント</span></a>
     </div>
-
+    {% endfor %}
 </div>
 <div class="user-mypage-btn">
     <div>
@@ -41,11 +41,11 @@
 </div>
 
 
-
+{% for object in object_list %}
 <p>aaaaaaaaaaaaaaa</p>
-<p>{{ object.t5_user_firstname }}</p>
+<p>{{object.t5_user_firstname }}</p>
 <p>aaaaaaaaaaaaaaaaa</p>
-
+{% endfor %}
 
 
 {% if user %}
