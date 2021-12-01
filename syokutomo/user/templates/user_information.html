@@ -12,7 +12,6 @@
 {% for object in object_list %}
 {{object.t5_user_firstname}}
 <a class="" href="{% url 'user:user_update' object.pk %}">変更</a>
-{% endif %}
 {% endblock %}
 
 
