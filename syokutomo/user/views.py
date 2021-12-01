@@ -65,7 +65,7 @@ class user_updateView(LoginRequiredMixin, generic.UpdateView):
     form_class = User_UpdateForm
 
     def get_success_url(self):
-        return reverse_lazy('user:user_info',kwargs={'pk':self.kwargs['pk']})
+        return reverse_lazy('user:info',kwargs={'pk':self.kwargs['pk']})
 
     def form_valid(self,form):
         messages.success(slef.request,'更新しました。')

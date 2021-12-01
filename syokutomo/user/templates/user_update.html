@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block contents %}
-
+{% csrf_token %}
 <p>{{form.as_p }}</p>
 <button class="" type="submit">更新</button>
 
