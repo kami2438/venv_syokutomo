@@ -12,5 +12,5 @@ urlpatterns = [
     path('mypage/info/<int:pk>/',
          views.user_informationView.as_view(), name="info"),
     path('mypage/info/user_update/<int:pk>/',
-         views.user_informationView.as_view(), name="user_update"),
+         views.user_updateView.as_view(), name="user_update"),
 ]
