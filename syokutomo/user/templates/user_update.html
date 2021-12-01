@@ -10,7 +10,7 @@
 {% block contents %}
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <p>{{ form.as_table }}</p>
+    <table class="">{{ form.as_table }}</table>
     <button class="" type="submit">更新</button>
 </form>
 
