@@ -11,4 +11,6 @@ urlpatterns = [
     path('list/', views.ListView.as_view(), name="list"),
     path('mypage/info/<int:pk>/',
          views.user_informationView.as_view(), name="info"),
+    # path('mypage/info/<int:pk>/',
+    #      views.user_informationView.as_view(), name="info"),
 ]
