@@ -42,7 +42,7 @@ class driver_updateView(LoginRequiredMixin, UpdateView):
     template_name = 'driver_update.html'
     form_class = driver_updateForm
 
-        def get_success_url(self):
+    def get_success_url(self):
         return reverse_lazy('user:info',kwargs={'pk':self.kwargs['pk']})
 
     def form_valid(self,form):
