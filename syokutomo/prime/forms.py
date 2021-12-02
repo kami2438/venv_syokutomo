@@ -58,7 +58,9 @@ class Regis_userForm(forms.ModelForm):
         help_texts={
             't5_allergy':"例）たまご、かに、なす　のように区切りに読点を使ってください"
         }
-        widgets={"t5_credit_security":forms.PasswordInput(),"t5_bank_password":forms.PasswordInput()}
+        widgets={
+            # "t5_credit_security":forms.PasswordInput(),"t5_bank_password":forms.PasswordInput()
+            }
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
