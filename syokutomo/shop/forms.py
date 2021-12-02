@@ -1,6 +1,9 @@
 from django import forms
 from .models import *
 
+def wrap_boolean_check(v):
+    return not (v is False or v is None or v == '' or v == 0)
+
 class shop_infoForm(forms.ModelForm):
     class Meta:
         model = T1_shop
