@@ -8,9 +8,13 @@
 {% endblock %}
 
 {% block contents %}
-<h1>
-    {{object.t7_delivery_man_firstname}}
-</h1>
+
+<p>苗字：{{object.t7_delivery_man_firstname}}</p>
+<p>名前：{{object.t7_delivery_man_lastname}}</p>
+<p>電話番号：{{object.t7_delivery_man_tel}}</p>
+<p>金融機関名：{{object.t7_bank_name}}</p>
+<p>支店番号：{{object.t7_bank_location}}</p>
+<p>口座番号：{{object.t7_bank_number}}</p>
 
 <a class="" href="{% url 'driver:update' object.pk %}">変更</a>
 
