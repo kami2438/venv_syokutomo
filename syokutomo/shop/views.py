@@ -36,7 +36,7 @@ class TermsView(generic.TemplateView):
 #        users = T1_shop.object.filter(user=self.request.user).order_by('-created_at')
 #        return users
 
-class shop_infoView(LoginRequiredMixin, generic.ListView):
+class shop_infoView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
     template_name = "shop_info.html"
 
