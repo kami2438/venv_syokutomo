@@ -58,7 +58,7 @@ class T1_shop(models.Model):
     t1_shop_photo_04=models.ImageField(verbose_name='写真04',blank=True,null=True)
     t1_shop_photo_05=models.ImageField(verbose_name='写真05',blank=True,null=True)
     
-    t1_bank_name=models.CharField(verbose_name='金融機関名',null=False,max_length=4, validators=[RegexValidator(regex=r"^[0-9]*$")],blank=True)
+    t1_bank_name=models.CharField(verbose_name='金融機関名',null=True,blank=True)
     t1_bank_location=models.CharField(verbose_name='支店番号',null=False,max_length=3, validators=[RegexValidator(regex=r"^[0-9]*$")],blank=True)
     t1_bank_number=models.CharField(verbose_name='口座番号',null=False,max_length=6,validators=[RegexValidator(regex=r"^[0-9]*$")],blank=True)
     t1_review_ave=models.FloatField(verbose_name='レビュー評価',null=False,blank=True,default=2.5,max_length=3)
