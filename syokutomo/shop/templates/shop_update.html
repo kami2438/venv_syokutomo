@@ -1,0 +1,17 @@
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="">{{ form.as_table }}</table>
+    <button class="" type="submit">更新</button>
+</form>
+
+{% endblock %}

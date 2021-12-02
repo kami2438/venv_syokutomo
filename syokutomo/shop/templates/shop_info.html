@@ -1,0 +1,16 @@
+{% extends 'user_base.html' %}
+
+{% load static %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+
+{{object.t1_shop_name_prime}}
+
+<a class="" href="{% url 'shop:shop_update' object.pk %}">変更</a>
+
+{% endblock %}
