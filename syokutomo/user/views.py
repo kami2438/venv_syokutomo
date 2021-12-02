@@ -75,3 +75,21 @@ class user_updateView(LoginRequiredMixin, generic.UpdateView):
     def form_invalid(self,form):
         messages.error(self.request,"更新に失敗しました。")
         return super().form_invalid(form)
+
+
+# class user_ChrageView(LoginRequiredMixin, generic.CreateView):
+#     model =T12_charge
+#     success_url = reverse_lazy('user:mypage')
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["T5_user"]=T5_user.objects.get.filter(
+#             user=self.request.user)[0]
+#         return context
+#     def form_valid(self, form):
+#         messages.success(self.request,'チャージされました。')
+#         chuser=T5_user.objects.get.filter(
+#             user=self.request.user)[0]
+#         chrage=T12_charge.objects.get.all().order_by('-created_at')[0]
+#         chuser.t5_charge_remain=int(chrage.t12_charge_amount)+int(chuser.t5_charge_remain)
+#         chuser.save()
+#         return super().form_valid(form)
