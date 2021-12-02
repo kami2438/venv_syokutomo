@@ -43,7 +43,7 @@ class driver_updateView(LoginRequiredMixin, generic.UpdateView):
     form_class = driver_updateForm
 
     def get_success_url(self):
-        return reverse_lazy('user:info',kwargs={'pk':self.kwargs['pk']})
+        return reverse_lazy('driver:info',kwargs={'pk':self.kwargs['pk']})
 
     def form_valid(self,form):
         messages.success(self.request,'更新しました。')
