@@ -14,7 +14,7 @@ from .forms import *
 class IndexView(generic.TemplateView):
     template_name = "shop_index.html"
 
-class MypageView(generic.ListView):
+class MypageView(LoginRequiredMixin,generic.ListView):
     template_name = "shop_mypage.html"
     model = T1_shop
     pk_url_kwarg = "id"
