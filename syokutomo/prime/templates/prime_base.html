@@ -130,7 +130,7 @@
 {% else %}
 <script>
     var p_str = "アカウントに必要な情報を引き続き入力してください";
-    var cancel = "今はやめておく";
+    var cancel = "ポップアップを閉じます";
     var url = "{% url 'prime:reservation' %}";
     var type = {{ user.user_type }}
     if ({{ user.user_type }} == "1") {
