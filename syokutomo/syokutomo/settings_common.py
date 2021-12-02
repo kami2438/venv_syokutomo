@@ -193,3 +193,6 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert alert-info',
 }
 ACCOUNT_ADAPTER = 'accounts.adapters.MyCrmAdapter'
+
+MEDIA_URL = '/img/'
+MEDIA_ROOT = BASE_DIR
