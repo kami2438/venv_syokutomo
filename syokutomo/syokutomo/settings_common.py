@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -132,7 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#if static_root error showed uncommand this. static_root is new parameter at django 3
+# if static_root error showed uncommand this. static_root is new parameter at django 3
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
@@ -183,7 +183,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 ##################################################サインイン変更#######################################################################################
 ACCOUNT_FORMS = {
-'signup': 'accounts.forms.CustomSignupForm'
+    'signup': 'accounts.forms.CustomSignupForm'
 }
 
 MESSAGE_TAGS = {
