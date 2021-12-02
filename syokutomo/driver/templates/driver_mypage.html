@@ -13,9 +13,11 @@
 </div>
 
 <div class="driver-mypage-btn">
+  {% for object in object_list %}
   <div>
     <a href="{% url 'driver:info' object.pk %}" class="btn_02_a"><span>アカウント</span></a>
   </div>
+  {% endfor %}
   <!--<a href="#"
         class="btn driver-btn-orange driver-btn-circle driver-btn-circle-a driver-btn-shadow driver-mypage-btn-margin-bottom">アカウント</a>-->
 </div>
