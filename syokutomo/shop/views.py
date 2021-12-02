@@ -18,10 +18,12 @@ class MypageView(LoginRequiredMixin,generic.ListView):
     template_name = "shop_mypage.html"
     model = T1_shop
     pk_url_kwarg = "id"
-
+    print('get')
     def get_queryset(self):
         informations = T1_shop.objects.filter(user=self.request.user)
+        print('2')
         return informations
+    
 
 class TermsView(generic.TemplateView):
     template_name = "shop_terms_of_service.html"
