@@ -40,7 +40,8 @@ class shop_infoView(LoginRequiredMixin, generic.ListView):
 
 class shop_updateView(LoginRequiredMixin, generic.UpdateView):
     model = T1_shop
-    template_name = shop_infoForm
+    template_name = "shop_update.html"
+    form_class = shop_updateForm
 
     def get_success_url(self):
         return reverse_lazy('shop:info',kwargs={'pk':self.kwargs['pk']})
