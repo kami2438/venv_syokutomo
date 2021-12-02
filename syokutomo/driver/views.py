@@ -37,7 +37,7 @@ class driver_infoView(LoginRequiredMixin, generic.DetailView):
     model = T7_delivery_man
     template_name = "driver_info.html"
 
-class driver_updateView(LoginRequiredMixin, UpdateView):
+class driver_updateView(LoginRequiredMixin, generic.UpdateView):
     model =T7_delivery_man
     template_name = 'driver_update.html'
     form_class = driver_updateForm
