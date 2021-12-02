@@ -74,7 +74,7 @@ class Regis_shopForm(forms.ModelForm):
         widgets={"t1_shop_sun":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_mon":forms.CheckboxInput(check_test=wrap_boolean_check),
         "t1_shop_tue":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_wed":forms.CheckboxInput(check_test=wrap_boolean_check),
         "t1_shop_tru":forms.CheckboxInput(check_test=wrap_boolean_check),"t1_shop_fri":forms.CheckboxInput(check_test=wrap_boolean_check),
-        "t1_shop_sat":forms.CheckboxInput(check_test=wrap_boolean_check)
+        "t1_shop_sat":forms.CheckboxInput(check_test=wrap_boolean_check),"t5_credit_security":forms.PasswordInput(),"t5_bank_password":forms.PasswordInput()
         # "t1_start_time":,"t1_end_time":
         }
 
