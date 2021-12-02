@@ -9,5 +9,5 @@ urlpatterns = [
     path('mypage', views.MypageView.as_view(), name="mypage"),
     path('terms', views.TermsView.as_view(), name="terms"),
     path('status', views.StatusView.as_view(), name="status"),
-    path('info/<int:pk>', views.driver_infoView.as_view(), name="info"),
+    path('mypage/info/<int:pk>', views.driver_infoView.as_view(), name="info"),
 ]

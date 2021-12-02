@@ -20,6 +20,8 @@ class IndexView(generic.TemplateView):
 class MypageView(LoginRequiredMixin, generic.ListView):
     template_name = "driver_mypage.html"
     model =T7_delivery_man
+    pk_url_kwarg = "id"
+
     def get_queryset(self):
         informations = T7_delivery_man.objects.filter(user=self.request.user)
         return informations
