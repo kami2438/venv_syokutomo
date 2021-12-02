@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.views import generic
 
 from .models import *
-# from .forms import *
+from .forms import *
 
 # Create your views here.
 
@@ -36,3 +36,19 @@ class StatusView(generic.TemplateView):
 class driver_infoView(LoginRequiredMixin, generic.DetailView):
     model = T7_delivery_man
     template_name = "driver_info.html"
+
+class driver_updateView(LoginRequiredMixin, UpdateView):
+    model =T7_delivery_man
+    template_name = 'driver_update.html'
+    form_class = driver_updateForm
+
+        def get_success_url(self):
+        return reverse_lazy('user:info',kwargs={'pk':self.kwargs['pk']})
+
+    def form_valid(self,form):
+        messages.success(self.request,'更新しました。')
+        return super().form_valid(form)
+
+    def form_invalid(self,form):
+        messages.error(self.request,"更新に失敗しました。")
+        return super().form_invalid(form)
