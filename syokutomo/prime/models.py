@@ -196,7 +196,7 @@ class T12_charge(models.Model):
     t12_charge_amount=models.PositiveIntegerField(verbose_name='チャージ額',blank=False,default=0)
     t12_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t12_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    t12_charge_remain_ex=models.IntegerField(verbose_name='チャージ後残高',blank=False,default=0)
+    t12_charge_remain_ex=models.IntegerField(verbose_name='チャージ後残高',blank=True,default=0,null=True)
 class T13_inquiry(models.Model):
      # t13_inquiry_id=models.CharField(verbose_name='お問い合わせID',primary_key=True,max_length=13,validators=[RegexValidator(regex=r"^I[0-9]*$")])
    
