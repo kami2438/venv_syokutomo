@@ -77,9 +77,9 @@ class user_updateView(LoginRequiredMixin, generic.UpdateView):
         return super().form_invalid(form)
 
 
-class user_ChrageView(LoginRequiredMixin, generic.CreateView):
+class user_ChargeView(LoginRequiredMixin, generic.CreateView):
     model =T12_charge
-    form_class=Chrage_form
+    form_class=Charge_form
     template_name = "user_charge.html"
     success_url = reverse_lazy('user:mypage')
     def get_context_data(self, **kwargs):
@@ -91,9 +91,9 @@ class user_ChrageView(LoginRequiredMixin, generic.CreateView):
         messages.success(self.request,'チャージされました。')
         chuser=T5_user.objects.get.filter(
             user=self.request.user)[0]
-        chrage=T12_charge.objects.get.all().order_by('-created_at')[0]
-        n=int(chrage.t12_charge_amount)+int(chuser.t5_charge_remain)
+        charge=T12_charge.objects.get.all().order_by('-created_at')[0]
+        n=int(charge.t12_charge_amount)+int(chuser.t5_charge_remain)
         chuser.t5_charge_remain=n
-        chrage.t12_charge_remain_ex=n
+        charge.t12_charge_remain_ex=n
         chuser.save()
         return super().form_valid(form)

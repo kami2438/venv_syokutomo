@@ -21,7 +21,7 @@ class User_UpdateForm(forms.ModelForm):
 
 
 
-class Chrage_form(forms.ModelForm):
+class Charge_form(forms.ModelForm):
     class Meta:
         model = T12_charge
         fields = '__all__'
