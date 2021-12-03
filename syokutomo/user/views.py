@@ -92,9 +92,11 @@ class user_ChargeView(LoginRequiredMixin, generic.CreateView):
         chuser=T5_user.objects.filter(
             user=self.request.user)[0]
         charge=T12_charge.objects.all().order_by('t12_create_at')[0]
+        messages.success(self.request,'zzzz')
         n=int(charge.t12_charge_amount)+int(chuser.t5_charge_remain)
         chuser.t5_charge_remain=n
         charge.t12_charge_remain_ex=n
+        messages.success(self.request,'djffeijij')
         chuser.save()
         messages.success(self.request,'チャージされました。')
         return super().form_valid(form)
