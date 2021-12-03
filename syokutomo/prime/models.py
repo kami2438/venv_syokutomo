@@ -149,7 +149,7 @@ class T7_delivery_man(models.Model):
     t7_bank_name=models.CharField(verbose_name='金融機関名',max_length=20,null=True)
     t7_bank_location=models.CharField(verbose_name='支店番号',max_length=8,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
     t7_bank_number=models.CharField(verbose_name='口座番号',max_length=10,validators=[RegexValidator(regex=r"^[0-9]*$")],null=True)
-    t7_photo=models.ImageField(verbose_name='確認写真',blank=True,null=True)
+    t7_photo=models.ImageField(verbose_name='確認写真')
     def __str__(self):
         return "%s %s" % (self.t7_delivery_man_firstname,self.t7_delivery_man_lastname)
 
