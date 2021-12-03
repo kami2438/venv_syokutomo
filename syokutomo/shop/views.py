@@ -59,7 +59,7 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
 
 # class FoodCreateView(LoginRequiredMixin,generic.CreateView):
 #     model=T4_food
-#     template_name='food_create.html'
+#     template_name='shop_food_create.html'
 #     form_class=Food_createform
 #     success_url=reverse_lazy('prime:food_list')
 
@@ -76,7 +76,7 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
    
 # class FoodListView(LoginRequiredMixin,generic.ListView):
 #     model=T4_food
-#     template_name='food_list.html'
+#     template_name='shop_food_list.html'
     
 #     def get_queryset(self) :       
         
