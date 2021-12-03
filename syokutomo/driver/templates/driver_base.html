@@ -56,17 +56,15 @@
                 </a>
             </div><!-- navbar-header -->
             <div id="navbar" class="navbar-collapse collapse">
-
+                <div class="hidden-xs" id="logo"><a href="{% url 'driver:index' %}">
+                        <img src="{% static '/img/buf_icon.svg' %}" alt="">
+                    </a></div>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">配達予定</a></li>
                     <li><a href="{% url 'driver:terms' %}">利用規約</a></li>
 
-                    <li>
-                        <div class="hidden-xs" id="logo"><a href="{% url 'driver:index' %}">
-                                <img src="{% static '/img/buf_icon.svg' %}" alt="">
-                            </a></div>
-                    </li>
+
 
 
                     <li><a href="{% url 'driver:mypage' %}">マイページ</a></li>
