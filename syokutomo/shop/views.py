@@ -6,9 +6,10 @@ from django.urls.base import reverse
 from django.contrib import messages
 
 from django.views import generic
-
+from prime.models import *
 from .models import *
 from .forms import *
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 class IndexView(generic.TemplateView):
@@ -28,13 +29,13 @@ class MypageView(LoginRequiredMixin,generic.ListView):
 class TermsView(generic.TemplateView):
     template_name = "shop_terms_of_service.html"
 
-#class MerchandiseView(LoginRequiredMixin, generic.MerchandiseView):
-#    model = T1_shop
-#    template_name = 'shop_merchandise.html'
+class MerchandiseView(LoginRequiredMixin, generic.MerchandiseView):
+    model = T1_shop
+    template_name = 'shop_merchandise.html'
 
-#    def get_queryset(self):
-#        users = T1_shop.object.filter(user=self.request.user).order_by('-created_at')
-#        return users
+    def get_queryset(self):
+        users = T1_shop.object.filter(user=self.request.user).order_by('-created_at')
+        return users
 
 class shop_infoView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
@@ -55,3 +56,30 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
     def form_invalid(self,form):
         messages.error(self.request,"更新に失敗しました。")
         return super().form_invalid(form)
+
+# class FoodCreateView(LoginRequiredMixin,generic.CreateView):
+#     model=T4_food
+#     template_name='food_create.html'
+#     form_class=Food_createform
+#     success_url=reverse_lazy('prime:food_list')
+
+#     def form_valid(self,form) :
+#         food_list=form.save(commit=False)
+#         food_list.user=self.request.user
+#         food_list.save()
+#         messages.success(self.request,'商品追加しました。')
+#         return super().form_valid(form)
+#     def form_invalid(self, form):
+#         message.error(self.request,'商品追加失敗しました。')
+#         return super().form_invalid(form)
+
+   
+# class FoodListView(LoginRequiredMixin,generic.ListView):
+#     model=T4_food
+#     template_name='food_list.html'
+    
+#     def get_queryset(self) :       
+        
+#         food_q=T4_food.objects.all().order_by('-t4_create_at')
+        
+#         return food_q 
