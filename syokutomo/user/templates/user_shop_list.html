@@ -20,12 +20,10 @@
                   {% for item in object_list %}
                     <div class="post-preview">
                         <a href="#">
+                                {{item.t1_shop_photo_01}}
                             <h2 calss="post-title">
-                                {{item.title}}
+                                {{item.t1_shop_name_prime}}
                             </h2>
-                            <h3 class="post-subtitle">
-                                {{item.content|truncatechars:20}}
-                            </h3>
                         </a>
                     </div>
                     <hr>
