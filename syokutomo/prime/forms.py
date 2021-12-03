@@ -105,8 +105,8 @@ class Regis_shopForm(forms.ModelForm):
         ('21:00:00', '21:00'),('21:30:00', '21:30'),
         ('22:00:00', '22:00'),('22:30:00', '22:30'),
         ('23:00:00', '23:00'),('23:30:00', '23:30') )
-    "t1_start_time" = forms.ChoiceField(choices=TIME_CHOICES)
-    "t1_end_time" = forms.ChoiceField(choices=TIME_CHOICES)
+    t1_start_time = forms.ChoiceField(choices=TIME_CHOICES,queryset=T1_shop)
+    t1_end_time = forms.ChoiceField(choices=TIME_CHOICES,queryset=T1_shop)
     class Meta:
         model = T1_shop
         fields = '__all__'
