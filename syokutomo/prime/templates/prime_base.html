@@ -127,6 +127,19 @@
 </html>
 
 {% if user.main_regist %}
+<script>
+    var url = "{% url 'prime:index' %}";
+    var type = {{ user.user_type }}
+    if ({{ user.user_type }} == "1") {
+        url = "{% url 'user:index' %}";
+    } else if({{user.user_type}} =="2"){
+    url="{% url 'shop:index' %}";
+    } else if({{user.user_type}} =="3"){
+    url="{% url 'driver:index' %}";}
+    window.onload = function Move() {
+        window.location.href = url;
+    }
+</script>
 {% else %}
 <script>
     var p_str = "アカウントに必要な情報を引き続き入力してください";
@@ -151,5 +164,6 @@
             alert(cancel);
         }
     }
+
 </script>
 {% endif %}
