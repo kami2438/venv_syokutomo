@@ -13,5 +13,5 @@ urlpatterns = [
          views.user_informationView.as_view(), name="info"),
     path('mypage/info/user_update/<int:pk>/',
          views.user_updateView.as_view(), name="user_update"),
-     # path('mypage/chrage/',views.user_ChrageView.as_view(),name="chrage")
+     path('mypage/chrage/',views.user_ChrageView.as_view(),name="chrage")
 ]
