@@ -12,10 +12,32 @@
 </div>
 
 
-<div class="dliveryStartButton" type="button" value="開始" onclick="alert_msg()">
-</div>
-<div class="deliveryCompleteButton" type="button" value="配達済" onclick="alert_msg()">
-</div>
+
+<form>
+<input type="text" id="msg" size="50">
+<input class="button" type="button" name="button1" value="開始" onclick="disp(this)">
+<input class="button" type="button" name="button2" value="配送済" onclick="delivered()">
+</form>>
+<script>
+    function disp(lol) {
+        if(window.confirm('OK?')){
+            lol.value="配送中";
+        }
+        else{
+            window.alert('キャンセル');
+        }
+    }
+
+    function delivered() {
+        if(window.confirm('OK?')){
+            location.href = "index.html";
+        }
+        else{
+            window.alert('キャンセル');
+        }
+    }
+</script>
+
 
 
 {% endblock %}

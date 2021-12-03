@@ -4,15 +4,13 @@
     margin-bottom: 30px;
 }
 
-.all{
+input {
     padding: 10px;
-}
-.button{
+  }
+  .button {
     display: inline-block;
-    padding: 0px 10px;
-    background: hsl(42, 100%, 62%);
-    padding: 10px 15px;
-    border-radius: 4px;
-    color: #FFF;
-    text-decoration: none;
-}
+    background-color: #FF3C5F;
+    border: #FF3C5F;
+    color: rgb(124, 55, 55);
+    border-radius: 5px;
+  }
