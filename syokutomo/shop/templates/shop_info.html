@@ -18,23 +18,45 @@
 <p>{{object.t1_tel_number}}</p>
 <p>{{object.t1_shop_discribe}}</p>
 <p>{{object.t1_shop_name_sub}}</p>
+
+
+<p>{% if object.t1_shop_sun %}
+    日曜日
+    {% endif %}
+    {% if object.t1_shop_mon %}
+    月曜日
+    {% endif %}
+    {% if object.t1_shop_tue %}
+    火曜日
+    {% endif %}
+    {% if object.t1_shop_wed %}
+    水曜日
+    {% endif %}
+    {% if object.t1_shop_tru %}
+    木曜日
+    {% endif %}
+    {% if object.t1_shop_fri %}
+    金曜日
+    {% endif %}
+    {% if object.t1_shop_sat %}
+    土曜日
+    {% endif %}
+</p>
+
+
 <p>{% if object.t1_shop_photo_01 %}
     <img src="{{ object.t1_shop_photo_01.url }}" width="200" height="200" />
     {% endif %}
-</p>
-<p>{% if object.t1_shop_photo_02 %}
+    {% if object.t1_shop_photo_02 %}
     <img src="{{ object.t1_shop_photo_02.url }}" width="200" height="200" />
     {% endif %}
-</p>
-<p>{% if object.t1_shop_photo_03 %}
+    {% if object.t1_shop_photo_03 %}
     <img src="{{ object.t1_shop_photo_03.url }}" width="200" height="200" />
     {% endif %}
-</p>
-<p>{% if object.t1_shop_photo_04 %}
+    {% if object.t1_shop_photo_04 %}
     <img src="{{ object.t1_shop_photo_04.url }}" width="200" height="200" />
     {% endif %}
-</p>
-<p>{% if object.t1_shop_photo_05 %}
+    {% if object.t1_shop_photo_05 %}
     <img src="{{ object.t1_shop_photo_05.url }}" width="200" height="200" />
     {% endif %}
 </p>
