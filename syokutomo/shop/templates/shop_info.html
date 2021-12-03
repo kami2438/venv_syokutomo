@@ -46,20 +46,11 @@
     ]</p>
 
 
-<p>店舗画像：{% if object.t1_shop_photo_01 %}
+<p>宣材写真：{% if object.t1_shop_photo_01 %}
     <img src="{{ object.t1_shop_photo_01.url }}" width="200" height="200" />
-    {% endif %}
-    {% if object.t1_shop_photo_02 %}
+</P>{% endif %}
+<P>ヘッダー写真：{% if object.t1_shop_photo_02 %}
     <img src="{{ object.t1_shop_photo_02.url }}" width="200" height="200" />
-    {% endif %}
-    {% if object.t1_shop_photo_03 %}
-    <img src="{{ object.t1_shop_photo_03.url }}" width="200" height="200" />
-    {% endif %}
-    {% if object.t1_shop_photo_04 %}
-    <img src="{{ object.t1_shop_photo_04.url }}" width="200" height="200" />
-    {% endif %}
-    {% if object.t1_shop_photo_05 %}
-    <img src="{{ object.t1_shop_photo_05.url }}" width="200" height="200" />
     {% endif %}
 </p>
 <p>金融機関名：{{object.t1_bank_name}}</p>
