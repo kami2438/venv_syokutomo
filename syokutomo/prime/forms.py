@@ -73,7 +73,7 @@ class Regis_shopForm(forms.ModelForm):
     # t1_start_time = forms.ChoiceField(choices=TIME_CHOICES,queryset=T1_shop.objects)
     # t1_end_time = forms.ChoiceField(choices=TIME_CHOICES,queryset=T1_shop.objects)
     class Meta:
-            TIME_CHOICES = (('00:00:00', '00:00'),('00:30:00', '00:30'),
+        TIME_CHOICES = (('00:00:00', '00:00'),('00:30:00', '00:30'),
 
   ('01:00:00', '01:00'),('01:30:00', '01:30'),
 
