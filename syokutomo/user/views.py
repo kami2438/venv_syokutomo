@@ -45,10 +45,10 @@ class ListView(LoginRequiredMixin, generic.ListView):
     model = T1_shop
     template_name = 'user_shoplist.html'
 
-    def get_queryset(self):
-        users = T1_shop.object.filter(
-            user=self.request.user).order_by('-created_at')
-        return users
+#    def get_queryset(self):
+ #       users = T1_shop.object.filter(
+  #          user=self.request.user).order_by('-created_at')
+   #     return users
 
 
 class user_informationView(LoginRequiredMixin, generic.DetailView):
