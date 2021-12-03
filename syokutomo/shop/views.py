@@ -28,13 +28,13 @@ class MypageView(LoginRequiredMixin,generic.ListView):
 class TermsView(generic.TemplateView):
     template_name = "shop_terms_of_service.html"
 
-#class MerchandiseView(LoginRequiredMixin, generic.MerchandiseView):
-#    model = T1_shop
-#    template_name = 'shop_merchandise.html'
+class MerchandiseView(LoginRequiredMixin, generic.MerchandiseView):
+    model = T1_shop
+    template_name = 'shop_merchandise.html'
 
-#    def get_queryset(self):
-#        users = T1_shop.object.filter(user=self.request.user).order_by('-created_at')
-#        return users
+    def get_queryset(self):
+        users = T1_shop.object.filter(user=self.request.user).order_by('-created_at')
+        return users
 
 class shop_infoView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
