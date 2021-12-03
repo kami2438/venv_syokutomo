@@ -84,14 +84,14 @@ class user_ChargeView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy('user:mypage')
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["T5_user"]=T5_user.objects.get.filter(
+        context["T5_user"]=T5_user.objects.filter(
             user=self.request.user)[0]
         return context
     def form_valid(self, form):
         messages.success(self.request,'チャージされました。')
-        chuser=T5_user.objects.get.filter(
+        chuser=T5_user.objects.filter(
             user=self.request.user)[0]
-        charge=T12_charge.objects.get.all().order_by('-created_at')[0]
+        charge=T12_charge.objects.all().order_by('-created_at')[0]
         n=int(charge.t12_charge_amount)+int(chuser.t5_charge_remain)
         chuser.t5_charge_remain=n
         charge.t12_charge_remain_ex=n
