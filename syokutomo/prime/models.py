@@ -192,7 +192,7 @@ class T11_love(models.Model):
 class T12_charge(models.Model):
     # t12_charge_id=models.CharField(verbose_name='お気に入りID',primary_key=True,max_length=20,validators=[RegexValidator(regex=r"^C[0-9]*$")])
    
-    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=False)
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
     t12_charge_amount=models.PositiveIntegerField(verbose_name='チャージ額',blank=False,default=0)
     t12_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t12_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
