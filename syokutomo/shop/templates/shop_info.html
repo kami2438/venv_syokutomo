@@ -9,18 +9,18 @@
 
 {% block contents %}
 
-<p>{{object.t1_shop_name_prime}}</p>
-<p>{{object.t1_address}}</p>
-<p>{{object.t8_shop_category_id}}</p>
-<p>{{object.t1_start_time}}</p>
-<p>{{object.t1_end_time}}</p>
-<p>{{object.t1_favorite_count}}</p>
-<p>{{object.t1_tel_number}}</p>
-<p>{{object.t1_shop_discribe}}</p>
-<p>{{object.t1_shop_name_sub}}</p>
+<p>店名：{{object.t1_shop_name_prime}}</p>
+<p>住所：{{object.t1_address}}</p>
+<p>カテゴリー：{{object.t8_shop_category_id}}</p>
+<p>注文開始時間：{{object.t1_start_time}}</p>
+<p>注文終了時間：{{object.t1_end_time}}</p>
+<p>お気に入り数：{{object.t1_favorite_count}}</p>
+<p>電話番号：{{object.t1_tel_number}}</p>
+<p>店舗説明：{{object.t1_shop_discribe}}</p>
+<p>サブ店舗名{{object.t1_shop_name_sub}}</p>
 
 
-<p>{% if object.t1_shop_sun %}
+<p>定休日：[{% if object.t1_shop_sun %}
     日曜日
     {% endif %}
     {% if object.t1_shop_mon %}
@@ -41,10 +41,10 @@
     {% if object.t1_shop_sat %}
     土曜日
     {% endif %}
-</p>
+    ]</p>
 
 
-<p>{% if object.t1_shop_photo_01 %}
+<p>店舗画像：{% if object.t1_shop_photo_01 %}
     <img src="{{ object.t1_shop_photo_01.url }}" width="200" height="200" />
     {% endif %}
     {% if object.t1_shop_photo_02 %}
@@ -60,9 +60,10 @@
     <img src="{{ object.t1_shop_photo_05.url }}" width="200" height="200" />
     {% endif %}
 </p>
-<p>{{object.t1_bank_name}}</p>
-<p>{{object.t1_bank_location}}</p>
-<p>{{object.t1_bank_number}}</p>
+<p>金融機関名：{{object.t1_bank_name}}</p>
+<p>支店番号：{{object.t1_bank_location}}</p>
+<p>口座番号：{{object.t1_bank_number}}</p>
+<p>レビュー評価：{{object.t1_review_ave}}</p>
 
 
 <a class="" href="{% url 'shop:shop_update' object.pk %}">変更</a>
