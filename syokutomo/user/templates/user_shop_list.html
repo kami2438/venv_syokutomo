@@ -17,14 +17,14 @@
         <div class="row">
             <div class="my-div-style w-100">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                  {% for user in user_shop_list %}
+                  {% for item in object_list %}
                     <div class="post-preview">
                         <a href="#">
                             <h2 calss="post-title">
-                                {{user.title}}
+                                {{item.title}}
                             </h2>
                             <h3 class="post-subtitle">
-                                {{user.content|truncatechars:20}}
+                                {{item.content|truncatechars:20}}
                             </h3>
                         </a>
                     </div>
