@@ -61,7 +61,7 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
 #     model=T4_food
 #     template_name='food_create.html'
 #     form_class=Food_createform
-#     success_url=reverse_lazy('prime:food_list')
+#     success_url=reverse_lazy('shop:food_list')
 
 #     def form_valid(self,form) :
 #         food_list=form.save(commit=False)
