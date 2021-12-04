@@ -59,7 +59,7 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
 
 # class FoodCreateView(LoginRequiredMixin,generic.CreateView):
 #     model=T4_food
-#     template_name='shop_food_create.html'
+#     template_name='food_create.html'
 #     form_class=Food_createform
 #     success_url=reverse_lazy('prime:food_list')
 
@@ -76,10 +76,14 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
    
 # class FoodListView(LoginRequiredMixin,generic.ListView):
 #     model=T4_food
-#     template_name='shop_food_list.html'
-    
-#     def get_queryset(self) :       
-        
-#         food_q=T4_food.objects.all().order_by('-t4_create_at')
-        
-#         return food_q 
+#     template_name='food_list.html'
+
+
+#     def get_queryset(self) :
+
+#         # ログインしているユーザーとT1_shopテイブルに同じユーザーを選択し、そのidをlistに入れる
+#         t1id=list(T1_shop.objects.filter(user=self.request.user).values_list('id'))
+#         #t1_shop_id__in  list の中にt1_shop_idを取り出します            
+#         food_q=T4_food.objects.filter(t1_shop_id__in=t1id).order_by('t4_create_at')
+            
+#         return food_q
