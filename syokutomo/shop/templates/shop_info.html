@@ -110,6 +110,7 @@
         <td>{{object.t1_bank_number}}</td>
     </tr>
 </table>
-
-<a class="" href="{% url 'shop:shop_update' object.pk %}">変更</a>
+</div class="change_button">
+<a href="{% url 'shop:shop_update' object.pk %}">変更</a>
+</div>
 {% endblock %}
