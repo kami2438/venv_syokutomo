@@ -14,30 +14,44 @@
 
 
 <form>
-<input type="text" id="msg" size="50">
-<input class="button" type="button" name="button1" value="開始" onclick="disp(this)">
-<input class="button" type="button" name="button2" value="配送済" onclick="delivered()">
-</form>>
-<script>
-    function disp(lol) {
-        if(window.confirm('OK?')){
-            lol.value="配送中";
+    <div class="adress">
+    <input type="text" id="msg" size="50">
+    <button class="button" type="button" id="button1" onclick="disp()" disabled>開始</button>
+    <button class="button" type="button" id="button2" onclick="delivered()" disabled>配送完了</button>
+    </div>
+</form>
+    <script>
+        var element;
+        element=document.getElementById("button1");
+        element.disabled = false;
+        function disp() {
+            if(window.confirm('配送を開始しますか?')){
+                var obj = document.getElementById("button1");
+                console.log(obj.textContent)
+                obj.textContent = "配送中";
+            }
+            else{
+                window.alert('キャンセルしました');
+            }
+            obj.disabled=true;
         }
-        else{
-            window.alert('キャンセル');
+    
+    
+        var element2;
+        element2=document.getElementById("button2");
+        element2.disabled = false;
+        function delivered() {
+            if(window.confirm('配送が完了しましたか')){
+                var obj = document.getElementById("button2");
+                console.log(obj.textContent)
+                obj.textContent = "配送済";
+            }
+            else{
+                window.alert('キャンセルしました');
+            }
+            obj.disabled=true;
         }
-    }
-
-    function delivered() {
-        if(window.confirm('OK?')){
-            location.href = "index.html";
-        }
-        else{
-            window.alert('キャンセル');
-        }
-    }
-</script>
-
+    </script>
 
 
 {% endblock %}
