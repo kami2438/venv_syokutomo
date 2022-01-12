@@ -7,31 +7,32 @@
 
 
 {% block contents %}
-    <h1>店舗一覧</h1>
-    <form action="" method="get">
-        <input name="query" value="{{ request.GET.query }}" type="text">
-        <button type="submit">検索する</button>
-    </form>
- 
-    <div class="container">
-        <div class="row">
-            <div class="my-div-style w-100">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                  {% for item in object_list %}
-                    <div class="post-preview">
-                        <a href="#">
-                            <img src="{{item.t1_shop_photo_01.url}}" width="100" height="100"/>
-                            <h2 calss="post-title">
-                                {{item.t1_shop_name_prime}}
-                            </h2>
-                        </a>
-                    </div>
-                    <hr>
-                  {% empty %}
-                    <p>近くにお店がありません</p>
-                  {% endfor %}
+<h1>店舗一覧</h1>
+<form action="" method="get">
+    <input name="query" value="{{ request.GET.query }}" type="text">
+    <button type="submit">検索する</button>
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="my-div-style w-100">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% for item in object_list %}
+                {% for object in object_list %}
+                <div class="post-preview">
+                    <a href="{% url 'user:product' %}">
+                        <img src="{{item.t1_shop_photo_01.url}}" width="100" height="100" />
+                        <h2 calss="post-title">
+                            {{item.t1_shop_name_prime}}
+                        </h2>
+                    </a>
                 </div>
+                {% endfor %}
+                {% empty %}
+                <p>近くにお店がありません</p>
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

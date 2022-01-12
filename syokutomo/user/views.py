@@ -60,47 +60,55 @@ class user_informationView(LoginRequiredMixin, generic.DetailView):
     #     informations = T5_user.objects.filter(user=self.request.user)
     #     return informations
 
+
 class user_updateView(LoginRequiredMixin, generic.UpdateView):
-    model =T5_user
+    model = T5_user
     template_name = 'user_update.html'
     form_class = User_UpdateForm
 
     def get_success_url(self):
-        return reverse_lazy('user:info',kwargs={'pk':self.kwargs['pk']})
+        return reverse_lazy('user:info', kwargs={'pk': self.kwargs['pk']})
 
-    def form_valid(self,form):
-        messages.success(self.request,'更新しました。')
+    def form_valid(self, form):
+        messages.success(self.request, '更新しました。')
         return super().form_valid(form)
 
-    def form_invalid(self,form):
-        messages.error(self.request,"更新に失敗しました。")
+    def form_invalid(self, form):
+        messages.error(self.request, "更新に失敗しました。")
         return super().form_invalid(form)
 
 
 class user_ChargeView(LoginRequiredMixin, generic.CreateView):
-    model =T12_charge
-    form_class=Charge_form
+    model = T12_charge
+    form_class = Charge_form
     template_name = "user_charge.html"
     success_url = reverse_lazy('user:mypage')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["T5_user"]=T5_user.objects.filter(
+        context["T5_user"] = T5_user.objects.filter(
             user=self.request.user)[0]
         return context
+
     def form_valid(self, form):
         # messages.success(self.request,'仮完了')
         print("1")
-        chuser=T5_user.objects.filter(
+        chuser = T5_user.objects.filter(
             user=self.request.user)[0]
-        charge=T12_charge.objects.all().order_by('t12_create_at')[0]
+        charge = T12_charge.objects.all().order_by('t12_create_at')[0]
         # messages.success(self.request,'zzzz')
         print("2")
-        n=int(charge.t12_charge_amount)+int(chuser.t5_charge_remain)
-        chuser.t5_charge_remain=n
-        charge.t12_charge_remain_ex=n
+        n = int(charge.t12_charge_amount)+int(chuser.t5_charge_remain)
+        chuser.t5_charge_remain = n
+        charge.t12_charge_remain_ex = n
         # messages.success(self.request,'djffeijij')
         print("3")
         chuser.save()
         # messages.success(self.request,'チャージされました。')
         print("4")
         return super().form_valid(form)
+
+
+class user_productView(LoginRequiredMixin, generic.TemplateView):
+    model = T1_shop
+    template_name = "user_product.html"
