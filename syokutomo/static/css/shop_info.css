@@ -1,4 +1,4 @@
-design03 {
+.design03 {
   width: 100%;
   text-align: center;
   border-collapse: collapse;
@@ -17,4 +17,12 @@ design03 {
 .v_line_left {
   border-left: thick solid red;
   padding-left: 10px;
+}
+.change_button{
+  color: #fff;
+  background: #677c9b;
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
 }
