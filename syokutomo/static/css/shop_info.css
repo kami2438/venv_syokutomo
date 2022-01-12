@@ -1,5 +1,5 @@
 .design03 {
-  width: 100%;
+  width: 50%;
   text-align: center;
   border-collapse: collapse;
   border-spacing: 0;
@@ -18,9 +18,9 @@
   border-left: thick solid red;
   padding-left: 10px;
 }
-.change_button{
+a {
   color: #fff;
-  background: #677c9b;
+  background: #5876a3;
   padding: 10px 30px;
   display: inline-block;
   border-radius: 5px;
