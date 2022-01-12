@@ -9,8 +9,8 @@
 {% endblock %}
 
 {% block contents %}
-<p>店舗基本情報</p>
-<table>
+<h2 class="v_line_left">店舗基本情報</h2>
+<table class="design03">
     <tr>
         <th>店名</th>
         <td>{{object.t1_shop_name_prime}}</td>
@@ -58,8 +58,8 @@
     </tr>
 </table>
 
-<p>システム店舗情報</p>
-<table>
+<h2 class="v_line_left">システム店舗情報</h2>
+<table class="design03">
     {% if object.t1_shop_photo_01 %}
     <tr>
         <th>宣材写真</th>
@@ -95,8 +95,8 @@
         <td>{{object.t1_favorite_count}}</td>
     </tr>
 </table>
-<p>金融情報</p>
-<table>
+<h2 class="v_line_left">金融情報</h2>
+<table class="design03">
     <tr>
         <th>金融機関名</th>
         <td>{{object.t1_bank_name}}</td>
