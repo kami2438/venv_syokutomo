@@ -1,14 +1,12 @@
-design03 {
-  width: 50%;
-  text-align: center;
-  border-collapse: collapse;
-  border-spacing: 0;
-  border-top: solid 1px #778ca3;
+.design03 {
+  padding: 10px;
 }
 .design03 tr:nth-child(2n + 1) {
   background: #e9faf9;
 }
-.design03 th,
+.design03 th{
+  font-size: 24px;
+}
 .design03 td {
   padding: 10px;
   border-bottom: solid 1px #778ca3;
