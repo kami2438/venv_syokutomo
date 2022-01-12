@@ -1,13 +1,12 @@
 .design03 {
-  padding-left: 10px;
+  padding: 10px;
 }
 .design03 tr:nth-child(2n + 1) {
   background: #e9faf9;
   padding-left: 10px;
 }
 .design03 th{
-  font-size: 30px;
-  border-bottom: solid 3px black;
+  font-size: 24px;
 }
 .design03 td {
   padding: 10px;
@@ -20,7 +19,7 @@
 }
 .change_button {
   color: #fff;
-  background: #5876a3;
+  background: #a2c1ee;
   padding: 10px 30px;
   display: inline-block;
   border-radius: 5px;
