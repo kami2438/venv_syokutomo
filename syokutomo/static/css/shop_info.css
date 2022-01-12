@@ -1,13 +1,13 @@
 .design03 tr:nth-child(2n + 1) {
   background: #e9faf9;
   padding-left: 10px;
+  border-bottom: solid 1px #778ca3;
 }
 .design03 th{
-  font-size: 24px;
+  font-size: 20px;
 }
 .design03 td {
   padding: 10px;
-  border-bottom: solid 1px #778ca3;
 }
 
 .v_line_left {
