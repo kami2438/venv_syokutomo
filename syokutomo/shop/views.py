@@ -150,7 +150,7 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
         shop=T1_shop.objects.filter(user=self.request.user)
         print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
         print(shop)
-        review = T6_review.objects.filter(t1_shop_id=shop)
+        review = T6_review.objects.filter(t1_shop_id=shop.pk)
         print(review)
         print('xxxxxxxxx')
         return review
