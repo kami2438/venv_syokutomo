@@ -1,4 +1,4 @@
-{% extends 'prime_base.html' %}
+{% extends 'shop_base.html' %}
 
 
 {% block title %}{% endblock %}
@@ -15,5 +15,5 @@
                 <button class="btn" type="submit">はい</button>
                 <a class="btn" href="{% url 'prime:food_detail' object.pk %}">いいえ</a>
             </form>
-        
-{% endblock %}
+
+            {% endblock %}

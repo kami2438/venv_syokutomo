@@ -1,4 +1,4 @@
-{% extends 'prime_base.html' %}
+{% extends 'shop_base.html' %}
 
 
 {% block title %}商品詳細{% endblock %}
@@ -10,38 +10,38 @@
     <div class="row">
         <div class="my-div-style">
             <h1>商品詳細</h1>
-           <p>
-            {{ object.t1_shop_id }}
-           </p>
-           <h2>料理名</h2>
-           <p>
-               {{ object.t4_food_name }}
-           </p>
-           <h2>単価</h2>
-           <p>
-               {{ object.t4_price }}
-           </p>
+            <p>
+                {{ object.t1_shop_id }}
+            </p>
+            <h2>料理名</h2>
+            <p>
+                {{ object.t4_food_name }}
+            </p>
+            <h2>単価</h2>
+            <p>
+                {{ object.t4_price }}
+            </p>
             <h2>食材</h2>
             <p>
                 {% for k in object.t4_ingredients %}
-           
-                    {{ k }}
-           
+
+                {{ k }}
+
                 {% endfor %}
             </p>
-           <h2>写真</h2>
-           <p>
-               {{ object.t4_food_photo_01 }}
-           </p>
-           
-            {{ object.updated_at }}
-    </div>
-    <div class="row">
-        <div class="my-div-style">
-            <a class="btn" href="#">編集</a>
-           
-            <a class="btn" href="{% url 'prime:food_delete' object.pk %}">削除</a>
-        </div>
-    </div>
+            <h2>写真</h2>
+            <p>
+                {{ object.t4_food_photo_01 }}
+            </p>
 
-{% endblock %}
+            {{ object.updated_at }}
+        </div>
+        <div class="row">
+            <div class="my-div-style">
+                <a class="btn" href="#">編集</a>
+
+                <a class="btn" href="{% url 'prime:food_delete' object.pk %}">削除</a>
+            </div>
+        </div>
+
+        {% endblock %}
