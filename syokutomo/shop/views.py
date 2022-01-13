@@ -146,3 +146,8 @@ class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CheckReviewView(LoginRequiredMixin, generic.DetailView):
     model = T6_review
     template_name = 'shop_check_review.html'
+    def get_queryset(self):
+        shop=T1_shop.objects.filter(user=self.request.user)
+        review = T6_review.objects.filter(t1_shop_id=shop.id)
+        print('xxxxxxxxx')
+        return review
