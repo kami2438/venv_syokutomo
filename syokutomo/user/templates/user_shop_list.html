@@ -19,9 +19,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 {% for item in object_list %}
                 <div class="post-preview">
-                    {% for object in object_list %}
-                    <a href="{% url 'user:product' object.pk %}">
-                        {% endfor %}
+                    <a href="{% url 'user:product' item.pk %}">
                         <img src="{{item.t1_shop_photo_01.url}}" width="100" height="100" />
                         <h2 calss="post-title">
                             {{item.t1_shop_name_prime}}
