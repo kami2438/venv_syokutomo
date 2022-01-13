@@ -158,4 +158,5 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
         shop=T1_shop.objects.filter(user=self.request.user)
         context = super().get_context_data(**kwargs)
         context["review"]=T6_review.objects.filter(t1_shop_id=shop)
+        print(context["review"])
         return context
