@@ -143,7 +143,7 @@ class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
         return super().form_invalid(form)
 
 
-class CheckReviewView(LoginRequiredMixin, generic.DetailView):
+class CheckReviewView(LoginRequiredMixin, generic.ListView):
     model = T6_review
     template_name = 'shop_check_review.html'
     def get_queryset(self):
