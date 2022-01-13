@@ -78,7 +78,7 @@ class FoodCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        message.error(self.request, '商品追加失敗しました。')
+        messages.error(self.request, '商品追加失敗しました。')
         return super().form_invalid(form)
 
 
