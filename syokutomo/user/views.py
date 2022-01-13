@@ -118,7 +118,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
     model=T12_charge
-    template_name="user_charge_history"
+    template_name="user_charge_history.html"
     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
