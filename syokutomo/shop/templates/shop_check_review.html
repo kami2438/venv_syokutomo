@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block contents %}
-<!-- {% for rev in review %}
+{% for rev in review %}
+{% if shop == rev.t1_shop_id %}
 <p>{{rev.t6_title}}</p>
-{% endfor %} -->
+{% endif %}
+{% endfor %}
 {% endblock %}
