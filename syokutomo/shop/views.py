@@ -160,6 +160,6 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
         # print(T6_review)
         # print(type(T6_review))
         context["review"]=T6_review.objects.all() 
-        context["shop"]=shop[0]
+        context["shop"]=shop
         print(context["shop"])
         return context
