@@ -122,6 +122,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["food"] = T4_food.objects.filter(
             t1_shop_id=self.kwargs['pk'])
+        print(context["food"][0])
         return context
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
@@ -132,5 +133,4 @@ class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         context["history"] = T12_charge.objects.filter(
             user=self.request.user)
-        print(context["history"][0])
         return context
