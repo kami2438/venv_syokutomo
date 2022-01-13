@@ -147,10 +147,11 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
     model = T6_review
     template_name = 'shop_check_review.html'
     def get_queryset(self):
-        shop=T1_shop.objects.filter(user=self.request.user)
-        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
-        print(shop)
-        review = T6_review.objects.filter(t1_shop_id=shop.pk)
+        # shop=T1_shop.objects.filter(user=self.request.user)
+        # print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+        # print(shop)
+        # review = T6_review.objects.filter(t1_shop_id=shop.pk)
+        review =T6_review.objects.filter(t1_shop_id=T1_shop.objects.filter(user=self.request.user))
         print(review)
         print('xxxxxxxxx')
         return review
