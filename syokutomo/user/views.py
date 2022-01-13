@@ -1,3 +1,4 @@
+from re import template
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.postgres import fields
@@ -78,7 +79,7 @@ class user_updateView(LoginRequiredMixin, generic.UpdateView):
         return super().form_invalid(form)
 
 
-class user_ChargeView(LoginRequiredMixin, generic.CreateView):
+class ChargeView(LoginRequiredMixin, generic.CreateView):
     model = T12_charge
     form_class = Charge_form
     template_name = "user_charge.html"
@@ -97,7 +98,7 @@ class user_ChargeView(LoginRequiredMixin, generic.CreateView):
             user=self.request.user)[0]
         print("div")
         # charge = T12_charge.objects.all().order_by('t12_create_at')[0]
-        amount = form.cleaned_data.get('t12_charge_amount')
+        amount=form.cleaned_data.get('t12_charge_amount')
         print(amount)
         # messages.success(self.request,'zzzz')
         print("2")
@@ -115,8 +116,11 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
     template_name = "user_product.html"
 
+class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
+    model=T12_charge
+    template_name="user_charge_history"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["T4_food"] = T4_food.objects.filter(
+        context["history"] = T12_charge.objects.filter(
             user=self.request.user)[0]
         return context

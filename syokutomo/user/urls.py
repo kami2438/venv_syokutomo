@@ -12,6 +12,7 @@ urlpatterns = [
     path('mypage/info/<int:pk>/', views.user_informationView.as_view(), name="info"),
     path('mypage/info/user_update/<int:pk>/',
          views.user_updateView.as_view(), name="user_update"),
-    path('mypage/charge/', views.user_ChargeView.as_view(), name="charge"),
+    path('charge/', views.ChargeView.as_view(), name="charge"),
     path('list/product/<int:pk>/', views.user_productView.as_view(), name="product"),
+    path('mypage/charge_history/',views.ChargeHistoryView.as_view(), name="charge_history")
 ]
