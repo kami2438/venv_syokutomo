@@ -95,12 +95,14 @@ class user_ChargeView(LoginRequiredMixin, generic.CreateView):
         print("1")
         chuser = T5_user.objects.filter(
             user=self.request.user)[0]
-        charge = T12_charge.objects.all().order_by('t12_create_at')[0]
+        print("div")
+        # charge = T12_charge.objects.all().order_by('t12_create_at')[0]
+        amount=form.cleaned_data.get('t12_charge_amount')
+        print(amount)
         # messages.success(self.request,'zzzz')
         print("2")
-        n = int(charge.t12_charge_amount)+int(chuser.t5_charge_remain)
+        n = int(amount)+int(chuser.t5_charge_remain)
         chuser.t5_charge_remain = n
-        charge.t12_charge_remain_ex = n
         # messages.success(self.request,'djffeijij')
         print("3")
         chuser.save()
