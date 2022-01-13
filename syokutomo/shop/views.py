@@ -68,7 +68,7 @@ class FoodCreateView(LoginRequiredMixin, generic.CreateView):
     model = T4_food
     template_name = 'food_create.html'
     form_class = Food_createform
-    success_url = reverse_lazy('shop:food_list')
+    success_url = reverse_lazy('prime:food_list')
 
     def form_valid(self, form):
         food_list = form.save(commit=False)
@@ -78,7 +78,7 @@ class FoodCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, '商品追加失敗しました。')
+        message.error(self.request, '商品追加失敗しました。')
         return super().form_invalid(form)
 
 
@@ -146,18 +146,17 @@ class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CheckReviewView(LoginRequiredMixin, generic.ListView):
     model = T6_review
     template_name = 'shop_check_review.html'
-    # def get_queryset(self):
+    def get_queryset(self):
+        shop=T1_shop.objects.filter(user=self.request.user)
+        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+        print(shop)
+        review = T6_review.objects.filter(t1_shop_id=shop)
+        print(review)
+        print('xxxxxxxxx')
+        return review
+    # def get_context_data(self, **kwargs):
     #     shop=T1_shop.objects.filter(user=self.request.user)
-    #     print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
-    #     print(shop)
-    #     review = T6_review.objects.filter(t1_shop_id=shop.pk)
-    #     print(review)
-    #     print('xxxxxxxxx')
-    #     return review
-
-    def get_context_data(self, **kwargs):
-        shop = T1_shop.objects.filter(user=self.request.user)
-        context = super().get_context_data(**kwargs)
-        context["review"] = T6_review.objects.filter(t1_shop_id=shop)
-        print(context["review"])
-        return context
+    #     context = super().get_context_data(**kwargs)
+    #     context["review"]=T6_review.objects.filter(t1_shop_id=shop)
+    #     print(context["review"])
+    #     return context
