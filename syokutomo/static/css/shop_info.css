@@ -1,12 +1,8 @@
 .design03 tr:nth-child(2n + 1) {
   background: #e9faf9;
 }
-.design03 tr{
-  margin-left: 10px;
-  border-bottom: solid 1px #4e555e;
-}
+
 .design03 th{
-  font-size: 20px;
   border-right:solid 1px #4e555e;
 }
 .design03 td {
@@ -17,11 +13,11 @@
   border-left: thick solid red;
   padding-left: 10px;
 }
-.change_button {
+/*.change_button {
   color: #fff;
   background: #a2c1ee;
   padding: 10px 30px;
   display: inline-block;
   border-radius: 5px;
   text-decoration: none;
-}
+}*/

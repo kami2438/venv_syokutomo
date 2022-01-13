@@ -111,6 +111,6 @@
     </tr>
 </table>
 
-<a class="change_button" href="{% url 'shop:shop_update' object.pk %}">変更</a>
+<button class="change_button" onclick="location.href={% url 'shop:shop_update' object.pk %}">変更</button>
 
 {% endblock %}
