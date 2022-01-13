@@ -77,7 +77,7 @@ class T9_food_category(models.Model):
 class T4_food(models.Model):
  
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=True)
-    t9_food_category_id=models.ForeignKey(T9_food_category,verbose_name='カテゴリー',on_delete=models.PROTECT)
+    t9_food_category_id=models.ForeignKey(T9_food_category,verbose_name='カテゴリー',on_delete=models.CASCADE,null=True)
     # postgresql specific model fields
     t4_ingredients=ArrayField(models.CharField(max_length=300), blank=True,verbose_name='食材',null=True)
 
