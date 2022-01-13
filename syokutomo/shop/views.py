@@ -155,11 +155,11 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
     #     print('xxxxxxxxx')
     #     return review
     def get_context_data(self, **kwargs):
-        shop=T1_shop.objects.filter(user=self.request.user)
+        shop=T1_shop.objects.filter(user=self.request.user)[0]
         context = super().get_context_data(**kwargs)
         # print(T6_review)
         # print(type(T6_review))
         context["review"]=T6_review.objects.all() 
-        context["shop"]=str(shop)
+        context["shop"]=shop[0]
         print(context["shop"])
         return context
