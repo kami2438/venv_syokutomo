@@ -20,4 +20,5 @@ urlpatterns = [
 
 
     path('check_review/', views.CheckReviewView.as_view(), name='check_review'),
+    path('food-create/',views.FoodCreateView.as_view(),name='food_create'),
 ]
