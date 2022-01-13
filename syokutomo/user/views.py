@@ -97,7 +97,7 @@ class user_ChargeView(LoginRequiredMixin, generic.CreateView):
             user=self.request.user)[0]
         print("div")
         # charge = T12_charge.objects.all().order_by('t12_create_at')[0]
-        amount=form.cleaned_data.get('t12_charge_amount')
+        amount = form.cleaned_data.get('t12_charge_amount')
         print(amount)
         # messages.success(self.request,'zzzz')
         print("2")
@@ -114,3 +114,9 @@ class user_ChargeView(LoginRequiredMixin, generic.CreateView):
 class user_productView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
     template_name = "user_product.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["T4_food"] = T4_food.objects.filter(
+            user=self.request.user)[0]
+        return context
