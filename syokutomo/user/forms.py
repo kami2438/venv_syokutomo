@@ -25,4 +25,4 @@ class Charge_form(forms.ModelForm):
     class Meta:
         model = T12_charge
         fields = '__all__'
-        exclude = ['user','t12_create_at']
+        exclude = ['t12_create_at']
