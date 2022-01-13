@@ -93,6 +93,9 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         # messages.success(self.request,'仮完了')
+        charge=form.save(commit=False)
+        charge.user=self.request.user
+        charge.save
         print("1")
         chuser = T5_user.objects.filter(
             user=self.request.user)[0]
