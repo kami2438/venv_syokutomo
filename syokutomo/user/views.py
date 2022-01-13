@@ -132,4 +132,5 @@ class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         context["history"] = T12_charge.objects.filter(
             user=self.request.user)
+        print(context["history"][0])
         return context
