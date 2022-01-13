@@ -8,5 +8,7 @@
 {% endblock %}
 
 {% block contents %}
+{% for object in object_list %}
 <p>{{object.t6_title}}</p>
+{% endfor %}
 {% endblock %}
