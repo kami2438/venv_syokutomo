@@ -1,8 +1,14 @@
+.margin {
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .Banner-image {
   margin-top: -50px;
-  width: 100%;
+  width: 90%;
   height: 300px;
-  object-fit: cover;
+  display: block;
 }
 
 .star5_rating {

@@ -68,7 +68,7 @@ class FoodCreateView(LoginRequiredMixin, generic.CreateView):
     model = T4_food
     template_name = 'food_create.html'
     form_class = Food_createform
-    success_url = reverse_lazy('prime:food_list')
+    success_url = reverse_lazy('shop:food_list')
 
     def form_valid(self, form):
         food_list = form.save(commit=False)
@@ -154,9 +154,10 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
     #     print(review)
     #     print('xxxxxxxxx')
     #     return review
+
     def get_context_data(self, **kwargs):
-        shop=T1_shop.objects.filter(user=self.request.user)
+        shop = T1_shop.objects.filter(user=self.request.user)
         context = super().get_context_data(**kwargs)
-        context["review"]=T6_review.objects.filter(t1_shop_id=shop)
+        context["review"] = T6_review.objects.filter(t1_shop_id=shop)
         print(context["review"])
         return context
