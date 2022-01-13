@@ -118,6 +118,11 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
 class user_productView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
     template_name = "user_product.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["food"] = T4_food.objects.filter(
+            t1_shop_id=self.kwargs['pk'])
+        return context
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
     model=T12_charge
