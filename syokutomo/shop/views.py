@@ -146,12 +146,16 @@ class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CheckReviewView(LoginRequiredMixin, generic.ListView):
     model = T6_review
     template_name = 'shop_check_review.html'
-    def get_queryset(self):
-        # shop=T1_shop.objects.filter(user=self.request.user)
-        # print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
-        # print(shop)
-        # review = T6_review.objects.filter(t1_shop_id=shop.pk)
-        review =T6_review.objects.filter(t1_shop_id=T1_shop.objects.filter(user=self.request.user))
-        print(review)
-        print('xxxxxxxxx')
-        return review
+    # def get_queryset(self):
+    #     shop=T1_shop.objects.filter(user=self.request.user)
+    #     print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+    #     print(shop)
+    #     review = T6_review.objects.filter(t1_shop_id=shop.pk)
+    #     print(review)
+    #     print('xxxxxxxxx')
+    #     return review
+    def get_context_data(self, **kwargs):
+        shop=T1_shop.objects.filter(user=self.request.user)
+        context = super().get_context_data(**kwargs)
+        context["review"]=T6_review.objects.filter(t1_shop_id=shop)
+        return context
