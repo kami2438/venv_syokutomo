@@ -2,8 +2,8 @@
   background: #e9faf9;
 }
 
-.design03 th{
-  border-right:solid 1px #4e555e;
+.design03 th {
+  border-right: solid 1px #4e555e;
 }
 .design03 td {
   padding: 10px;
@@ -21,3 +21,7 @@
   border-radius: 5px;
   text-decoration: none;
 }*/
+
+.img {
+  object-fit: cover;
+}

@@ -63,13 +63,13 @@
     {% if object.t1_shop_photo_01 %}
     <tr>
         <th>宣材写真</th>
-        <td><img src="{{ object.t1_shop_photo_01.url }}" />
+        <td><img class="img" src="{{ object.t1_shop_photo_01.url }}" />
         </td>
     </tr>{% endif %}
     {% if object.t1_shop_photo_02 %}
     <tr>
         <th>ヘッダー写真</th>
-        <td><img src="{{ object.t1_shop_photo_02.url }}" width="600" height="200" />
+        <td><img class="img" src="{{ object.t1_shop_photo_02.url }}" width="600" height="200" />
         </td>
     </tr>{% endif %}
     <tr>
@@ -111,6 +111,6 @@
     </tr>
 </table>
 
-<button class="change_button" onclick="location.href={% url 'shop:shop_update' object.pk %}">変更</button>
+<button class="change_button" onclick=location.href="{% url 'shop:shop_update' object.pk %}">変更</button>
 
 {% endblock %}

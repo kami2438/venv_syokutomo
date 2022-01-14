@@ -9,6 +9,7 @@
   width: 90%;
   height: 300px;
   display: block;
+  object-fit: cover;
 }
 
 .star5_rating {
