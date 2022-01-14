@@ -71,11 +71,9 @@ class FoodCreateView(LoginRequiredMixin,generic.CreateView):
     success_url=reverse_lazy('shop:food_list')
     
     def form_valid(self,form) :
-        food_list=form.save(commit=False)
-        food_list.user=self.request.user
-        t1id=list(T1_shop.objects.filter(user=self.request.user).values_list('id'))
-        food_q=T4_food.objects.filter(t1_shop_id__in=t1id).first()
-        food_list.t1_shop_id=food_q.t1_shop_id
+        food_list=form.save(commit=False)        
+        t1id=T1_shop.objects.filter(user=self.request.user).first()
+        food_list.t1_shop_id=t1id
         food_list.save()
         messages.success(self.request,'商品追加しました。')
         return super().form_valid(form)
