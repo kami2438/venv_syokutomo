@@ -127,20 +127,17 @@ class FoodDeleteView(LoginRequiredMixin, generic.DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = T4_food
-    template_name = 'food_update.html'
-    form_class = Food_createform
-
-    def get_success_url(self):
-        return reverse_lazy('shop:food_detail', kwargs={'pk': self.kwargs['pk']})
-
-    def form_valid(self, form):
-        messages.success(self.request, '商品更新しました。')
+class FoodUpdateView(LoginRequiredMixin,generic.UpdateView):
+    model=T4_food
+    template_name='food_update.html'
+    form_class=Food_createform
+    def get_success_url(self) :        
+        return reverse_lazy('shop:food_detail',kwargs={'t1_shop_id':self.kwargs['pk']})
+    def form_valid(self,form):
+        messages.success(self.request,'商品更新しました。')
         return super().form_valid(form)
-
-    def form_invalid(self, form):
-        messages.error(self.request, '商品更新に失敗しました。')
+    def form_invalid(self, form) :
+        messages.error(self.request,'商品更新に失敗しました。')
         return super().form_invalid(form)
 
 
