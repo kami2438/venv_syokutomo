@@ -5,14 +5,17 @@
 {% block title %}{% endblock %}
 
 {% block header %}
+<link rel="stylesheet" href="{% static 'css/shop_check_review.css' %}">
 {% endblock %}
 
 {% block contents %}
 {% for rev in review %}
 {% if shop == rev.t1_shop_id %}
-<p>{{rev.t6_title}}</p>
-<p>{{rev.t6_star}}</p>
-<p>{{rev.t6_sentence}}</p>
+<div class="framework">
+    <p>{{rev.t6_title}}</p>
+    <span class="star5_rating" data-rate="{{rev.t6_star}}"></span> ({{rev.t6_star}})
+    <p>{{rev.t6_sentence}}</p>
+</div>
 {% endif %}
 {% endfor %}
 
