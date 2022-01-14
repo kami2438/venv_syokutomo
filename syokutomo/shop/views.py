@@ -104,7 +104,7 @@ class FoodListView(LoginRequiredMixin, generic.ListView):
 class FoodDetailView(LoginRequiredMixin, generic.DetailView):
     model = T4_food
     template_name = 'food_detail.html'
-    # ルーティングの変数名、変数はモジュールにある変数
+    # ルーティングの変数名、変数はT$_foodのid
     pk_url_kwarg = 't1_shop_id'
 
     def get_queryset(self):
@@ -149,17 +149,8 @@ class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CheckReviewView(LoginRequiredMixin, generic.ListView):
     model = T6_review
     template_name = 'shop_check_review.html'
-    # def get_queryset(self):
-    #     shop=T1_shop.objects.filter(user=self.request.user)
-    #     print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
-    #     print(shop)
-    #     review = T6_review.objects.filter(t1_shop_id=shop.pk)
-    #     print(review)
-    #     print('xxxxxxxxx')
-    #     return review
     def get_context_data(self, **kwargs):
         shop=T1_shop.objects.filter(user=self.request.user)
         context = super().get_context_data(**kwargs)
         context["review"]=T6_review.objects.filter(t1_shop_id=shop)
-        print(context["review"])
         return context
