@@ -27,15 +27,8 @@ class MypageView(generic.ListView, LoginRequiredMixin):
         print('get')
         informations = T5_user.objects.filter(user=self.request.user)
         informations = informations
-        print(type(self.request.user))
-        print(type(informations))
-        print("--------------------------------")
-        print(vars(informations))
         return informations
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     print(context)
-    #     return context
+
 
 
 class TermsView(generic.TemplateView):
@@ -46,20 +39,13 @@ class ListView(LoginRequiredMixin, generic.ListView):
     model = T1_shop
     template_name = 'user_shop_list.html'
 
-#    def get_queryset(self):
- #       users = T1_shop.object.filter(
-  #          user=self.request.user).order_by('-created_at')
-   #     return users
+
 
 
 class user_informationView(LoginRequiredMixin, generic.DetailView):
     model = T5_user
     template_name = "user_information.html"
-    # pk_url_kwarg = "id"
 
-    # def get_queryset(self):
-    #     informations = T5_user.objects.filter(user=self.request.user)
-    #     return informations
 
 
 class user_updateView(LoginRequiredMixin, generic.UpdateView):
@@ -92,26 +78,18 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
         return context
 
     def form_valid(self, form):
-        # messages.success(self.request,'仮完了')
         charge=form.save(commit=False)
         charge.user=self.request.user
         charge.save
         print("1")
         chuser = T5_user.objects.filter(
             user=self.request.user)[0]
-        print("div")
-        # charge = T12_charge.objects.all().order_by('t12_create_at')[0]
         amount=form.cleaned_data.get('t12_charge_amount')
         print(amount)
-        # messages.success(self.request,'zzzz')
-        print("2")
         n = int(amount)+int(chuser.t5_charge_remain)
         chuser.t5_charge_remain = n
-        # messages.success(self.request,'djffeijij')
         print("3")
         chuser.save()
-        # messages.success(self.request,'チャージされました。')
-        print("4")
         return super().form_valid(form)
 
 
@@ -128,7 +106,6 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
     model=T12_charge
     template_name="user_charge_history.html"
-    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["history"] = T12_charge.objects.filter(
