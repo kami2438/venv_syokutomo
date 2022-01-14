@@ -57,4 +57,5 @@ class shop_updateForm(forms.ModelForm):
 class Food_createform(forms.ModelForm):
     class Meta:
         model=T4_food
-        fields=('t1_shop_id',"t9_food_category_id","t4_ingredients","t4_food_photo_01","t4_price","t4_food_name","t4_food_discribe",)
+        fields=("t9_food_category_id","t4_ingredients","t4_food_photo_01","t4_price","t4_food_name","t4_food_discribe",)
+        exclude=['t1_shop_id']
