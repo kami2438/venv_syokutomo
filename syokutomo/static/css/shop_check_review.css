@@ -4,7 +4,7 @@
   margin-bottom: 20px;
   border: solid;
   width: 80%;
-  height: 500px;
+  min-height: 500px;
   padding-top: 4px;
 }
 
@@ -14,7 +14,7 @@
   display: inline-block;
   white-space: nowrap;
   color: #cccccc; /* グレーカラー 自由に設定化 */
-  /*font-size: 30px; フォントサイズ 自由に設定化 */
+  font-size: 40px; /*フォントサイズ 自由に設定化 */
 }
 
 .star5_rating:before,
@@ -65,3 +65,57 @@
 .star5_rating[data-rate="0"]:after {
   width: 0%;
 } /* 星0 */
+
+.margin-top_20px {
+  margin-top: 20px;
+}
+
+.evaluation_position {
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.rating_position {
+  display: inline-block;
+}
+
+.font-size_35px {
+  font-size: 35px;
+  display: inline-block;
+}
+
+.margin-left_40px {
+  margin-left: 40px;
+}
+
+.margin-left_80px {
+  margin-left: 80px;
+}
+
+.margin-top_40px {
+  margin-top: 40px;
+}
+.margin-left_20px {
+  margin-left: 20px;
+}
+
+.title {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  border: solid;
+  padding-top: 4px;
+  font-size: 25px;
+  overflow-wrap: break-word;
+}
+
+.review_text {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  border: solid;
+  padding-top: 4px;
+  font-size: 25px;
+  overflow-wrap: break-word;
+}
