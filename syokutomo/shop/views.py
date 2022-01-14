@@ -64,22 +64,25 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
         return super().form_invalid(form)
 
 
-class FoodCreateView(LoginRequiredMixin, generic.CreateView):
-    model = T4_food
-    template_name = 'food_create.html'
-    form_class = Food_createform
-    success_url = reverse_lazy('prime:food_list')
-
-    def form_valid(self, form):
-        food_list = form.save(commit=False)
-        food_list.user = self.request.user
+class FoodCreateView(LoginRequiredMixin,generic.CreateView):
+    model=T4_food
+    template_name='food_create.html'
+    form_class=Food_createform
+    success_url=reverse_lazy('shop:food_list')
+    
+    def form_valid(self,form) :
+        food_list=form.save(commit=False)
+        food_list.user=self.request.user
+        t1id=list(T1_shop.objects.filter(user=self.request.user).values_list('id'))
+        food_q=T4_food.objects.filter(t1_shop_id__in=t1id).first()
+        food_list.t1_shop_id=food_q.t1_shop_id
         food_list.save()
-        messages.success(self.request, '商品追加しました。')
+        messages.success(self.request,'商品追加しました。')
         return super().form_valid(form)
-
     def form_invalid(self, form):
-        message.error(self.request, '商品追加失敗しました。')
+        message.error(self.request,'商品追加失敗しました。')
         return super().form_invalid(form)
+
 
 
 class FoodListView(LoginRequiredMixin, generic.ListView):
@@ -150,16 +153,13 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
     #     shop=T1_shop.objects.filter(user=self.request.user)
     #     print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
     #     print(shop)
-    #     review = T6_review.objects.filter(t1_shop_id=shop)
+    #     review = T6_review.objects.filter(t1_shop_id=shop.pk)
     #     print(review)
     #     print('xxxxxxxxx')
     #     return review
     def get_context_data(self, **kwargs):
-        shop=T1_shop.objects.filter(user=self.request.user)[0]
+        shop=T1_shop.objects.filter(user=self.request.user)
         context = super().get_context_data(**kwargs)
-        # print(T6_review)
-        # print(type(T6_review))
-        context["review"]=T6_review.objects.all() 
-        context["shop"]=shop
-        print(context["shop"])
+        context["review"]=T6_review.objects.filter(t1_shop_id=shop)
+        print(context["review"])
         return context
