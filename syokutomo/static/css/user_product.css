@@ -110,3 +110,15 @@
 .detail_table {
   margin-left: 60px;
 }
+
+.main_text {
+  margin-left: 60px;
+  margin-right: 150px;
+  margin-bottom: 20px;
+  padding-top: 4px;
+  overflow-wrap: break-word;
+}
+
+.discribe_font_size {
+  font-size: medium;
+}

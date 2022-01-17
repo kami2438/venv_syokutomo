@@ -58,8 +58,11 @@
 
             </table>
         </h3>
-        <p>店舗説明：<br>
-            {{object.t1_shop_discribe}}</p>
+        {% if object.t1_shop_discribe %}
+        <h3 class="main_text">店舗説明：<br>
+            <div class="discribe_font_size">{{object.t1_shop_discribe}}</div>
+        </h3>
+        {% endif %}
     </div>
 </div>
 {% for dish in food %}
