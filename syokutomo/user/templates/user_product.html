@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}マイページ{% endblock %}
+{% block title %}店舗詳細{% endblock %}
 
 {% block header %}
 <link rel="stylesheet" href="{% static 'css/user_product.css' %}">
@@ -10,48 +10,51 @@
 
 {% block contents %}
 <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" />
-<p>{{object.t1_shop_name_prime}}</p>
-<p>
-    <span class="star5_rating" data-rate="{{object.t1_review_ave}}"></span> ({{object.t1_review_ave}})
-</p>
-<p>営業時間：{{object.t1_start_time}} ～ {{object.t1_end_time}}</p>
-<p>定休日：{% if object.t1_shop_sun %}
-    日曜日
-    {% endif %}
-    {% if object.t1_shop_mon %}
-    月曜日
-    {% endif %}
-    {% if object.t1_shop_tue %}
-    火曜日
-    {% endif %}
-    {% if object.t1_shop_wed %}
-    水曜日
-    {% endif %}
-    {% if object.t1_shop_tru %}
-    木曜日
-    {% endif %}
-    {% if object.t1_shop_fri %}
-    金曜日
-    {% endif %}
-    {% if object.t1_shop_sat %}
-    土曜日
-    {% endif %}
-    年中無休</p>
-<p>住所：{{object.t1_address}}</p>
-<p>カテゴリ：{{object.t8_shop_category_id}}</p>
-<p>店舗説明：{{object.t1_shop_discribe}}</p>
-<p>サブ店舗：{{object.t1_shop_name_sub}}</p>
-<p>電話番号：{{object.t1_tel_number}}</p>
+<div class="Contents">
 
+    <h2 class="shop_name">{{object.t1_shop_name_prime}}</h2>
+    <span class="star5_rating" data-rate="{{object.t1_review_ave}}"></span>
+    {{object.t1_review_ave}}/5
 
-{% for dish in food %}
-<p>{{dish.t4_food_name}}</p>
-<p>{{dish.t9_food_category_id}}</p>
-<p>{{dish.t4_ingredients}}</p>
-<p>{{dish.t4_food_discribe}}</p>
-<img src="{{dish.t4_food_photo_01.url}}" width="100" height="100" />
-{% empty %}
-<p>料理がありません</p>
-{% endfor %}
+    <p>カテゴリ：{{object.t8_shop_category_id}}</p>
 
+    <p>定休日：{% if object.t1_shop_sun %}
+        日曜日
+        {% endif %}
+        {% if object.t1_shop_mon %}
+        月曜日
+        {% endif %}
+        {% if object.t1_shop_tue %}
+        火曜日
+        {% endif %}
+        {% if object.t1_shop_wed %}
+        水曜日
+        {% endif %}
+        {% if object.t1_shop_tru %}
+        木曜日
+        {% endif %}
+        {% if object.t1_shop_fri %}
+        金曜日
+        {% endif %}
+        {% if object.t1_shop_sat %}
+        土曜日
+        {% endif %}
+        年中無休</p>
+    <p>住所：{{object.t1_address}}</p>
+
+    <p>店舗説明：{{object.t1_shop_discribe}}</p>
+    <p>サブ店舗：{{object.t1_shop_name_sub}}</p>
+    <p>電話番号：{{object.t1_tel_number}}</p>
+    <p>営業時間：{{object.t1_start_time}} ～ {{object.t1_end_time}}</p>
+
+    {% for dish in food %}
+    <p>{{dish.t4_food_name}}</p>
+    <p>{{dish.t9_food_category_id}}</p>
+    <p>{{dish.t4_ingredients}}</p>
+    <p>{{dish.t4_food_discribe}}</p>
+    <img src="{{dish.t4_food_photo_01.url}}" width="100" height="100" />
+    {% empty %}
+    <p>料理がありません</p>
+    {% endfor %}
+</div>
 {% endblock %}
