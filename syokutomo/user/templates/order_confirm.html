@@ -1,0 +1,79 @@
+{% extends 'user_base.html' %}
+{% load static %}
+
+{% block title %}最終確認{% endblock %}
+
+
+
+{% block contents %}
+<!-- Button trigger modal -->
+<h1>店舗詳細</h1>
+<div class="contaoner">
+    <div class="my-div-style w-500">
+        <div class="row">
+            <div class="col-3">
+                <h1>商品</h1>
+            </div>
+            
+            <hr>
+
+            <div class="row">
+              <div class="col-3">
+                {% for i in object2 %}
+                    <h1>{{ i.t4_food_name }}</h1>
+                {% endfor %}
+            </div>
+                <div class="col-3">
+                    {% if object.photo1 %}
+                        <img src="{{ object.photo1.url }}"width="200"height="200"/>
+                    {% endif %}
+                </div>
+                <div class="col-3">
+                    {% if object.photo2 %}
+                        <img src="{{ object.photo2.url }}"width="200"height="200"/>
+                    {% endif %}
+                </div>
+                <div class="col-3">
+                    {% if object.photo3 %}
+                        <img src="{{ object.photo3.url }}"width="200"height="200"/>
+                    {% endif %}
+                </div>
+            </div>
+
+          <hr>
+
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#orderlistform">
+    購入
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="orderlistform" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">購入します、よろしいですか？</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>eeeeeeeeeee</p>
+        </div>
+        <div class="modal-footer">
+          <form method="POST" action="{% url 'user:is_bought_page' %}" >
+            {% csrf_token %}
+            {{form.as_table}}
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" >いえ</button>
+            <button type="submit" class="btn btn-primary"  name="test" >はい</button>
+        </form>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
