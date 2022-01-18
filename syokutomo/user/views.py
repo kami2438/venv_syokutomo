@@ -39,7 +39,10 @@ class ListView(LoginRequiredMixin, generic.ListView):
     model = T1_shop
     template_name = 'user_shop_list.html'
     def get_queryset(self):
-        informations = T1_shop.objects.filter(user=self.request.user.area)
+        # print(user)
+        informations = T1_shop.objects.all()
+        print(informations)
+        print(type(informations))
         return informations
 
 
