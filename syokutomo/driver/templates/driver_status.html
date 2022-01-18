@@ -17,40 +17,66 @@
     <div class="adress">
     <input type="text" id="msg" size="50">
     <button class="button" type="button" id="button1" onclick="disp()" disabled>開始</button>
+    <span class="time" id="start_time" >00:00</span>
     <button class="button" type="button" id="button2" onclick="delivered()" disabled>配送完了</button>
+    <span class="time" id="finish_time">00:00</span>
     </div>
 </form>
+
     <script>
         var element;
-        element=document.getElementById("button1");
-        element.disabled = false;
-        function disp() {
-            if(window.confirm('配送を開始しますか?')){
-                var obj = document.getElementById("button1");
-                console.log(obj.textContent)
-                obj.textContent = "配送中";
-            }
-            else{
-                window.alert('キャンセルしました');
-            }
-            obj.disabled=true;
+    element=document.getElementById("button1");
+    element.disabled = false;
+    function disp() {
+        if(window.confirm('配送を開始しますか?')){
+            var obj = document.getElementById("button1");
+            console.log(obj.textContent)
+            obj.textContent = "配送中";
+            
+            var now = document.getElementById("start_time");
+            document.getElementById("start_time").innerHTML = showTime();
+            function showTime() {
+                var now = new Date();
+                var nowhour = now.getHours();
+                if(nowhour<10){
+                    nowhour = "0"+nowhour
+                }
+                var nowminutes = now.getMinutes();
+                if(nowminutes<10){
+                    nowminutes = "0"+nowminutes
+                }
+                var start_time = nowhour + "：" + nowminutes;
+                return start_time;
+  }
         }
-    
-    
-        var element2;
-        element2=document.getElementById("button2");
-        element2.disabled = false;
-        function delivered() {
-            if(window.confirm('配送が完了しましたか')){
-                var obj = document.getElementById("button2");
-                console.log(obj.textContent)
-                obj.textContent = "配送済";
-            }
-            else{
-                window.alert('キャンセルしました');
-            }
-            obj.disabled=true;
+        else{
+            window.alert('キャンセルしました');
         }
+        obj.disabled=true;
+    }
+
+    var element2;
+    element2=document.getElementById("button2");
+    element2.disabled = false;
+    function delivered() {
+        if(window.confirm('配送が完了しましたか')){
+            var obj = document.getElementById("button2");
+            console.log(obj.textContent)
+            obj.textContent = "配送済";
+            document.getElementById("finish_time").innerHTML = showTime();
+            function showTime() {
+                var now = new Date();
+                var nowhour = now.getHours();
+                var nowminutes = now.getMinutes();
+                var finish_time = nowhour + "：" + nowminutes; 
+                return finish_time;
+  }
+        }
+        else{
+            window.alert('キャンセルしました');
+        }
+        obj.disabled=true;
+    }
     </script>
 
 
