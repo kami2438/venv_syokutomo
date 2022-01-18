@@ -15,4 +15,5 @@ urlpatterns = [
     path('charge/', views.ChargeView.as_view(), name="charge"),
     path('list/product/<int:pk>/', views.user_productView.as_view(), name="product"),
     path('mypage/charge_history/',views.ChargeHistoryView.as_view(), name="charge_history")
+    # path('list/product/<int:pk>/order',views.CreateOrderView.as_view(),name="create_order")
 ]
