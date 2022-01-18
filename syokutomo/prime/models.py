@@ -27,7 +27,8 @@ class T8_shop_category(models.Model):
 
 class T1_shop(models.Model):
     #ユーザー別foreignkey
-    user = models.OneToOneField(CustomUser,on_delete=models.CASCADE,null=True)
+    # user = models.OneToOneField(CustomUser,on_delete=models.CASCADE,null=True)
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,null=True)
  
   
 
