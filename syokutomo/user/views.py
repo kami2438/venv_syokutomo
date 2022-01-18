@@ -44,7 +44,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
         # print(informations)
         # print(type(informations))
         for i in informations:
-            print(i)
+            print(i.user.area)
         return informations
 
 
