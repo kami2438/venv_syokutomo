@@ -41,8 +41,10 @@ class ListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         # print(user)
         informations = T1_shop.objects.all()
-        print(informations)
-        print(type(informations))
+        # print(informations)
+        # print(type(informations))
+        for i in informations:
+            print(i)
         return informations
 
 
