@@ -65,14 +65,15 @@
         {% endif %}
     </div>
 </div>
-{% for dish in food %}
-<p>{{dish.t4_food_name}}</p>
-<p>{{dish.t9_food_category_id}}</p>
-<p>{{dish.t4_ingredients}}</p>
-<p>{{dish.t4_food_discribe}}</p>
-<img src="{{dish.t4_food_photo_01.url}}" width="100" height="100" />
-{% empty %}
-<p>料理がありません</p>
-{% endfor %}
-
+<table class="menu">
+    {% for dish in food %}
+    <tr>
+        <td><img src="{{dish.t4_food_photo_01.url}}" width="100" height="100" /><br>
+            <a>{{dish.t4_food_name}}</a>
+        </td>
+    </tr>
+    {% empty %}
+    <p>料理がありません</p>
+    {% endfor %}
+</table>
 {% endblock %}
