@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # use pip install django-import-export to install app   and run  python manage.py collectstatic
     'import_export',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
