@@ -124,11 +124,11 @@
 }
 
 .menu tr:nth-child(2n + 1) {
-  float: left;
-  background-color: #ffcf32;
+  margin-left: 100px;
+  background-color: orange;
 }
 
 .menu tr {
-  float: right;
+  margin-right: 100px;
   background-color: blue;
 }
