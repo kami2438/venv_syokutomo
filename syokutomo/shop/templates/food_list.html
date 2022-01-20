@@ -1,45 +1,39 @@
 {% extends 'shop_base.html' %}
 
 
-{% block title %}商品リスト{% endblock %}
+{% block title %}商品詳細{% endblock %}
 {% block header %}
 {% endblock %}
 {% block contents %}
 
-<div class="container">
-    <div class="row">
-    <h1>商品詳細</h1>
+{% for f in object_list %}
+<div class="ex_pic">
+<div class="food_name">
+    <!--料理名-->
+    <h1>{{ f.t4_food_name }}<h1>
 </div>
-    {% for f in object_list %}
-    <h2>
-        <!--DBから商品名を持ってくる-->
-        {{ f.t1_shop_id }}
-    </h2>
-    
-            <h2>料理名</h2>
-            <p>
-                {{ f.t4_food_name }}
-            </p>
-            <h2>単価</h2>
-            <p>
-                {{ f.t4_price }}
-            </p>
-            <h2>食材</h2>
-            <p>
-                {% for k in f.t4_ingredients %}
+<div class="food_pic">
+    <img src="../static/food_hamburger.png">
+</div>
+</div>
+<div class="ex_block">
+<div class="food_name_ex">
+    <h2>商品名：{{ f.t4_food_name }}</h2>
+    <!--商品説明-->
+    <p>{{ f.t4_food_discribe }}</p>
+</div>
+<div class="money">
+<span class = "en">￥</span>
+<span class="enen">{{ f.t4_food_price }}</span>
+</div>
+<div class="food">
+<h2>使用食材</h2>
+<li>{{ f.t4_ingredients }}</li>
 
-                {{ k }}
-
-                {% endfor %}
-            </p>
-            <h2>写真</h2>
-            <p>
-                {{ f.t4_food_photo_01 }}
-            </p>
+</div>
+</div>
             <!--商品の説明-->
             {% empty %}
             <p>empty</p>
             {% endfor %}
-</div>
-
         {% endblock %}
