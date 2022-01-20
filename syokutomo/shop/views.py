@@ -1,3 +1,4 @@
+from re import T
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.postgres import fields
@@ -64,23 +65,23 @@ class shop_updateView(LoginRequiredMixin, generic.UpdateView):
         return super().form_invalid(form)
 
 
-class FoodCreateView(LoginRequiredMixin,generic.CreateView):
-    model=T4_food
-    template_name='food_create.html'
-    form_class=Food_createform
-    success_url=reverse_lazy('shop:food_list')
-    
-    def form_valid(self,form) :
-        food_list=form.save(commit=False)        
-        t1id=T1_shop.objects.filter(user=self.request.user).first()
-        food_list.t1_shop_id=t1id
-        food_list.save()
-        messages.success(self.request,'商品追加しました。')
-        return super().form_valid(form)
-    def form_invalid(self, form):
-        message.error(self.request,'商品追加失敗しました。')
-        return super().form_invalid(form)
+class FoodCreateView(LoginRequiredMixin, generic.CreateView):
+    model = T4_food
+    template_name = 'food_create.html'
+    form_class = Food_createform
+    success_url = reverse_lazy('shop:food_list')
 
+    def form_valid(self, form):
+        food_list = form.save(commit=False)
+        t1id = T1_shop.objects.filter(user=self.request.user).first()
+        food_list.t1_shop_id = t1id
+        food_list.save()
+        messages.success(self.request, '商品追加しました。')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        message.error(self.request, '商品追加失敗しました。')
+        return super().form_invalid(form)
 
 
 class FoodListView(LoginRequiredMixin, generic.ListView):
@@ -127,17 +128,20 @@ class FoodDeleteView(LoginRequiredMixin, generic.DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class FoodUpdateView(LoginRequiredMixin,generic.UpdateView):
-    model=T4_food
-    template_name='food_update.html'
-    form_class=Food_createform
-    def get_success_url(self) :        
-        return reverse_lazy('shop:food_detail',kwargs={'t1_shop_id':self.kwargs['pk']})
-    def form_valid(self,form):
-        messages.success(self.request,'商品更新しました。')
+class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = T4_food
+    template_name = 'food_update.html'
+    form_class = Food_createform
+
+    def get_success_url(self):
+        return reverse_lazy('shop:food_detail', kwargs={'t1_shop_id': self.kwargs['pk']})
+
+    def form_valid(self, form):
+        messages.success(self.request, '商品更新しました。')
         return super().form_valid(form)
-    def form_invalid(self, form) :
-        messages.error(self.request,'商品更新に失敗しました。')
+
+    def form_invalid(self, form):
+        messages.error(self.request, '商品更新に失敗しました。')
         return super().form_invalid(form)
 
 
@@ -149,9 +153,15 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
     #     context = super().get_context_data(**kwargs)
     #     context["review"]=T6_review.objects.filter(t1_shop_id=shop)
     #     return context
+
     def get_context_data(self, **kwargs):
-        shop=T1_shop.objects.filter(user=self.request.user)[0]
+        shop = T1_shop.objects.filter(user=self.request.user)[0]
         context = super().get_context_data(**kwargs)
-        context["review"]=T6_review.objects.all() 
-        context["shop"]=shop
+        context["review"] = T6_review.objects.all()
+        context["shop"] = shop
         return context
+
+
+class FoodListExView(LoginRequiredMixin, generic.DateDetailView):
+    model = T4_food
+    template_name = 'food_list_ex.html'
