@@ -10,32 +10,33 @@
 
 {% for f in object_list %}
 <div class="ex_pic">
-<div class="food_name">
-    <!--料理名-->
-    <h1>{{ f.t4_food_name }}<h1>
-</div>
-<div class="food_pic">
-    <img src="../static/food_hamburger.png">
-</div>
+    <div class="food_name">
+        <!--料理名-->
+        <h1><a href="{% url 'shop:food_list_ex' f.pk %}"> {{f.t4_food_name }}</a>
+            <h1>
+    </div>
+    <div class=" food_pic">
+        <img src="../static/food_hamburger.png">
+    </div>
 </div>
 <div class="ex_block">
-<div class="food_name_ex">
-    <h2>商品名：{{ f.t4_food_name }}</h2>
-    <!--商品説明-->
-    <p>{{ f.t4_food_discribe }}</p>
-</div>
-<div class="money">
-<span class = "en">￥</span>
-<span class="enen">{{ f.t4_price }}</span>
-</div>
-<div class="food">
-<h2>使用食材</h2>
-<li>{{ f.t4_ingredients }}</li>
+    <div class="food_name_ex">
+        <h2>商品名：{{ f.t4_food_name }}</h2>
+        <!--商品説明-->
+        <p>{{ f.t4_food_discribe }}</p>
+    </div>
+    <div class="money">
+        <span class="en">￥</span>
+        <span class="enen">{{ f.t4_price }}</span>
+    </div>
+    <div class="food">
+        <h2>使用食材</h2>
+        <li>{{ f.t4_ingredients }}</li>
 
+    </div>
 </div>
-</div>
-            <!--商品の説明-->
-            {% empty %}
-            <p>empty</p>
-            {% endfor %}
-        {% endblock %}
+<!--商品の説明-->
+{% empty %}
+<p>empty</p>
+{% endfor %}
+{% endblock %}
