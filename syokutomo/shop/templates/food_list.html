@@ -9,6 +9,7 @@
 {% block contents %}
 
 {% for f in object_list %}
+<div class="block">
 <div class="ex_pic">
     <div class="food_name">
         <!--料理名-->
@@ -34,6 +35,7 @@
         <li>{{ f.t4_ingredients }}</li>
 
     </div>
+</div>
 </div>
 <!--商品の説明-->
 {% empty %}
