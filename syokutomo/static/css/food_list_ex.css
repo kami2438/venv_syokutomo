@@ -9,6 +9,7 @@
     padding-left: 30px;
     padding-top: 100px;
     float: left;
+    overflow: hidden;
 }
 .money .en .enen{
     display: inline-block;
