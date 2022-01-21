@@ -123,12 +123,34 @@
   font-size: medium;
 }
 
-.menu tr:nth-child(2n + 1) {
-  margin-left: 100px;
+/* .menu {
+  margin-left: 1px;
   background-color: orange;
-}
+  float: left;
+  border: solid;
+  overflow: hidden;
+} */
 
-.menu tr {
+/* .menu tr:nth-child(2n) {
   margin-right: 100px;
   background-color: blue;
+  float: left;
+  border: solid;
+  overflow: hidden;
+} */
+
+.menu tr:nth-child(2n) {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid;
+  overflow: hidden;
+  align-items: flex-start;
+}
+
+.menu tr:nth-child(2n + 1) {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid;
+  overflow: hidden;
+  align-items: flex-start;
 }
