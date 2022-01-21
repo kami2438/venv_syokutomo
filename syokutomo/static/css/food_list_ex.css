@@ -4,12 +4,12 @@
 }
 .ex_pic{
     float: left;
-    clear: both;
 }
 .ex_block{
     padding-left: 30px;
     padding-top: 100px;
     float: left;
+    clear: both;
 }
 .money .en .enen{
     display: inline-block;
