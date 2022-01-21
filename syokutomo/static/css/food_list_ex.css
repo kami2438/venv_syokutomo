@@ -4,6 +4,7 @@
 }
 .ex_pic{
     float: left;
+    clear: both;
 }
 .ex_block{
     padding-left: 30px;
