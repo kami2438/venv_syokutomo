@@ -9,7 +9,6 @@
     padding-left: 30px;
     padding-top: 100px;
     float: left;
-    overflow: hidden;
 }
 .money .en .enen{
     display: inline-block;
@@ -19,4 +18,7 @@
 }
 .enen{
     font-size:45px;
+}
+.block{
+    overflow: hidden;
 }
