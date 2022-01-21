@@ -162,6 +162,6 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
         return context
 
 
-class FoodListExView(LoginRequiredMixin, generic.DateDetailView):
+class FoodListExView(LoginRequiredMixin, generic.DetailView):
     model = T4_food
     template_name = 'food_list_ex.html'
