@@ -1,23 +1,9 @@
 .food_name{
-    border-left: thick solid red;
-    padding-left: 15px;
+    font-size: 10px;
 }
-.ex_pic{
-    float: left;
-}
-.ex_block{
-    padding-left: 30px;
-    padding-top: 100px;
-    float: left;
-}
-.money .en .enen{
-    display: inline-block;
-}
-.en{
-    font-size: 22px;
-}
-.enen{
-    font-size:45px;
+img{
+    width:10%;
+    height:auto;
 }
 .block{
     overflow: hidden;
