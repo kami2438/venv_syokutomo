@@ -1,10 +1,10 @@
-.food_name{
-    font-size: 10px;
+.food_name {
+  font-size: 10px;
 }
-img{
-    width:10%;
-    height:auto;
+.food_pic {
+  width: 10%;
+  height: auto;
 }
-.block{
-    overflow: hidden;
+.block {
+  overflow: hidden;
 }
