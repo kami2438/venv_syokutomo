@@ -20,5 +20,5 @@
     font-size:45px;
 }
 .block{
-    clear: both;
+    overflow: hidden;
 }
