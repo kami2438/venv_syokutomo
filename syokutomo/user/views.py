@@ -145,6 +145,6 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
         return super().delete(request, *args, **kwargs)
     def form_valid(self,form):
         user=self.request.user
-        user.delete()
+        user.is_active= False
         user.save()
         return super().form_valid(form)
