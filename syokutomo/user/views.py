@@ -123,3 +123,15 @@ class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
             user=self.request.user)
         return context
 
+class CreateOrderView(LoginRequiredMixin, generic.CreateView):
+    model=T2_order
+    template_name="user_order.html"
+    form_class=Orderform
+    def get_success_url(self):
+        return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+    def form_valid(self, form):
+        order = form.save(commit=False)
+        order.t1_shop_id= self.kwargs['pk']
+        order.save()
+        messages.success(self.request, '注文が登録されました。')
+        return super().form_valid(form)
