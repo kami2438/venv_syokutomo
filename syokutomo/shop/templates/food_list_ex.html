@@ -34,7 +34,8 @@
             {% endfor %}
             <div class="button-block">
                 <div class="change">
-                  <button type="button" id="change-button" onclick="cha()">変更</button>
+                  {% comment %} <button type="button" id="change-button" onclick="cha()">変更</button> {% endcomment %}
+                  <a id="change-button" href="{% url 'shop:food_update' object.pk %}"　onclick="cha()">変更</a>
                 </div>
               <div class ="delete">
                 {% comment %} <button type="button" id="delete-button" onclick="del()">削除</button> {% endcomment %}
