@@ -37,7 +37,7 @@
 <div class="user-mypage-btn">
     {% for object in object_list %}
     <div>
-        <a href="{% url 'user:delete_user' object.pk  %}" class="btn_02_a"><span>退会申し込み</span></a>
+        <a href="{% url 'user:delete_user' object.pk %}" class="btn_02_a"><span>退会申し込み</span></a>
     </div>
     {% endfor %}
 </div>
