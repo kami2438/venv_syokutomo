@@ -16,5 +16,5 @@ urlpatterns = [
     path('list/product/<int:pk>/', views.user_productView.as_view(), name="product"),
     path('mypage/charge_history/',views.ChargeHistoryView.as_view(), name="charge_history"),
     path('list/product/order/<int:pk>/',views.CreateOrderView.as_view(),name="create_order"),
-    path('mypage/delete/<int:pk>/',views.DeleteUserView.as_view(),name="delete_user"),
+    path('mypage/delete/',views.DeleteUserView.as_view(),name="delete_user"),
 ]
