@@ -35,8 +35,8 @@ class T1_shop(models.Model):
     t1_shop_name_prime = models.CharField(verbose_name= '店名',max_length=40,null=False)
     # t10_area_id= models.ForeignKey(t10_area,verbose_name='エリア',on_delete= models.SET_DEFAULT,default='未設定')
     t1_address= models.CharField(verbose_name= '住所',max_length=200,null=False)
-    #null=False 時postgresがt8_shop_category_idテーブルを勝手に作ります,null=Trueに設定する
-    t8_shop_category_id= models.ForeignKey(T8_shop_category,verbose_name='店舗カテゴリ',on_delete=models.CASCADE,null=True)
+    #null=False 時postgresがt8_shop_categoryテーブルを勝手に作ります,null=Trueに設定する
+    t8_shop_category= models.ForeignKey(T8_shop_category,verbose_name='店舗カテゴリ',on_delete=models.CASCADE,null=True)
     t1_shop_sun=models.BooleanField(verbose_name='日曜日',null=True,blank=True)
     t1_shop_mon=models.BooleanField(verbose_name='月曜日',null=True,blank=True)
     t1_shop_tue=models.BooleanField(verbose_name='火曜日',null=True,blank=True)
@@ -78,7 +78,7 @@ class T9_food_category(models.Model):
 class T4_food(models.Model):
  
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=True)
-    t9_food_category_id=models.ForeignKey(T9_food_category,verbose_name='カテゴリー',on_delete=models.CASCADE,null=True)
+    t9_food_category=models.ForeignKey(T9_food_category,verbose_name='カテゴリー',on_delete=models.CASCADE,null=True)
     # postgresql specific model fields
     t4_ingredients=ArrayField(models.CharField(max_length=300), blank=True,verbose_name='食材',null=True)
 
@@ -134,6 +134,8 @@ class T2_order(models.Model):
     t2_week=models.PositiveIntegerField(verbose_name='曜日',blank=False,null=True,validators=[MaxValueValidator(7)],choices=week_cho)
     t2_order_count=models.PositiveIntegerField(verbose_name='残り回数',null=False)
     t2_done=models.BooleanField(verbose_name='詳細注文済みか',null=False,default=False)
+    def __str__(self):
+        return "%s %s %s" % (self.t1_shop_id,self.user,self.t2_create_at)
 
 
 class T7_delivery_man(models.Model):
