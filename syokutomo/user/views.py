@@ -137,3 +137,14 @@ class CreateOrderView(LoginRequiredMixin, generic.CreateView):
         order.save()
         messages.success(self.request, '注文が登録されました。')
         return super().form_valid(form)
+class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
+    model=T5_user
+    template_name="delete_user.html"
+    success_url = reverse_lazy('prime:index')
+    def delete(self, request, *args,**kwargs):
+        return super().delete(request, *args, **kwargs)
+    def form_valid(self,form):
+        user=self.request.user
+        user.delete()
+        user.save()
+        return super().form_valid(form)
