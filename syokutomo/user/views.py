@@ -142,9 +142,16 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
     template_name="delete_user.html"
     success_url = reverse_lazy('prime:index')
     def delete(self, request, *args,**kwargs):
-        return super().delete(request, *args, **kwargs)
-    def form_valid(self,form):
+        print("11")
         user=self.request.user
-        user.is_active= False
+        print("222")
+        user.delete()
+        print("333")
         user.save()
-        return super().form_valid(form)
+        print("4444")
+        return super().delete(request, *args, **kwargs)
+    # def form_valid(self,form):
+    #     user=self.request.user
+    #     user.is_active= False
+    #     user.save()
+    #     return super().form_valid(form)
