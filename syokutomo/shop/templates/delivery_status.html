@@ -9,9 +9,25 @@
 {% endblock %}
 
 {% block contents %}
-<h1 class="margin-left_80px">レビュー確認画面</h1>
-{% for rev in review %}
-{% endfor %}
+
+
+<table>
+    <tr>
+        <th>注文者</th>
+        <th>商品名</th>
+        <th>受渡予定</th>
+        <th>配達状況</th>
+    </tr>
+    {% for object in objectlist %}
+    <tr>
+        <td>{{}}</td>
+        <td>{{}}</td>
+        <td>{{object.t3_delivery_date}}</td>
+        <td>{{object.t3_order_deliver_status}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 
 
 
