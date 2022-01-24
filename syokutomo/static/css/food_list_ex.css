@@ -38,6 +38,8 @@
   margin-top: 300px;
   margin-left: 30px;
   margin-right: 30px;
+  float: right;
+  overflow: hidden;
 }
 #change-button {
   border: 0;
