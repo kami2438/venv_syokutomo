@@ -31,7 +31,33 @@
             <h2>使用食材</h2>
             {% for food in object.t4_ingredients %}
             <li>{{ food }}</li>
-            {% endfor %}
+
+            <div class="button-block">
+                <div class="change">
+                  <button type="button" type="button" id="change-button" onclick="cha()">変更</button>
+                </div>
+              <div class ="delete">
+                <button type="button" type="button" id="delete-button" onclick="del()">削除</button>
+              </div>
+            </div>
+          <script>
+                function cha() {
+                  if(window.confirm('データを変更しますか？')){
+            }
+                  else{
+                      window.alert('キャンセルしました');
+                  }
+                }
+          
+          
+              function del() {
+                  if(window.confirm('データを消去しますか？')){
+            }
+                  else{
+                      window.alert('キャンセルしました');
+                  }
+                }
+              </script>
         </div>
     </div>
 </div>

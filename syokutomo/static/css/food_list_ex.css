@@ -29,3 +29,29 @@
 .enen{
   font-size:45px;
 }
+
+.button-block{
+  margin-top: 300px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#change-button {
+  border: 0;
+  background:rgb(37, 32, 29);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 21px;
+  border: solid black;
+  }
+  
+#delete-button {
+  margin-top: 10px;
+  border: 0;
+  background: rgb(37, 32, 29);
+  color: rgb(214, 23, 23);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 21px;
+  border: solid black;
+  }
