@@ -80,7 +80,7 @@ class FoodCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        message.error(self.request, '商品追加失敗しました。')
+        messages.error(self.request, '商品追加失敗しました。')
         return super().form_invalid(form)
 
 
@@ -134,7 +134,7 @@ class FoodUpdateView(LoginRequiredMixin, generic.UpdateView):
     form_class = Food_createform
 
     def get_success_url(self):
-        return reverse_lazy('shop:food_detail', kwargs={'t1_shop_id': self.kwargs['pk']})
+        return reverse_lazy('shop:food_list_ex', kwargs={'pk': self.kwargs['pk']})
 
     def form_valid(self, form):
         messages.success(self.request, '商品更新しました。')
