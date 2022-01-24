@@ -33,4 +33,4 @@ class Orderform(forms.ModelForm):
     class Meta:
         model =T2_order
         fields='__all__'
-        exclude=['user','t2_create_at','t1_shop_id']
+        exclude=['user','t2_create_at','t1_shop_id','t2_done']

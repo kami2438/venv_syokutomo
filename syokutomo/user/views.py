@@ -133,6 +133,7 @@ class CreateOrderView(LoginRequiredMixin, generic.CreateView):
         order = form.save(commit=False)
         shoppk=self.kwargs['pk']
         order.t1_shop_id= T1_shop.objects.filter(id=shoppk)[0]
+        order.user = self.request.user
         order.save()
         messages.success(self.request, '注文が登録されました。')
         return super().form_valid(form)
