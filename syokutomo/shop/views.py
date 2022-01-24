@@ -1,4 +1,4 @@
-from re import T
+from re import T, template
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.postgres import fields
@@ -165,3 +165,8 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
 class FoodListExView(LoginRequiredMixin, generic.DetailView):
     model = T4_food
     template_name = 'food_list_ex.html'
+
+
+# class DeliveryStatusView(LoginRequiredMixin, generic.ListView):
+#     model = T3_order_detail
+#     template_name = 'delivery_status.html'

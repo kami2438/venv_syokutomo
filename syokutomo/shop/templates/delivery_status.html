@@ -1,0 +1,18 @@
+{% extends 'shop_base.html' %}
+
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/shop_check_review.css' %}">
+{% endblock %}
+
+{% block contents %}
+<h1 class="margin-left_80px">レビュー確認画面</h1>
+{% for rev in review %}
+{% endfor %}
+
+
+
+{% endblock %}

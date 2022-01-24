@@ -17,11 +17,10 @@ urlpatterns = [
          views.FoodDetailView.as_view(), name='food_detail'),
     path('food-update/<int:pk>/', views.FoodUpdateView.as_view(), name='food_update'),
     path('food-delete/<int:pk>/', views.FoodDeleteView.as_view(), name='food_delete'),
-
-
     path('check_review/', views.CheckReviewView.as_view(), name='check_review'),
     path('food-create/', views.FoodCreateView.as_view(), name='food_create'),
-
     path('food_list_ex/<int:pk>/',
          views.FoodListExView.as_view(), name='food_list_ex'),
+    #     path('delivery_status/<int:pk>/',
+    #          views.DeliveryStatusView.as_view(), name='delivery_status'),
 ]
