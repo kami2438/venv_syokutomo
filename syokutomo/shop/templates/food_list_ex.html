@@ -34,10 +34,11 @@
             {% endfor %}
             <div class="button-block">
                 <div class="change">
-                  <button type="button" type="button" id="change-button" onclick="cha()">変更</button>
+                  <button type="button" id="change-button" onclick="cha()">変更</button>
                 </div>
               <div class ="delete">
-                <button type="button" type="button" id="delete-button" onclick="del()">削除</button>
+                {% comment %} <button type="button" id="delete-button" onclick="del()">削除</button> {% endcomment %}
+                <a id="delete-button" href="{% url 'shop:food_delete' object.pk %}"　onclick="del()">削除</a>
               </div>
             </div>
           <script>
@@ -48,8 +49,6 @@
                       window.alert('キャンセルしました');
                   }
                 }
-          
-          
               function del() {
                   if(window.confirm('データを消去しますか？')){
             }
