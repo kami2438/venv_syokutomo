@@ -27,3 +27,25 @@ body{
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.plus img{
+  width:150px;
+  height: 150px
+}
+.new_block {
+  overflow: hidden;
+
+  border: solid black;
+  border-radius: 10px;
+
+  display: inline-block;/*横並び*/
+
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+
+  padding-left: 110px;
+  padding-right: 110px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
