@@ -131,7 +131,8 @@ class CreateOrderView(LoginRequiredMixin, generic.CreateView):
         return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
     def form_valid(self, form):
         order = form.save(commit=False)
-        order.t1_shop_id= self.kwargs['pk']
+        shoppk=self.kwargs['pk']
+        order.t1_shop_id= T1_shop.objects.filter(id=shoppk)[0]
         order.save()
         messages.success(self.request, '注文が登録されました。')
         return super().form_valid(form)
