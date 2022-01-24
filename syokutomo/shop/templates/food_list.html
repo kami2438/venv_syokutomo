@@ -25,27 +25,27 @@
 
     <div class="block">
         <a href="{% url 'shop:food_list_ex' f.pk %}" target="_blank" rel="noopener noreferrer">
-    <div class="food_name">
-      <h1>{{f.t4_food_name }}<h1>
-    </div>
-    <div class="food_pic">
-        <img src="{{ f.t4_food_photo_01.url }}" />
-    </div>
-    </a>
+            <div class="food_name">
+                <h1>{{f.t4_food_name }}<h1>
+            </div>
+            <div class="food_pic">
+                <img src="{{ f.t4_food_photo_01.url }}" />
+            </div>
+        </a>
     </div>
 
 
     {% empty %}
     <p>empty</p>
     {% endfor %}
-    
+
     <div class="new_block">
-        <a href="{% url 'shop:food_create' object.pk %}" target="_blank" rel="noopener noreferrer">
-        <div class="food_name">
-        <h1>新規作成<h1>
-        </div>
-        <div class="plus">
-            <img src="../static/img/logo.png">
-        </div>
-        </div>
+        <a href="{% url 'shop:food_create' %}" target="_blank" rel="noopener noreferrer">
+            <div class="food_name">
+                <h1>新規作成<h1>
+            </div>
+            <div class="plus">
+                <img src="../static/img/logo.png">
+            </div>
+    </div>
     {% endblock %}
