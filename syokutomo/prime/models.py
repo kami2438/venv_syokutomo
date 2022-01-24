@@ -94,7 +94,7 @@ class T4_food(models.Model):
         return "%s " % (self.t4_food_name)
 
 class T5_user(models.Model):
-    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT)
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE)
     charge_choose=[(1,'銀行'),(0,'クレジットカード')]
 
     # t5_user_id=models.CharField(verbose_name='ユーザーID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
