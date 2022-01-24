@@ -3,6 +3,10 @@
   overflow: hidden;
   margin-left: 25px;
 }
+.food_pic img{
+  width: 500px;
+  height: auto;
+}
 .food_name{
   border-left: thick solid red;
   padding-left: 15px;
