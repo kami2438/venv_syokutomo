@@ -127,7 +127,6 @@ class T2_order(models.Model):
     # t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
     week_cho=[(1,"日"),(2,"月"),(3,"火"),(4,"水"),(5,"木"),(6,"金"),(7,"土")]
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=True,blank=True)
-    t5_user_id=models.ForeignKey(T5_user,verbose_name='ユーザー',max_length=10,null=True,on_delete=models.CASCADE )
     t2_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
     t2_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t2_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
