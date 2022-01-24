@@ -60,7 +60,7 @@ class Food_createform(forms.ModelForm):
         self.fields['t4_ingredients'].delimiter = '、'
     class Meta:
         model=T4_food
-        fields=("t9_food_category_id","t4_ingredients","t4_food_photo_01","t4_price","t4_food_name","t4_food_discribe",)
+        fields=("t4_food_name","t4_price","t9_food_category_id","t4_ingredients","t4_food_photo_01","t4_food_discribe",)
         exclude=['t1_shop_id']
         help_texts={
             't4_ingredients':"例）たまご、かに、なす　のように区切りに読点を使ってください"
