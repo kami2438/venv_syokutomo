@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # use pip install django-import-export to install app   and run  python manage.py collectstatic
     'import_export',
     'mathfilters',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -197,3 +198,6 @@ ACCOUNT_ADAPTER = 'accounts.adapters.MyCrmAdapter'
 
 MEDIA_URL = '/img/'
 MEDIA_ROOT = BASE_DIR
+
+NUMBER_GROUPING = 3
+# カンマで桁区切りする桁
