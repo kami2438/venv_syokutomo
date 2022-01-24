@@ -139,7 +139,7 @@
   overflow: hidden;
 } */
 
-.menu tr:nth-child(2n) {
+/* .menu tr:nth-child(2n) {
   display: flex;
   flex-wrap: wrap;
   border: solid;
@@ -153,4 +153,37 @@
   border: solid;
   overflow: hidden;
   align-items: flex-start;
+} */
+
+body{
+  width:99%; /*ページ全体の幅は100%と指定する*/	
+  text-align:center; /*ページ全体を中央揃えにする*/
+}
+.food_name{
+  font-size: 10px;
+}
+img{
+  width:170px;
+  height: 150px;
+}
+.block {
+  overflow: hidden;
+
+  border: solid black;
+  border-radius: 10px;
+
+  display: inline-block;/*横並び*/
+
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+a{
+  display: block;
 }
