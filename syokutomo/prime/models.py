@@ -69,7 +69,7 @@ class T1_shop(models.Model):
 class T9_food_category(models.Model):
  
 
-    t9_food_category_name=models.CharField(verbose_name='カテゴリ名',max_length=40,blank=True,null=False)
+    t9_food_category_name=models.CharField(verbose_name='食品カテゴリ名',max_length=40,blank=True,null=False)
     t9_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t9_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     def __str__(self):
@@ -77,12 +77,12 @@ class T9_food_category(models.Model):
 
 class T4_food(models.Model):
  
-    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=True)
+    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',max_length=10,on_delete=models.CASCADE,null=True)
     t9_food_category_id=models.ForeignKey(T9_food_category,verbose_name='カテゴリー',on_delete=models.CASCADE,null=True)
     # postgresql specific model fields
     t4_ingredients=ArrayField(models.CharField(max_length=300), blank=True,verbose_name='食材',null=True)
 
-    t4_food_photo_01=models.ImageField(verbose_name='写真01',blank=True,null=True)
+    t4_food_photo_01=models.ImageField(verbose_name='写真',blank=True,null=True)
 
     t4_price=models.PositiveIntegerField(verbose_name='単価',null=False,blank=False)
     t4_food_name=models.CharField(verbose_name='料理名',max_length=40,null=False,blank=False)
@@ -99,8 +99,8 @@ class T5_user(models.Model):
 
     # t5_user_id=models.CharField(verbose_name='ユーザーID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^U[0-9]*$")])
 
-    t5_user_firstname=models.CharField(verbose_name='顧客姓',max_length=30,blank=False)
-    t5_user_lastname=models.CharField(verbose_name='顧客名',max_length=30,blank=False)
+    t5_user_firstname=models.CharField(verbose_name='姓',max_length=30,blank=False)
+    t5_user_lastname=models.CharField(verbose_name='名',max_length=30,blank=False)
     # t10_area_id=models.ForeignKey(t10_area,verbose_name='エリア',null=False,on_delete=models.SET_DEFAULT,default=120)
     t5_address=models.CharField(verbose_name='住所',max_length=70)
     # t5_post=models.CharField(verbose_name='郵便番号',max_length=7,validators=[RegexValidator(regex=r"^F[0-9]*$")])
@@ -127,7 +127,7 @@ class T2_order(models.Model):
     # t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.PROTECT,null=True)
     week_cho=[(1,"日"),(2,"月"),(3,"火"),(4,"水"),(5,"木"),(6,"金"),(7,"土")]
-    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',max_length=10,on_delete=models.CASCADE,null=True,blank=True)
+    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',max_length=10,on_delete=models.CASCADE,null=True,blank=True)
     t2_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
     t2_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t2_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
@@ -163,22 +163,22 @@ class T7_delivery_man(models.Model):
 class T3_order_detail(models.Model):
     # t3_order_detail_id=models.CharField(verbose_name='注文詳細ID',primary_key=True,max_length=20, validators=[RegexValidator(regex=r"^OD[0-9]*$")])
 
-    t2_order_id=models.ForeignKey(T2_order,verbose_name='注文ID',null=True,on_delete=models.CASCADE )
-    t4_food_id=models.ForeignKey(T4_food,verbose_name='料理ID',on_delete=models.CASCADE ,null=True)
+    t2_order_id=models.ForeignKey(T2_order,verbose_name='注文',null=True,on_delete=models.CASCADE )
+    t4_food_id=models.ForeignKey(T4_food,verbose_name='料理',on_delete=models.CASCADE ,null=True)
     t3_amount=models.PositiveIntegerField(verbose_name='数量',default=1,null=False)
     t3_delivery_date=models.DateTimeField(verbose_name='配達予定時刻' ,null=False)
     t3_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
     t3_payment=models.PositiveIntegerField(verbose_name='料金',null=False )
     t3_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t3_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員ID',on_delete=models.CASCADE )
+    t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員',on_delete=models.CASCADE )
     t3_order_deliver_status=models.PositiveIntegerField(verbose_name='配送状態',null=False,validators=[MaxValueValidator(1)])
 
 
 class T6_review(models.Model):
     # t6_review_id=models.CharField(verbose_name='レビューID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^R[0-9]*$")])
    
-    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='ユーザーID',on_delete=models.CASCADE,null=True)
+    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店',on_delete=models.CASCADE,null=True)
     t6_star=models.PositiveSmallIntegerField(verbose_name='星',validators=[MaxValueValidator(5),MinValueValidator(1)])
     t6_title=models.CharField(verbose_name='タイトル',max_length=40,null=True,blank=True)
     t6_sentence=models.TextField(verbose_name='本文',max_length=400,null=True,blank=True)
@@ -190,8 +190,8 @@ class T6_review(models.Model):
 class T11_love(models.Model):
     # t11_love_id=models.CharField(verbose_name='お気に入りID',primary_key=True,max_length=20,validators=[RegexValidator(regex=r"^L[0-9]*$")])
     # id=models.AutoField(primary_key=True)
-    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗ID',on_delete=models.CASCADE,null=True)
-    t5_user_id=models.ForeignKey(T5_user,verbose_name='ユーザーID',on_delete=models.CASCADE,null=True)
+    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',on_delete=models.CASCADE,null=True)
+    t5_user_id=models.ForeignKey(T5_user,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
     t11_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t11_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
 class T12_charge(models.Model):
@@ -205,7 +205,7 @@ class T12_charge(models.Model):
 class T13_inquiry(models.Model):
      # t13_inquiry_id=models.CharField(verbose_name='お問い合わせID',primary_key=True,max_length=13,validators=[RegexValidator(regex=r"^I[0-9]*$")])
    
-    t13_title=models.CharField(verbose_name='題名',max_length=30,blank=False)
+    t13_title=models.CharField(verbose_name='タイトル',max_length=30,blank=False)
     t13_sentence=models.TextField(verbose_name='内容',max_length=400,blank=False)
     t13_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t13_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
