@@ -1,4 +1,7 @@
+from dataclasses import field
 from django import forms
+
+from syokutomo.prime.models import T2_order
 from .models import *
 
 
@@ -26,3 +29,9 @@ class Charge_form(forms.ModelForm):
         model = T12_charge
         fields = '__all__'
         exclude = ['user','t12_create_at']
+
+class Orderform(forms.ModelForm):
+    class Meta:
+        model =T2_order
+        fields='__all__'
+        exclude=['user','t2_create_at','t1_shop_id']
