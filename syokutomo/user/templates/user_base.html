@@ -124,3 +124,12 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
+
+{% if user.id==None %}
+<script>
+    window.onload = function MoveCheck() {
+
+    window.location.href = "{% url 'prime:index' %}";}
+
+</script>
+{% endif %}
