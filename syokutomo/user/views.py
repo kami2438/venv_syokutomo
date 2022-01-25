@@ -152,16 +152,10 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
         return reverse('prime:index')
 
     def delete(self, request, *args, **kwargs):
-        print("11")
+
         user = self.request.user
-        print("222")
-        print(user)
         user.is_active=False
-        print("333")
-        print(user)
         user.save()
-        print("4444")
-        print(user)
         return super().delete(request, *args, **kwargs)
     # def form_valid(self,form):
     #     user=self.request.user
