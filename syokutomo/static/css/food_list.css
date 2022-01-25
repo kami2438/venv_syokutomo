@@ -1,5 +1,5 @@
 
-body{
+.all-block{
   width:100%; 
   text-align:center; 
   }
@@ -12,6 +12,7 @@ body{
 .food_pic img{
   width:170px;
   height: 150px;
+  margin-bottom: 10px;
 }
 .block {
   overflow: hidden;
