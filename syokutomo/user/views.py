@@ -110,8 +110,15 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["food"] = T4_food.objects.filter(
             t1_shop_id=self.kwargs['pk'])
-        print(context["food"][0].t9_food_category_id)
+
+        context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+        print(context["like"])
         return context
+    def like(self,request):
+        if request.method == 'POST':
+            if 'like_button' in request.POST:
+                pass
+
 
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
