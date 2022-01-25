@@ -6,6 +6,7 @@
 .food_name{
   font-size: 10px;
   width: 200px;
+  height: 40px;
 }
 .food_pic img{
   width:170px;
