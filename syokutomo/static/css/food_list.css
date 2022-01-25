@@ -4,9 +4,10 @@
   text-align:center; 
   } */
 .food_name{
-  font-size: 7px;
-  width: 200px;
-  height: 40px;
+  width: 275px;
+  height: 80px;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 .food_pic img{
   width:170px;

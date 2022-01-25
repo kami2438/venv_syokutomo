@@ -26,7 +26,7 @@
     <div class="block">
         <a href="{% url 'shop:food_list_ex' f.pk %}" target="_blank" rel="noopener noreferrer">
             <div class="food_name">
-                <h1>{{f.t4_food_name }}<h1>
+                <b>{{f.t4_food_name }}</b>
             </div>
             <div class="food_pic">
                 <img src="{{ f.t4_food_photo_01.url }}" />
@@ -42,7 +42,7 @@
     <div class="new_block">
         <a href="{% url 'shop:food_create' %}" target="_blank" rel="noopener noreferrer">
             <div class="food_name">
-                <h1>新規作成<h1>
+                <b>新規作成</b>
             </div>
             <div class="plus">
                 <img src="../static/img/logo.png">
