@@ -149,7 +149,7 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
     # success_url = reverse_lazy('user:index')
 
     def get_success_url(self):
-        return reverse('user:index')
+        return reverse('prime:index')
 
     def delete(self, request, *args, **kwargs):
         print("11")
