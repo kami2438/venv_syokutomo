@@ -191,7 +191,7 @@ class T11_love(models.Model):
     # t11_love_id=models.CharField(verbose_name='お気に入りID',primary_key=True,max_length=20,validators=[RegexValidator(regex=r"^L[0-9]*$")])
     # id=models.AutoField(primary_key=True)
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',on_delete=models.CASCADE,null=True)
-    t5_user_id=models.ForeignKey(T5_user,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
     t11_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t11_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
 class T12_charge(models.Model):
