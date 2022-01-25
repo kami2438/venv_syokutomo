@@ -36,12 +36,14 @@
 }
 
 .button-block{
+  float: left;
   margin-top: 300px;
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
-.change-button {
+.change {
   border: 0;
   background:rgb(37, 32, 29);
   color: white;
@@ -51,7 +53,7 @@
   border: solid black;
   }
   
-.delete-button {
+.delete {
   margin-top: 50px;
   border: 0;
   background: rgb(37, 32, 29);
