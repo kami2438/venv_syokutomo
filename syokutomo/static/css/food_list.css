@@ -18,6 +18,8 @@ body{
 .block {
   overflow: hidden;
 
+  background-color: white;
+
   border: solid black;
   border-radius: 10px;
 
@@ -47,6 +49,8 @@ body{
   display: inline-block;/*横並び*/
 
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+
+  background-color: white;
 
   padding-left: 110px;
   padding-right: 110px;
