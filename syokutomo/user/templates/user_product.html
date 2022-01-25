@@ -10,6 +10,21 @@
 
 {% block contents %}
 <div class="orderbutton"><a href="{% url 'user:create_order' object.pk %}" class="btn_02_a"><span>注文</span></a></div>
+
+{% if like %}
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit"><img src="{% static 'syokutomo/static/img/likea.jpeg ' %}" alt="">ボタン</button>
+</form>
+{% else %}
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit"><img src="{% static 'syokutomo/static/img/likeb.jpeg ' %}" alt="">ボタン</button>
+</form>
+{% endif %}
+
+
+
 <div class="imggg">
     <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" />
 
@@ -19,7 +34,7 @@
             <div class="star5_rating" data-rate="{{object.t1_review_ave}}"></div>{{object.t1_review_ave}}/5
         </h5>
         <h3>
-            <table class="detail_table">
+            <table class="detail_table">♡
                 <tr>
                     <td>カテゴリ：{{object.t8_shop_category_id}}</td>
                     <td>&emsp;&emsp;&emsp;&emsp;&emsp;</td>
