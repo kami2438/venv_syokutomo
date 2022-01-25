@@ -30,7 +30,6 @@ class MypageView(generic.ListView, LoginRequiredMixin):
         return informations
 
 
-
 class TermsView(generic.TemplateView):
     template_name = "user_terms.html"
 
@@ -38,9 +37,11 @@ class TermsView(generic.TemplateView):
 class ListView(LoginRequiredMixin, generic.ListView):
     model = T1_shop
     template_name = 'user_shop_list.html'
+
     def get_queryset(self):
         # print(user)
-        informations = T1_shop.objects.filter(user__area=self.request.user.area)
+        informations = T1_shop.objects.filter(
+            user__area=self.request.user.area)
         # print(informations)
         # print(type(informations))
         # l=[]
@@ -51,12 +52,9 @@ class ListView(LoginRequiredMixin, generic.ListView):
         return informations
 
 
-
-
 class user_informationView(LoginRequiredMixin, generic.DetailView):
     model = T5_user
     template_name = "user_information.html"
-
 
 
 class user_updateView(LoginRequiredMixin, generic.UpdateView):
@@ -89,13 +87,13 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
         return context
 
     def form_valid(self, form):
-        charge=form.save(commit=False)
-        charge.user=self.request.user
+        charge = form.save(commit=False)
+        charge.user = self.request.user
         charge.save
         print("1")
         chuser = T5_user.objects.filter(
             user=self.request.user)[0]
-        amount=form.cleaned_data.get('t12_charge_amount')
+        amount = form.cleaned_data.get('t12_charge_amount')
         print(amount)
         n = int(amount)+int(chuser.t5_charge_remain)
         chuser.t5_charge_remain = n
@@ -107,6 +105,7 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
 class user_productView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
     template_name = "user_product.html"
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["food"] = T4_food.objects.filter(
@@ -114,38 +113,47 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         print(context["food"][0].t9_food_category_id)
         return context
 
+
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
-    model=T12_charge
-    template_name="user_charge_history.html"
+    model = T12_charge
+    template_name = "user_charge_history.html"
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["history"] = T12_charge.objects.filter(
             user=self.request.user)
         return context
 
+
 class CreateOrderView(LoginRequiredMixin, generic.CreateView):
-    model=T2_order
-    template_name="user_order.html"
-    form_class=Orderform
+    model = T2_order
+    template_name = "user_order.html"
+    form_class = Orderform
+
     def get_success_url(self):
         return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+
     def form_valid(self, form):
         order = form.save(commit=False)
-        shoppk=self.kwargs['pk']
-        order.t1_shop_id= T1_shop.objects.filter(id=shoppk)[0]
+        shoppk = self.kwargs['pk']
+        order.t1_shop_id = T1_shop.objects.filter(id=shoppk)[0]
         order.user = self.request.user
         order.save()
         messages.success(self.request, '注文が登録されました。')
         return super().form_valid(form)
+
+
 class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
-    model=T5_user
-    template_name="delete_user.html"
+    model = T5_user
+    template_name = "delete_user.html"
     # success_url = reverse_lazy('user:index')
+
     def get_success_url(self):
         return reverse('user:index')
-    def delete(self, request, *args,**kwargs):
+
+    def delete(self, request, *args, **kwargs):
         print("11")
-        user=self.request.user
+        user = self.request.user
         print("222")
         print(user)
         user.delete()
@@ -160,3 +168,8 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
     #     user.is_active= False
     #     user.save()
     #     return super().form_valid(form)
+
+
+class FoodDetailView(LoginRequiredMixin, generic.DetailView):
+    model = T4_food
+    template_name = "user_food_detail.html"
