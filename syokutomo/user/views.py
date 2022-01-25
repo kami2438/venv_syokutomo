@@ -140,15 +140,18 @@ class CreateOrderView(LoginRequiredMixin, generic.CreateView):
 class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
     model=T5_user
     template_name="delete_user.html"
-    success_url = reverse_lazy('prime:index')
+    success_url = reverse_lazy('user:index')
     def delete(self, request, *args,**kwargs):
         print("11")
         user=self.request.user
         print("222")
+        print(user)
         user.delete()
         print("333")
+        print(user)
         user.save()
         print("4444")
+        print(user)
         return super().delete(request, *args, **kwargs)
     # def form_valid(self,form):
     #     user=self.request.user
