@@ -156,7 +156,7 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
         user = self.request.user
         print("222")
         print(user)
-        user.delete()
+        user.is_active=False
         print("333")
         print(user)
         user.save()

@@ -125,7 +125,7 @@
     <script src="{% static 'js/main.js' %}"></script>
 </body>
 
-{% if user.id is None %}
+{% if user.is_active is None %}
 <script>
     window.onload = function MoveCheck() {
 
