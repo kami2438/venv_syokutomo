@@ -1,8 +1,8 @@
 
-body{
-  width:100%; /*ページ全体の幅は100%と指定する*/	
-  text-align:center; /*ページ全体を中央揃えにする*/
-}
+/* body{
+  width:100%; 
+  text-align:center; 
+  } */
 .food_name{
   font-size: 10px;
 }
