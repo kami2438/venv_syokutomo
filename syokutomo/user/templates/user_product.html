@@ -12,11 +12,13 @@
 <div class="orderbutton"><a href="{% url 'user:create_order' object.pk %}" class="btn_02_a"><span>注文</span></a></div>
 
 {% if like %}
+<h1>dddddddddddddddddd</h1>
 <form method="POST">
     {% csrf_token %}
     <button type="submit"><img src="{% static 'syokutomo/static/img/likea.jpeg ' %}" alt="">ボタン</button>
 </form>
 {% else %}
+<h1>ehrioghiofug</h1>
 <form method="POST">
     {% csrf_token %}
     <button type="submit"><img src="{% static 'syokutomo/static/img/likeb.jpeg ' %}" alt="">ボタン</button>
