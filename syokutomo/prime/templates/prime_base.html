@@ -69,7 +69,7 @@
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'account_logout' %}">サインアウト</a></li>
                     {% else %}
-                    <li><a href="{% url 'prime:choice_login' %}">サインイン</a></li>
+                    <li><a href="{% url 'account_login' %}">サインイン</a></li>
                     {% endif %}
                     <!-- {% if user.is_authenticated %}
                     <li>{{ user.main_regis }}</li>
@@ -132,10 +132,11 @@
     var type = {{ user.user_type }}
     if ({{ user.user_type }} == "1") {
         url = "{% url 'user:index' %}";
-    } else if({{user.user_type}} =="2"){
-    url="{% url 'shop:index' %}";
-    } else if({{user.user_type}} =="3"){
-    url="{% url 'driver:index' %}";}
+    } else if ({{ user.user_type }} == "2") {
+        url = "{% url 'shop:index' %}";
+    } else if ({{ user.user_type }} == "3") {
+        url = "{% url 'driver:index' %}";
+    }
     window.onload = function Move() {
         window.location.href = url;
     }
@@ -148,10 +149,10 @@
     var type = {{ user.user_type }}
     if ({{ user.user_type }} == "1") {
         url = "{% url 'prime:regis_user' %}";
-    } else if({{user.user_type}} =="2"){
-    url="{% url 'prime:regis_shop' %}";
-    } else if({{user.user_type}} =="3"){
-    url="{% url 'prime:regis_driver' %}";
+    } else if ({{ user.user_type }} == "2") {
+        url = "{% url 'prime:regis_shop' %}";
+    } else if ({{ user.user_type }} == "3") {
+        url = "{% url 'prime:regis_driver' %}";
 
     } else {
         url = "{% url 'prime:terms' %}";

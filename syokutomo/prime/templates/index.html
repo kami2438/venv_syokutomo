@@ -70,7 +70,7 @@
         <div class="row text-center services-3">
             <div class="col-sm-3">
                 <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-beer"></i> </div>
+                    <div class=icon-border bm10"> <i class="fa fa-beer"></i> </div>
                     <h4>796518</h4>
                     <p>登録店舗数</p>
                 </div>
@@ -78,15 +78,8 @@
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-play-circle-o"></i> </div>
-                    <h4>39472</h4>
-                    <p>数</p>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-truck"></i> </div>
-                    <h4>2188764</h4>
-                    <p>配達員数</p>
+                    <h4>394762</h4>
+                    <p>利用回数</p>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -94,6 +87,13 @@
                     <div class="icon-border bm10"> <i class="fa fa-users"></i> </div>
                     <h4>480523</h4>
                     <p>ユーザー登録数</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="col-wrapper">
+                    <div class="icon-border bm10"> <i class="fa fa-truck"></i> </div>
+                    <h4>21764</h4>
+                    <p>配達員数</p>
                 </div>
             </div>
         </div>
@@ -118,16 +118,16 @@
 
                     <div class="pricing-item-details">
 
-                        <h3><a href="#">Chicken Fried Rice</a></h3>
+                        <h3>
+                            <p>Chicken Fried Rice</p>
+                        </h3>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
-
-                        <a class="btn btn-danger" href="#">Order now</a>
+                        <a class="btn btn-danger" href="{% url 'account_login' %}">Login now</a>
                         <div class="clearfix"></div>
                     </div>
                     <!--price tag-->
-                    <span class="hot-tag br-red">$26</span>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -140,16 +140,16 @@
 
                     <div class="pricing-item-details">
 
-                        <h3><a href="#">Hot Fried Chicken</a></h3>
+                        <h3>
+                            <p>Hot Fried Chicken</p>
+                        </h3>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
-
-                        <a class="btn btn-danger" href="#">Order now</a>
+                        <a class="btn btn-danger" href="{% url 'account_login' %}">Login now</a>
                         <div class="clearfix"></div>
                     </div>
                     <!--price tag-->
-                    <span class="hot-tag br-lblue">$37</span>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -163,16 +163,16 @@
 
                     <div class="pricing-item-details">
 
-                        <h3><a href="#">Thi Chicken Momo</a></h3>
+                        <h3>
+                            <p>Thi Chicken Momo</p>
+                        </h3>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
-
-                        <a class="btn btn-danger" href="#">Order now</a>
+                        <a class="btn btn-danger" href="{% url 'account_login' %}">Login now</a>
                         <div class="clearfix"></div>
                     </div>
                     <!--price tag-->
-                    <span class="hot-tag br-green">$54</span>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -187,14 +187,13 @@
 
                         <h3><a href="#">Cocktail Sushi</a></h3>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
 
-                        <a class="btn btn-danger" href="#">Order now</a>
+                        <a class="btn btn-danger" href="{% url 'account_login' %}">Login now</a>
                         <div class="clearfix"></div>
                     </div>
                     <!--price tag-->
-                    <span class="hot-tag br-red">$27</span>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -223,9 +222,8 @@
                     <div class="icon-wrapper">
                         <img src="{% static 'img/oosaka.jpg' %}" width="300" height="200">
                     </div>
-                    <h3>Saransh Goila</h3>
-                    <p>Vivamus sagittis lacuson augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur
-                        purus sit amet fermentum ultricies vehicula.</p>
+                    <h3>大阪</h3>
+                    <p></p>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -233,9 +231,8 @@
                     <div class="icon-wrapper">
                         <img src="{% static 'img/tokyo.jpg' %}" width="300" height="200">
                     </div>
-                    <h3>Jane Doe</h3>
-                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis
-                        dis parturient monte nascetur ultricies vehicula. </p>
+                    <h3>東京</h3>
+                    <p></p>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -243,9 +240,8 @@
                     <div class="icon-wrapper">
                         <img src="{% static 'img/hokai.jpg' %}" width="300" height="200">
                     </div>
-                    <h3>Anton Mosimann</h3>
-                    <p>Curabitur blandit matti tempus porttitor. Donec id elit non mi porta ut gravida at eget
-                        metus. Consectetur adipiscing elit ultricies vehicula.</p>
+                    <h3>北海道</h3>
+                    <p></p>
                 </div>
             </div>
         </div>
