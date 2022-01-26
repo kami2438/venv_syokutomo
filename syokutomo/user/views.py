@@ -215,5 +215,4 @@ class LikeView(LoginRequiredMixin, generic.ListView):
             sn_list=[]
             for like in likes:
                 sn_list.append(like.t1_shop_id)
-            print(sn_list)
-        return sn_list
+        return list(set(sn_list))
