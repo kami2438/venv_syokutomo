@@ -114,6 +114,21 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         print(context["like"])
         return context
+    def like(self,request):
+        print("move")
+        done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+        if request.method == 'POST':
+            if 'like' in request.POST:
+                print("ok")
+                if done is None:
+                    T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+                    print("kk")
+            if 'unlike' in request.POST:
+                if done :
+                    done.delete()
+            print("save")
+            return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+    like()
 
 
 
@@ -174,17 +189,3 @@ class FoodDetailView(LoginRequiredMixin, generic.DetailView):
 # これオブジェクトallしたらそうなっちゃうんだー？ トムブラウン
 # 烏賊
 
-def like(self,request):
-    print("move")
-    done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-    if request.method == 'POST':
-        if 'like' in request.POST:
-            print("ok")
-            if done is None:
-                T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-                print("kk")
-        if 'unlike' in request.POST:
-            if done :
-                done.delete()
-        print("save")
-        return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
