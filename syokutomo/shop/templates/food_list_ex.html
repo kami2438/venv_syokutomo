@@ -40,12 +40,10 @@
                   {% comment %} <button type="button" id="change-button" onclick="cha()">変更</button> {% endcomment %}
                   <a class="change-button" href="{% url 'shop:food_update' object.pk %}"　onclick="cha()">変更</a>
                 </div>
-              <div class ="delete">
                 {% comment %} <button type="button" id="delete-button" onclick="del()">削除</button> {% endcomment %}
                 <a href="{% url 'shop:food_delete' object.pk %}" >
                   <button type="button" id="delete-button" onclick="del()">削除</button>
                 </a>
-              </div>
             </div>
           <script>
                 function cha() {
