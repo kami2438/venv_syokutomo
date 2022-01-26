@@ -50,6 +50,9 @@
   font-size: 23px;
   border: solid black;
   }
+  .change:hover{
+    opacity: 0.5;
+  }
 .change-button{
   color: white;
 }
@@ -63,7 +66,9 @@
   font-size: 23px;
   border: solid black;
   }
-
+.delete:hover{
+  opacity: 0.5;
+  }
 .delete-button{
   color: red;
 }
