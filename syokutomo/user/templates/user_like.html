@@ -1,0 +1,26 @@
+{% extends 'user_base.html' %}
+{% load static %}
+
+{% block title %}お気に入り一覧{% endblock %}
+
+
+
+{% block contents %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="my-div-style w-100">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% for shop in shops_list %}
+                <div class="post-preview">
+                    <p>{{shop.t1_shop_name_prime}}</p>
+                </div>
+                {% empty %}
+                <p>まだ登録されていません</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
