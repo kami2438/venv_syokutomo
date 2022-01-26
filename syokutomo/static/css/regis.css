@@ -1,3 +1,12 @@
 .main-title{
     border-left: thick solid red;
 }
+
+.tbl{
+    border-collapse: separate;
+    border-spacing: 4px 8px;
+}
+.tbl td{
+    background-color:#f5dfd1;
+    border-bottom:solid 2px #ff4800;
+}
