@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{% static 'css/food_list_ex.css' %}">
 {% endblock %}
 {% block contents %}
+<div class="all">
 <div class="block">
     <div class="ex_pic">
         <div class="food_name">
@@ -45,6 +46,7 @@
                 <a class="delete-button" onclick="del()" href="{% url 'shop:food_delete' object.pk %}" >削除</a>
               </div>
             </div>
+          </div>
           <script>
                 function cha() {
                   if(window.confirm('データを変更しますか？')){

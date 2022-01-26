@@ -1,3 +1,6 @@
+.all{
+  overflow: hidden;
+}
 .block{
   position: relative;
   margin-left: 25px;
