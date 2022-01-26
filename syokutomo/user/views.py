@@ -115,9 +115,15 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         print(context["like"])
         return context
     def like(self,request):
+        done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         if request.method == 'POST':
-            if 'like_button' in request.POST:
-                pass
+            if 'like' in request.POST:
+                if done is None:
+                    T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+            if 'unlike' in request.POST:
+                if done :
+                    done.delete()
+            return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
 
 
 
@@ -174,3 +180,6 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
 class FoodDetailView(LoginRequiredMixin, generic.DetailView):
     model = T4_food
     template_name = "user_food_detail.html"
+
+# これオブジェクトallしたらそうなっちゃうんだー？ トムブラウン
+# 烏賊
