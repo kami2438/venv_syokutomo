@@ -51,6 +51,7 @@ class Regis_userForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['t5_allergy'].delimiter = '、'
+        self.label_suffix = " "
     class Meta:
         model = T5_user
         fields = ("t5_user_firstname", "t5_user_lastname", "t5_address","t5_post", "t5_tel_number", "t5_landmark", "t5_allergy", "t5_charge_tool",
@@ -61,6 +62,7 @@ class Regis_userForm(forms.ModelForm):
         widgets={
             # "t5_credit_security":forms.PasswordInput(),"t5_bank_password":forms.PasswordInput()
             }
+        
         # def __init__(self,*args,**kwargs) :
         #     super().__init__(self,*args,**kwargs)
         #     for field in self.fields.values():
@@ -69,6 +71,9 @@ class Regis_userForm(forms.ModelForm):
 
 
 class Regis_shopForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = " "
 
     # t1_start_time = forms.ChoiceField(choices=TIME_CHOICES,queryset=T1_shop.objects)
     # t1_end_time = forms.ChoiceField(choices=TIME_CHOICES,queryset=T1_shop.objects)
@@ -121,6 +126,9 @@ class Regis_shopForm(forms.ModelForm):
 
 
 class Regis_driverForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = " "
     class Meta:
         model = T7_delivery_man
         fields = '__all__'
