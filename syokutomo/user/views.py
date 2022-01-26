@@ -115,20 +115,20 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         return context
         
-    def get(self,request,pk):
+    def post(self,request):
         print("move")
         done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-        if request.method == 'GET':
-            if 'like' in request.GET:
+        if request.method == 'POST':
+            if 'like' in request.POST:
                 print("ok")
                 if done is None:
                     T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
                     print("kk")
-            if 'unlike' in request.GET:
+            if 'unlike' in request.POST:
                 if done :
                     done.delete()
             print("save")
-            return reverse_lazy('user:product', self.kwargs['pk'])
+            return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
 
 
 
