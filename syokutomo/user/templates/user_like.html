@@ -15,6 +15,7 @@
                 {% for shop in object_list %}
                 <div class="post-preview">
                     <p>{{shop.t1_shop_name_prime}}</p>
+                    <a href="{% url 'user:product' shop.pk %}"><img src="{{shop.t1_shop_photo_01.url}}" /></a>
                 </div>
                 {% empty %}
                 <p>まだ登録されていません</p>
