@@ -189,19 +189,31 @@ class FoodDetailView(LoginRequiredMixin, generic.DetailView):
 
 # これオブジェクトallしたらそうなっちゃうんだー？ トムブラウン
 # 烏賊
+# class LikeView(LoginRequiredMixin, generic.ListView):
+#     model=T11_love
+#     template_name="user_like.html"
+#     def get_queryset(self):
+#         like=T11_love.objects.filter(user=self.request.user)
+#         return like
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         likes= T11_love.objects.select_related('t1_shop_id').filter(user=self.request.user)
+#         if likes.first():
+#             sn_list=[]
+#             for like in likes:
+#                 sn_list.append(like.t1_shop_id)
+#             print(sn_list)
+#         context["shops"] = sn_list
+#         return context
+
 class LikeView(LoginRequiredMixin, generic.ListView):
     model=T11_love
     template_name="user_like.html"
     def get_queryset(self):
-        like=T11_love.objects.filter(user=self.request.user)
-        return like
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
         likes= T11_love.objects.select_related('t1_shop_id').filter(user=self.request.user)
         if likes.first():
             sn_list=[]
             for like in likes:
                 sn_list.append(like.t1_shop_id)
             print(sn_list)
-        context["shops"] = sn_list
-        return context
+        return sn_list
