@@ -122,7 +122,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
             if 'like' in request.POST:
                 print("ok")
                 if done is None:
-                    T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+                    T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=pk)
                     print("kk")
             if 'unlike' in request.POST:
                 if done :
