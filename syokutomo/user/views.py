@@ -202,5 +202,6 @@ class LikeView(LoginRequiredMixin, generic.ListView):
         # for like in likes:
         #     sn_list.append(like.t1_shop_id)
         # sn= T1_shop.objects.filter()
+        print(likes)
         context["shops"] = likes.t1_shop_id
         return context
