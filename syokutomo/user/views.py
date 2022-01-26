@@ -115,7 +115,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         return context
         
-    def post(self,request):
+    def get(self,request):
         print("move")
         done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         if request.method == 'GET':
