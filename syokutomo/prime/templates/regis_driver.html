@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 
 <html lang=ja>
-    <head></head>
+    <head>
+        <title>配送員本登録</title>
+        <link rel="stylesheet" href="{% static 'css/regis.css' %}">
+    </head>
     <body>
-        <h1>Hello World</h1>
+        <h1>配送員本登録</h1>
         <form method="post" >
         {% csrf_token %}
         <table class="">{{ form.as_table }}</table>
