@@ -57,7 +57,7 @@
   color: white;
 }
 
-.delete-button{
+.delete{
   margin-top: 50px;
   border: 0;
   background: rgb(37, 32, 29);
@@ -65,8 +65,10 @@
   border-radius: 10px;
   font-size: 23px;
   border: solid black;
-  color: red;
   }
 .delete:hover{
   opacity: 0.5;
+  }
+  .delete-button{
+    color: red;
   }
