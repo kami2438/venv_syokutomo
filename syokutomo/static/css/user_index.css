@@ -116,7 +116,11 @@ section::after {
   animation-delay: 10s;
   background-size: cover;
 }
-
+#header .src4{
+  background-image: url(../img/HIKAKIN/HIKAKIN_GOOD.jpg);
+  animation-delay: 15s;
+  background-size: cover;
+}
 @keyframes bgAnime {
   0% { opacity: 0; }
   5% { opacity: 1; }
