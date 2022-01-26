@@ -198,10 +198,10 @@ class LikeView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         likes= T11_love.objects.select_related('t1_shop_id').filter(user=self.request.user)
-        # sn_list=[]
-        # for like in likes:
-        #     sn_list.append(like.t1_shop_id)
-        # sn= T1_shop.objects.filter()
-        print(likes)
-        context["shops"] = likes.t1_shop_id
+        if likes.first():
+            sn_list=[]
+            for like in likes:
+                sn_list.append(like.t1_shop_id)
+            print(sn_list)
+        context["shops"] = sn_list
         return context
