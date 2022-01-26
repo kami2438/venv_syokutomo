@@ -59,12 +59,12 @@
                     </a></div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#story">Home</a></li>
-                    <li><a href="#chefs">利用可能地域</a></li>
-                    <li><a href="#special-offser">利用可能店舗</a></li>
+                    <li><a href="{% url 'prime:index' %}">Home</a></li>
+                    <li><a href="{% url 'prime:index' %}#chefs">利用可能地域</a></li>
+                    <li><a href="{% url 'prime:index' %}#special-offser">利用可能店舗</a></li>
 
 
-                    <li><a href="#story">料金</a></li>
+                    <li><a href="{% url 'prime:index' %}#story">料金</a></li>
                     <li><a href="{% url 'prime:reservation' %}">お問い合わせ</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'account_logout' %}">サインアウト</a></li>
