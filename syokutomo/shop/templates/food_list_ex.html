@@ -42,7 +42,9 @@
                 </div>
               <div class ="delete">
                 {% comment %} <button type="button" id="delete-button" onclick="del()">削除</button> {% endcomment %}
-                <a class="delete-button" onclick="del()" href="{% url 'shop:food_delete' object.pk %}" >削除</a>
+                <a href="{% url 'shop:food_delete' object.pk %}" >
+                  <button type="button" id="delete-button" onclick="del()">削除</button>
+                </a>
               </div>
             </div>
           <script>
