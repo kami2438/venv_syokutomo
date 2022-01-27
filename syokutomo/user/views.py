@@ -1,6 +1,7 @@
 from http.client import HTTPResponse
 from pyexpat import model
 from re import template
+from unicodedata import category
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.postgres import fields
@@ -28,7 +29,6 @@ class MypageView(generic.ListView, LoginRequiredMixin):
     def get_queryset(self):
         print('get')
         informations = T5_user.objects.filter(user=self.request.user)
-        informations = informations
         return informations
 
 
@@ -40,17 +40,32 @@ class ListView(LoginRequiredMixin, generic.ListView):
     model = T1_shop
     template_name = 'user_shop_list.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        category = T8_shop_category.objects.all()
+        context['category'] = category
+        
+        return context
+
     def get_queryset(self):
         # print(user)
         informations = T1_shop.objects.filter(
             user__area=self.request.user.area)
-        # print(informations)
-        # print(type(informations))
-        # l=[]
-        # for i in informations:
-        #     print(i.user.area)
-        #     if(i.user.area ==self.request.user.area):
-        #         [i.user]+=l
+        # GETのURLクエリパラメータを取得する
+        # 該当のクエリパラメータが存在しない場合は、[]が返ってくる
+        q_category = self.request.GET.getlist('category')
+        q_name = self.request.GET.get('name')
+
+
+        # if q_category is not None:
+
+        #     informations = informations.filter(t8_shop_category_id__in=q_category)
+        print(q_category)
+
+        if q_name is not None:
+            informations = informations.filter(t1_shop_name_prime__icontains=q_name)
+
         return informations
 
 

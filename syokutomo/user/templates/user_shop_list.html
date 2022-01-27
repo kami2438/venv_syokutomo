@@ -1,6 +1,6 @@
 {% extends 'user_base.html' %}
 {% load static %}
-
+{% load custom_filters %}
 {% block title %}店舗一覧{% endblock %}
 
 {% block active_user_shop_list %}active{% endblock %}
@@ -15,8 +15,24 @@
 <aside class="sidebar">
     <div class="widget widget--sticky">
 <form action="" method="get">
-    <input name="query" value="{{ request.GET.query }}" type="text">
+    <input type="search" id="filter_name"name="name" placeholder="店名" value={{ request.GET|name }}>
     <button type="submit">検索する</button>
+
+
+    <form method="get" action="" name="filter_form">
+        <legend>絞り込み条件</legend>
+        <div>
+            <span>カテゴリ：</span>
+            {% for cate in category %}
+                <input type="radio" id="filter_kind_{{ cate.pk }}" 
+                    name="category" 
+                    value="{{ cate.pk }}"
+                    {{ cate.pk|checked:request.GET }}    
+                    >{{ cate.name }}
+            {% endfor %}
+        </div>
+        <div>
+
 </form>
 </div>
 </aside>
