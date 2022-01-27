@@ -1,5 +1,7 @@
-.main-title {
+h1 {
   border-left: thick solid red;
+  border-right: thick solid red;
+  
 }
 
 .tbl {
