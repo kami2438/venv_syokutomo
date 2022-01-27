@@ -135,7 +135,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
 
     #     return HTTPResponse("ffffffffff")
 
-def love(self,request):
+def love(self,request,pk):
     print("move")
     done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
     if request.method == 'GET':
