@@ -58,9 +58,9 @@ class ListView(LoginRequiredMixin, generic.ListView):
         q_name = self.request.GET.get('name')
 
 
-        # if q_category is not None:
+        if q_category is not None:
 
-        #     informations = informations.filter(t8_shop_category_id__in=q_category)
+            informations = informations.filter(t8_shop_category_id=q_category)
         print(q_category)
 
         if q_name is not None:
