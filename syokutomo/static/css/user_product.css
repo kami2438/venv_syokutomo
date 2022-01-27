@@ -93,6 +93,9 @@
   top: 40px;
   left: 700px;
 } */
+.lovelove .shop_name .love{
+  display: inline-block;
+}
 .love img{
   width: 30px;
   height: auto;
@@ -101,7 +104,7 @@
 .Contents .user-orderbutton{
   position: absolute;
   top: 100px;
-  left: 700px;
+  left: 800px;
 }
 
 .user-orderbutton{
@@ -126,7 +129,6 @@
   box-shadow: none; /* カーソル時の影消去 */
   color: #ff4d4d; /* 背景色     */
   background: #ffffff; /* 文字色     */
-  margin-left: 40px;
 }
 
 .shop_name {
