@@ -104,9 +104,10 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class user_productView(LoginRequiredMixin, generic.DetailView):
+class user_productView(LoginRequiredMixin, generic.CreateView):
     model = T1_shop
     template_name = "user_product.html"
+    success_url = reverse_lazy('user:mypage')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -114,6 +115,24 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
             t1_shop_id=self.kwargs['pk'])
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         return context
+
+
+    def form_valid(self, form):
+        data = form.save(commit=False)
+        print("move")
+        done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+        if self.request.method == 'GET':
+            if 'like' in self.request.GET:
+                print("ok")
+                if done is None:
+                    T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+                    print("kk")
+            if 'unlike' in self.request.GET:
+                if done :
+                    done.delete()
+            print("save")
+        return super().form_valid(form)
+
     def loveaa(self,request):
         print("move")
         done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
@@ -129,9 +148,6 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
             print("save")
             return reverse_lazy('user:index')
 
-    def get(self, request, *args, **kwargs):
-        """Handle GET requests: instantiate a blank version of the form."""
-        return self.render_to_response(self.loveaa(request=request))
     
 
     # def get(self,request,*args,**kwargs):
