@@ -159,7 +159,9 @@ def love(self,request,pk):
        'form' : LikeForm(),
    }
     if (request.method == 'POST'):
-        like = T11_love(user=self.request.user, t1_shop_id={'pk': self.kwargs['pk']})
+        user=self.request.user
+        id={'pk': self.kwargs['pk']}
+        like = T11_love(user=user, t1_shop_id=id)
         like.save()
         return redirect(to = 'index')
 
