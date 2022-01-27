@@ -91,7 +91,7 @@
 .Contents .love{
   position: absolute;
   top: 50px;
-  left: 200px;
+  left: 400px;
 }
 .love img{
   width: 30px;
@@ -100,7 +100,7 @@
 .Contents .user-orderbutton{
   position: absolute;
   top: 100px;
-  left: 200px;
+  left: 500px;
 }
 .shop_name {
   font-weight: 800;
