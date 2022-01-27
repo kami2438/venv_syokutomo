@@ -161,8 +161,12 @@ def love(request,pk):
     if (request.method == 'POST'):
         user=request.user
         id=T1_shop.objects.filter(id=pk)[0]
-        like = T11_love(user=user, t1_shop_id=id)
-        like.save()
+        vex=T11_love.objects.filter(user=user, t1_shop_id=id)
+        if vex.first() is None:
+            like = T11_love(user=user, t1_shop_id=id)
+            like.save()
+        else:
+            vex.delete()
 
     # return render(request, 'user/index.html', params)
     return redirect("user:product",pk)
