@@ -5,7 +5,9 @@
 
 {% block active_user_shop_list %}active{% endblock %}
 
-
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/user_shop_list.css' %}">
+{% endblock %}
 {% block contents %}
 <h1>店舗一覧</h1>
 <h1><a href="{% url 'user:user_like' %}">お気に入り</a></h1>
