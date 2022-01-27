@@ -112,7 +112,6 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["food"] = T4_food.objects.filter(
             t1_shop_id=self.kwargs['pk'])
-
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         return context
         
@@ -132,11 +131,25 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
             return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
     
 
-    def get(self,request,*args,**kwargs):
-        print("ssssssssss")
+    # def get(self,request,*args,**kwargs):
+    #     print("ssssssssss")
 
-        return HTTPResponse("ffffffffff")
+    #     return HTTPResponse("ffffffffff")
 
+def loveaa(self,request):
+    print("move")
+    done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+    if request.method == 'GET':
+        if 'like' in request.GET:
+            print("ok")
+            if done is None:
+                T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+                print("kk")
+        if 'unlike' in request.GET:
+            if done :
+                done.delete()
+        print("save")
+        return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
 
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
