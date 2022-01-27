@@ -87,14 +87,20 @@
   padding: 0;
   background-color: #fafaf6;
 }
+/*いいね*/
 .Contents .love{
   position: absolute;
-  top: 100px;
-  left: 50px;
+  top: 50px;
+  left: 200px;
 }
 .love img{
   width: 30px;
   height: auto;
+}
+.Contents .user-orderbutton{
+  position: absolute;
+  top: 100px;
+  left: 200px;
 }
 .shop_name {
   font-weight: 800;

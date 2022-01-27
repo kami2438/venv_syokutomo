@@ -67,6 +67,7 @@
             <div class="discribe_font_size">{{object.t1_shop_discribe}}</div>
         </h3>
         {% endif %}
+        
         <div class="love">
             <form method="post" action="{% url 'user:love' object.pk %}">
                 {% csrf_token %}
@@ -78,12 +79,14 @@
                     {% endif %}
                 </button>
             </form> 
-        </div>  
+        </div> 
+        
+        <div class="user-orderbutton"><a href="{% url 'user:create_order' object.pk %}" class="btn_02_a"><span>注文</span></a></div>
+
     </div>
 </div>
 
 <!-- 注文ボタン -->
-<div class="orderbutton"><a href="{% url 'user:create_order' object.pk %}" class="btn_02_a"><span>注文</span></a></div>
 
 
 
