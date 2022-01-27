@@ -165,7 +165,7 @@ def love(request,pk):
         like.save()
 
     # return render(request, 'user/index.html', params)
-    return redirect('list/product/food_list/', pk)
+    return redirect('list/product/', pk)
 
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
