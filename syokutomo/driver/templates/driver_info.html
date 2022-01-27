@@ -8,15 +8,36 @@
 {% endblock %}
 
 {% block contents %}
-
-<p>苗字：{{object.t7_delivery_man_firstname}}</p>
-<p>名前：{{object.t7_delivery_man_lastname}}</p>
-<p>電話番号：{{object.t7_delivery_man_tel}}</p>
-<p>金融機関名：{{object.t7_bank_name}}</p>
-<p>支店番号：{{object.t7_bank_location}}</p>
-<p>口座番号：{{object.t7_bank_number}}</p>
-<p><img src="{{object.t7_photo.url}}" width="200" height="200" /></p>
-
+<table>
+    <tr>
+        <th>苗字：</th>
+        <td>{{object.t7_delivery_man_firstname}}</td>
+    </tr>
+    <tr>
+        <th>名前：</th>
+        <td>{{object.t7_delivery_man_lastname}}</td>
+    </tr>
+    <tr>
+        <th>電話番号：</th>
+        <td>{{object.t7_delivery_man_tel}}</td>
+    </tr>
+    <tr>
+        <th>金融機関名：</th>
+        <td>{{object.t7_bank_name}}</td>
+    </tr>
+    <tr>
+        <th>支店番号：</th>
+        <td>{{object.t7_bank_location}}</td>
+    </tr>
+    <tr>
+        <th>口座番号：</th>
+        <td>{{object.t7_bank_number}}</td>
+    </tr>
+    <tr>
+        <th>確認写真</th>
+        <td><img src="{{object.t7_photo.url}}" width="200" height="200" /></td>
+    </tr>
+</table>
 <a class="" href="{% url 'driver:update' object.pk %}">変更</a>
 
 {% endblock %}
