@@ -165,7 +165,7 @@ def love(request,pk):
         like.save()
 
     # return render(request, 'user/index.html', params)
-    return reverse_lazy('user:product', kwargs=pk)
+    return redirect('product', pk)
 
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
