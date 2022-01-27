@@ -9,29 +9,29 @@
 {% block contents %}
 <h1>店舗一覧</h1>
 <h1><a href="{% url 'user:user_like' %}">お気に入り</a></h1>
+<div class="all-block">
+<aside class="sidebar">
+    <div class="widget widget--sticky">
 <form action="" method="get">
     <input name="query" value="{{ request.GET.query }}" type="text">
     <button type="submit">検索する</button>
 </form>
+</div>
+</aside>
 
-<div class="container">
-    <div class="row">
-        <div class="my-div-style w-100">
-            <div class="col-lg-8 col-md-10 mx-auto">
+<div class="main">
                 {% for item in object_list %}
                 <div class="post-preview">
                     <a href="{% url 'user:product' item.pk %}">
                         <img src="{{item.t1_shop_photo_01.url}}" width="100" height="100" />
-                        <h2 calss="post-title">
+                        <h4 calss="post-title">
                             {{item.t1_shop_name_prime}}
-                        </h2>
+                        </h4>
                     </a>
                 </div>
                 {% empty %}
                 <p>近くにお店がありません</p>
                 {% endfor %}
-            </div>
-        </div>
-    </div>
+</div>
 </div>
 {% endblock %}
