@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from pyexpat import model
 from re import template
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -132,7 +133,9 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
     
 
     def get(self,request,*args,**kwargs):
-        return print("ssssssssss")
+        print("ssssssssss")
+
+        return HTTPResponse("ffffffffff")
 
 
 
