@@ -105,8 +105,9 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
 
 
 class user_productView(LoginRequiredMixin, generic.CreateView):
-    model = T1_shop
+    model = T11_love
     template_name = "user_product.html"
+    fields=["t1_shop_id"]
     success_url = reverse_lazy('user:mypage')
 
     def get_context_data(self, **kwargs):
