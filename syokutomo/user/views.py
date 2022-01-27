@@ -129,6 +129,10 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
                     done.delete()
             print("save")
             return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+    
+
+    def get(self,request,*args,**kwargs):
+        return print("ssssssssss")
 
 
 
