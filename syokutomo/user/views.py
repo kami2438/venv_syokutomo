@@ -114,7 +114,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
             t1_shop_id=self.kwargs['pk'])
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         return context
-        
+    def form_valid(self,form,)
     def loveaa(self,request):
         print("move")
         done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
