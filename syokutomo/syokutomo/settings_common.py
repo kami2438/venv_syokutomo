@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'import_export',
     'mathfilters',
     'django.contrib.humanize',
-    'templatetags.custum_filters'
+    'user.templatetags.custum_filters'
 ]
 
 MIDDLEWARE = [
@@ -76,7 +76,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries':{
-                'custum_filters':'templatetags.custum_filters'
+                'custum_filters':'user.templatetags.custum_filters'
             }
         },
     },
