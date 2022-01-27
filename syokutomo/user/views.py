@@ -160,7 +160,7 @@ def love(request,pk):
     print("")
     if (request.method == 'POST'):
         user=request.user
-        id=T1_shop.objects.filter(t1_shop_id=pk)
+        id=T1_shop.objects.filter(id=pk)
         like = T11_love(user=user, t1_shop_id=id)
         like.save()
         return redirect(to = 'index')
