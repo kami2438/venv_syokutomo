@@ -163,9 +163,9 @@ def love(request,pk):
         id=T1_shop.objects.filter(id=pk)[0]
         like = T11_love(user=user, t1_shop_id=id)
         like.save()
-        return redirect(to = 'index')
 
-    return render(request, 'user/index.html', params)
+    # return render(request, 'user/index.html', params)
+    return reverse_lazy('user:product', kwargs=pk)
 
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
