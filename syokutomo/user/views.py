@@ -54,7 +54,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
             user__area=self.request.user.area)
         # GETのURLクエリパラメータを取得する
         # 該当のクエリパラメータが存在しない場合は、[]が返ってくる
-        q_category = self.request.GET.getlist('category')
+        q_category = self.request.GET.get('category')
         q_name = self.request.GET.get('name')
 
 
