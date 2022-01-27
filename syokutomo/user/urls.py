@@ -22,7 +22,7 @@ urlpatterns = [
          views.DeleteUserView.as_view(), name="delete_user"),
     path('list/product/food_list/<int:pk>',
          views.FoodDetailView.as_view(), name="food_detail"),
-     path('list/product/food_list/<int:pk>',
-         views.love, name="food_detail"),
+     path('list/product/food_list/<int:pk>/love',
+         views.love, name="love"),
      path('like', views.LikeView.as_view(), name="user_like"),
 ]

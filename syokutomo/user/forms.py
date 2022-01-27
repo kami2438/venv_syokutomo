@@ -34,3 +34,8 @@ class Orderform(forms.ModelForm):
         model =T2_order
         fields='__all__'
         exclude=['user','t2_create_at','t1_shop_id','t2_done']
+
+class LikeForm(forms.Form):
+   class Meta:
+       model = T11_love
+       fields = ('t1_shop_id', 'user')
