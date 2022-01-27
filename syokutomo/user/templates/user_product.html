@@ -72,14 +72,12 @@
 {% if like %}
 <h1>dddddddddddddddddd</h1>
 <form method="GET">
-    {% csrf_token %}
-    <button type="submit" name="unlike" value="1"><img src="{% static '/img/likea.jpeg ' %}" alt=""></button>
+    <button type="submit" name="unlike"><img src="{% static '/img/likea.jpeg ' %}" alt=""></button>
 </form>
 {% else %}
 <h1>ehrioghiofug</h1>
 <form method="GET">
-    {% csrf_token %}
-    <button type="submit" name="like" value="1"><img src="{% static '/img/likeb.jpeg ' %}" alt=""></button>
+    <button type="submit" name="like"><img src="{% static '/img/likeb.jpeg ' %}" alt=""></button>
 </form>
 {% endif %}
 <table class="menu">
