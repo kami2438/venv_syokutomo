@@ -131,7 +131,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
 
     def get(self, request, *args, **kwargs):
         """Handle GET requests: instantiate a blank version of the form."""
-        return self.render_to_response(self.loveaa())
+        return self.render_to_response(self.loveaa(request=request))
     
 
     # def get(self,request,*args,**kwargs):
