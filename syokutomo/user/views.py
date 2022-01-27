@@ -104,7 +104,7 @@ class ChargeView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class user_productView(LoginRequiredMixin, generic.DetailView,generic.BaseFormView):
+class user_productView(LoginRequiredMixin, generic.DetailView):
     model = T1_shop
     template_name = "user_product.html"
 
