@@ -68,20 +68,27 @@
         {% endif %}
     </div>
 </div>
+
+<!-- 注文ボタン -->
 <div class="orderbutton"><a href="{% url 'user:create_order' object.pk %}" class="btn_02_a"><span>注文</span></a></div>
-{% if like %}
-<h1>dddddddddddddddddd</h1>
+
+
+
+<!-- いいねボタン -->
+
 <form method="post" action="{% url 'user:love' object.pk %}">
     {% csrf_token %}
-    <button type="submit" name="unlike" value="1"><img src="{% static '/img/likea.jpeg ' %}" alt=""></button>
+    <button type="submit" name="like" value="1">
+        {% if like %}
+        <img src="{% static '/img/likea.jpeg ' %}" >
+        {% else %}
+        <img src="{% static '/img/likeb.jpeg ' %}" >
+        {% endif %}
+    </button>
 </form>
-{% else %}
-<h1>ehrioghiofug</h1>
-<form method="post" action="{% url 'user:love' object.pk %}">
-    {% csrf_token %}
-    <button type="submit" name="like" value="1"><img src="{% static '/img/likeb.jpeg ' %}" alt=""></button>
-</form>
-{% endif %}
+
+
+
 <table class="menu">
     {% for dish in food %}
     <div class="block">
