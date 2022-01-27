@@ -1,43 +1,43 @@
-.main-title{
-    border-left: thick solid red;
+.main-title {
+  border-left: thick solid red;
 }
 
-.tbl{
-    border-collapse: separate;
-    border-spacing: 4px 8px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+.tbl {
+  border-collapse: separate;
+  border-spacing: 4px 8px;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.tbl th{
-    background-color:#f5dfd1;
-    border-bottom:solid 2px #ff4800;
-    padding-left: 10px;
-    padding-right: 10px;
+.tbl th {
+  background-color: #f5dfd1;
+  border-bottom: solid 2px #ff4800;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-body{
-    width:99%; 
-    }
-    .button {
-        margin-top: 10px;
+body {
+  width: 99%;
+}
+.button {
+  margin-top: 10px;
 
-        display       : inline-block;
-        border-radius : 5%;          /* 角丸       */
-        font-size     : 20px;        /* 文字サイズ */
-        font-weight:bold;
-        text-align    : center;      /* 文字位置   */
-        cursor        : pointer;     /* カーソル   */
-        padding       : 10px 18px;   /* 余白       */
-        background    : #ff4800;     /* 背景色     */
-        color         : #ffffff;     /* 文字色     */
-        line-height   : 1em;         /* 1行の高さ  */
-        transition    : .3s;         /* なめらか変化 */
-        box-shadow    : 2px 2px #666666;  /* 影の設定 */
-        border        : 2px solid #ff4d4d;    /* 枠の指定 */
-      }
-      .button:hover {
-        box-shadow    : none;        /* カーソル時の影消去 */
-        color         : #ff4d4d;     /* 背景色     */
-        background    : #ffffff;     /* 文字色     */
-      }
+  display: inline-block;
+  border-radius: 5%; /* 角丸       */
+  font-size: 20px; /* 文字サイズ */
+  font-weight: bold;
+  text-align: center; /* 文字位置   */
+  cursor: pointer; /* カーソル   */
+  padding: 10px 18px; /* 余白       */
+  background: #ff4800; /* 背景色     */
+  color: #ffffff; /* 文字色     */
+  line-height: 1em; /* 1行の高さ  */
+  transition: 0.3s; /* なめらか変化 */
+  box-shadow: 2px 2px #666666; /* 影の設定 */
+  border: 2px solid #ff4d4d; /* 枠の指定 */
+}
+.button:hover {
+  box-shadow: none; /* カーソル時の影消去 */
+  color: #ff4d4d; /* 背景色     */
+  background: #ffffff; /* 文字色     */
+}
