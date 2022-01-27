@@ -17,19 +17,7 @@
 
 <div class="imggg">
     <div class="all-banner">
-    <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" />
-    <div class="love">
-    <form method="post" action="{% url 'user:love' object.pk %}">
-        {% csrf_token %}
-        <button type="submit" name="like" value="1">
-            {% if like %}
-            <img src="{% static '/img/likea.jpeg ' %}" >
-            {% else %}
-            <img src="{% static '/img/likeb.jpeg ' %}" >
-            {% endif %}
-        </button>
-    </form> 
-</div>   
+    <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" /> 
     </div>
     <div class="Contents underline">
         <h1 class="shop_name">{{object.t1_shop_name_prime}} </h1>
@@ -79,6 +67,18 @@
             <div class="discribe_font_size">{{object.t1_shop_discribe}}</div>
         </h3>
         {% endif %}
+        <div class="love">
+            <form method="post" action="{% url 'user:love' object.pk %}">
+                {% csrf_token %}
+                <button type="submit" name="like" value="1">
+                    {% if like %}
+                    <img src="{% static '/img/likea.jpeg ' %}" >
+                    {% else %}
+                    <img src="{% static '/img/likeb.jpeg ' %}" >
+                    {% endif %}
+                </button>
+            </form> 
+        </div>  
     </div>
 </div>
 
