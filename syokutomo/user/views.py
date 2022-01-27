@@ -141,7 +141,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
 
 
 
-def love(self,request,pk):
+def love(request,pk):
     # print("move")
     # done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
     # if request.method == 'POST':
@@ -159,8 +159,8 @@ def love(self,request,pk):
     params = {'form' : LikeForm(),}
     print("")
     if (request.method == 'POST'):
-        user=self.request.user
-        id={'pk': self.kwargs['pk']}
+        user=request.user
+        id=pk
         like = T11_love(user=user, t1_shop_id=id)
         like.save()
         return redirect(to = 'index')
