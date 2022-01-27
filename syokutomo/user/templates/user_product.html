@@ -20,7 +20,21 @@
     <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" /> 
     </div>
     <div class="Contents underline">
+        <div class="lovelove">
         <h1 class="shop_name">{{object.t1_shop_name_prime}} </h1>
+        <div class="love">
+            <form method="post" action="{% url 'user:love' object.pk %}">
+                {% csrf_token %}
+                <button type="submit" name="like" value="1">
+                    {% if like %}
+                    <img src="{% static '/img/likea.jpeg ' %}" >
+                    {% else %}
+                    <img src="{% static '/img/likeb.jpeg ' %}" >
+                    {% endif %}
+                </button>
+            </form> 
+        </div> 
+        </div>
         <h5>
             <div class="star5_rating" data-rate="{{object.t1_review_ave}}"></div>{{object.t1_review_ave}}/5
         </h5>
@@ -68,7 +82,7 @@
         </h3>
         {% endif %}
         
-        <div class="love">
+        {% comment %} <div class="love">
             <form method="post" action="{% url 'user:love' object.pk %}">
                 {% csrf_token %}
                 <button type="submit" name="like" value="1">
@@ -79,7 +93,7 @@
                     {% endif %}
                 </button>
             </form> 
-        </div> 
+        </div>  {% endcomment %}
         
         <div class="user-orderbutton">
             <a href="{% url 'user:create_order' object.pk %}"><span>注文</span></a>
