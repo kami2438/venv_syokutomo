@@ -12,6 +12,11 @@
   object-fit: cover;
   position: relative;
 }
+.Banner-image .love{
+  position: absolute;
+  top: 100px;
+  left: 50px;
+}
 
 .star5_rating {
   margin-left: 40px;
