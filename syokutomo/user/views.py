@@ -141,7 +141,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
 
 
 
-def love(self,request,pk):
+def love(self,request=request,pk):
     # print("move")
     # done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
     # if request.method == 'POST':
