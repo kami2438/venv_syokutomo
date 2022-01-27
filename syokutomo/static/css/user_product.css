@@ -90,18 +90,45 @@
 /*いいね*/
 .Contents .love{
   position: absolute;
-  top: 50px;
-  left: 400px;
+  top: 40px;
+  left: 700px;
 }
 .love img{
   width: 30px;
   height: auto;
 }
+/*注文ボタン*/
 .Contents .user-orderbutton{
   position: absolute;
   top: 100px;
-  left: 500px;
+  left: 700px;
 }
+
+.user-orderbutton{
+  margin-top: 10px;
+
+  display: inline-block;
+  border-radius: 5%; /* 角丸       */
+  font-size: 20px; /* 文字サイズ */
+  font-weight: bold;
+  text-align: center; /* 文字位置   */
+  cursor: pointer; /* カーソル   */
+  padding: 10px 18px; /* 余白       */
+  background: #ff4800; /* 背景色     */
+  color: #ffffff; /* 文字色     */
+  line-height: 1em; /* 1行の高さ  */
+  transition: 0.3s; /* なめらか変化 */
+  box-shadow: 2px 2px #666666; /* 影の設定 */
+  border: 2px solid #ff4d4d; /* 枠の指定 */
+}
+
+.user-orderbutton:hover {
+  box-shadow: none; /* カーソル時の影消去 */
+  color: #ff4d4d; /* 背景色     */
+  background: #ffffff; /* 文字色     */
+  margin-left: 40px;
+}
+
 .shop_name {
   font-weight: 800;
   margin-left: 30px;
