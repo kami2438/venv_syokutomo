@@ -155,6 +155,7 @@ def love(self,request,pk):
     #             done.delete()
     #     print("save")
     #     return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+    print("gggggg")
     params = {'form' : LikeForm(),}
     print("")
     if (request.method == 'POST'):
