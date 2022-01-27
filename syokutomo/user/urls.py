@@ -23,6 +23,6 @@ urlpatterns = [
 #     path('list/product/food_list/<int:pk>',
 #          views.FoodDetailView.as_view(), name="food_detail"),
      path('list/product/food_list/<int:pk>',
-         views.loveaa, name="food_detail"),
+         views.love, name="food_detail"),
      path('like', views.LikeView.as_view(), name="user_like"),
 ]
