@@ -12,7 +12,9 @@
     background-color:#f5dfd1;
     border-bottom:solid 2px #ff4800;
 }
-
+.tbl td{
+    width:311px;
+}
 body{
     width:99%; 
     text-align:center;
