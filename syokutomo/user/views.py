@@ -54,14 +54,17 @@ class ListView(LoginRequiredMixin, generic.ListView):
             user__area=self.request.user.area)
         # GETのURLクエリパラメータを取得する
         # 該当のクエリパラメータが存在しない場合は、[]が返ってくる
-        q_category = self.request.GET.get('category')
+        q_category = self.request.GET.getlist('category')
         q_name = self.request.GET.get('name')
 
 
-        if q_category is not None:
+        # if q_category is not None:
 
-            informations = informations.filter(t8_shop_category_id=q_category)
-        print(q_category)
+        #     informations = informations.filter(t8_shop_category_id=q_category)
+        # print(q_category)
+        if len(q_category) != 0:
+            kinds = [x for x in q_category if x in ["1", "2"]]
+            informations = informations.filter(kind__in=kinds)
 
         if q_name is not None:
             informations = informations.filter(t1_shop_name_prime__icontains=q_name)
