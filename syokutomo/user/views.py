@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+from lib2to3.pgen2 import driver
 from pyexpat import model
 from re import template
 from unicodedata import category
@@ -19,6 +20,13 @@ from .forms import *
 
 class IndexView(generic.TemplateView):
     template_name = "user_index.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        category = T2_order.objects.filter()
+        context['category'] = category
+        
+        return context
 
 
 class MypageView(generic.ListView, LoginRequiredMixin):
@@ -213,24 +221,6 @@ class FoodDetailView(LoginRequiredMixin, generic.DetailView):
     model = T4_food
     template_name = "user_food_detail.html"
 
-# これオブジェクトallしたらそうなっちゃうんだー？ トムブラウン
-# 烏賊
-# class LikeView(LoginRequiredMixin, generic.ListView):
-#     model=T11_love
-#     template_name="user_like.html"
-#     def get_queryset(self):
-#         like=T11_love.objects.filter(user=self.request.user)
-#         return like
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         likes= T11_love.objects.select_related('t1_shop_id').filter(user=self.request.user)
-#         if likes.first():
-#             sn_list=[]
-#             for like in likes:
-#                 sn_list.append(like.t1_shop_id)
-#             print(sn_list)
-#         context["shops"] = sn_list
-#         return context
 
 class LikeView(LoginRequiredMixin, generic.ListView):
     model=T11_love
@@ -241,4 +231,32 @@ class LikeView(LoginRequiredMixin, generic.ListView):
             sn_list=[]
             for like in likes:
                 sn_list.append(like.t1_shop_id)
-        return list(set(sn_list))
+            return list(set(sn_list))
+        else:
+            return None
+
+# class OrderDetail(LoginRequiredMixin, generic.CreateView):
+#     model=T3_order_detail
+#     template="order_detail.html"
+#     form_class=OrderDetailForm
+
+#     def form_valid(self, form):
+#         order = form.save(commit=False)
+#         order.user = self.request.user
+#         order.t3_payment=int(order.t3_amount)*int(order.t4_food_id)+180
+#         order.t2_order_id=T2_order.objects.filter(id= self.kwargs['pk'])[0]
+#         driver=T7_delivery_man.objects.filter(user__area=self.request.user.area).order_by('?')[0]
+#         order.t7_delivery_man_id=driver
+#         order.save()
+#         done=T2_order.object.filter(id=self.kwargs['pk'])
+#         done.t2_done=True
+#         done.save()
+#         messages.success(self.request, '注文が登録されました。')
+#         return super().form_valid(form)
+
+
+
+# class CreateReview(LoginRequiredMixin, generic.CreateView):
+#     model=T6_review
+#     template_name="user_createview.html"
+#     from_class=ReviewForm
