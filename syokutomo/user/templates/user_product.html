@@ -90,9 +90,9 @@
                 {% csrf_token %}
                 <button type="submit" name="like" value="1">
                     {% if like %}
-                    <img src="{% static '/img/likeb.jpeg ' %}" >
-                    {% else %}
                     <img src="{% static '/img/likea.jpeg ' %}" >
+                    {% else %}
+                    <img src="{% static '/img/likeb.jpeg ' %}" >
                     {% endif %}
                 </button>
                 <p>{{ object.t1_favorite_count }}</p>
