@@ -24,7 +24,7 @@
         <div>
             <span>カテゴリ：</span>
             {% for cate in category %}
-                <input type="checkbox" id="filter_kind_{{ cate.pk }}" 
+                <input type="radio" id="filter_kind_{{ cate.pk }}" 
                     name="category" 
                     value="{{ cate.pk }}"
                     {{ cate.pk|checked:request.GET }}    
