@@ -64,7 +64,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
         # print(q_category)
         if len(q_category) != 0:
             kinds = [x for x in q_category if x in ["1", "2"]]
-            informations = informations.filter(kind__in=kinds)
+            informations = informations.filter(t8_shop_category_id__in=kinds)
 
         if q_name is not None:
             informations = informations.filter(t1_shop_name_prime__icontains=q_name)
