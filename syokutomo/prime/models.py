@@ -172,7 +172,8 @@ class T3_order_detail(models.Model):
     t3_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t3_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員',on_delete=models.CASCADE )
-    t3_order_deliver_status=models.PositiveIntegerField(verbose_name='配送状態',null=False,validators=[MaxValueValidator(1)],blank=True)
+    t3_order_deliver_status=models.PositiveIntegerField(verbose_name='配送状態',null=False,default=0,blank=True)
+    # 配送前０、配送中１、配送完了２
     t3_review_done=models.BooleanField(verbose_name="レビューしたか",default=False,blank=True)
 
 
