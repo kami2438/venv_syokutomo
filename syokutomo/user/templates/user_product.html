@@ -20,9 +20,9 @@
     <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" /> 
     </div>
     <div class="Contents underline">
-        <div class="lovelove">
-        <h1 class="shop_name">{{object.t1_shop_name_prime}} </h1>
-        <div class="love">
+        <table class="lovelove">
+        <td><h1 class="shop_name">{{object.t1_shop_name_prime}} </h1></td>
+        <td><div class="love">
             <form method="post" action="{% url 'user:love' object.pk %}">
                 {% csrf_token %}
                 <button type="submit" name="like" value="1">
@@ -34,7 +34,8 @@
                 </button>
             </form> 
         </div> 
-        </div>
+    </td>
+    </table>
         <h5>
             <div class="star5_rating" data-rate="{{object.t1_review_ave}}"></div>{{object.t1_review_ave}}/5
         </h5>
