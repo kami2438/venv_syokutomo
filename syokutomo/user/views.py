@@ -133,48 +133,11 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
             t1_shop_id=self.kwargs['pk'])
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
         return context
-    # def loveaa(self,request):
-    #     print("move")
-    #     done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-    #     if request.method == 'GET':
-    #         if 'like' in request.GET:
-    #             print("ok")
-    #             if done is None:
-    #                 T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-    #                 print("kk")
-    #         if 'unlike' in request.GET:
-    #             if done :
-    #                 done.delete()
-    #         print("save")
-    #         return reverse_lazy('user:index')
 
-    # def get(self, request, *args, **kwargs):
-    #     """Handle GET requests: instantiate a blank version of the form."""
-    #     return self.render_to_response(self.loveaa(request=request))
-    
-
-    # def get(self,request,*args,**kwargs):
-    #     print("ssssssssss")
-
-    #     return HTTPResponse("ffffffffff")
 
 
 
 def love(request,pk):
-    # print("move")
-    # done=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-    # if request.method == 'POST':
-    #     if 'like' in request.POST:
-    #         print("ok")
-    #         if done is None:
-    #             T11_love.objects.get_or_create(user=self.request.user,t1_shop_id=self.kwargs['pk'])
-    #             print("kk")
-    #     if 'unlike' in request.POST:
-    #         if done :
-    #             done.delete()
-    #     print("save")
-    #     return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
-    print("gggggg")
     params = {'form' : LikeForm(),}
     print("")
     if (request.method == 'POST'):
@@ -184,10 +147,15 @@ def love(request,pk):
         if vex.first() is None:
             like = T11_love(user=user, t1_shop_id=id)
             like.save()
+            shop=id
+            shop.t1_favorite_count=int(shop.t1_favorite_count)+1
+            shop.save
         else:
             vex.delete()
+            shop=id
+            shop.t1_favorite_count=int(shop.t1_favorite_count)-1
+            shop.save
 
-    # return render(request, 'user/index.html', params)
     return redirect("user:product",pk)
 
 
