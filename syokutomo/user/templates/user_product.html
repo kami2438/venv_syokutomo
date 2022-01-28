@@ -25,7 +25,7 @@
         <td><div class="love">
             <form method="post" action="{% url 'user:love' object.pk %}">
                 {% csrf_token %}
-                <button type="submit" name="like" value="1">
+                <button type="submit" name="like" class="btn" value="1">
                     {% if like %}
                     {% comment %} <img src="{% static '/img/likea.jpeg ' %}" > {% endcomment %}
                     <span class="love-mark">&#9825;</span></button></td>

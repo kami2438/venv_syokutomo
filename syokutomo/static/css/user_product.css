@@ -98,8 +98,13 @@
   border-spacing: 12px 8px;
 }
 .love-mark{
-  font-size: 20px;
+  font-size: 27px;
   font-weight: bold;
+}
+.btn{
+  width: 35px;
+  height:35px;
+  border-radius: 50%;
 }
 /*注文ボタン*/
 .Contents .user-orderbutton {
