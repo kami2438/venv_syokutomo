@@ -101,6 +101,9 @@
   width: 30px;
   height: auto;
 }
+love-mark{
+  font-size: 20px;
+}
 /*注文ボタン*/
 .Contents .user-orderbutton {
   position: absolute;
