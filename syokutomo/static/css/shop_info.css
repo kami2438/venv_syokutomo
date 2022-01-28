@@ -1,3 +1,7 @@
+.design03 {
+  margin-left: 50px;
+}
+
 .design03 tr:nth-child(2n + 1) {
   background: #e9faf9;
 }
@@ -10,6 +14,7 @@
 }
 
 .v_line_left {
+  margin-left: 20px;
   border-left: thick solid red;
   padding-left: 10px;
 }

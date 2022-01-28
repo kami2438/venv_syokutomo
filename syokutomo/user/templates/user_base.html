@@ -74,7 +74,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{% url 'user:list' %}">注文</a></li>
                     <li><a href="#">配達状況</a></li>
-                    <li><a href="#">配達予定</a></li>
+                    <li><a href="">お気に入り店舗</a></li>
 
 
                     <li><a href="{% url 'user:charge' %}">チャージ</a></li>
@@ -91,10 +91,10 @@
     </div><!-- menu -->
 
 
-<!-- fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff -->
-{% comment %} <h1><a href="{% url 'user:user_like' %}">お気に入り</a></h1> {% endcomment %}
+    <!-- fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff -->
+    {% comment %} <h1><a href="{% url 'user:user_like' %}">お気に入り</a></h1> {% endcomment %}
 
-<!--fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff  -->
+    <!--fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff  -->
 
 
 
@@ -138,7 +138,8 @@
 <script>
     window.onload = function MoveCheck() {
 
-    window.location.href = "{% url 'prime:index' %}";}
+        window.location.href = "{% url 'prime:index' %}";
+    }
 
 </script>
 {% endif %}

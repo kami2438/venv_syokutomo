@@ -5,10 +5,12 @@
 {% block title %}マイページ{% endblock %}
 
 {% block header %}
+<link rel="stylesheet" href="{% static 'css/shop_info.css' %}">
 {% endblock %}
 
 {% block contents %}
-<table>
+<h2 class="v_line_left">基本情報</h2>
+<table class="design03">
     <tr>
         <th>苗字：</th>
         <td>{{object.t5_user_firstname}}
@@ -41,6 +43,9 @@
             {{food}}
             {% endfor %}</td>
     </tr>
+</table>
+<h2 class="v_line_left">金融情報</h2>
+<table class="design03">
     <tr>
         <th>チャージ方法：</th>
         <td>{{object.t5_charge_tool}}</td>
