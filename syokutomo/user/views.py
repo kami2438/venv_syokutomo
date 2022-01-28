@@ -43,7 +43,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        category = T8_shop_category.objects.all()
+        category = T8_shop_category.objects.all().order_by("t1_favorite_count").reverse()
         context['category'] = category
         
         return context
