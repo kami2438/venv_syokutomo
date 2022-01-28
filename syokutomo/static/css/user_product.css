@@ -103,8 +103,8 @@
 /*注文ボタン*/
 .Contents .user-orderbutton {
   position: absolute;
-  top: 100px;
-  left: 800px;
+  top: 150px;
+  left: 900px;
 }
 
 .user-orderbutton {
