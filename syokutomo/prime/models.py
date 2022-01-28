@@ -162,7 +162,7 @@ class T7_delivery_man(models.Model):
 
 class T3_order_detail(models.Model):
     # t3_order_detail_id=models.CharField(verbose_name='注文詳細ID',primary_key=True,max_length=20, validators=[RegexValidator(regex=r"^OD[0-9]*$")])
-
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
     t2_order_id=models.ForeignKey(T2_order,verbose_name='注文',null=True,on_delete=models.CASCADE )
     t4_food_id=models.ForeignKey(T4_food,verbose_name='料理',on_delete=models.CASCADE ,null=True)
     t3_amount=models.PositiveIntegerField(verbose_name='数量',default=1,null=False)
@@ -173,6 +173,7 @@ class T3_order_detail(models.Model):
     t3_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員',on_delete=models.CASCADE )
     t3_order_deliver_status=models.PositiveIntegerField(verbose_name='配送状態',null=False,validators=[MaxValueValidator(1)])
+    t3_review_done=models.BooleanField(verbose_name="レビューしたか",default=False)
 
 
 class T6_review(models.Model):
