@@ -166,7 +166,7 @@ class T3_order_detail(models.Model):
     t2_order_id=models.ForeignKey(T2_order,verbose_name='注文',null=True,on_delete=models.CASCADE )
     t4_food_id=models.ForeignKey(T4_food,verbose_name='料理',on_delete=models.CASCADE ,null=True)
     t3_amount=models.PositiveIntegerField(verbose_name='数量',default=1,null=False)
-    t3_delivery_date=models.DateTimeField(verbose_name='配達予定時刻' ,null=False)
+    t3_delivery_date=models.TimeField(verbose_name='配達予定時刻' ,null=False)
     t3_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
     t3_payment=models.PositiveIntegerField(verbose_name='料金',null=False )
     t3_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
