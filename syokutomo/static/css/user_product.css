@@ -97,12 +97,12 @@
   margin:0 auto;
   border-spacing: 12px 8px;
 }
-.love img {
-  width: 30px;
-  height: auto;
+.love {
+  font-weight: bold;
 }
-love-mark{
+.love-mark{
   font-size: 20px;
+
 }
 /*注文ボタン*/
 .Contents .user-orderbutton {
@@ -110,6 +110,7 @@ love-mark{
   top: 150px;
   left: 900px;
   color: white;
+  font-weight: bold;
 }
 
 .user-orderbutton {
