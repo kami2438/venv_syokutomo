@@ -63,6 +63,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
         #     informations = informations.filter(t8_shop_category_id=q_category)
         # print(q_category)
         if len(q_category) != 0:
+            print(q_category)
             kinds = [x for x in q_category if x in ["1", "2"]]
             informations = informations.filter(t8_shop_category_id__in=kinds)
 
