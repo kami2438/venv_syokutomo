@@ -155,14 +155,14 @@ def love(request,pk):
         if vex.first() is None:
             like = T11_love(user=user, t1_shop_id=id)
             like.save()
-            # shop=id
-            # shop.t1_favorite_count=int(shop.t1_favorite_count)+1
-            # shop.save
+            shop=id
+            shop.t1_favorite_count=int(shop.t1_favorite_count)+1
+            shop.save
         else:
             vex.delete()
-            # shop=id
-            # shop.t1_favorite_count=int(shop.t1_favorite_count)-1
-            # shop.save
+            shop=id
+            shop.t1_favorite_count=int(shop.t1_favorite_count)-1
+            shop.save
 
     return redirect("user:product",pk)
 
