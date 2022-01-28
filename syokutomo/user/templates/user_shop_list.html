@@ -28,7 +28,8 @@
                     name="category" 
                     value="{{ cate.pk }}"
                     {{ cate.pk|checked:request.GET }}    
-                    >{{ cate.t8_shop_category_name }}
+                    onclick="document.filter_form.submit();">
+                    {{ cate.t8_shop_category_name }}
             {% endfor %}
         </div>
         <div>
