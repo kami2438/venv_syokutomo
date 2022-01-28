@@ -110,8 +110,6 @@
   position: absolute;
   top: 150px;
   left: 900px;
-  color: white;
-  font-weight: bold;
 }
 
 .user-orderbutton {
@@ -130,6 +128,7 @@
   transition: 0.3s; /* なめらか変化 */
   box-shadow: 2px 2px #666666; /* 影の設定 */
   border: 2px solid #ff4d4d; /* 枠の指定 */
+  font-weight: bold;
 }
 
 .user-orderbutton:hover {
