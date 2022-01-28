@@ -140,6 +140,7 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context["food"] = T4_food.objects.filter(
             t1_shop_id=self.kwargs['pk'])
         context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+        print(context["like"])
         return context
 
 
