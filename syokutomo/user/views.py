@@ -43,7 +43,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        category = T8_shop_category.objects.all().order_by("t1_favorite_count").reverse()
+        category = T8_shop_category.objects.all()
         context['category'] = category
         
         return context
@@ -51,7 +51,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         # print(user)
         informations = T1_shop.objects.filter(
-            user__area=self.request.user.area)
+            user__area=self.request.user.area).order_by("t1_favorite_count").reverse()
         # GETのURLクエリパラメータを取得する
         # 該当のクエリパラメータが存在しない場合は、[]が返ってくる
         q_category = self.request.GET.getlist('category')
