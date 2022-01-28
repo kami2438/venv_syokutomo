@@ -89,7 +89,7 @@
             <form method="post" action="{% url 'user:love' object.pk %}">
                 {% csrf_token %}
                 <button type="submit" name="like" value="1">
-                    {% if like is not None %}
+                    {% if like %}
                     <img src="{% static '/img/likea.jpeg ' %}" >
                     {% else %}
                     <img src="{% static '/img/likeb.jpeg ' %}" >
