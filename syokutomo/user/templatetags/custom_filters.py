@@ -6,9 +6,7 @@ register = template.Library()
 def checked(value, querydict):
     kinds = querydict.get('category')
     print("hhhh",kinds)
-    if str(value) in kinds:
-        return "checked"
-    return ""
+    return "" if name is None else name
 
 @register.filter
 def name(querydict):
