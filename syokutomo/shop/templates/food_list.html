@@ -22,8 +22,8 @@
     </div> {% endcomment %}
     <!--商品の説明-->
 
-    <div class="block">
-        <a href="{% url 'shop:food_list_ex' f.pk %}" target="_blank" rel="noopener noreferrer">
+    {% comment %} <div class="block"> {% endcomment %}
+        <a class="block" href="{% url 'shop:food_list_ex' f.pk %}" target="_blank" rel="noopener noreferrer">
             <div class="food_name">
                 <b>{{f.t4_food_name }}</b>
             </div>
@@ -31,7 +31,7 @@
                 <img src="{{ f.t4_food_photo_01.url }}" />
             </div>
         </a>
-    </div>
+    {% comment %} </div> {% endcomment %}
 
     {% endfor %}
 
