@@ -24,8 +24,8 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        category = T2_order.objects.filter()
-        context['category'] = category
+        order = T2_order.objects.filter(user=self.request.user)
+        context['order'] = order
         
         return context
 
@@ -237,24 +237,24 @@ class LikeView(LoginRequiredMixin, generic.ListView):
         else:
             return None
 
-# class OrderDetail(LoginRequiredMixin, generic.CreateView):
-#     model=T3_order_detail
-#     template="order_detail.html"
-#     form_class=OrderDetailForm
+class OrderDetail(LoginRequiredMixin, generic.CreateView):
+    model=T3_order_detail
+    template="order_detail.html"
+    form_class=OrderDetailForm
 
-#     def form_valid(self, form):
-#         order = form.save(commit=False)
-#         order.user = self.request.user
-#         order.t3_payment=int(order.t3_amount)*int(order.t4_food_id)+180
-#         order.t2_order_id=T2_order.objects.filter(id= self.kwargs['pk'])[0]
-#         driver=T7_delivery_man.objects.filter(user__area=self.request.user.area).order_by('?')[0]
-#         order.t7_delivery_man_id=driver
-#         order.save()
-#         done=T2_order.object.filter(id=self.kwargs['pk'])
-#         done.t2_done=True
-#         done.save()
-#         messages.success(self.request, '注文が登録されました。')
-#         return super().form_valid(form)
+    def form_valid(self, form):
+        order = form.save(commit=False)
+        order.user = self.request.user
+        order.t3_payment=int(order.t3_amount)*int(order.t4_food_id)+180
+        order.t2_order_id=T2_order.objects.filter(id= self.kwargs['pk'])[0]
+        driver=T7_delivery_man.objects.filter(user__area=self.request.user.area).order_by('?')[0]
+        order.t7_delivery_man_id=driver
+        order.save()
+        done=T2_order.object.filter(id=self.kwargs['pk'])
+        done.t2_done=True
+        done.save()
+        messages.success(self.request, '注文が登録されました。')
+        return super().form_valid(form)
 
 
 
