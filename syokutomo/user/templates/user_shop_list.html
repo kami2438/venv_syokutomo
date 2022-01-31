@@ -10,48 +10,44 @@
 {% endblock %}
 {% block contents %}
 <h1>店舗一覧</h1>
-<h1><a href="{% url 'user:user_like' %}">お気に入り</a></h1>
 <div class="all-block">
-<aside class="sidebar">
-    <div class="widget widget--sticky">
-<form action="" method="get">
-    <input type="search" id="filter_name"name="name" placeholder="店名" value={{ request.GET|name }}>
-    <button type="submit">検索する</button>
+    <aside class="sidebar">
+        <div class="widget widget--sticky">
+            <form action="" method="get">
+                <input type="search" id="filter_name" name="name" placeholder="店名" value={{ request.GET|name }}>
+                <button type="submit">検索する</button>
 
 
-    <form method="get" action="" name="filter_form">
-        <legend>絞り込み条件</legend>
-        <div>
-            <span>カテゴリ</span><br>
-            {% for cate in category %}
-                <input type="radio" id="filter_kind_{{ cate.pk }}" 
-                    name="category" 
-                    value="{{ cate.pk }}"
-                    {{ cate.pk|checked:request.GET }}    
-                    >
-                    {{ cate.t8_shop_category_name }}
-                    <br>
-            {% endfor %}
+                <form method="get" action="" name="filter_form">
+                    <legend>絞り込み条件</legend>
+                    <div>
+                        <span>カテゴリ</span><br>
+                        {% for cate in category %}
+                        <input type="radio" id="filter_kind_{{ cate.pk }}" name="category" value="{{ cate.pk }}" {{
+                            cate.pk|checked:request.GET }}>
+                        {{ cate.t8_shop_category_name }}
+                        <br>
+                        {% endfor %}
+                    </div>
+                    <div>
+
+                </form>
         </div>
-        <div>
+    </aside>
 
-</form>
-</div>
-</aside>
-
-<div class="main">
-                {% for item in object_list %}
-                <div class="post-preview">
-                    <a href="{% url 'user:product' item.pk %}">
-                        <img src="{{item.t1_shop_photo_01.url}}" width="100" height="100" />
-                        <h4 calss="post-title">
-                            {{item.t1_shop_name_prime}}
-                        </h4>
-                    </a>
-                </div>
-                {% empty %}
-                <p>近くにお店がありません</p>
-                {% endfor %}
-</div>
+    <div class="main">
+        {% for item in object_list %}
+        <div class="post-preview">
+            <a href="{% url 'user:product' item.pk %}">
+                <img src="{{item.t1_shop_photo_01.url}}" width="100" height="100" />
+                <h4 calss="post-title">
+                    {{item.t1_shop_name_prime}}
+                </h4>
+            </a>
+        </div>
+        {% empty %}
+        <p>近くにお店がありません</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
