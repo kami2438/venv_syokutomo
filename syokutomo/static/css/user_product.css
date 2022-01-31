@@ -98,8 +98,10 @@
   border-spacing: 12px 8px;
 }
 .love-mark{
-  font-size: 27px;
+  font-size: 30px;
   font-weight: bold;
+  background:transparent;
+  border-color:transparent;
 }
 .btn{
   width: 35px;
