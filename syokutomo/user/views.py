@@ -14,6 +14,7 @@ from django.views import generic
 from django.shortcuts import render,redirect
 from .models import *
 from .forms import *
+from django.db.models import Q
 
 # Create your views here.
 
@@ -261,3 +262,20 @@ class LikeView(LoginRequiredMixin, generic.ListView):
 #     model=T6_review
 #     template_name="user_createview.html"
 #     from_class=ReviewForm
+class FoodSearchView(LoginRequiredMixin,generic.ListView):
+    template_name="food_search.html"
+    
+    def get_queryset(self):
+        q_word=self.request.GET.get('search')
+        if q_word:
+            object_list= T4_food.objects.filter(Q(t9_food_category_id__t9_food_category_name__icontains=q_word) | 
+            Q(t4_ingredients__icontains=q_word)|Q(t4_food_name__icontains=q_word))
+            if object_list:                
+                return  object_list
+            else:
+                object_list= T1_shop.objects.filter(Q(t1_shop_name_prime__icontains=q_word)|Q(t8_shop_category_id__t8_shop_category_name__icontains=q_word
+                ))              
+                return object_list
+        else:
+            object_list=T4_food.objects.all()            
+            return object_list
