@@ -58,6 +58,7 @@ new Vue({
 <div class="user-orderbutton">
     <a href="{% url 'user:order_detail' ord.pk %}"><span>注文</span></a>
 </div>
+{% endfor %}
 {% endblock %}
 
 {% block contents %}
