@@ -42,7 +42,6 @@ class LikeForm(forms.Form):
 
 class OrderDetailForm(forms.ModelForm):
 
-    ord=T2_order.objects.filter(id=self.kwargs['pk'])
     class Meta:
         model=T3_order_detail
         TIME_CHOICES = (('00:00:00', '00:00'),('00:30:00', '00:30'),
