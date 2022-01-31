@@ -100,13 +100,14 @@
 .love-mark{
   font-size: 30px;
   font-weight: bold;
-  background:transparent;
-  border-color:transparent;
+
 }
 .btn{
   width: 35px;
   height:35px;
   border-radius: 50%;
+  background:transparent;
+  border-color:transparent;
 }
 /*注文ボタン*/
 .Contents .user-orderbutton {
