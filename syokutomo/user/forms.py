@@ -42,6 +42,7 @@ class LikeForm(forms.Form):
 
 class OrderDetailForm(forms.ModelForm):
 
+    ord=T2_order.objects.filter(id=self.kwargs['pk'])
     class Meta:
         model=T3_order_detail
         TIME_CHOICES = (('00:00:00', '00:00'),('00:30:00', '00:30'),
@@ -81,12 +82,14 @@ class OrderDetailForm(forms.ModelForm):
         ('22:00:00', '22:00'),('22:30:00', '22:30'),
         ('23:00:00', '23:00'),('23:30:00', '23:30') )
         fields = '__all__'
+        
+        # t4_food_id=
         exclude=['user','t2_order_id','t1_shop_id','t3_review_done',"t3_order_deliver_status","t7_delivery_man_id","t3_create_at"
         "t3_update_at","t3_payment"]
         widgets={"t3_delivery_date":forms.Select(choices=TIME_CHOICES),
         # "t1_start_time":,"t1_end_time":
         }
-    def __init__( self, *args):
+    def __init__( self, *args,a):
         super(OrderDetailForm,self).__init__(*args)
         # id = kwargs.get("instance").user.id
         ord=T2_order.objects.filter(id=self.kwargs['pk'])
