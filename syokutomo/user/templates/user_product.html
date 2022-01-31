@@ -17,32 +17,26 @@
 
 <div class="imggg">
     <div class="all-banner">
-        <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" />
+    <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" /> 
     </div>
     <div class="Contents underline">
         <table class="lovelove">
-            <td>
-                <h1 class="shop_name">{{object.t1_shop_name_prime}} </h1>
+        <td><h1 class="shop_name">{{object.t1_shop_name_prime}} </h1></td>
+            <form method="post" action="{% url 'user:love' object.pk %}">
+                <td>
+                {% csrf_token %}
+                <button type="submit" name="like" class="btn" value="1">
+                    {% if like %}
+                    {% comment %} <img src="{% static '/img/likea.jpeg ' %}" > {% endcomment %}
+                    <span class="love-mark">&#9825;</span></button>
+                    {% else %}
+                    {% comment %} <img src="{% static '/img/likeb.jpeg ' %}" > {% endcomment %}
+                    <span class="love-mark"><font color="red">&hearts;</span></button>
+                    {% endif %}
+                </button>
             </td>
-            <td>
-                <div class="love">
-                    <form method="post" action="{% url 'user:love' object.pk %}">
-                        {% csrf_token %}
-                        <button type="submit" name="like" class="btn" value="1">
-                            {% if like %}
-                            <img src="{% static '/img/likea.jpeg ' %}">
-                            <span class="love-mark"></span></button>
-                        {% else %}
-                        <img src="{% static '/img/likeb.jpeg ' %}">
-                        <span class="love-mark">
-                            <font color="red">&hearts;
-                        </span></button>
-                        {% endif %}
-                        </button>
-                    </form>
-                </div>
-            </td>
-        </table>
+            </form> 
+    </table>
         <h5>
             <div class="star5_rating" data-rate="{{object.t1_review_ave}}"></div>{{object.t1_review_ave}}/5
         </h5>
@@ -89,21 +83,21 @@
             <div class="discribe_font_size">{{object.t1_shop_discribe}}</div>
         </h3>
         {% endif %}
-        <h1>{{like}}</h1>
+        
         {% comment %} <div class="love">
             <form method="post" action="{% url 'user:love' object.pk %}">
                 {% csrf_token %}
                 <button type="submit" name="like" value="1">
                     {% if like %}
-                    <img src="{% static '/img/likeb.jpeg ' %}">
+                    <img src="{% static '/img/likea.jpeg ' %}" >
                     {% else %}
-                    <img src="{% static '/img/likea.jpeg ' %}">
+                    <img src="{% static '/img/likeb.jpeg ' %}" >
                     {% endif %}
                 </button>
                 <p>{{ object.t1_favorite_count }}</p>
-            </form>
-        </div> {% endcomment %}
-
+            </form> 
+        </div>  {% endcomment %}
+        
         <div class="user-orderbutton">
             <a href="{% url 'user:create_order' object.pk %}"><span>注文</span></a>
         </div>
@@ -121,9 +115,9 @@
     {% csrf_token %}
     <button type="submit" name="like" value="1">
         {% if like %}
-        <img src="{% static '/img/likea.jpeg ' %}">
+        <img src="{% static '/img/likea.jpeg ' %}" >
         {% else %}
-        <img src="{% static '/img/likeb.jpeg ' %}">
+        <img src="{% static '/img/likeb.jpeg ' %}" >
         {% endif %}
     </button>
 </form> {% endcomment %}
