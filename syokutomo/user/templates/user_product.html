@@ -20,7 +20,10 @@
     <img class="Banner-image" src="{{object.t1_shop_photo_02.url}}" /> 
     </div>
     <div class="Contents underline">
-        <table class="lovelove">
+        <div class="lovelove">
+        <table>
+            <tr>
+                <div class="love-mark">
         <td><h1 class="shop_name">{{object.t1_shop_name_prime}} </h1></td>
             <form method="post" action="{% url 'user:love' object.pk %}">
                 <td>
@@ -33,10 +36,13 @@
                     {% comment %} <img src="{% static '/img/likeb.jpeg ' %}" > {% endcomment %}
                     <span class="love-mark">&#9825;</span></button>
                     {% endif %}
+                    </div>
+                    </tr>
                 </button>
             </td>
             </form> 
     </table>
+</div>
         <h5>
             <div class="star5_rating" data-rate="{{object.t1_review_ave}}"></div>{{object.t1_review_ave}}/5
         </h5>

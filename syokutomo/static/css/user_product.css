@@ -93,12 +93,13 @@
   top: 40px;
   left: 700px;
 } */
-.lovelove{
+.lovelove table{
   margin:0 auto;
   border-spacing: 12px 8px;
 }
 .love-mark{
   font-size: 27px;
+  font-weight: bold;
 }
 .btn{
   width: 35px;
