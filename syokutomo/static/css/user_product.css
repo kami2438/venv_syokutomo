@@ -93,21 +93,20 @@
   top: 40px;
   left: 700px;
 } */
-.lovelove table{
-  margin:0 auto;
+.lovelove table {
+  margin: 0 auto;
   border-spacing: 12px 8px;
 }
-.love-mark{
+.love-mark {
   font-size: 30px;
   font-weight: bold;
-
 }
-.btn{
+.btn {
   width: 35px;
-  height:35px;
+  height: 35px;
   border-radius: 50%;
-  background:transparent;
-  border-color:transparent;
+  background: transparent;
+  border-color: transparent;
 }
 /*注文ボタン*/
 .Contents .user-orderbutton {
@@ -126,12 +125,12 @@
   text-align: center; /* 文字位置   */
   cursor: pointer; /* カーソル   */
   padding: 10px 18px; /* 余白       */
-  background: #ff4800; /* 背景色     */
+  background: #ffe6de; /* 背景色     */
   color: #ffffff; /* 文字色     */
   line-height: 1em; /* 1行の高さ  */
   transition: 0.3s; /* なめらか変化 */
   box-shadow: 2px 2px #666666; /* 影の設定 */
-  border: 2px solid #ff4d4d; /* 枠の指定 */
+  border: 2px solid #817979; /* 枠の指定 */
   font-weight: bold;
 }
 
