@@ -12,7 +12,7 @@ from django.urls.base import reverse
 from django.contrib import messages
 
 from django.views import generic
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.db.models import Q
@@ -27,7 +27,7 @@ class IndexView(generic.TemplateView):
 
     #     order = T2_order.objects.filter(user=self.request.user)
     #     context['order'] = order
-        
+
     #     return context
 
 
@@ -55,7 +55,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
 
         category = T8_shop_category.objects.all()
         context['category'] = category
-        
+
         return context
 
     def get_queryset(self):
@@ -67,7 +67,6 @@ class ListView(LoginRequiredMixin, generic.ListView):
         q_category = self.request.GET.getlist('category')
         q_name = self.request.GET.get('name')
 
-
         # if q_category is not None:
 
         #     informations = informations.filter(t8_shop_category_id=q_category)
@@ -75,10 +74,12 @@ class ListView(LoginRequiredMixin, generic.ListView):
         if len(q_category) != 0:
             # print(q_category)
             # kinds = [x for x in q_category if x in ["1", "2"]]
-            informations = informations.filter(t8_shop_category_id__id=q_category[0])
+            informations = informations.filter(
+                t8_shop_category_id__id=q_category[0])
 
         if q_name is not None:
-            informations = informations.filter(t1_shop_name_prime__icontains=q_name)
+            informations = informations.filter(
+                t1_shop_name_prime__icontains=q_name)
 
         return informations
 
@@ -141,33 +142,32 @@ class user_productView(LoginRequiredMixin, generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["food"] = T4_food.objects.filter(
             t1_shop_id=self.kwargs['pk'])
-        context["like"]=T11_love.objects.filter(user=self.request.user,t1_shop_id=self.kwargs['pk'])
+        context["like"] = T11_love.objects.filter(
+            user=self.request.user, t1_shop_id=self.kwargs['pk'])
         print(context["like"])
         return context
 
 
-
-
-def love(request,pk):
-    params = {'form' : LikeForm(),}
+def love(request, pk):
+    params = {'form': LikeForm(), }
     print("")
     if (request.method == 'POST'):
-        user=request.user
-        id=T1_shop.objects.filter(id=pk)[0]
-        vex=T11_love.objects.filter(user=user, t1_shop_id=id)
+        user = request.user
+        id = T1_shop.objects.filter(id=pk)[0]
+        vex = T11_love.objects.filter(user=user, t1_shop_id=id)
         if vex.first() is None:
             like = T11_love(user=user, t1_shop_id=id)
             like.save()
-            shop=id
-            shop.t1_favorite_count=int(shop.t1_favorite_count)+1
+            shop = id
+            shop.t1_favorite_count = int(shop.t1_favorite_count)+1
             shop.save
         else:
             vex.delete()
-            shop=id
-            shop.t1_favorite_count=int(shop.t1_favorite_count)-1
+            shop = id
+            shop.t1_favorite_count = int(shop.t1_favorite_count)-1
             shop.save
 
-    return redirect("user:product",pk)
+    return redirect("user:product", pk)
 
 
 class ChargeHistoryView(generic.ListView, LoginRequiredMixin):
@@ -210,7 +210,7 @@ class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
     def delete(self, request, *args, **kwargs):
 
         user = self.request.user
-        user.is_active=False
+        user.is_active = False
         user.save()
         return super().delete(request, *args, **kwargs)
     # def form_valid(self,form):
@@ -226,63 +226,67 @@ class FoodDetailView(LoginRequiredMixin, generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        order = T2_order.objects.filter(user=self.request.user,t2_order_count__gte=1)
+        order = T2_order.objects.filter(
+            user=self.request.user, t2_order_count__gte=1)
         context['order'] = order
         return context
 
 
 class LikeView(LoginRequiredMixin, generic.ListView):
-    model=T11_love
-    template_name="user_like.html"
+    model = T11_love
+    template_name = "user_like.html"
+
     def get_queryset(self):
-        likes= T11_love.objects.select_related('t1_shop_id').filter(user=self.request.user)
+        likes = T11_love.objects.select_related(
+            't1_shop_id').filter(user=self.request.user)
         if likes.first():
-            sn_list=[]
+            sn_list = []
             for like in likes:
                 sn_list.append(like.t1_shop_id)
             return list(set(sn_list))
         else:
             return None
 
+
 class OrderDetail(LoginRequiredMixin, generic.CreateView):
-    model=T3_order_detail
-    template="order_detail.html"
-    form_class=OrderDetailForm
+    model = T3_order_detail
+    template_name = "order_detail.html"
+    form_class = OrderDetailForm
 
     def form_valid(self, form):
         food = request.GET.get("food")
         print("se")
         order = form.save(commit=False)
         order.user = self.request.user
-        order.t4_food_id=T4_food.objects.filter(id=food)
-        order.t3_payment=int(order.t3_amount)*int(order.t4_food_id)+180
-        order.t2_order_id=T2_order.objects.filter(id= self.kwargs['pk'])[0]
-        driver=T7_delivery_man.objects.filter(user__area=self.request.user.area).order_by('?')[0]
-        order.t7_delivery_man_id=driver
+        order.t4_food_id = T4_food.objects.filter(id=food)
+        order.t3_payment = int(order.t3_amount)*int(order.t4_food_id)+180
+        order.t2_order_id = T2_order.objects.filter(id=self.kwargs['pk'])[0]
+        driver = T7_delivery_man.objects.filter(
+            user__area=self.request.user.area).order_by('?')[0]
+        order.t7_delivery_man_id = driver
         order.save()
         # messages.success(self.request, '注文が登録されました。')
         # return super().form_valid(form)
-
 
 
 # class CreateReview(LoginRequiredMixin, generic.CreateView):
 #     model=T6_review
 #     template_name="user_createview.html"
 #     from_class=ReviewForm
-class FoodSearchView(LoginRequiredMixin,generic.ListView):
-    template_name="food_search.html"
-    
+class FoodSearchView(LoginRequiredMixin, generic.ListView):
+    template_name = "food_search.html"
+
     def get_queryset(self):
-        q_word=self.request.GET.get('search')
+        q_word = self.request.GET.get('search')
         if q_word:
-            object_list= T4_food.objects.filter(Q(t9_food_category_id__t9_food_category_name__icontains=q_word) | 
-            Q(t4_ingredients__icontains=q_word)|Q(t4_food_name__icontains=q_word))
-            if object_list:                
-                return  object_list
+            object_list = T4_food.objects.filter(Q(t9_food_category_id__t9_food_category_name__icontains=q_word) |
+                                                 Q(t4_ingredients__icontains=q_word) | Q(t4_food_name__icontains=q_word))
+            if object_list:
+                return object_list
             else:
-                object_list= T1_shop.objects.filter(Q(t1_shop_name_prime__icontains=q_word)|Q(t8_shop_category_id__t8_shop_category_name__icontains=q_word
-                ))              
+                object_list = T1_shop.objects.filter(Q(t1_shop_name_prime__icontains=q_word) | Q(t8_shop_category_id__t8_shop_category_name__icontains=q_word
+                                                                                                 ))
                 return object_list
         else:
-            object_list=T4_food.objects.all()            
+            object_list = T4_food.objects.all()
             return object_list
