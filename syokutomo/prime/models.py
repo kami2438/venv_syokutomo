@@ -123,20 +123,6 @@ class T5_user(models.Model):
         return "%s %s" % (self.t5_user_firstname,self.t5_user_lastname)
 
 
-class T2_order(models.Model):
-    # t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
-    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
-    week_cho=[(1,"日"),(2,"月"),(3,"火"),(4,"水"),(5,"木"),(6,"金"),(7,"土")]
-    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',max_length=10,on_delete=models.CASCADE,null=True,blank=True)
-    t2_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
-    t2_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
-    t2_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
-    t2_week=models.PositiveIntegerField(verbose_name='曜日',blank=False,null=True,validators=[MaxValueValidator(7)],choices=week_cho)
-    t2_order_count=models.PositiveIntegerField(verbose_name='残り回数',null=False)
-    t2_done=models.BooleanField(verbose_name='詳細注文済みか',null=False,default=False)
-    def __str__(self):
-        return "%s %s %s" % (self.t1_shop_id,self.user,self.t2_create_at)
-
 class T7_delivery_man(models.Model):
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE)
  
@@ -157,6 +143,22 @@ class T7_delivery_man(models.Model):
     t7_photo=models.ImageField(verbose_name='確認写真')
     def __str__(self):
         return "%s %s" % (self.t7_delivery_man_firstname,self.t7_delivery_man_lastname)
+
+class T2_order(models.Model):
+    # t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
+    user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
+    week_cho=[(1,"日"),(2,"月"),(3,"火"),(4,"水"),(5,"木"),(6,"金"),(7,"土")]
+    t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',max_length=10,on_delete=models.CASCADE,null=True,blank=True)
+    t2_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
+    t2_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
+    t2_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+    t2_week=models.PositiveIntegerField(verbose_name='曜日',blank=False,null=True,validators=[MaxValueValidator(7)],choices=week_cho)
+    t2_order_count=models.PositiveIntegerField(verbose_name='残り回数',null=False)
+    t2_done=models.BooleanField(verbose_name='詳細注文済みか',null=False,default=False)
+    def __str__(self):
+        return "%s %s %s" % (self.t1_shop_id,self.user,self.t2_create_at)
+
+
 
 
 
