@@ -154,7 +154,7 @@ class T2_order(models.Model):
     t2_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t2_week=models.PositiveIntegerField(verbose_name='曜日',blank=False,null=True,validators=[MaxValueValidator(7)],choices=week_cho)
     t2_order_count=models.PositiveIntegerField(verbose_name='注文予定回数',null=False)
-    t2_done=models.BooleanField(verbose_name='詳細注文済みか',null=False,default=False)
+    # t2_done=models.BooleanField(verbose_name='詳細注文済みか',null=False,default=False)
     def __str__(self):
         return "%s %s %s" % (self.t1_shop_id,self.user,self.t2_create_at)
 
