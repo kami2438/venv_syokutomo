@@ -254,11 +254,11 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
     form_class = OrderDetailForm
 
     def form_valid(self, form):
-        food = request.GET.get("food")
+        # food = request.GET.get("food")
         print("se")
         order = form.save(commit=False)
         order.user = self.request.user
-        order.t4_food_id = T4_food.objects.filter(id=food)
+        order.t4_food_id = T4_food.objects.filter(id=self.kwargs['id'])[0]
         order.t3_payment = int(order.t3_amount)*int(order.t4_food_id)+180
         order.t2_order_id = T2_order.objects.filter(id=self.kwargs['pk'])[0]
         driver = T7_delivery_man.objects.filter(
