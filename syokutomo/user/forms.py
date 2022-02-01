@@ -86,8 +86,8 @@ class OrderDetailForm(forms.ModelForm):
         widgets={"t3_delivery_date":forms.Select(choices=TIME_CHOICES),
         # "t1_start_time":,"t1_end_time":
         }
-    def __init__( self, **args):
-        super(OrderDetailForm,self).__init__(**args)
+    def __init__( self, *args, **kwargs):
+        super(OrderDetailForm,self).__init__(*args, **kwargs)
         # id = kwargs.get("instance").user.id
         ord=T2_order.objects.filter(id=self.kwargs['pk'])
         self.fields['t4_food_id'].queryset = T4_food.objects.filter(t1_shop_id=ord.t1_shop_id)
