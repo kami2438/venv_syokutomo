@@ -170,3 +170,7 @@ class FoodListExView(LoginRequiredMixin, generic.DetailView):
 # class DeliveryStatusView(LoginRequiredMixin, generic.ListView):
 #     model = T3_order_detail
 #     template_name = 'delivery_status.html'
+#     def get_queryset(self):
+#         shop = T1_shop.objects.filter(user=self.request.user)[0]
+
+#         return super().get_queryset()
