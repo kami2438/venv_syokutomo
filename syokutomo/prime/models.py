@@ -148,14 +148,12 @@ class T2_order(models.Model):
     # t2_order_id= models.CharField(verbose_name='注文ID',primary_key=True,max_length=15, validators=[RegexValidator(regex=r"^O[0-9]*$")])
     user=models.ForeignKey(CustomUser,verbose_name='ユーザー',on_delete=models.CASCADE,null=True)
     week_cho=[(1,"日"),(2,"月"),(3,"火"),(4,"水"),(5,"木"),(6,"金"),(7,"土")]
-    t2_delivery_date=models.TimeField(verbose_name='配達予定時刻' ,null=False)
     t1_shop_id=models.ForeignKey(T1_shop,verbose_name='店舗',max_length=10,on_delete=models.CASCADE,null=True,blank=True)
     t2_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
     t2_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t2_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
     t2_week=models.PositiveIntegerField(verbose_name='曜日',blank=False,null=True,validators=[MaxValueValidator(7)],choices=week_cho)
     t2_order_count=models.PositiveIntegerField(verbose_name='注文予定回数',null=False)
-    t2_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員',on_delete=models.CASCADE )
     # t2_done=models.BooleanField(verbose_name='詳細注文済みか',null=False,default=False)
     def __str__(self):
         return "%s %s %s" % (self.t1_shop_id,self.user,self.t2_create_at)
@@ -170,10 +168,12 @@ class T3_order_detail(models.Model):
     t2_order_id=models.ForeignKey(T2_order,verbose_name='注文',null=True,on_delete=models.CASCADE )
     t4_food_id=models.ForeignKey(T4_food,verbose_name='料理',on_delete=models.CASCADE ,null=True)
     t3_amount=models.PositiveIntegerField(verbose_name='数量',default=1,null=False)
+    t3_delivery_date=models.TimeField(verbose_name='配達予定時刻' ,null=False)
     t3_comment=models.TextField(verbose_name='コメント',max_length=500,blank=True,null=True)
     t3_payment=models.PositiveIntegerField(verbose_name='料金',null=False )
     t3_create_at=models.DateTimeField(verbose_name='作成日時',auto_now_add=True)
     t3_update_at=models.DateTimeField(verbose_name='最終更新日時',auto_now=True)
+    t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員',on_delete=models.CASCADE )
     t3_order_deliver_status=models.PositiveIntegerField(verbose_name='配送状態',null=False,default=0,blank=True)
     # 配送前０、配送中１、配送完了２
     t3_review_done=models.BooleanField(verbose_name="レビューしたか",default=False,blank=True)
