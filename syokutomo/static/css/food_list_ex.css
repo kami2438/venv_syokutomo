@@ -104,3 +104,7 @@
 .dark-wrapper {
   margin-top: 500px;
 }
+
+.order {
+  border: solid;
+}
