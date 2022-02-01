@@ -25,6 +25,8 @@ urlpatterns = [
      path('list/product/food_list/<int:pk>/love',
          views.love, name="love"),
      path('like', views.LikeView.as_view(), name="user_like"),
-     path('order_detail/<int:pk>/',views.OrderDetail.as_view(),name="order_detail"),
+     # path('order_detail/<int:pk>/',views.OrderDetail.as_view(),name="order_detail"),
+     path("list/product/food_list/<int:pk>/order_detail",
+          views.views.OrderDetail.as_view(),name="order_detail"),
      path('search/', views.FoodSearchView.as_view(), name="search"),
 ]

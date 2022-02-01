@@ -37,4 +37,27 @@
         </div>
     </div>
 </div>
+<div class="linkbox">
+
+{% for l in order %}
+<a href="{% url 'user:order_detail' l.pk %}?food={ object.pk }"></a>
+<p>次の
+{% if l.t2_week==1 %}
+日
+{% elif l.t2_week==2 %}
+月
+{% elif l.t2_week==3 %}
+火
+{% elif l.t2_week==4 %}
+水
+{% elif l.t2_week==5 %}
+木
+{% elif l.t2_week==6 %}
+金
+{% elif l.t2_week==7 %}
+土
+{% endif %}
+曜日の注文に追加！
+</p>
+</div>
 {% endblock %}

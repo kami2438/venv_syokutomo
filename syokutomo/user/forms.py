@@ -121,7 +121,7 @@ class OrderDetailForm(forms.ModelForm):
 #         ('23:00:00', '23:00'),('23:30:00', '23:30') )
         fields = '__all__'
         exclude=['user','t2_order_id','t1_shop_id','t3_review_done',"t3_order_deliver_status","t7_delivery_man_id","t3_create_at"
-        "t3_update_at","t3_payment"]
+        "t3_update_at","t3_payment","t4_food_id"]
         # widgets={"t3_delivery_date":forms.Select(choices=TIME_CHOICES),
         # # "t1_start_time":,"t1_end_time":
         # }

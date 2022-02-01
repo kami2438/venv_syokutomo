@@ -3,6 +3,7 @@ from lib2to3.pgen2 import driver
 from pyexpat import model
 from re import template
 from unicodedata import category
+from urllib import request
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.postgres import fields
@@ -21,13 +22,13 @@ from django.db.models import Q
 
 class IndexView(generic.TemplateView):
     template_name = "user_index.html"
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
 
-        order = T2_order.objects.filter(user=self.request.user)
-        context['order'] = order
+    #     order = T2_order.objects.filter(user=self.request.user)
+    #     context['order'] = order
         
-        return context
+    #     return context
 
 
 class MypageView(generic.ListView, LoginRequiredMixin):
@@ -223,6 +224,12 @@ class FoodDetailView(LoginRequiredMixin, generic.DetailView):
     model = T4_food
     template_name = "user_food_detail.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        order = T2_order.objects.filter(user=self.request.user,t2_order_count__gte=1)
+        context['order'] = order
+        return context
+
 
 class LikeView(LoginRequiredMixin, generic.ListView):
     model=T11_love
@@ -243,18 +250,18 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
     form_class=OrderDetailForm
 
     def form_valid(self, form):
+        food = request.GET.get("food")
+        print("se")
         order = form.save(commit=False)
         order.user = self.request.user
+        order.t4_food_id=T4_food.objects.filter(id=food)
         order.t3_payment=int(order.t3_amount)*int(order.t4_food_id)+180
         order.t2_order_id=T2_order.objects.filter(id= self.kwargs['pk'])[0]
         driver=T7_delivery_man.objects.filter(user__area=self.request.user.area).order_by('?')[0]
         order.t7_delivery_man_id=driver
         order.save()
-        done=T2_order.object.filter(id=self.kwargs['pk'])
-        done.t2_done=True
-        done.save()
-        messages.success(self.request, '注文が登録されました。')
-        return super().form_valid(form)
+        # messages.success(self.request, '注文が登録されました。')
+        # return super().form_valid(form)
 
 
 
