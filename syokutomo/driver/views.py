@@ -1,3 +1,4 @@
+from re import template
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.postgres import fields
@@ -19,15 +20,17 @@ class IndexView(generic.TemplateView):
 
 class MypageView(LoginRequiredMixin, generic.ListView):
     template_name = "driver_mypage.html"
-    model =T7_delivery_man
+    model = T7_delivery_man
     pk_url_kwarg = "id"
 
     def get_queryset(self):
         informations = T7_delivery_man.objects.filter(user=self.request.user)
         return informations
 
+
 class TermsView(generic.TemplateView):
     template_name = "driver_terms.html"
+
 
 class StatusView(generic.TemplateView):
     template_name = "driver_status.html"
@@ -37,18 +40,24 @@ class driver_infoView(LoginRequiredMixin, generic.DetailView):
     model = T7_delivery_man
     template_name = "driver_info.html"
 
+
 class driver_updateView(LoginRequiredMixin, generic.UpdateView):
-    model =T7_delivery_man
+    model = T7_delivery_man
     template_name = 'driver_update.html'
     form_class = driver_updateForm
 
     def get_success_url(self):
-        return reverse_lazy('driver:info',kwargs={'pk':self.kwargs['pk']})
+        return reverse_lazy('driver:info', kwargs={'pk': self.kwargs['pk']})
 
-    def form_valid(self,form):
-        messages.success(self.request,'更新しました。')
+    def form_valid(self, form):
+        messages.success(self.request, '更新しました。')
         return super().form_valid(form)
 
-    def form_invalid(self,form):
-        messages.error(self.request,"更新に失敗しました。")
+    def form_invalid(self, form):
+        messages.error(self.request, "更新に失敗しました。")
         return super().form_invalid(form)
+
+
+class driver_scheduleView(LoginRequiredMixin, generic.ListView):
+    model = T3_order_detail
+    template_name = 'driver_schedule.html'

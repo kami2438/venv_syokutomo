@@ -1,0 +1,16 @@
+{% extends 'driver_base.html' %}
+
+{% load static %}
+
+{% block title %}配達予定{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+{% for object in object_list %}
+<p>{{object.user}}</p>
+<p>{{object.t4_food_id}}</p>
+{% endfor %}
+
+{% endblock %}
