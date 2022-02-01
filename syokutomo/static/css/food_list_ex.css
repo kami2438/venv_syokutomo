@@ -1,26 +1,26 @@
-.all{
+.all {
   overflow: hidden;
 }
-.block{
-  position: relative;
+.block {
+  /* position: relative; */
   margin-left: 25px;
 }
-.food_pic img{
+.food_pic img {
   width: 450px;
   height: auto;
 }
-.food_name{
+.food_name {
   border-left: thick solid red;
   padding-left: 15px;
 }
-.ex_pic{
+.ex_pic {
   float: left;
 }
-.food_pic{
+.food_pic {
   margin: 50px;
   width: 500px;
 }
-.ex_block{
+.ex_block {
   width: 300px;
   padding-top: 100px;
   margin-left: 30px;
@@ -28,17 +28,17 @@
   margin-bottom: 30px;
   float: left;
 }
-.money .en .enen{
+.money .en .enen {
   display: inline-block;
 }
-.en{
+.en {
   font-size: 22px;
 }
-.enen{
-  font-size:45px;
+.enen {
+  font-size: 45px;
 }
 
-.button-block{
+.button-block {
   float: left;
   margin-top: 300px;
   margin-left: 30px;
@@ -48,20 +48,20 @@
 }
 .change {
   border: 0;
-  background:rgb(37, 32, 29);
+  background: rgb(37, 32, 29);
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 23px;
   border: solid black;
-  }
-  .change:hover{
-    opacity: 0.5;
-  }
-.change-button{
+}
+.change:hover {
+  opacity: 0.5;
+}
+.change-button {
   color: white;
 }
 
-.delete{
+.delete {
   margin-top: 20px;
   border: 0;
   background: rgb(37, 32, 29);
@@ -69,10 +69,14 @@
   border-radius: 10px;
   font-size: 23px;
   border: solid black;
-  }
-.delete:hover{
+}
+.delete:hover {
   opacity: 0.5;
-  }
-  .delete-button{
-    color: red;
-  }
+}
+.delete-button {
+  color: red;
+}
+
+.block-element {
+  position: absolute;
+}

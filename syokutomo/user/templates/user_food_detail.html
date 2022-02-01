@@ -7,31 +7,33 @@
 <link rel="stylesheet" href="{% static 'css/food_list_ex.css' %}">
 {% endblock %}
 {% block contents %}
-<div class="block">
-    <div class="ex_pic">
-        <div class="food_name">
-            <!--料理名-->
-            <h1>{{ object.t4_food_name }}<h1>
+<div class="block-element">
+    <div class="block">
+        <div class="ex_pic">
+            <div class="food_name">
+                <!--料理名-->
+                <h1>{{ object.t4_food_name }}<h1>
+            </div>
+            <div class="food_pic">
+                <img src="{{ object.t4_food_photo_01.url }}">
+            </div>
         </div>
-        <div class="food_pic">
-            <img src="{{ object.t4_food_photo_01.url }}">
-        </div>
-    </div>
-    <div class="ex_block">
-        <div class="food_name_ex">
-            <h2>商品名：{{ object.t4_food_name }}</h2>
-            <!--商品説明-->
-            <p>{{ object.t4_food_discribe }}</p>
-        </div>
-        <div class="money">
-            <span class="en">￥</span>
-            <span class="enen">{{ object.t4_price }}</span>
-        </div>
-        <div class="food">
-            <h2>使用食材</h2>
-            {% for food in object.t4_ingredients %}
-            <li>{{ food }}</li>
-            {% endfor %}
+        <div class="ex_block">
+            <div class="food_name_ex">
+                <h2>商品名：{{ object.t4_food_name }}</h2>
+                <!--商品説明-->
+                <p>{{ object.t4_food_discribe }}</p>
+            </div>
+            <div class="money">
+                <span class="en">￥</span>
+                <span class="enen">{{ object.t4_price }}</span>
+            </div>
+            <div class="food">
+                <h2>使用食材</h2>
+                {% for food in object.t4_ingredients %}
+                <li>{{ food }}</li>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
