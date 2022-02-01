@@ -265,6 +265,7 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
             user__area=self.request.user.area).order_by('?')[0]
         order.t7_delivery_man_id = driver
         order.save()
+        return super().form_valid(form)
         # messages.success(self.request, '注文が登録されました。')
         # return super().form_valid(form)
 
