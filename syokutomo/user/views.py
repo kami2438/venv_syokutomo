@@ -253,6 +253,9 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
     template_name = "order_detail.html"
     form_class = OrderDetailForm
 
+    def get_success_url(self):
+        return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+
     def form_valid(self, form):
         # food = request.GET.get("food")
         print("se")
