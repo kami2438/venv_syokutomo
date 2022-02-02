@@ -21,6 +21,5 @@ class CustomUser(AbstractUser):
     main_regist= models.BooleanField(default=False)
     area= models.ForeignKey(t10_area,verbose_name='エリア',on_delete= models.CASCADE ,default="2359")
     # nickname = models.CharField('ニックネーム', max_length=50,null=True)
-    address=models.CharField(verbose_name='住所',max_length=70,default="")
     class Meta:
         verbose_name_plural="CustomUser"
