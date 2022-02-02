@@ -6,6 +6,7 @@
 {% block header %}
 <link rel="stylesheet" href="{% static 'css/food_list_ex.css' %}">
 {% endblock %}
+
 {% block contents %}
 <div class="block-element">
     <div class="block">
@@ -37,29 +38,34 @@
         </div>
     </div>
 </div>
-<div class="linkbox">
+
+<span class="order_box">
+    {% for l in order %}
     <div class="order">
-        {% for l in order %}
-        <a href="{% url 'user:order_detail' l.pk object.id %}"></a>
-        <p>次の
-            {% if l.t2_week == 1 %}
-            日
-            {% elif l.t2_week == 2 %}
-            月
-            {% elif l.t2_week == 3 %}
-            火
-            {% elif l.t2_week == 4 %}
-            水
-            {% elif l.t2_week == 5 %}
-            木
-            {% elif l.t2_week == 6 %}
-            金
-            {% elif l.t2_week == 7 %}
-            土
-            {% endif %}
-            曜日の注文に追加！
-        </p>
+        <div class="linkbox">
+            <a href="{% url 'user:order_detail' l.pk object.id %}"></a>
+            <p>次の
+                {% if l.t2_week == 1 %}
+                日
+                {% elif l.t2_week == 2 %}
+                月
+                {% elif l.t2_week == 3 %}
+                火
+                {% elif l.t2_week == 4 %}
+                水
+                {% elif l.t2_week == 5 %}
+                木
+                {% elif l.t2_week == 6 %}
+                金
+                {% elif l.t2_week == 7 %}
+                土
+                {% endif %}
+                曜日の注文に追加！
+            </p>
+        </div>
     </div>
-</div>
-{% endfor %}
+    {% empty %}
+    <p>&nbsp;</p>
+    {% endfor %}
+</span>
 {% endblock %}

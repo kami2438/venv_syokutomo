@@ -81,6 +81,7 @@
   position: absolute;
 }
 
+/*  */
 .linkbox {
   position: relative;
 }
@@ -106,5 +107,14 @@
 }
 
 .order {
-  border: solid;
+  width: 190px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: 200px;
+
+  background-color: #ffe6de;
+}
+
+.order_box {
+  margin-top: 10px;
 }
