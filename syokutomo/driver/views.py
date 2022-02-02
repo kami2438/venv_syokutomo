@@ -5,7 +5,7 @@ from django.contrib.postgres import fields
 from django.urls import reverse_lazy
 from django.urls.base import reverse
 from django.contrib import messages
-
+from django.shortcuts import render, redirect
 from django.views import generic
 
 from .models import *
@@ -16,6 +16,30 @@ from .forms import *
 
 class IndexView(generic.TemplateView):
     template_name = "driver_index.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        driver=T7_delivery_man.objects.filter(user=self.request.user)
+        orderdetail = T3_order_detail.objects.filter(t7_delivery_man_id=driver,t2_order_id__t2_order_deliver_status__lt=3)
+        # order=T2_order.objects.filter()
+        order=[]
+        for i in orderdetail:
+            order.append(orderdetail. t2_order_id)
+        order=list(set(order))
+        context['order'] = order
+
+        return context
+
+def update(request,pk):
+    print("oooo")
+    if (request.method == 'POST'):
+        print("eeee")
+        user = request.user
+        order = T2_order.objects.filter(id=pk)[0]
+        # vex = T11_love.objects.filter(user=user, t1_shop_id=id)
+        order.t2_order_deliver_status+=1
+        if order.t2_order_deliver_status==2:
+            order.t2_order_count-=1
+        return redirect("driver:index")
 
 
 class MypageView(LoginRequiredMixin, generic.ListView):

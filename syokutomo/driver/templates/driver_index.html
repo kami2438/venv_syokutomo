@@ -23,8 +23,45 @@
     </div>
 </div>
 <!-- /#header -->
-{% endblock %}
+<table border="1">
+    <tr><th>注文id</th><th>状態</th><th>配達ボタン</th><th>配達予定時間</th><th>店名</th><th>店の住所</th><th>届け先</th></tr>
+{% for item in order %}
 
+<td>{{item.pk}}</td>
+<td>
+    {% if item.t2_order_deliver_status ==0 %}
+    集荷待ち
+    {% elif item.t2_order_deliver_status == 1 %}
+    配送中
+    {% elif item.t2_order_deliver_status == 2 %}
+    配達済み
+    {% endif %}
+</td>
+<td>
+
+     <form method="post" action="{% url 'driver:update' item.pk %}">
+        {% csrf_token %}
+        <button type="submit" name="update" value="1">
+            {% if item.t2_order_deliver_status ==0 %}
+            集荷済み
+            {% elif item.t2_order_deliver_status == 1 %}
+            配送
+            {% elif item.t2_order_deliver_status == 2 %}
+            配達済み
+            {% endif %}
+        </button>
+    </form> 
+    
+
+</td>
+<td>{{item.t2_delivery_date}}</td>
+<td>{{item.t1_shop_id}}</td>
+<td>{{item.t1_shop_id.t1_address}}</td>
+<td>{{item.user.t5_address}}</td>
+
+
+</table>
+{% endblock %}
 {% block contents %}
 
 
