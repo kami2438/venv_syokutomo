@@ -166,7 +166,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 # サインアップにメールアドレス確認を挟むよう設定
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = False
 
 
 # 要調整
