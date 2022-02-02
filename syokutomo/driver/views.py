@@ -18,7 +18,7 @@ class IndexView(generic.TemplateView):
     template_name = "driver_index.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        driver=T7_delivery_man.objects.filter(user=self.request.user)
+        driver=T7_delivery_man.objects.filter(user=self.request.user)[0]
         orderdetail = T3_order_detail.objects.filter(t7_delivery_man_id=driver,t2_order_id__t2_order_deliver_status__lt=3)
         # order=T2_order.objects.filter()
         order=[]
