@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django import forms
@@ -19,6 +20,7 @@ class CustomUser(AbstractUser):
         ("3", "配達員"))
     user_type=models.CharField(verbose_name='user_type',choices=type_choice,max_length=1,default="1")
     main_regist= models.BooleanField(default=False)
+    address=model.CharField(verbose_name='詳細住所',default="")
     area= models.ForeignKey(t10_area,verbose_name='エリア',on_delete= models.CASCADE ,default="2359")
     # nickname = models.CharField('ニックネーム', max_length=50,null=True)
     class Meta:
