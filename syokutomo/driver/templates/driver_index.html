@@ -26,7 +26,7 @@
 <table border="1">
     <tr><th>注文id</th><th>状態</th><th>配達ボタン</th><th>配達予定時間</th><th>店名</th><th>店の住所</th><th>届け先</th></tr>
 {% for item in order %}
-
+<tr>
 <td>{{item.pk}}</td>
 <td>
     {% if item.t2_order_deliver_status == 0 %}
@@ -58,6 +58,7 @@
 <td>{{item.t1_shop_id}}</td>
 <td><a href="https://www.google.co.jp/maps/place/{{item.t1_shop_id.t1_address}}">{{item.t1_shop_id.t1_address}}</a></td>
 <td><a href="https://www.google.co.jp/maps/place/{{item.user.address}}">{{item.user.address}}</a></td>
+</tr>
 {% endfor %}
 
 </table>
