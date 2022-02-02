@@ -39,6 +39,7 @@ def updateAction(request,pk):
         order.t2_order_deliver_status+=1
         if order.t2_order_deliver_status==2:
             order.t2_order_count-=1
+        order.save()
         return redirect("driver:index")
 
 
