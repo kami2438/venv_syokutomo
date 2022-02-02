@@ -29,7 +29,7 @@ class IndexView(generic.TemplateView):
 
         return context
 
-def update(request,pk):
+def updateAction(request,pk):
     print("oooo")
     if (request.method == 'POST'):
         print("eeee")
