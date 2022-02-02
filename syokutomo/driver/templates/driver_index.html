@@ -29,7 +29,7 @@
 
 <td>{{item.pk}}</td>
 <td>
-    {% if item.t2_order_deliver_status ==0 %}
+    {% if item.t2_order_deliver_status == 0 %}
     集荷待ち
     {% elif item.t2_order_deliver_status == 1 %}
     配送中
@@ -42,7 +42,7 @@
      <form method="post" action="{% url 'driver:update' item.pk %}">
         {% csrf_token %}
         <button type="submit" name="update" value="1">
-            {% if item.t2_order_deliver_status ==0 %}
+            {% if item.t2_order_deliver_status == 0 %}
             集荷済み
             {% elif item.t2_order_deliver_status == 1 %}
             配送
