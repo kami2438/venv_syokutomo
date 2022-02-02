@@ -1,0 +1,22 @@
+.post-preview{
+    display: inline-block;
+    text-align: center;
+    background-color: azure;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    border: solid black;
+    width: 220px;
+    height: 200px;
+    overflow: hidden;
+}
+.post-preview p{
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container{
+    width: 99%;
+}
