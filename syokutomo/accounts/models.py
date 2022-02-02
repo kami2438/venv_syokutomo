@@ -20,7 +20,7 @@ class CustomUser(AbstractUser):
         ("3", "配達員"))
     user_type=models.CharField(verbose_name='user_type',choices=type_choice,max_length=1,default="1")
     main_regist= models.BooleanField(default=False)
-    address=models.CharField(verbose_name='詳細住所',default="")
+    address=models.CharField(verbose_name='詳細住所',default="",max_length=100)
     area= models.ForeignKey(t10_area,verbose_name='エリア',on_delete= models.CASCADE ,default="2359")
     # nickname = models.CharField('ニックネーム', max_length=50,null=True)
     class Meta:
