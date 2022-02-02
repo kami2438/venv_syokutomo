@@ -261,6 +261,7 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
         print("se")
         order = form.save(commit=False)
         order.user = self.request.user
+        user=T5_user.objects.filter(user=self.request.user)[0]
         order.t4_food_id = T4_food.objects.filter(id=self.kwargs['id'])[0]
         order.t3_payment = order.t3_amount*order.t4_food_id.t4_price+180
         order.t2_order_id = T2_order.objects.filter(id=self.kwargs['pk'])[0]
@@ -268,12 +269,12 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
             user__area=self.request.user.area).order_by('?')[0]
         order.t7_delivery_man_id = driver
         order.save()
-        if order.t3_payment>self.request.user.t5_charge_remain:
-            self.request.user.t5_charge_remain=0
+        if order.t3_payment>user.t5_charge_remain:
+            user.t5_charge_remain=0
             messages.success(self.request, '不足分は登録支払い方法によって引き落とされました。')
         else:
-            self.request.user.t5_charge_remain=self.request.user.t5_charge_remain-order.t3_payment
-        self.request.user.save()
+            user.t5_charge_remain=user.t5_charge_remain-order.t3_payment
+        user.save()
         messages.success(self.request, '注文が登録されました。')
         return super().form_valid(form)
         # messages.success(self.request, '注文が登録されました。')
