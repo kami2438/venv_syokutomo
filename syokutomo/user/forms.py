@@ -33,7 +33,7 @@ class Orderform(forms.ModelForm):
     class Meta:
         model =T2_order
         fields='__all__'
-        exclude=['user','t2_create_at','t1_shop_id','t2_done']
+        exclude=['user','t2_create_at','t1_shop_id','t2_done',"t2_order_count"]
         TIME_CHOICES = (('00:00:00', '00:00'),('00:30:00', '00:30'),
 
   ('01:00:00', '01:00'),('01:30:00', '01:30'),
