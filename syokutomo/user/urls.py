@@ -29,4 +29,5 @@ urlpatterns = [
      path("list/product/food_list/<int:pk>/order_detail/<int:id>",
           views.OrderDetail.as_view(),name="order_detail"),
      path('search/', views.FoodSearchView.as_view(), name="search"),
+     path("mypage/order_log",views.OrderLog.as_view(),name="order_log")
 ]

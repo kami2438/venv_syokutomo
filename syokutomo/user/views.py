@@ -302,3 +302,14 @@ class FoodSearchView(LoginRequiredMixin, generic.ListView):
         else:
             object_list = T4_food.objects.all()
             return object_list
+
+
+
+
+class OrderLog(LoginRequiredMixin, generic.ListView):
+    model = T3_order_detail
+    template_name = 'order_log.html'
+    def get_queryset(self):
+        
+        informations = T3_order_detail.objects.filter(user=self.request.user)
+        return informations
