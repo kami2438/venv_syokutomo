@@ -268,6 +268,13 @@ class OrderDetail(LoginRequiredMixin, generic.CreateView):
             user__area=self.request.user.area).order_by('?')[0]
         order.t7_delivery_man_id = driver
         order.save()
+        if order.t3_payment>self.request.user.t5_charge_remain:
+            self.request.user.t5_charge_remain=0
+            messages.success(self.request, '不足分は登録支払い方法によって引き落とされました。')
+        else:
+            self.request.user.t5_charge_remain=self.request.user.t5_charge_remain-order.t3_payment
+        self.request.user.save()
+        messages.success(self.request, '注文が登録されました。')
         return super().form_valid(form)
         # messages.success(self.request, '注文が登録されました。')
         # return super().form_valid(form)
