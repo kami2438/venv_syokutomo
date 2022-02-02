@@ -178,7 +178,8 @@ class T3_order_detail(models.Model):
     t7_delivery_man_id=models.ForeignKey(T7_delivery_man,verbose_name='配達員',on_delete=models.CASCADE )
 
     t3_review_done=models.BooleanField(verbose_name="レビューしたか",default=False,blank=True)
-
+    def __str__(self):
+        return "%s %s %s" % (self.user,self.t4_food_id,self.t7_delivery_man_id)
 
 class T6_review(models.Model):
     # t6_review_id=models.CharField(verbose_name='レビューID',primary_key=True,max_length=15,validators=[RegexValidator(regex=r"^R[0-9]*$")])
