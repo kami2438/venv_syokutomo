@@ -23,7 +23,7 @@ class IndexView(generic.TemplateView):
         # order=T2_order.objects.filter()
         order=[]
         for i in orderdetail:
-            order.append(orderdetail.t2_order_id)
+            order.append(i.t2_order_id)
         order=list(set(order))
         context['order'] = order
 
