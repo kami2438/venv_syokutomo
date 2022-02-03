@@ -5,13 +5,15 @@
 {% block title %}詳細注文画面{% endblock %}
 
 {% block header %}
+<link rel="stylesheet" href="{% static 'css/regis.css' %}">
 {% endblock %}
 
 {% block contents %}
 
 
-        <form method="post" >
+<form method="post">
         {% csrf_token %}
-        <table class="">{{ form.as_table }}</table>
+        <table class="tbl">{{ form.as_table }}</table>
         <button type="submit">決定</button>
-{% endblock %}
+        {% endblock %}
+</form>

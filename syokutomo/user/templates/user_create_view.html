@@ -3,7 +3,9 @@
 
 {% block title %}レビュー{% endblock %}
 
-
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/regis.css' %}">
+{% endblock %}
 
 {% block contents %}
 
@@ -14,11 +16,10 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <form method="POST">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <table class="tbl">{{ form.as_table }}</table>
                     <button type="submit" id="review-data">送信</button>
                 </form>
             </div>
-       
         </div>
     </div>
 </div>
