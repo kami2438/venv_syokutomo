@@ -313,3 +313,18 @@ class OrderLog(LoginRequiredMixin, generic.ListView):
         
         informations = T3_order_detail.objects.filter(user=self.request.user)
         return informations
+    
+class CreateReviewView(LoginRequiredMixin,generic.CreateView):
+    template_name="user_create_view.html"
+    model = T6_review
+    form_class = User_ReviewForm
+
+    def get_success_url(self):
+        return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
+    def form_valid(self, form):
+        review = form.save(commit=False)
+        shoppk = self.kwargs['pk']
+        review.t1_shop_id = T1_shop.objects.filter(id=shoppk)[0]
+        review.save()
+        messages.success(self.request, 'レビューが登録されました。')
+        return super().form_valid(form)

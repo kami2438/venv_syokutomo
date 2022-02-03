@@ -1,0 +1,25 @@
+{% extends 'user_base.html' %}
+{% load static %}
+
+{% block title %}レビュー{% endblock %}
+
+
+
+{% block contents %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="my-div-style w-100">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" id="review-data">送信</button>
+                </form>
+            </div>
+       
+        </div>
+    </div>
+</div>
+{% endblock %}

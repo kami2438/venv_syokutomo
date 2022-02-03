@@ -130,3 +130,9 @@ class OrderDetailForm(forms.ModelForm):
     #     # id = kwargs.get("instance").user.id
     #     ord=T2_order.objects.filter(id=self.kwargs['pk'])
     #     self.fields['t4_food_id'].queryset = T4_food.objects.filter(t1_shop_id=ord.t1_shop_id)
+
+class User_ReviewForm(forms.ModelForm):
+    class Meta:
+        model=T6_review
+        field= '__all__'
+        exclude=['t1_shop_id','t6_create_at','t4_update_at']
