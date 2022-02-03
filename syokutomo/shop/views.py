@@ -157,7 +157,8 @@ class CheckReviewView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         shop = T1_shop.objects.filter(user=self.request.user)[0]
         context = super().get_context_data(**kwargs)
-        context["review"] = T6_review.objects.all()
+        context["review"] = T6_review.objects.all().order_by(
+            't6_create_at').reverse()
         context["shop"] = shop
         return context
 
@@ -176,19 +177,24 @@ class FoodListExView(LoginRequiredMixin, generic.DetailView):
 #         return super().get_queryset()
 
 class ScheduleView(LoginRequiredMixin, generic.ListView):
-        model = T3_order_detail
-        template_name = 'order_schedule.html'
-        def get_queryset(self):
-            me=T1_shop.objects.filter(user=self.request.user)[0]
-            order=T2_order.objects.filter(t1_shop_id=me,t2_order_deliver_status=0)
-            informations = T3_order_detail.objects.filter(t2_order_id__in=order)
-            return informations
+    model = T3_order_detail
+    template_name = 'order_schedule.html'
+
+    def get_queryset(self):
+        me = T1_shop.objects.filter(user=self.request.user)[0]
+        order = T2_order.objects.filter(
+            t1_shop_id=me, t2_order_deliver_status=0)
+        informations = T3_order_detail.objects.filter(t2_order_id__in=order)
+        return informations
+
 
 class OrderHistoryView(LoginRequiredMixin, generic.ListView):
-        model = T3_order_detail
-        template_name = 'order_history.html'
-        def get_queryset(self):
-            me=T1_shop.objects.filter(user=self.request.user)[0]
-            order=T2_order.objects.filter(t1_shop_id=me,t2_order_deliver_status=2)
-            informations = T3_order_detail.objects.filter(t2_order_id__in=order)
-            return informations
+    model = T3_order_detail
+    template_name = 'order_history.html'
+
+    def get_queryset(self):
+        me = T1_shop.objects.filter(user=self.request.user)[0]
+        order = T2_order.objects.filter(
+            t1_shop_id=me, t2_order_deliver_status=2)
+        informations = T3_order_detail.objects.filter(t2_order_id__in=order)
+        return informations
