@@ -16,9 +16,15 @@
                     {% for item in history %}
                     <div class="post-preview">
                         <tr>
-                            <td>チャージ額：{{item.t12_charge_amount}}</td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>チャージ日時：{{item.t12_create_at}}</td>
+                            <td>
+                                <h3>チャージ額：{{item.t12_charge_amount}}</h3>
+                            </td>
+                            <td>
+                                <h3>&nbsp;&nbsp;&nbsp;</h3>
+                            </td>
+                            <td>
+                                <h3>チャージ日時：{{item.t12_create_at}}</h3>
+                            </td>
                         </tr>
                     </div>
                     {% empty %}
