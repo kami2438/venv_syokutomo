@@ -239,3 +239,35 @@ body {
 a {
   display: block;
 }
+
+
+.Contents .user-reviewbutton {
+  position: absolute;
+  top: 150px;
+  left: 900px;
+}
+
+.user-user-reviewbutton {
+  margin-top: 10px;
+
+  display: inline-block;
+  border-radius: 5%; /* 角丸       */
+  font-size: 20px; /* 文字サイズ */
+  font-weight: bold;
+  text-align: center; /* 文字位置   */
+  cursor: pointer; /* カーソル   */
+  padding: 10px 18px; /* 余白       */
+  background: #d0d3fdad; /* 背景色     */
+  color: #000000; /* 文字色     */
+  line-height: 1em; /* 1行の高さ  */
+  transition: 0.3s; /* なめらか変化 */
+  box-shadow: 2px 2px #666666; /* 影の設定 */
+  border: 2px solid #817979; /* 枠の指定 */
+  font-weight: bold;
+}
+
+.user-user-reviewbutton:hover {
+  box-shadow: none; /* カーソル時の影消去 */
+  color: #000000; /* 背景色     */
+  background: #ffffff; /* 文字色     */
+}
