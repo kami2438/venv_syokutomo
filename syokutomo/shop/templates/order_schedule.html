@@ -1,0 +1,37 @@
+{% extends 'shop_base.html' %}
+
+{% load static %}
+
+{% block title %}注文状況{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+
+
+{% block contents %}
+
+
+<div class="container">
+                {% for item in object_list %}
+                <h3>{{item.t4_food_id.t4_food_name}}</h3>
+                <p>個数：{{item.t3_amount}}品</p>
+                <p>注文曜日：{{item.t2_order_id.t2_week}}</p>
+                <p>配達予定時刻：{{item.t2_order_id.t2_delivery_date}}</p>
+                {% if item.t2_order_id.t2_comment %}
+                <p>コメント：{{item.t2_order_id.t2_comment}}</p>
+                {% endif %}
+                {% if item.t3_comment %}
+                <p>詳細コメント：{{item.t3_comment}}</p>
+                {% endif %}
+                <hr color="#fff0f0" width="80%" size="7">
+                {% empty %}
+                <p>まだ注文していません</p>
+                {% endfor %}
+</div>
+{% endblock %}
+
+
+
+{% endblock %}

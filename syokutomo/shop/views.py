@@ -174,3 +174,12 @@ class FoodListExView(LoginRequiredMixin, generic.DetailView):
 #         shop = T1_shop.objects.filter(user=self.request.user)[0]
 
 #         return super().get_queryset()
+
+class ScheduleView(LoginRequiredMixin, generic.ListView):
+        model = T3_order_detail
+        template_name = 'order_schedule.html'
+        def get_queryset(self):
+            me=T1_shop.objects.filter(user=self.request.user)[0]
+            order=T2_order.objects.filter(t1_shop_id=me,t2_order_deliver_status=0)
+            informations = T3_order_detail.objects.filter(t2_order_id__in=order)
+            return informations
