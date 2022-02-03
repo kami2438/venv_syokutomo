@@ -1,5 +1,5 @@
 {% extends 'driver_base.html' %}
-
+{% load weektag %}
 {% load static %}
 
 {% block title %}driver{% endblock %}
@@ -28,6 +28,7 @@
         <th>注文id</th>
         <th>状態</th>
         <th>配達ボタン</th>
+        <th>配達する曜日</th>
         <th>配達予定時間</th>
         <th>店名</th>
         <th>店の住所</th>
@@ -62,6 +63,7 @@
 
 
         </td>
+        <td>{{item.t2_week|cusweek}}</td>
         <td>{{item.t2_delivery_date}}</td>
         <td>{{item.t1_shop_id}}</td>
         <td><a href="https://www.google.co.jp/maps/place/{{item.t1_shop_id.t1_address}}"
