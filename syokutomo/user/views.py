@@ -323,8 +323,14 @@ class CreateReviewView(LoginRequiredMixin,generic.CreateView):
         return reverse_lazy('user:product', kwargs={'pk': self.kwargs['pk']})
     def form_valid(self, form):
         review = form.save(commit=False)
-        shoppk = self.kwargs['pk']
-        review.t1_shop_id = T1_shop.objects.filter(id=shoppk)[0]
+        shop=T1_shop.objects.filter(id=self.kwargs['pk'])[0]
+        star=(review.t6_star*0.1+shop.t1_review_ave)*0.93
+        if star>5:
+            star=5
+        elif star<1:
+            star=1
+        shop.t1_review_ave=star
+        review.t1_shop_id = shop
         review.save()
         messages.success(self.request, 'レビューが登録されました。')
         return super().form_valid(form)
