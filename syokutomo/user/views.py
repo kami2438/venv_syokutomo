@@ -334,8 +334,7 @@ class CreateReviewView(LoginRequiredMixin,generic.CreateView):
         # v=0
         n=int(S[2])
         if n>=3 and n<=7:
-            S[2]="5"
-            star=int(S)
+            star=math.floor(star)+0.5
         elif n>8:
             star=math.ceil(star)
         else:
