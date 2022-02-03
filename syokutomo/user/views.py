@@ -329,7 +329,7 @@ class CreateReviewView(LoginRequiredMixin,generic.CreateView):
             star=5
         elif star<1:
             star=1
-        shop.t1_review_ave=star
+        shop.t1_review_ave=round(star,1)
         review.t1_shop_id = shop
         review.save()
         shop.save()
