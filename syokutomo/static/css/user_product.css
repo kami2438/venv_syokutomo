@@ -247,7 +247,7 @@ a {
   left: 900px;
 }
 
-.user-user-reviewbutton {
+.user-reviewbutton {
   margin-top: 10px;
 
   display: inline-block;
@@ -266,7 +266,7 @@ a {
   font-weight: bold;
 }
 
-.user-user-reviewbutton:hover {
+.user-reviewbutton:hover {
   box-shadow: none; /* カーソル時の影消去 */
   color: #000000; /* 背景色     */
   background: #ffffff; /* 文字色     */
