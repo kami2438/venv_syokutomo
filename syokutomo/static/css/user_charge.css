@@ -1,0 +1,22 @@
+.charge_main {
+  border: solid;
+  width: 500px;
+  margin: auto;
+}
+
+.now {
+  display: inline-block;
+  margin-left: 300px;
+  margin-top: 20px;
+}
+
+.charge_table {
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.chatge_button {
+  margin-left: 300px;
+  margin-bottom: 20px;
+}
