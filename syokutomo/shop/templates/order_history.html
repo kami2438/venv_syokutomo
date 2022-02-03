@@ -1,0 +1,33 @@
+{% extends 'shop_base.html' %}
+
+{% load static %}
+{% load weektag %}
+{% block title %}販売履歴{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contents %}
+
+
+
+
+<div class="container">
+                {% for item in object_list %}
+                <h3>{{item.t4_food_id.t4_food_name}}</h3>
+                <p>個数：{{item.t3_amount}}品</p>
+                <p>配達完了日時：{{item.t3_update_at}}</p>
+                {% if item.t2_order_id.t2_comment %}
+                <p>コメント：{{item.t2_order_id.t2_comment}}</p>
+                {% endif %}
+                {% if item.t3_comment %}
+                <p>詳細コメント：{{item.t3_comment}}</p>
+                {% endif %}
+                <hr color="#fff0f0" width="80%" size="20">
+                {% empty %}
+                <p>まだ履歴がありません</p>
+                {% endfor %}
+</div>
+{% endblock %}
+
+

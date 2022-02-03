@@ -23,5 +23,6 @@ urlpatterns = [
          views.FoodListExView.as_view(), name='food_list_ex'),
     #     path('delivery_status/<int:pk>/',
     #          views.DeliveryStatusView.as_view(), name='delivery_status'),
-    path('order_schedule/',views.ScheduleView.as_view(),name="schedule")
+    path('order_schedule/',views.ScheduleView.as_view(),name="schedule"),
+    path("mypage/order_history/",views.OrderHistoryView.as_view(),name="order_history"),
 ]
