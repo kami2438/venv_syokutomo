@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/user_base.css' %}">
     <link rel="stylesheet" href="{% static 'css/user_mypage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mes.css' %}">
     <!-- <link rel="stylesheet" href="{% static 'css/button.css' %}"> -->
 
 
@@ -98,20 +99,22 @@
 
 
     {% if messages %}
-    <div class="container">
-        <div class="row">
-            <div class="my-div-style w-100">
-                <ul class="messages" style="list-style: none;">
-                    {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                        {{ message }}
-                    </li>
-                    {% endfor %}
-                </ul>
+    <div class="messa">
+        <div class="container messa_main">
+            <div class="row">
+                <div class="my-div-style w-100">
+                    <ul class="messages" style="list-style: none;">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{ message }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-  {% endif %}
+    {% endif %}
 
     <div class="user-base-margin-bottom-style">
         {% block header %}{% endblock %}

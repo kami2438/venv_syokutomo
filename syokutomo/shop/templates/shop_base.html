@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{% static 'css/shop_index.css' %}">
     <link rel="stylesheet" href="{% static 'css/shop_base.css' %}">
     <link rel="stylesheet" href="{% static 'css/shop_mypage.css'%}">
+    <link rel="stylesheet" href="{% static 'css/mes.css' %}">
     <!-- <link rel="stylesheet" href="{% static 'css/button.css' %}"> -->
     <link rel="stylesheet" href="{% static 'css/font_kinds.css' %}">
 
@@ -80,20 +81,22 @@
         </div><!-- container -->
     </div><!-- menu -->
     {% if messages %}
-    <div class="container">
-        <div class="row">
-            <div class="my-div-style w-100">
-                <ul class="messages" style="list-style: none;">
-                    {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                        {{ message }}
-                    </li>
-                    {% endfor %}
-                </ul>
+    <div class="messa">
+        <div class="container messa_main">
+            <div class="row">
+                <div class="my-div-style w-100">
+                    <ul class="messages" style="list-style: none;">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{ message }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-  {% endif %}
+    {% endif %}
     <div class="shop-base-margin-bottom-style">
         {% block header %}{% endblock %}
     </div>
