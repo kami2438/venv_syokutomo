@@ -346,22 +346,22 @@ class CreateReviewView(LoginRequiredMixin,generic.CreateView):
         shop.save()
         messages.success(self.request, 'レビューが登録されました。')
         return super().form_valid(form)
-    def reviewcol(self):
-        # print ('reviewcol is called')
-        weights=[]
-        shoppk = self.kwargs['pk']
-        aves=[]
-        star_list=list(T6_review.objects.filter(t1_shop_id=shoppk).values_list('t6_star',flat=True))
-        # print("star_list",star_list)
-        if len(star_list) >= 1000:
-            ran=random.randint(3,999)
-            star_list_tmp= star_list[:ran]
-            star_list=star_list_tmp
-        star_avg=sum(star_list)/len(star_list)
-        for i in range(len(star_list)):
-            w_std=(star_list[i]-star_avg)*(star_list[i]-star_avg)
-            weights.append(w_std)
-            aves.append(weights[i]*star_list[i])
-        ave=sum(aves)/len(aves)
-        ave=round(ave,2)
-        T1_shop.objects.filter(id=shoppk).update(t1_review_ave=ave)    
+    # def reviewcol(self):
+    #     # print ('reviewcol is called')
+    #     weights=[]
+    #     shoppk = self.kwargs['pk']
+    #     aves=[]
+    #     star_list=list(T6_review.objects.filter(t1_shop_id=shoppk).values_list('t6_star',flat=True))
+    #     # print("star_list",star_list)
+    #     if len(star_list) >= 1000:
+    #         ran=random.randint(3,999)
+    #         star_list_tmp= star_list[:ran]
+    #         star_list=star_list_tmp
+    #     star_avg=sum(star_list)/len(star_list)
+    #     for i in range(len(star_list)):
+    #         w_std=(star_list[i]-star_avg)*(star_list[i]-star_avg)
+    #         weights.append(w_std)
+    #         aves.append(weights[i]*star_list[i])
+    #     ave=sum(aves)/len(aves)
+    #     ave=round(ave,2)
+    #     T1_shop.objects.filter(id=shoppk).update(t1_review_ave=ave)    
