@@ -5,13 +5,13 @@
 {% block title %}マイページ{% endblock %}
 
 {% block header %}
-<link rel="stylesheet" href="{% static 'css/shop_update.css' %}">
+<link rel="stylesheet" href="{% static 'css/regis.css' %}">
 {% endblock %}
 
 {% block contents %}
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <table class="uptable">{{ form.as_table }}</table>
+    <table class="tbl">{{ form.as_table }}</table>
     <button class="" type="submit">更新</button>
 </form>
 
