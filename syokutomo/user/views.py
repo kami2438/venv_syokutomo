@@ -16,7 +16,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.db.models import Q
-
+import math
 # Create your views here.
 
 
@@ -329,7 +329,18 @@ class CreateReviewView(LoginRequiredMixin,generic.CreateView):
             star=5
         elif star<1:
             star=1
-        shop.t1_review_ave=round(star,1)
+        star=round(star,1)
+        S=str(star)
+        # v=0
+        n=int(S[2])
+        if n>=3 and n<=7:
+            S[2]="5"
+            star=int(S)
+        elif n>8:
+            star=math.ceil(star)
+        else:
+            star=math.floor(star)
+        shop.t1_review_ave=star
         review.t1_shop_id = shop
         review.save()
         shop.save()
