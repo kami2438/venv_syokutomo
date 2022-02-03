@@ -11,7 +11,7 @@
 <div class="container">
                 {% for shop in object_list %}
                 <h3>{{shop.t4_food_id.t4_food_name}}</h3>
-                <img src="{{shop.t4_food_id.t1_shop_photo_01.url}}" >
+                <img src="{{shop.t4_food_id.t4_food_photo_01.url}}" href="{% url 'user:food_detail' shop.t4_food_id.pk %}">
                 <p>個数：{{shop.t3_amount}}品</p>
                 <p>支払い金額：{{shop.t3_payment}}円</p>
                 <p>注文日時：{{shop.t3_create_at}}</p>
