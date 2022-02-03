@@ -13,5 +13,5 @@ urlpatterns = [
     path('mypage/info/update/<int:pk>/',
          views.driver_updateView.as_view(), name="update"),
     path('schedule', views.driver_scheduleView.as_view(), name="schedule"),
-    path('action/<int:pk>',views.updateAction,name="update")
+    path('action/<int:pk>',views.Action,name="update")
 ]
