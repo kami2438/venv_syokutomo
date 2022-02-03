@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'import_export',
     'mathfilters',
     'django.contrib.humanize',
-    # 'user.templatetags.custum_filters'
+    'user.templatetags.custum_filters'
 ]
 
 MIDDLEWARE = [
