@@ -86,3 +86,19 @@ class driver_updateView(LoginRequiredMixin, generic.UpdateView):
 class driver_scheduleView(LoginRequiredMixin, generic.ListView):
     model = T3_order_detail
     template_name = 'driver_schedule.html'
+
+
+# class DeleteDriverView(LoginRequiredMixin, generic.DeleteView):
+#     model = T7_delivery_man
+#     template_name = "delete_user.html"
+#     # success_url = reverse_lazy('user:index')
+
+#     def get_success_url(self):
+#         return reverse('prime:index')
+
+#     def delete(self, request, *args, **kwargs):
+
+#         user = self.request.user
+#         user.is_active = False
+#         user.save()
+#         return super().delete(request, *args, **kwargs)

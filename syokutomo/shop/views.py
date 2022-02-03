@@ -198,3 +198,18 @@ class OrderHistoryView(LoginRequiredMixin, generic.ListView):
             t1_shop_id=me, t2_order_deliver_status=2)
         informations = T3_order_detail.objects.filter(t2_order_id__in=order)
         return informations
+
+# class DeleteDriverView(LoginRequiredMixin, generic.DeleteView):
+#     model = T1_shop
+#     template_name = "delete_user.html"
+#     # success_url = reverse_lazy('user:index')
+
+#     def get_success_url(self):
+#         return reverse('prime:index')
+
+#     def delete(self, request, *args, **kwargs):
+
+#         user = self.request.user
+#         user.is_active = False
+#         user.save()
+#         return super().delete(request, *args, **kwargs)
