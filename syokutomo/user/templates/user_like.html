@@ -15,10 +15,12 @@
         <div class="my-div-style w-100">
             <div class="col-lg-8 col-md-10 mx-auto">
                 {% for shop in object_list %}
-                <div class="post-preview">
-                    <p>{{shop.t1_shop_name_prime}}</p>
-                    <a href="{% url 'user:product' shop.pk %}"><img src="{{shop.t1_shop_photo_01.url}}" /></a>
-                </div>
+
+                <a class="post-preview" href="{% url 'user:product' shop.pk %}">
+                    <img src="{{shop.t1_shop_photo_02.url}}" />
+                    <div class="star5_rating" data-rate="{{shop.t1_review_ave}}"></div>{{shop.t1_review_ave}}/5
+                    <h2 class="name_font">{{shop.t1_shop_name_prime}}</h2>
+                </a>
                 {% empty %}
                 <p>まだ登録されていません</p>
                 {% endfor %}
