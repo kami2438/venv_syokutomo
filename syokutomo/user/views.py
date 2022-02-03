@@ -332,5 +332,6 @@ class CreateReviewView(LoginRequiredMixin,generic.CreateView):
         shop.t1_review_ave=star
         review.t1_shop_id = shop
         review.save()
+        shop.save()
         messages.success(self.request, 'レビューが登録されました。')
         return super().form_valid(form)
