@@ -17,7 +17,11 @@
                 <h1>
         </div>
         <div class=" food_pic">
+        {% if f.t4_food_photo_01 %}
             <img src="{{ f.t4_food_photo_01.url }}" />
+        {% else %}
+            <img src="#" alt="photo">
+        {% endif %}
         </div>
     </div> {% endcomment %}
     <!--商品の説明-->
@@ -28,7 +32,12 @@
                 <b>{{f.t4_food_name }}</b>
             </div>
             <div class="food_pic">
+            {% if f.t4_food_photo_01 %}
                 <img src="{{ f.t4_food_photo_01.url }}" />
+            {% else %}
+                <img src="#" alt="photo">
+            {% endif %}
+
             </div>
         </a>
     {% comment %} </div> {% endcomment %}
